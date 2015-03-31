@@ -1,32 +1,4 @@
-%
-% Exemplo LaTeX de monografia UNISINOS
-%
-% Elaborado com base nas orientações dadas no documento
-% ``GUIA PARA ELABORAÇÃO DE TRABALHOS ACADÊMICOS''
-% disponível no site da biblioteca da Unisinos.
-% http://www.unisinos.br/biblioteca
-%
-% Os elementos textuais abaixo são apresentados na ordem em que devem
-% aparecer no documento.  Repare que nem todos são obrigatórios - isso
-% é devidamente indicado em cada caso.
-%
-% Comentários abaixo colocados entre aspas (`` '') foram
-% extraídos diretamente do documento da biblioteca.
-%
-% Este documento é de domínio público.
-%
-
-%=======================================================================
-% Declarações iniciais identificando a classe de documento e
-% selecionando alguns pacotes adicionais.
-%
-% As opções disponíveis (separe-as com vírgulas, sem espaço) são:
-% - twoside: Formata o documento para impressão frente-e-verso
-%   (o default é somente-frente)
-% - english,brazilian,french,german,etc.: idiomas usados no documento.
-%   Deve ser colocado por último o idioma principal.
-%=======================================================================
-\documentclass[twoside,english,brazilian]{UNISINOSmonografia}
+\documentclass[english,brazilian]{UNISINOSmonografia}
 \usepackage[utf8]{inputenc} % charset do texto (utf8, latin1, etc.)
 \usepackage[T1]{fontenc} % encoding da fonte (afeta a sep. de sílabas)
 \usepackage{graphicx} % comandos para gráficos e inclusão de figuras
@@ -53,26 +25,11 @@
 %=======================================================================
 % Dados gerais sobre o trabalho.
 %=======================================================================
-\autor{Tal}{Fulano de}
-\titulo{Exemplo de Monografia no Padrão da UNISINOS}
-\subtitulo{Versão \LaTeX}
-\orientador[Prof.~Dr.]{Knuth}{Donald E.}
-%\coorientador[Prof.~Dr.]{Lamport}{Leslie}
+\autor{Gräbin}{Paulo Henrique Grolli}
+\titulo{Um modelo acessível de software para localização com BLE}
+\orientador[Prof.~Dr.]{Costa}{Cristiano André da}
 \local{São Leopoldo}
-\ano{2012}
-
-%% dados específicos para Dissertação de Mestrado
-%\unidade{Unidade Acadêmica de Pesquisa e Pós-Graduação}
-%\curso{Programa de Pós-Graduação em Computação Aplicada}
-%\nivel{Nível Mestrado}
-%\natureza{%
-%Dissertação apresentada como requisito parcial para a obtenção
-%do título de Mestre pelo Programa de Pós-Graduação em Computação
-%Aplicada da Universidade do Vale do Rio dos Sinos --- UNISINOS
-%}
-%% dados da ficha catalográfica (obrigatória somente para diss. e tese)
-%\cip{Dissertação (mestrado)}{004.732}
-%\bibliotecario{Bibliotecária responsável: Fulana da Silva}{12/3456}
+\ano{2015}
 
 %% dados específicos para monografia de Graduação
 \unidade{Unidade Acadêmica Graduação}
@@ -86,14 +43,12 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 % cada palavra-chave deve ser fornecida duas vezes, uma em português e
 % outra no idioma estrangeiro (na verdade, em tantos idiomas quantos se
 % desejar).
-\palavrachave{brazilian}{UNISINOS}
-\palavrachave{brazilian}{ABNT}
-\palavrachave{brazilian}{\LaTeX}
-\palavrachave{brazilian}{Formatação de documentos}
-\palavrachave{english}{UNISINOS}
-\palavrachave{english}{ABNT}
-\palavrachave{english}{\LaTeX}
-\palavrachave{english}{Document typesetting}
+\palavrachave{brazilian}{Acessibilidade Ubíqua}
+\palavrachave{brazilian}{Deficiência Visual}
+\palavrachave{brazilian}{Sistemas de Posicionamento Indoor}
+\palavrachave{english}{Ubiquitous Accessibility}
+\palavrachave{english}{Visual Impairment}
+\palavrachave{english}{Indoor Positioning System}
 
 %=======================================================================
 % Início do documento.
@@ -133,10 +88,10 @@ Obrigado!
 % relacionada com a matéria tratada no corpo do trabalho. Podem, também,
 % constar epígrafes nas folhas de aberturas das seções primárias.''
 %=======================================================================
-\begin{epigrafe}
-``\textit{Ninguém abre um livro sem que aprenda alguma coisa}''.\\
-(Anônimo)
-\end{epigrafe}
+% \begin{epigrafe}
+% ``\textit{Ninguém abre um livro sem que aprenda alguma coisa}''.\\
+% (Anônimo)
+% \end{epigrafe}
 
 %=======================================================================
 % Resumo em Português.
@@ -175,13 +130,13 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 %
 % Deve ser passada como parâmetro a maior das abreviaturas utilizadas.
 %=======================================================================
-\begin{listadeabreviaturas}{seg., segs.}
-\item[ampl.] ampliado, -a
-\item[atual.] atualizado, -a
-\item[coord.] coordenador
-\item[N.~T.] Novo Testamento
-\item[seg., segs.] seguinte, -s
-\end{listadeabreviaturas}
+% \begin{listadeabreviaturas}{seg., segs.}
+% \item[ampl.] ampliado, -a
+% \item[atual.] atualizado, -a
+% \item[coord.] coordenador
+% \item[N.~T.] Novo Testamento
+% \item[seg., segs.] seguinte, -s
+% \end{listadeabreviaturas}
 
 %=======================================================================
 % Lista de Siglas (opcional).
@@ -189,9 +144,8 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
 \begin{listadesiglas}{FAPERGS}
-\item[ABNT] Associação Brasileira de Normas Técnicas
-\item[CAPES] Coordenação de Aperfeiçoamento de Pessoal de Nível Superior
-\item[FAPERGS] Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul
+\item[IBGE] Instituto Brasileiro de Geografia e Estatística
+\item[PDV] Portadores de Deficiência Visual
 \end{listadesiglas}
 
 %=======================================================================
@@ -199,11 +153,11 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 %
 % Deve ser passado o maior (mais largo) dos símbolos utilizados.
 %=======================================================================
-\begin{listadesimbolos}{Ca}
-\item[\textsuperscript{o}C] Graus Celsius
-\item[Al] Alumínio
-\item[Ca] Cálcio
-\end{listadesimbolos}
+%\begin{listadesimbolos}{Ca}
+%\item[\textsuperscript{o}C] Graus Celsius
+%\item[Al] Alumínio
+%\item[Ca] Cálcio
+%\end{listadesimbolos}
 
 %=======================================================================
 % Sumário
@@ -213,6 +167,109 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 %=======================================================================
 % Introdução
 %=======================================================================
+\section{Revisão Bibliográfica}
+Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para navegação para PDV. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), bluetooth e Global Positioning System (GPS) são algumas dessas tecnologias. Os autores ainda apontam que apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
+
+\begin{itemize}
+  \item GPS é normalmente usado para localização em ambientes externos, mas se mostra ineficiente devido à própria natureza das ondas de rádio usadas na tecnologia, quando obstáculos são locados ao redor do usuário. Além disso, GPS não é uma tecnologia ideal para ambientes internos, pois é capaz apenas de marcar um ponto em um mapa, não sendo suficiente para indicar, por exemplo, múltiplos andares em um prédio, cenário muito comum em ambientes indoor. 
+  \item Sonares são formas baratas de detecção de objetos e obstáculos, através de frequências acústicas, mas exigem hardware dedicado e não servem para localização.
+  \item RFID, juntamente com NFC, exige proximidade de seus emissores para que a comunicação seja estabelecida.
+  \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de bluetooth low energy.    \ldots
+\end{itemize}
+\section{Modelo Proposto}
+
+
+
+
+
+
+\chapter{Introdução}
+
+	\section{Motivação}
+
+	\section{Objetivos}
+	
+		\subsection{Objetivo geral}
+		
+		\subsection{Objetivos específicos}
+	
+	\section{Estrutura do Texto}
+
+
+\chapter{Referencial Teórico}
+
+	\section{Deficiência Visual}
+De acordo com o último Censo Demográfico, realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE), em 2010 o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são portadores de deficiência visual (PDV).
+
+A deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela, dificultando diversos aspectos de sua vida, como o seu deslocamento em ambientes desconhecidos. Não é possível compreender a dificuldade que um cego possui em realizar as tarefas consideradas triviais por aqueles que possuem a totalidade de sua visão.
+
+No Brasil, existe legislação especifica para tratar da condição médica necessária para classificar alguém como deficiente visual e, também, para garantir a acessibilidade e os direitos dos PDV. Os Decretos 3.298/99 e 5.296/04 definem critérios técnicos para conceituação de alguém como PDV. Os níveis de deficiência visual são baixa visão e cegueira, baseados na acuidade visual medida através de exame. A Lei 10.098/00 estabelece normas e critérios básicos para a promoção da acessibilidade, descrevendo normas de construção de edifícios públicos, de uso coletivo e privados, bem como regulando como deve se dar a acessibilidade nos sistemas de comunicação e sinalização.
+	
+	\section{Computação Móvel e Ubíqua}
+Tecnologias tão avançadas que deixam de ser um fim em si mesmas e passam a ser um meio para que as pessoas realizem seus afazeres. Tão conectados, tão presentes na nossa rotina e concebidas para naturalmente se integrarem em nossas vidas que deixam de ser percebidas e se colocam no plano de fundo da nossa percepção. É assim que Weiser (1991) começa introduzindo o conceito de computação ubíqua. 
+
+Weiser previu um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook que é usado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocuparem os ambientes em que convivemos, estudamos ou trabalhamos. Esses computadores conversariam entre si de maneira continua e transparente, de modo que eles e todos os usuários estariam permanentemente conectados entre si, permitindo que serviços estejam acessíveis em todos os lugares e em todos os momentos. Tal definição vai ao encontro do conceito estabelecido por Satyanarayanan (2011) para computação móvel como sendo: “Informação na ponta dos dedos em qualquer lugar e em qualquer tempo”.
+	
+	\section{Tecnologias Assistivas}
+Diversas ferramentas existem para promover a inclusão de PDV, bem como para aliviar as dificuldades impostas pela deficiência visual. Cães-guia, bengalas e piso tátil são as principais formas usadas pra facilitar locomoção.
+
+Ganz et al. (2014) destaca que smartphones são ferramentas extremamente benéficas no dia a dia das PDV, podendo ser utilizados em diversas finalidade, tais como reconhecimento de cédulas de dinheiro, objetos e cores, navegação na internet, leitura de e-mails e comunicação. O trabalho ainda afirma que o uso de smartphones é possível devido à presença de recursos de acessibilidade oferecidos pelos principais sistemas operacionais disponíveis. 
+
+Entre esses recursos, podemos destacar a leitura de telas e os alertas vibratórios, essenciais pra aqueles que não enxergam as telas sensíveis ao toque que equipam a grande maioria dos smartphones disponíveis atualmente. Ao invés de apenas ler o texto sendo exibido, essa funcionalidade também informa sobre os tipos de cada componente, possibilitando ao usuário saber como lidar com cada um.
+
+Mau et al. (2008), após pesquisa realizada em seu trabalho, define o telefone celular como “a peça de tecnologia mais valiosa para os cegos”. 
+
+Segundo o estudo realizado por Quinõnes et al. (2011), PDV possuem o desejo de carregar consigo a menor quantidade possível de equipamento. É necessário criar tecnologias que não sejam um fardo a ser carregado, mas que ofereçam a quantidade apropriada de informações ao usuário. Uma maneira citada pelo autor é a incorporação de tecnologias de navegação em aparelhos que deficientes visuais carreguem consigo normalmente, assim reduzindo o número de objetos que devem ser cuidados.
+	
+	\section{Sistemas de localização}
+Bluetooth é uma tecnologia de comunicação sem fios de curto alcance, lançada comercialmente em 1990, quando teve sua primeira especificação formal divulgada. Desde então diversas modificações foram feitas e a tecnologia passou por diversos aprimoramentos, estando atualmente na versão 4.x, também conhecida como Bluetooth Smart, lançada em 2010. 
+
+O Bluetooth foi criado e atualmente é mantido por um conjunto de empresas conhecido como Bluetooth Special Interest Group (SIG). Inicialmente formado por Ericsson, Intel, Nokia, Toshiba e IBM, o SIG é hoje composto por mais de 20.000 empresas, incluindo Apple, Microsoft, Motorola e Lenovo.
+
+A tecnologia possui duas formas distintas de atuação, apesar de compartilharem entre si alguns pontos em comum. O primeiro e mais antigo modo, disponível desde a primeira especificação, é chamado Basic Rate (BR). O segundo foi introduzido somente na versão 4.0 e é chamado Low Energy (LE) e é o modo que será utilizado pelo modelo que será proposto.
+
+O LE foi criado para permitir produtos que requerem baixíssimo consumo de energia e baixo custo, quando comparados ao outro modo. Assim sendo, esse modo foi pensado para aplicações que exigem pouca troca de informações. Um exemplo de produto viável com a chegada do modo LE são os beacons bluetooth, que consistem em dispositivos do tamanho de uma moeda comum, compostos por um processador, uma bateria e um transmissor, que transmitem informações sobre si em intervalos regulares. Como o sinal dos beacons tem seu alcance limitado a alguns poucos metros, foi introduzido o conceito de micro localização, tornando possível o desenvolvimento de aplicações novas aplicações e serviços onde antes não era possível, tais como lojas e pontos de venda, grandes shows ou eventos, estádios esportivos, localização em ambientes internos, etc.
+
+A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional.
+
+	
+\chapter{Trabalhos Relacionados}
+
+	\section{Trabalho 1}
+	
+	\section{Trabalho 2}
+
+	\section{Trabalho 3}
+	
+	\section{Comparação entre os trabalhos estudados}
+
+
+\chapter{Modelo Proposto}
+Visando mitigar o impacto da deficiência visual na vida dos usuários, o modelo proposto fará uso de dispositivos móveis aliados aos conceitos da computação ubíqua para auxiliar os PDV durante o deslocamento em ambientes internos, tais como o campus da Unisinos, através de instruções dadas por voz e alertas vibratórios. O modelo oferecerá as funcionalidades de informar a localização atual, pesquisar locais, mostrar locais de conveniência (restaurantes, agências bancárias, etc), informar rota mais curta até o local selecionado e salvar local como favorito, entre outras. Para as funcionalidades espaciais, o modelo usará beacons transmissores bluetooth previamente espalhados pelo campus.
+
+O modelo objetiva oferecer localização confiável a seus usuários através de seus smartphones sem necessidade de hardware dedicado, assim possibilitando navegação segura e independente, tendo baixo custo e facilidade de implantação.
+
+	\section{Requisitos}
+	
+	\section{Arquitetura}
+
+
+\chapter{Metodologia}
+
+	\section{Desenvolvimento}
+	
+	\section{Avaliação}
+
+
+\chapter{Conclusão}
+
+	\section{Comparação entre os trabalhos estudados e o modelo proposto}
+	
+	\section{Trabalhos futuros}
+
+
+
+
 \chapter{Introdução}
 
 % as epígrafes nos capítulos são opcionais
