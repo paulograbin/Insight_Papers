@@ -66,7 +66,9 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 % a palavra 'dedicatória'.
 %=======================================================================
 \begin{dedicatoria}
-Aos nossos pais.\\[4ex] % quebra a linha dando um espaçamento maior
+À minha meus pais e meu irmão que sempre me incentivaram na busca por conhecimento e a lutar pelos meus objetivos.  \\[4ex] % quebra a linha dando um espaçamento maior
+
+
 \begin{itshape} % faz o texto ficar em itálico
 If I have seen farther than others,\\
 it is because I stood on the shoulders of giants.\\
@@ -78,7 +80,10 @@ it is because I stood on the shoulders of giants.\\
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Obrigado!
+Cristiano - orientador
+Mãe pai e irmão
+Namorada
+Amigos
 \end{agradecimentos}
 
 %=======================================================================
@@ -167,22 +172,6 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 %=======================================================================
 % Introdução
 %=======================================================================
-\section{Revisão Bibliográfica}
-Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para navegação para PDV. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), bluetooth e Global Positioning System (GPS) são algumas dessas tecnologias. Os autores ainda apontam que apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
-
-\begin{itemize}
-  \item GPS é normalmente usado para localização em ambientes externos, mas se mostra ineficiente devido à própria natureza das ondas de rádio usadas na tecnologia, quando obstáculos são locados ao redor do usuário. Além disso, GPS não é uma tecnologia ideal para ambientes internos, pois é capaz apenas de marcar um ponto em um mapa, não sendo suficiente para indicar, por exemplo, múltiplos andares em um prédio, cenário muito comum em ambientes indoor. 
-  \item Sonares são formas baratas de detecção de objetos e obstáculos, através de frequências acústicas, mas exigem hardware dedicado e não servem para localização.
-  \item RFID, juntamente com NFC, exige proximidade de seus emissores para que a comunicação seja estabelecida.
-  \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de bluetooth low energy.    \ldots
-\end{itemize}
-\section{Modelo Proposto}
-
-
-
-
-
-
 \chapter{Introdução}
 
 	\section{Motivação}
@@ -195,11 +184,13 @@ Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriorm
 	
 	\section{Estrutura do Texto}
 
-
+%=======================================================================
+% Referencial Teórico
+%=======================================================================
 \chapter{Referencial Teórico}
 
 	\section{Deficiência Visual}
-De acordo com o último Censo Demográfico, realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE), em 2010 o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são portadores de deficiência visual (PDV).
+De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são portadores de deficiência visual (PDV).
 
 A deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela, dificultando diversos aspectos de sua vida, como o seu deslocamento em ambientes desconhecidos. Não é possível compreender a dificuldade que um cego possui em realizar as tarefas consideradas triviais por aqueles que possuem a totalidade de sua visão.
 
@@ -232,7 +223,18 @@ O LE foi criado para permitir produtos que requerem baixíssimo consumo de energ
 
 A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional.
 
-	
+Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para navegação para PDV. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), bluetooth e Global Positioning System (GPS) são algumas dessas tecnologias. Os autores ainda apontam que apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
+
+\begin{itemize}
+  \item GPS é normalmente usado para localização em ambientes externos, mas se mostra ineficiente devido à própria natureza das ondas de rádio usadas na tecnologia, quando obstáculos são locados ao redor do usuário. Além disso, GPS não é uma tecnologia ideal para ambientes internos, pois é capaz apenas de marcar um ponto em um mapa, não sendo suficiente para indicar, por exemplo, múltiplos andares em um prédio, cenário muito comum em ambientes indoor. 
+  \item Sonares são formas baratas de detecção de objetos e obstáculos, através de frequências acústicas, mas exigem hardware dedicado e não servem para localização.
+  \item RFID, juntamente com NFC, exige proximidade de seus emissores para que a comunicação seja estabelecida.
+  \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de bluetooth low energy.    \ldots
+\end{itemize}
+
+%=======================================================================
+% Trabalhos relacionados
+%=======================================================================
 \chapter{Trabalhos Relacionados}
 
 	\section{Trabalho 1}
@@ -243,7 +245,9 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
 	
 	\section{Comparação entre os trabalhos estudados}
 
-
+%=======================================================================
+% Modelo proposto
+%=======================================================================
 \chapter{Modelo Proposto}
 Visando mitigar o impacto da deficiência visual na vida dos usuários, o modelo proposto fará uso de dispositivos móveis aliados aos conceitos da computação ubíqua para auxiliar os PDV durante o deslocamento em ambientes internos, tais como o campus da Unisinos, através de instruções dadas por voz e alertas vibratórios. O modelo oferecerá as funcionalidades de informar a localização atual, pesquisar locais, mostrar locais de conveniência (restaurantes, agências bancárias, etc), informar rota mais curta até o local selecionado e salvar local como favorito, entre outras. Para as funcionalidades espaciais, o modelo usará beacons transmissores bluetooth previamente espalhados pelo campus.
 
@@ -253,7 +257,9 @@ O modelo objetiva oferecer localização confiável a seus usuários através de
 	
 	\section{Arquitetura}
 
-
+%=======================================================================
+% Metodologia
+%=======================================================================
 \chapter{Metodologia}
 
 	\section{Desenvolvimento}
@@ -428,10 +434,10 @@ Seguem algumas referências a trabalhos acadêmicos, como teses, dissertações,
 % pelo próprio autor.  Deve seguir as mesmas regras de formatação do
 % corpo principal do documento.
 %=======================================================================
-\appendix
-\chapter{Informações Complementares}
+% \appendix
+% \chapter{Informações Complementares}
 
-O Apêndice é o lugar para incluir textos complementares, que não são essenciais para o entendimento do assunto principal da monografia, mas que podem contribuir com informação relevante (por exemplo, uma prova matemática, uma conceituação básica, etc.).  Ele deve seguir o formato normal do documento.
+% O Apêndice é o lugar para incluir textos complementares, que não são essenciais para o entendimento do assunto principal da monografia, mas que podem contribuir com informação relevante (por exemplo, uma prova matemática, uma conceituação básica, etc.).  Ele deve seguir o formato normal do documento.
 
 %=======================================================================
 % Exemplo de Anexo
@@ -439,7 +445,7 @@ O Apêndice é o lugar para incluir textos complementares, que não são essenci
 % próprio autor, como cópias de artigos, manuais, folders, balancetes, etc.
 % e não precisam estar em conformidade com o modelo''.
 %=======================================================================
-\annex
-\chapter{Artigos Publicados}
-Existe diferença entre os Apêndices e os Anexos.  Os apêndices trazem informação escrita pelo próprio autor do trabalho, incorporando-se ao formato da monografia como um todo.  Já um anexo é um material à parte, definido/publicado por si só, e que o autor julga conveniente ser apresentado juntamente com a monografia.  Normalmente também vai apresentar formato próprio, como um artigo publicado, um folder, uma planilha, etc.
+% \annex
+% \chapter{Artigos Publicados}
+% Existe diferença entre os Apêndices e os Anexos.  Os apêndices trazem informação escrita pelo próprio autor do trabalho, incorporando-se ao formato da monografia como um todo.  Já um anexo é um material à parte, definido/publicado por si só, e que o autor julga conveniente ser apresentado juntamente com a monografia.  Normalmente também vai apresentar formato próprio, como um artigo publicado, um folder, uma planilha, etc.
 \end{document}
