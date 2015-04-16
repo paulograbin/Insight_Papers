@@ -26,7 +26,7 @@
 % Dados gerais sobre o trabalho.
 %=======================================================================
 \autor{Gräbin}{Paulo Henrique Grolli}
-\titulo{Um modelo acessível de software para localização com BLE}
+\titulo{Um modelo acessível de software para localização e navegação de deficiêntes visuais com Bluetooth Low Energy}
 \orientador[Prof.~Dr.]{Costa}{Cristiano André da}
 \local{São Leopoldo}
 \ano{2015}
@@ -66,24 +66,27 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 % a palavra 'dedicatória'.
 %=======================================================================
 \begin{dedicatoria}
-À minha meus pais e meu irmão que sempre me incentivaram na busca por conhecimento e a lutar pelos meus objetivos.  \\[4ex] % quebra a linha dando um espaçamento maior
+À minha meus pais que sempre me incentivaram na busca por conhecimento e a lutar pelos meus objetivos.\\[4ex] % quebra a linha dando um espaçamento maior
 
 
 \begin{itshape} % faz o texto ficar em itálico
-If I have seen farther than others,\\
-it is because I stood on the shoulders of giants.\\
+Learning is the only thing the mind never exhausts, \\
+never fears, \\
+and never regrets.\\
+%If I have seen farther than others,\\
+%it is because I stood on the shoulders of giants.\\
 \end{itshape}
---- \textsc{Sir Isaac Newton} % \textsc é o "small caps"
+--- \textsc{Leonardo Da Vinci} % \textsc é o "small caps"
 \end{dedicatoria}
 
 %=======================================================================
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Cristiano - orientador
-Mãe pai e irmão
-Namorada
-Amigos
+Cristiano - orientador \\
+Mãe pai e irmão \\
+Namorada \\
+Amigos \\
 \end{agradecimentos}
 
 %=======================================================================
@@ -104,7 +107,7 @@ Amigos
 % A recomendação é para 150 a 500 palavras.
 %=======================================================================
 \begin{abstract}
-Este documento apresenta orientações para uso da classe \LaTeX\ de formatação de monografias para a UNISINOS\@.  Ao mesmo tempo, ele serve como exemplo de uso da classe, demonstrando os principais comandos a serem utilizados, e outras orientações mais gerais de uso do \LaTeX.  Adicionalmente, procuramos incluir no documento algumas orientações sobre a escrita da monografia em si, reunindo dicas e recomendações que contribuem para aumentar a qualidade técnica dos trabalhos acadêmicos.  O Resumo deve conter de 150 a 500~palavras e nele não deve haver citações. Sugere-se a utilização de parágrafo único.
+O presente trabalho apresenta a modelagem de um sistema de posicionamento em ambientes internos, com recursos de acessibilidade, desenhado com o objetivo de ser usado por portadores de deficiência visual. O modelo consiste em uma aplicação a ser usada em dispositivos móveis, utilizando beacons transmissores Bluetooth espalhados pelo ambiente para obter a localização do usuário. Para permitir que seus usuários possam se deslocar em ambientes desconhecidos sem necessidade de auxilio de outras pessoas, o sistema objetiva fornecer uma localização confiavel e uma navegação segura e independente.
 \end{abstract}
 
 %=======================================================================
@@ -116,7 +119,7 @@ Este documento apresenta orientações para uso da classe \LaTeX\ de formataçã
 %=======================================================================
 \begin{otherlanguage}{english}
 \begin{abstract}
-This document presents guidelines on the use of UNISINOS's \LaTeX\ class for academic reports and dissertations.  At the same time, it serves as an example on using the class, employing the main commands and providing further general orientations on the use of \LaTeX.  In addition, we have added guidelines for the process of writing itself, collecting tips and recommendations that contribute to the technical quality enhancement of academic monographs.  The Abstract should be composed of 150 to 500~words and must not contain any citations.  It is suggested that a single paragraph be used.
+This paper presents the modeling of a Indoor Positioning System with accessibility features, designed aiming to be used by visually impaired users. The model consists of an application to be used in mobile devices, making use of Bluetooth beacons deployed in the environment to obtain users location. In order to allow the users to navigate in unknown environments without need of assistance of other people, the system aims to provide a realiable location and a safe and independent navigation.
 \end{abstract}
 \end{otherlanguage}
 
@@ -149,8 +152,21 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
 \begin{listadesiglas}{FAPERGS}
+\item[API] Application Programming Interface
+\item[BLE] Bluetooth Low Energy
+\item[GPS] Global Positioning System
+\item[HTTP] Hypertext Transfer Protocol
 \item[IBGE] Instituto Brasileiro de Geografia e Estatística
+\item[JSON] JavaScript Object Notation
+\item[NFC] Near Field Communication
 \item[PDV] Portadores de Deficiência Visual
+\item[RFID] Radio Frequency Identification
+\item[SDK] Software Development Kid
+\item[SIG] Special Interest Group
+\item[SOAP] Simple Object Access Protocol
+\item[TAM] Technology Acceptance Model
+\item[UML] Unified Modeling Language
+\item[XML] Extensible Markup Language
 \end{listadesiglas}
 
 %=======================================================================
@@ -173,6 +189,7 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 % Introdução
 %=======================================================================
 \chapter{Introdução}
+\epigrafecap{Eureka}{EINSTEIN, Albert}
 
 	\section{Motivação}
 
@@ -261,6 +278,7 @@ O modelo objetiva oferecer localização confiável a seus usuários através de
 % Metodologia
 %=======================================================================
 \chapter{Metodologia}
+Quanto à natureza da pesquisa, esse trabalho ceracteriza-se como uma pesquisa aplicada, pois objetiva gerar conhecimento 
 
 	\section{Desenvolvimento}
 	
@@ -272,6 +290,10 @@ O modelo objetiva oferecer localização confiável a seus usuários através de
 	\section{Comparação entre os trabalhos estudados e o modelo proposto}
 	
 	\section{Trabalhos futuros}
+
+
+
+
 
 
 
