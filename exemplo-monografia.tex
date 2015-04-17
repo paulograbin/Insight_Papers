@@ -14,13 +14,8 @@
 % A vantagem do unisinos.bst é que ele permite o uso de um arquivo .bib
 % seguindo as orientações tradicionais do BibTeX (veja essas orientações
 % em http://ctan.tug.org/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf).
-% Entretanto, o estilo não suporta algumas citações mais exóticas como
-% apud.  Para isso, use o ABNTeX, mas esteja ciente de que muitas de
-% suas referências serão incompatíveis com os estilos tradicionais do
-% BibTeX como plain, alpha, ieeetr, entre outros.
 %=======================================================================
 \unisinosbst
-%\usepackage[alf]{abntcite}
 
 %=======================================================================
 % Dados gerais sobre o trabalho.
@@ -56,7 +51,6 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 \begin{document}
 \capa
 \folhaderosto
-%\folhadeaprovacao % não deve ser incluída nos TCCs
 
 %=======================================================================
 % Dedicatória (opcional).
@@ -103,8 +97,6 @@ Amigos \\
 
 %=======================================================================
 % Resumo em Português.
-%
-% A recomendação é para 150 a 500 palavras.
 %=======================================================================
 \begin{abstract}
 O presente trabalho apresenta a modelagem de um sistema de posicionamento em ambientes internos, com recursos de acessibilidade, desenhado com o objetivo de ser usado por portadores de deficiência visual. O modelo consiste em uma aplicação a ser usada em dispositivos móveis, utilizando beacons transmissores Bluetooth espalhados pelo ambiente para obter a localização do usuário. Para permitir que seus usuários possam se deslocar em ambientes desconhecidos sem necessidade de auxilio de outras pessoas, o sistema objetiva fornecer uma localização confiavel e uma navegação segura e independente.
@@ -113,9 +105,6 @@ O presente trabalho apresenta a modelagem de um sistema de posicionamento em amb
 %=======================================================================
 % Resumo em língua estrangeira (obrigatório somente para teses e
 % dissertações).
-%
-% O idioma usado aqui deve necessariamente aparecer nos parâmetros do
-% \documentclass, no início do documento.
 %=======================================================================
 \begin{otherlanguage}{english}
 \begin{abstract}
@@ -135,7 +124,6 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 
 %=======================================================================
 % Lista de Abreviaturas (opcional).
-%
 % Deve ser passada como parâmetro a maior das abreviaturas utilizadas.
 %=======================================================================
 % \begin{listadeabreviaturas}{seg., segs.}
@@ -148,10 +136,9 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 
 %=======================================================================
 % Lista de Siglas (opcional).
-%
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
-\begin{listadesiglas}{FAPERGS}
+\begin{listadesiglas}{IBGE}
 \item[API] Application Programming Interface
 \item[BLE] Bluetooth Low Energy
 \item[GPS] Global Positioning System
@@ -170,20 +157,11 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 \end{listadesiglas}
 
 %=======================================================================
-% Lista de Símbolos (opcional).
-%
-% Deve ser passado o maior (mais largo) dos símbolos utilizados.
-%=======================================================================
-%\begin{listadesimbolos}{Ca}
-%\item[\textsuperscript{o}C] Graus Celsius
-%\item[Al] Alumínio
-%\item[Ca] Cálcio
-%\end{listadesimbolos}
-
-%=======================================================================
 % Sumário
 %=======================================================================
 \tableofcontents
+
+
 
 %=======================================================================
 % Introdução

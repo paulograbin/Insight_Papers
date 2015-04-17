@@ -1,26 +1,26 @@
 all:
 
 	@echo "\n\n\n\n"
-	@echo "Gerando PDF... "
+	@echo "****************************** Gerando PDF... ******************************"
 
 	@echo "\n\n\n\n"
-	@echo "Primeira vez..."
+	@echo "****************************** Primeira vez... ******************************"
 	pdflatex exemplo-monografia 
 	
 	@echo "\n\n\n\n"
-	@echo "Gera referencias..."
+	@echo "****************************** Gera referencias... ******************************"
 	bibtex exemplo-monografia 
 
 	@echo "\n\n\n\n"
-	@echo "Segunda vez..."
+	@echo "****************************** Segunda vez... ******************************"
 	pdflatex exemplo-monografia 
 
 	@echo "\n\n\n\n"
-	@echo "Terceira vez..."
+	@echo "****************************** Terceira vez... ******************************"
 	pdflatex exemplo-monografia
 
 	@echo "\n\n\n\n"
-	@echo "Abre PDF..."
+	@echo "****************************** Abre PDF... ******************************"
 	open exemplo-monografia.pdf
 	
 	rm -f *~ *.{log,aux,dvi}
