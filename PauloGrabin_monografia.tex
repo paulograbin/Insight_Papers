@@ -1,16 +1,11 @@
 \documentclass[english,brazilian]{UNISINOSmonografia}
 \usepackage[utf8]{inputenc} % charset do texto (utf8, latin1, etc.)
-\usepackage[T1]{fontenc} % encoding da fonte (afeta a sep. de sílabas)
-\usepackage{graphicx} % comandos para gráficos e inclusão de figuras
-\usepackage{bibentry} % para inserir refs. bib. no meio do texto
+\usepackage[T1]{fontenc} 	% encoding da fonte (afeta a sep. de sílabas)
+\usepackage{graphicx} 		% comandos para gráficos e inclusão de figuras
+\usepackage{bibentry} 		% para inserir refs. bib. no meio do texto
+\usepackage{placeins}		% float barriers
 
 %=======================================================================
-% Escolha do sistema para geração de referências bibliográficas.
-%
-% O default é usar o estilo unisinos.bst.  Comente a definição abaixo
-% e descomente a linha seguinte para usar o estilo do ABNTeX (é
-% necessário ter esse pacote instalado).
-%
 % A vantagem do unisinos.bst é que ele permite o uso de um arquivo .bib
 % seguindo as orientações tradicionais do BibTeX (veja essas orientações
 % em http://ctan.tug.org/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf).
@@ -54,13 +49,9 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 
 %=======================================================================
 % Dedicatória (opcional).
-%
-% O texto é normalmente colocado na parte de baixo da página, alinhado
-% à direita.  Mas a formatação é basicamente livre.  Só não se escreve
-% a palavra 'dedicatória'.
 %=======================================================================
 \begin{dedicatoria}
-À minha meus pais que sempre me incentivaram na busca por conhecimento e a lutar pelos meus objetivos.\\[4ex] % quebra a linha dando um espaçamento maior
+À meus pais que sempre me incentivaram na busca por conhecimento \\e a lutar pelos meus objetivos.\\[4ex] % quebra a linha dando um espaçamento maior
 
 
 \begin{itshape} % faz o texto ficar em itálico
@@ -77,10 +68,15 @@ and never regrets.\\
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Cristiano - orientador \\
-Mãe pai e irmão \\
-Namorada \\
-Amigos \\
+Agradeço primeiramente ao meu orientador Cristiano, pessoa a quem eu muito admiro, pelas valiosas conversas, seu auxilio incomparável, e por sua disponibilidade sempre que necessário.
+
+Aos meus pais, pelo carinho e compreensão demonstrados e por todo o incentivo na realização dos meus sonhos.
+
+A minha namorada Victoria, por ficar sempre do meu lado e por me motivar a superar os desafios.
+
+Por fim, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e compreendiam os convites recusados.
+
+Muito obrigado!
 \end{agradecimentos}
 
 %=======================================================================
@@ -103,8 +99,7 @@ O presente trabalho apresenta a modelagem de um sistema de posicionamento em amb
 \end{abstract}
 
 %=======================================================================
-% Resumo em língua estrangeira (obrigatório somente para teses e
-% dissertações).
+% Resumo em língua estrangeira
 %=======================================================================
 \begin{otherlanguage}{english}
 \begin{abstract}
@@ -163,15 +158,27 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 
 
 
+
+
+
+
+
 %=======================================================================
 % Introdução
 %=======================================================================
 \chapter{Introdução}
 \epigrafecap{Eureka}{EINSTEIN, Albert}
 
+Texto contextualizando o problema abordado e o escopo abarcado.
+
 	\section{Motivação}
+Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica.
+Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
+
+
 
 	\section{Objetivos}
+Apresenta o objetivo principal do trabalho e os objetivos secundários: Importante: objetivo é o que será feito e não como será feito (isso é metodologia).
 	
 		\subsection{Objetivo geral}
 		
@@ -180,9 +187,10 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 	\section{Estrutura do Texto}
 
 %=======================================================================
-% Referencial Teórico
+% Fundamentação teórica
 %=======================================================================
 \chapter{Referencial Teórico}
+Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho.  O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
 
 	\section{Deficiência Visual}
 De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são portadores de deficiência visual (PDV).
@@ -192,9 +200,9 @@ A deficiência visual impõe severas dificuldades em todos os aspectos da vida d
 No Brasil, existe legislação especifica para tratar da condição médica necessária para classificar alguém como deficiente visual e, também, para garantir a acessibilidade e os direitos dos PDV. Os Decretos 3.298/99 e 5.296/04 definem critérios técnicos para conceituação de alguém como PDV. Os níveis de deficiência visual são baixa visão e cegueira, baseados na acuidade visual medida através de exame. A Lei 10.098/00 estabelece normas e critérios básicos para a promoção da acessibilidade, descrevendo normas de construção de edifícios públicos, de uso coletivo e privados, bem como regulando como deve se dar a acessibilidade nos sistemas de comunicação e sinalização.
 	
 	\section{Computação Móvel e Ubíqua}
-Tecnologias tão avançadas que deixam de ser um fim em si mesmas e passam a ser um meio para que as pessoas realizem seus afazeres. Tão conectados, tão presentes na nossa rotina e concebidas para naturalmente se integrarem em nossas vidas que deixam de ser percebidas e se colocam no plano de fundo da nossa percepção. É assim que Weiser (1991) começa introduzindo o conceito de computação ubíqua. 
+Tecnologias tão avançadas que deixam de ser um fim em si mesmas e passam a ser um meio para que as pessoas realizem seus afazeres. Tão conectados, tão presentes na nossa rotina e concebidas para naturalmente se integrarem em nossas vidas que deixam de ser percebidas e se colocam no plano de fundo da nossa percepção. É assim que \citetexto{Weiser1991} começa introduzindo o conceito de computação ubíqua. 
 
-Weiser previu um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook que é usado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocuparem os ambientes em que convivemos, estudamos ou trabalhamos. Esses computadores conversariam entre si de maneira continua e transparente, de modo que eles e todos os usuários estariam permanentemente conectados entre si, permitindo que serviços estejam acessíveis em todos os lugares e em todos os momentos. Tal definição vai ao encontro do conceito estabelecido por Satyanarayanan (2011) para computação móvel como sendo: “Informação na ponta dos dedos em qualquer lugar e em qualquer tempo”.
+Weiser previu um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook que é usado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocuparem os ambientes em que convivemos, estudamos ou trabalhamos. Esses computadores conversariam entre si de maneira continua e transparente, de modo que eles e todos os usuários estariam permanentemente conectados entre si, permitindo que serviços estejam acessíveis em todos os lugares e em todos os momentos. Tal definição vai ao encontro do conceito estabelecido por \citetexto{Satyanarayanan2001} para computação móvel como sendo: “Informação na ponta dos dedos em qualquer lugar e em qualquer tempo”.
 	
 	\section{Tecnologias Assistivas}
 Diversas ferramentas existem para promover a inclusão de PDV, bem como para aliviar as dificuldades impostas pela deficiência visual. Cães-guia, bengalas e piso tátil são as principais formas usadas pra facilitar locomoção.
@@ -231,6 +239,7 @@ Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriorm
 % Trabalhos relacionados
 %=======================================================================
 \chapter{Trabalhos Relacionados}
+Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
 	\section{Trabalho 1}
 	
@@ -244,23 +253,101 @@ Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriorm
 % Modelo proposto
 %=======================================================================
 \chapter{Modelo Proposto}
-Visando mitigar o impacto da deficiência visual na vida dos usuários, o modelo proposto fará uso de dispositivos móveis aliados aos conceitos da computação ubíqua para auxiliar os PDV durante o deslocamento em ambientes internos, tais como o campus da Unisinos, através de instruções dadas por voz e alertas vibratórios. O modelo oferecerá as funcionalidades de informar a localização atual, pesquisar locais, mostrar locais de conveniência (restaurantes, agências bancárias, etc), informar rota mais curta até o local selecionado e salvar local como favorito, entre outras. Para as funcionalidades espaciais, o modelo usará beacons transmissores bluetooth previamente espalhados pelo campus.
+Essa etapa consiste em detalhar o modelo. O capítulo do modelo deve começar a partir da delimitação da pesquisa, dizendo quais lacunas serão atacadas e como. Geralmente há uma visão geral do modelo aqui, já desenvolvido na atividade 4. Esse capítulo detalha como a questão de pesquisa será respondida? Que modelo computacional é necessário para isso. Se é proposta uma ontologia, ela é detalhada aqui; Se há um modelo de contexto, ele é detalhado aqui. Pode-se usar alguns diagramas para representar a arquitetura, interações, fluxos e componentes. Lembre-se que o modelo pode ter diferentes implementações e não precisa ser limitado por uma tecnologia específica. Por exemplo, não faz sentido dizer que o modelo é para Android ou feito em Java. Por que não poderia ser para iOS e feito em Objective C? Que característica de um modelo limitaria isso?
+
+
+Esse capítulo apresenta um modelo de sistema que auxilia a navegação de deficiêntes visuais.
+
+
+Vini:
+Modelo Proposto
+	Visão Geral do Modelo
+	Arquitetura Proposta
+	Requisitos e Casos de Uso
+		Requisitos Funcionais
+		Requisitos Não Funcionais
+	Modelo do Prontuario Proposto
+
+
+Plets:
+Modelo Proposto
+	Requisitos
+		Requisitos Funcionais
+		Requisitos Não Funcionais
+	Arquitetura
+	Modelo de Dados
+	Modelo de Segurança
+		Senha
+		Identificação de uso indevido
+		Criptografia
+	Modelo de comunicação
+	Modelo de contexto
+
+
+Visando mitigar o impacto da deficiência visual na vida dos usuários, o modelo proposto fará uso de dispositivos móveis aliados aos conceitos da computação ubíqua para auxiliar os PDV durante o deslocamento em ambientes internos, tais como o campus da UNISINOS, através de instruções dadas por voz e alertas vibratórios. O modelo oferecerá as funcionalidades de informar a localização atual, pesquisar locais, mostrar locais de conveniência (restaurantes, agências bancárias, etc), informar rota mais curta até o local selecionado e salvar local como favorito, entre outras. Para as funcionalidades espaciais, o modelo usará beacons transmissores bluetooth previamente espalhados pelo campus.
 
 O modelo objetiva oferecer localização confiável a seus usuários através de seus smartphones sem necessidade de hardware dedicado, assim possibilitando navegação segura e independente, tendo baixo custo e facilidade de implantação.
 
+	\section{Visão Geral}
+
+A Figura~\ref{fig:visaoGeral} mostra ilustra as fases psicológicas da escrita da dissertação. Você vai se reconhecer no personagem. ;-)
+
+\FloatBarrier
+\begin{figure}[!ht]
+	\caption{Visão geral do modelo}
+	\label{fig:visaoGeral}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{escrita}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+\FloatBarrier
+
 	\section{Requisitos}
-	
+
 	\section{Arquitetura}
+ 
+
+\FloatBarrier 
+\begin{figure}[!ht]
+	\caption{Diagrama de blocos da arquitetura}
+	\label{fig:arquitetura}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{arquitetura}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+\FloatBarrier 
+
+
+
 
 %=======================================================================
 % Metodologia
 %=======================================================================
 \chapter{Metodologia}
-Quanto à natureza da pesquisa, esse trabalho ceracteriza-se como uma pesquisa aplicada, pois objetiva gerar conhecimento 
+Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficiêntes visuais. A abordagem do trabalho é qualitativa e do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
 
 	\section{Desenvolvimento}
-	
+O trabalho de modelagem de desenvolvimento do xxxxxxx (TODO) foi divido em (TODO) XX passos metodológicos apresentados na figura (TODO) XX. Os passos 1 a X foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do RIo dos Sinos (UNISINOS).
+
+A seguir são apresentados brevemente cada um dos passos concebidos:
+
+(TODO citar os passos)	
+
 	\section{Avaliação}
+A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação do mesmo serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas. A primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso. A segunda será a técnica da entrevista estruturada. 
+
+A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes para obter informações sobre a forma como os usuários se guiam quando necessitam deslocar-se em um ambiente desconhecido. Após o termino dos testes para obter informações relativas a qualidade da localização e da navegação oferecida pelo protótipo. O resultado da analise permitirá identificar a eficácia do sistema e possibilitará elencar melhorias e/ou trabalhos relacionados ao tema.
+
+
+
+
+
+
+
 
 
 \chapter{Conclusão}
@@ -268,6 +355,63 @@ Quanto à natureza da pesquisa, esse trabalho ceracteriza-se como uma pesquisa a
 	\section{Comparação entre os trabalhos estudados e o modelo proposto}
 	
 	\section{Trabalhos futuros}
+
+
+
+Conforme \citetexto{Hexsel11}, a int
+
+tratar do como \cite{Hexsel11}, que deve ser explicado
+
+Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Biblioteca11} e, se necessário, da norma NBR~6023 \cite{NBR6023:2002}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -323,17 +467,7 @@ As legendas devem conter o tipo da ilustração (Figura, Tabela, etc), seguido d
 Toda figura deve ser citada no texto, como nos exemplos que seguem.
 
 \subsection{Figuras}
-A Figura~\ref{fig:escrita} ilustra as fases psicológicas da escrita da dissertação. Você vai se reconhecer no personagem. ;-)
 
-\begin{figure}
-	\caption{Fases psicológicas da escrita da dissertação}
-	\label{fig:escrita}
-	\centering%
-	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{escrita}
-		\fonte{\citetexto{Cham12}}
-	\end{minipage}
-\end{figure}
 
 \subsection{Tabelas}
 A Tabela~\ref{tab:estacoes} é um exemplo de tabela elaborada pelo(a) próprio(a) autor(a).
@@ -419,14 +553,14 @@ Os exemplos abaixo ilustram referências a artigos em periódicos.
 \section{Teses e Dissertações}
 Seguem algumas referências a trabalhos acadêmicos, como teses, dissertações, trabalhos de conclusão de curso, etc.
 \begin{itemize}
-	\item \bibentry{Teixeira09}.
+	\item \bibentry{FALK2013}.
 	\item \bibentry{Flaumann05}.
 \end{itemize}
 
 %=======================================================================
 % Referências
 %=======================================================================
-\bibliography{exemplo}
+\bibliography{bibliografia}
 
 %=======================================================================
 % Exemplo de Apêndice

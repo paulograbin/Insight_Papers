@@ -5,23 +5,24 @@ all:
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Primeira vez... ******************************"
-	pdflatex exemplo-monografia 
+	pdflatex PauloGrabin_monografia 
 	
 	@echo "\n\n\n\n"
 	@echo "****************************** Gera referencias... ******************************"
-	bibtex exemplo-monografia 
+	bibtex PauloGrabin_monografia 
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Segunda vez... ******************************"
-	pdflatex exemplo-monografia 
+	pdflatex PauloGrabin_monografia 
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Terceira vez... ******************************"
-	pdflatex exemplo-monografia
+	pdflatex PauloGrabin_monografia
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Abre PDF... ******************************"
-	open exemplo-monografia.pdf
+	open PauloGrabin_monografia.pdf
 	
-	rm -f *~ *.{log,aux,dvi}
+	@echo "****************************** Deletando as merdas... ******************************"
+	rm -f *~ *.{log,aux,dvi,bbl,blg,toc,lof,lot}
 #	bash -c 'rm -f *~ *.{log,aux,dvi} exemplo*pdf *synctex.gz'
