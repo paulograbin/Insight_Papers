@@ -4,6 +4,7 @@
 \usepackage{graphicx} 		% comandos para gráficos e inclusão de figuras
 \usepackage{bibentry} 		% para inserir refs. bib. no meio do texto
 \usepackage{placeins}		% float barriers
+\usepackage{enumitem}
 
 %=======================================================================
 % A vantagem do unisinos.bst é que ele permite o uso de um arquivo .bib
@@ -190,7 +191,7 @@ Apresenta o objetivo principal do trabalho e os objetivos secundários: Importan
 % Fundamentação teórica
 %=======================================================================
 \chapter{Referencial Teórico}
-Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho.  O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
+Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
 
 	\section{Deficiência Visual}
 De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são portadores de deficiência visual (PDV).
@@ -241,13 +242,42 @@ Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriorm
 \chapter{Trabalhos Relacionados}
 Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
-	\section{Trabalho 1}
-	
-	\section{Trabalho 2}
+Neste capítulo são apresentadas 3 ou 4 (TODO) soluções relacionadas com o tema. Estas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
+
+	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
+
+		\cite{Ganz2011}
+
+		\citetexto{Ganz2011}
+			
+		\cite{Ganz2012}
+
+		\citetexto{Ganz2012}
+
+	\section{Tirésias: um modelo para acessibilidade ubíqua orientado à deficiência visual}
 
 	\section{Trabalho 3}
 	
-	\section{Comparação entre os trabalhos estudados}
+	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
+\begin{table}
+	\caption{Tabela comparativa entre os trabalhos relacionados}
+	%\label{tab:estacoes}
+	\centering%
+	\begin{minipage}{.6\textwidth}
+		\begin{tabular*}{\textwidth}{ll}
+			\hline
+			\textbf{Meses} & \textbf{Estações do Ano}\\
+			\hline
+			21 de março a 21 de junho & Outono\\
+			21 de junho a 23 de setembro & Inverno\\
+			23 de setembro a 21 de dezembro & Primavera\\
+			21 de dezembro a 21 de março & Verão\\
+			\hline
+		\end{tabular*}
+		\fonte{Elaborada pela autora.}
+	\end{minipage}
+\end{table}
+
 
 %=======================================================================
 % Modelo proposto
@@ -335,7 +365,28 @@ O trabalho de modelagem de desenvolvimento do xxxxxxx (TODO) foi divido em (TODO
 
 A seguir são apresentados brevemente cada um dos passos concebidos:
 
-(TODO citar os passos)	
+% passos
+\begin{enumerate}
+	%	1
+	\item \textbf{Revisar bibliografia:} teste teste teste
+	%	2
+    \item \textbf{Realizar estudo sobre deficiência visual:} teste teste teste
+	%	3
+    \item \textbf{Realizar estudo sobre sistemas de localização e navegação:} teste teste teste
+	%	4
+    \item \textbf{Realizar estudo sobre tecnologias assistivas:} teste teste teste
+	%	5
+    \item \textbf{Realizar estudo sobre computação móvel e ubíqua:} teste teste teste
+    %	6
+    \item \textbf{Elencar requisitos e modelar o sistema:} teste teste teste
+    %	7
+    \item \textbf{Codificar sistema:} teste teste teste
+	%	8
+	\item \textbf{Testar aceitação do sistema:} teste teste teste	
+	%	9
+	\item \textbf{Analisar resultados dos testes:} teste teste teste
+\end{enumerate}
+
 
 	\section{Avaliação}
 A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação do mesmo serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas. A primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso. A segunda será a técnica da entrevista estruturada. 
@@ -353,6 +404,25 @@ A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes p
 \chapter{Conclusão}
 
 	\section{Comparação entre os trabalhos estudados e o modelo proposto}
+
+\begin{table}
+	\caption{Comparação entre os trabalhos estudados e o modelo proposto}
+	%\label{tab:estacoes}
+	\centering%
+	\begin{minipage}{.6\textwidth}
+		\begin{tabular*}{\textwidth}{ll}
+			\hline
+			\textbf{Meses} & \textbf{Estações do Ano}\\
+			\hline
+			21 de março a 21 de junho & Outono\\
+			21 de junho a 23 de setembro & Inverno\\
+			23 de setembro a 21 de dezembro & Primavera\\
+			21 de dezembro a 21 de março & Verão\\
+			\hline
+		\end{tabular*}
+		\fonte{Elaborada pela autora.}
+	\end{minipage}
+\end{table}
 	
 	\section{Trabalhos futuros}
 
@@ -466,31 +536,6 @@ As legendas devem conter o tipo da ilustração (Figura, Tabela, etc), seguido d
 
 Toda figura deve ser citada no texto, como nos exemplos que seguem.
 
-\subsection{Figuras}
-
-
-\subsection{Tabelas}
-A Tabela~\ref{tab:estacoes} é um exemplo de tabela elaborada pelo(a) próprio(a) autor(a).
-
-\begin{table}
-	\caption{Período das estações do ano no Brasil}
-	\label{tab:estacoes}
-	\centering%
-	\begin{minipage}{.6\textwidth}
-		\begin{tabular*}{\textwidth}{ll}
-			\hline
-			\textbf{Meses} & \textbf{Estações do Ano}\\
-			\hline
-			21 de março a 21 de junho & Outono\\
-			21 de junho a 23 de setembro & Inverno\\
-			23 de setembro a 21 de dezembro & Primavera\\
-			21 de dezembro a 21 de março & Verão\\
-			\hline
-		\end{tabular*}
-		\fonte{Elaborada pela autora.}
-	\end{minipage}
-\end{table}
-
 \section{Resumo}
 O resumo deve conter de 100 a 500 palavras. No resumo não deve haver citações e indica-se que essa seja a última seção do texto a ser escrita. Veja abaixo uma sugestão de organização e exemplo de resumo de \citetexto{Moro11}.
 
@@ -562,24 +607,4 @@ Seguem algumas referências a trabalhos acadêmicos, como teses, dissertações,
 %=======================================================================
 \bibliography{bibliografia}
 
-%=======================================================================
-% Exemplo de Apêndice
-% O Apêndice é utilizado para apresentar material complementar elaborado
-% pelo próprio autor.  Deve seguir as mesmas regras de formatação do
-% corpo principal do documento.
-%=======================================================================
-% \appendix
-% \chapter{Informações Complementares}
-
-% O Apêndice é o lugar para incluir textos complementares, que não são essenciais para o entendimento do assunto principal da monografia, mas que podem contribuir com informação relevante (por exemplo, uma prova matemática, uma conceituação básica, etc.).  Ele deve seguir o formato normal do documento.
-
-%=======================================================================
-% Exemplo de Anexo
-% O Anexo é utilizado para a ``inclusão de materiais não elaborados pelo
-% próprio autor, como cópias de artigos, manuais, folders, balancetes, etc.
-% e não precisam estar em conformidade com o modelo''.
-%=======================================================================
-% \annex
-% \chapter{Artigos Publicados}
-% Existe diferença entre os Apêndices e os Anexos.  Os apêndices trazem informação escrita pelo próprio autor do trabalho, incorporando-se ao formato da monografia como um todo.  Já um anexo é um material à parte, definido/publicado por si só, e que o autor julga conveniente ser apresentado juntamente com a monografia.  Normalmente também vai apresentar formato próprio, como um artigo publicado, um folder, uma planilha, etc.
 \end{document}
