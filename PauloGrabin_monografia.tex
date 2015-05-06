@@ -54,13 +54,10 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 \begin{dedicatoria}
 À meus pais que sempre me incentivaram na busca por conhecimento \\e a lutar pelos meus objetivos.\\[4ex] % quebra a linha dando um espaçamento maior
 
-
 \begin{itshape} % faz o texto ficar em itálico
 Learning is the only thing the mind never exhausts, \\
 never fears, \\
 and never regrets.\\
-%If I have seen farther than others,\\
-%it is because I stood on the shoulders of giants.\\
 \end{itshape}
 --- \textsc{Leonardo Da Vinci} % \textsc é o "small caps"
 \end{dedicatoria}
@@ -69,11 +66,11 @@ and never regrets.\\
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Agradeço primeiramente ao meu orientador Cristiano, pessoa a quem eu muito admiro, pelas valiosas conversas, seu auxilio incomparável, e por sua disponibilidade sempre que necessário.
+Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, pelas valiosas conversas, seu auxilio incomparável, e por sua disponibilidade sempre que necessário.
 
-Aos meus pais, pelo carinho e compreensão demonstrados e por todo o incentivo na realização dos meus sonhos.
+Aos meus pais, Ivani Grolli Gräbin e Milton Gräbin, que sempre me incentivaram a estudar e a realizar meus sonhos.
 
-A minha namorada Victoria, por ficar sempre do meu lado e por me motivar a superar os desafios.
+A minha namorada Victoria Caroline da Silva, pela compreensão, por ficar sempre do meu lado e por me motivar a superar os desafios.
 
 Por fim, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e compreendiam os convites recusados.
 
@@ -96,7 +93,7 @@ Muito obrigado!
 % Resumo em Português.
 %=======================================================================
 \begin{abstract}
-O presente trabalho apresenta a modelagem de um sistema de posicionamento em ambientes internos, com recursos de acessibilidade, desenhado com o objetivo de ser usado por portadores de deficiência visual. O modelo consiste em uma aplicação a ser usada em dispositivos móveis, utilizando beacons transmissores Bluetooth espalhados pelo ambiente para obter a localização do usuário. Para permitir que seus usuários possam se deslocar em ambientes desconhecidos sem necessidade de auxilio de outras pessoas, o sistema objetiva fornecer uma localização confiavel e uma navegação segura e independente.
+O presente trabalho apresenta a modelagem de um sistema de posicionamento em ambientes internos, com recursos de acessibilidade, desenhado com o objetivo de ser usado por pessoas com deficiência visual. O modelo consiste em uma aplicação a ser usada em dispositivos móveis, utilizando beacons transmissores Bluetooth espalhados pelo ambiente para obter a localização do usuário. Para permitir que seus usuários possam se deslocar em ambientes desconhecidos sem necessidade de auxilio de outras pessoas, o sistema objetiva fornecer uma localização confiavel e uma navegação segura e independente.
 \end{abstract}
 
 %=======================================================================
@@ -142,8 +139,9 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 \item[IBGE] Instituto Brasileiro de Geografia e Estatística
 \item[JSON] JavaScript Object Notation
 \item[NFC] Near Field Communication
-\item[PDV] Portadores de Deficiência Visual
+\item[PDV] Pessoas com Deficiência Visual
 \item[RFID] Radio Frequency Identification
+\item[RLSB]	Royal London Society for Blind People
 \item[SDK] Software Development Kid
 \item[SIG] Special Interest Group
 \item[SOAP] Simple Object Access Protocol
@@ -157,46 +155,86 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %=======================================================================
 \tableofcontents
 
-
-
-
-
-
-
-
 %=======================================================================
 % Introdução
 %=======================================================================
 \chapter{Introdução}
-\epigrafecap{Eureka}{EINSTEIN, Albert}
+%Texto contextualizando o problema abordado e o escopo abarcado.
+O presente trabalho trata sobre uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a deficiência visual, atuando na forma com que eles se orientam e deslocam em ambientes internos.
+Será mostrada como alternativa a modelagem de um sistema que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por \textit{Bluetooth Low Energy} (BLE).
 
-Texto contextualizando o problema abordado e o escopo abarcado.
+Como resultado do trabalho espera-se oferecer um sistema de fácil utilização que ofereça orientação e navegação precisa a seus usuários, de maneira que eles tenham confiança e independência. Vale ainda ressaltar que proposito do trabalho não é substituir ferramentas de auxílio como bengala e cães-guia, e sim ser um complemento a esses recursos.
 
 	\section{Motivação}
-Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica.
-Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
+	%Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica. 
+	%Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
 
 
+	Em \citetexto{YouthManifesto} a Royal blablabla...
+
+	Em 2014 a Royal London Society for Blind People (RLSB)
+
+	Em alguns locais, como o metro de porto alegre por exemplo, PDV precisam solicitar ajuda ou então esperar até que algum funcionário do metro apareça para auxilia-los. Em outros casos, é necessaria a presentaça e a ajuda de familiares ou amigos.
+
+	Escolhendo o contexto de uma universidade pela importancia que a educação tem na vida das pessoas, no sentido de ampliar o alcance...
+
+	RLSB youth manifesto: aponta algumas áreas problematicas que impedem que PDV possam usufruir da totalidade dos serviços ou recursos ofertados...
+	transporte, educação e aplicativos acessiveis buscando trazer a comunidade para perto afim de criar uma diferença que melhore a vida de futuras gerações de PDV.
+
+	O maior objetivo deste trabalho é evitar situações desse tipo, dando confiança
+
+	\section{Questão de pesquisa}
+	Como a Computação Ubíqua pode ser aplicada no desenvolvimento de um modelo de sistema que objetiva promover acessibilidade e auxiliar as pessoas com deficiência visual a transitar com confiança e independência em ambientes internos?
 
 	\section{Objetivos}
-Apresenta o objetivo principal do trabalho e os objetivos secundários: Importante: objetivo é o que será feito e não como será feito (isso é metodologia).
+	Tendo identificado a questão de pesquisa, foram definidos alguns objetivos para esse trabalho, apresentados nas seções subsequentes.
 	
 		\subsection{Objetivo geral}
+		O objetivo principal desde trabalho é especificar, desenvolver e validar um modelo de sistema para localização e orientação de PDV em ambientes internos através de dispositivos móveis, aplicando fundamentos de acessibilidade e conceitos de computação ubíqua, para permitir que seus usuários se localizem e se desloquem em ambientes desconhecidos sem necessidade do auxílio de outras pessoas.
+
+		O sistema não deve exigir uso de hardware dedicado por parte dos usuários, devendo ser leve, discreto e de fácil uso.
 		
 		\subsection{Objetivos específicos}
+		Para atingir o objetivo geral desse trabalho foram definidos alguns os seguintes objetivos especificos:
+
+		\begin{itemize}
+			\item Realizar estudo sobre deficiência visual - estudar essa deficiência buscando entender a maneira com que ela altera a vida de seus portadores e como ela afeta suas capacidades, bem como entender as necessidades que surgem a partir dela, para que os PDV possam ter uma vida mais proxima da levada pelas pessoas sem deficiência visual. Conhecer tecnologias assistivas que possam auxiliar a atingir o objetivo geral.
+
+			\item Realizar estudo sobre computação móvel e ubíqua - compreender quais características da computação móvel e ubíqua são desejaveis em um modelo que será usado por PDV, de forma que o modelo de integre com o cotidiano de seus usuários da maneira mais natural e intuitiva possivel.
+
+			\item Realizar estudo sobre sistemas de localização e navegação - analisar trabalhos e soluções existentes nessa área buscando entender quais características deles podem ser aproveitas em um sistema para PDV, bem como novas características que devem ser incorporadas para que as necessidades dos PDV sejam atendidas.
+
+			\item Desenvolver um protótipo da solução - modelar e codificar uma parte do modelo proposto, criando um protótipo que utilize o conhecimento adquirido para promover um sistema que auxilie PDV em 
+			possibilite a avaliação do modelo.
+
+			\item Avaliar o sistema desenvolvido - testar o sistema com PDV e avaliar, fazendo uso de questionário, a eficácia e eficiência do sistema. O resultado ajudará identificar a aceitação, pontos fortes e possíveis melhorias do sistema, bem como elencar trabalhos futuros relacionados ao tema. (TODO: avaliação com usuários ou com estudo de caso por cenários?) 
+		\end{itemize}
+
+
 	
-	\section{Estrutura do Texto}
+	\section{Organização do texto}
+O presente trabalho está dividido em seis capítulos. O primeiro introduz esse trabalho de conclusão, bem como apresenta sua contribuição ciêntifica e objetivos.
+O segundo capítulo apresenta os principais conceitos utilizados para o embasamento desde trabalho, descrevendo computação móvel e ubiqua, tecnologias assistivas, sistemas de localização e dando um panograma geral sobre a deficiência visual.
+O terceiro capítulo apresenta os trabalhos relacionados e traça um comparativo entre eles.
+No quarto capítulo é feito um detalhamento do modelo proposto neste trabalho, seus principais requisitos e componentes que formam este modelo.
+O quinto capítulo descreve a metodologia de pesquisa, materiais utilizados e como será realizado o desenvolvimento do protótipo.
+O sexto e ultimo capítulo conclui o trabalho e apresenta as considerações finais, uma comparação com os trabalhos relacionados e sugestões de trabalhos futuros.
 
 %=======================================================================
 % Fundamentação teórica
 %=======================================================================
 \chapter{Referencial Teórico}
-Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
+
 
 	\section{Deficiência Visual}
-De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são portadores de deficiência visual (PDV).
+De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são pessoas com deficiência visual (PDV).
 
 A deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela, dificultando diversos aspectos de sua vida, como o seu deslocamento em ambientes desconhecidos. Não é possível compreender a dificuldade que um cego possui em realizar as tarefas consideradas triviais por aqueles que possuem a totalidade de sua visão.
+
+CAUSAS
+
+EXEMPLO DE VISÃO
+
 
 No Brasil, existe legislação especifica para tratar da condição médica necessária para classificar alguém como deficiente visual e, também, para garantir a acessibilidade e os direitos dos PDV. Os Decretos 3.298/99 e 5.296/04 definem critérios técnicos para conceituação de alguém como PDV. Os níveis de deficiência visual são baixa visão e cegueira, baseados na acuidade visual medida através de exame. A Lei 10.098/00 estabelece normas e critérios básicos para a promoção da acessibilidade, descrevendo normas de construção de edifícios públicos, de uso coletivo e privados, bem como regulando como deve se dar a acessibilidade nos sistemas de comunicação e sinalização.
 	
@@ -240,11 +278,14 @@ Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriorm
 % Trabalhos relacionados
 %=======================================================================
 \chapter{Trabalhos Relacionados}
+\epigrafecap{The most dangerous phrase in the language is "We've always done this way"}{Grace Hopper}
+
 Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
 Neste capítulo são apresentadas 3 ou 4 (TODO) soluções relacionadas com o tema. Estas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
 	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
+Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 
 		\cite{Ganz2011}
 
@@ -254,7 +295,35 @@ Neste capítulo são apresentadas 3 ou 4 (TODO) soluções relacionadas com o te
 
 		\citetexto{Ganz2012}
 
-	\section{Tirésias: um modelo para acessibilidade ubíqua orientado à deficiência visual}
+	\section{Tirésias}
+	Em \citetexto{Falk2013} é proposto um modelo para acessibilidade ubíqua chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Esse, por sua vez, procura estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
+
+	Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus componentes, bem como a maneira integrada em que eles operam. Os componentes citados são:
+
+	\begin{itemize} 
+		\item agente assistente pessoal
+		\item modulo de saída
+		\item módulo de entrada
+		\item modulo de configurações
+	\end{itemize}
+
+	\FloatBarrier
+	\begin{figure}[!ht]
+		\caption{Arquitetura do modelo Tirésias}
+		\label{fig:visaoGeral}
+		\centering%
+		\begin{minipage}{.6\textwidth}
+			\includegraphics[width=\textwidth]{tiresiasArquitetura}
+			\fonte{Tirésias: um modelo para acessibilidade ubíqua orientado à deficiência visual}
+		\end{minipage}
+	\end{figure}
+	\FloatBarrier
+
+
+	O agente é responsavel pela comunicação com o Hefestos, através da qual são obtidos perfís de usuários e recursos disponiveis para o suporte a acessibilidade. 
+	O modulo de saída é o responsavel por passar as informações aos usuários, sendo utilizados duas maneiras de disponibilizar as informações: leitura de tela e alertas vibratórios.
+
+
 
 	\section{Trabalho 3}
 	
@@ -345,7 +414,7 @@ A Figura~\ref{fig:visaoGeral} mostra ilustra as fases psicológicas da escrita d
 	\label{fig:arquitetura}
 	\centering%
 	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{arquitetura}
+		\includegraphics[width=\textwidth]{arquitetura.png}
 		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{figure}
@@ -358,7 +427,7 @@ A Figura~\ref{fig:visaoGeral} mostra ilustra as fases psicológicas da escrita d
 % Metodologia
 %=======================================================================
 \chapter{Metodologia}
-Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficiêntes visuais. A abordagem do trabalho é qualitativa e do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
+Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficiêntes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
 
 	\section{Desenvolvimento}
 O trabalho de modelagem de desenvolvimento do xxxxxxx (TODO) foi divido em (TODO) XX passos metodológicos apresentados na figura (TODO) XX. Os passos 1 a X foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do RIo dos Sinos (UNISINOS).
@@ -387,6 +456,25 @@ A seguir são apresentados brevemente cada um dos passos concebidos:
 	\item \textbf{Analisar resultados dos testes:} teste teste teste
 \end{enumerate}
 
+\begin{description}
+	\item [1. Revisar bibliografia] teste teste teste
+	%	2
+    \item [2. Realizar estudo sobre deficiência visual] teste teste teste
+	%	3
+    \item [3. Realizar estudo sobre sistemas de localização e navegação] teste teste teste
+	%	4
+    \item [Realizar estudo sobre tecnologias assistivas] teste teste teste
+	%	5
+    \item [Realizar estudo sobre computação móvel e ubíqua] teste teste teste
+    %	6
+    \item [Elencar requisitos e modelar o sistema] teste teste teste
+    %	7
+    \item [Codificar sistema] teste teste teste
+	%	8
+	\item [Testar aceitação do sistema] teste teste teste	
+	%	9
+	\item [Analisar resultados dos testes] teste teste teste
+\end{description}
 
 	\section{Avaliação}
 A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação do mesmo serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas. A primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso. A segunda será a técnica da entrevista estruturada. 
@@ -490,10 +578,6 @@ Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Bibliote
 
 
 
-\chapter{Introdução}
-
-% as epígrafes nos capítulos são opcionais
-\epigrafecap{The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man.}{George Bernard Shaw}
 
 Conforme \citetexto{Hexsel11}, a introdução tem o objetivo de ``\emph{introduzir} o material que vai ser apresentado em mais detalhe nas seções subseqüentes''. Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
 
@@ -517,24 +601,7 @@ Geralmente, a introdução tem uma estrutura similar ao resumo e deve apresentar
 	\end{alineas}
 \end{itemize}
 
-%=======================================================================
-% Escrevendo o Texto
-%=======================================================================
-\chapter{Escrevendo o Texto}
 
-\section{Comandos do \LaTeX}
-Como regra geral, use os comandos tradicionais do \LaTeX\ para formatar seu texto.  Neste documento procuramos demonstrar os comandos mais comumente utilizados em monografias acadêmicas.
-
-Neste capítulo apresentamos alguns exemplos de como colocar figuras e tabelas no seu texto.
-
-\section{Ilustrações}
-
-\subsection{Legendas}
-As legendas das figuras devem se encontrar no topo da figura e não abaixo, como usualmente colocado. Abaixo da figura, é obrigatório colocar a fonte (mesmo que a figura tenha sido do próprio autor).
-
-As legendas devem conter o tipo da ilustração (Figura, Tabela, etc), seguido de numeração simples (sem número do capítulo).
-
-Toda figura deve ser citada no texto, como nos exemplos que seguem.
 
 \section{Resumo}
 O resumo deve conter de 100 a 500 palavras. No resumo não deve haver citações e indica-se que essa seja a última seção do texto a ser escrita. Veja abaixo uma sugestão de organização e exemplo de resumo de \citetexto{Moro11}.
@@ -598,7 +665,7 @@ Os exemplos abaixo ilustram referências a artigos em periódicos.
 \section{Teses e Dissertações}
 Seguem algumas referências a trabalhos acadêmicos, como teses, dissertações, trabalhos de conclusão de curso, etc.
 \begin{itemize}
-	\item \bibentry{FALK2013}.
+	\item \bibentry{Falk2013}.
 	\item \bibentry{Flaumann05}.
 \end{itemize}
 

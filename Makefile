@@ -1,6 +1,8 @@
 all:
 
 	@echo "****************************** Gerando PDF... ******************************"
+	@echo "****************************** Deletando as merdas... ******************************"
+	rm -f *~ *.{log,aux,dvi,blg,toc,lof,lot}
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Primeira vez... ******************************"
@@ -23,5 +25,5 @@ all:
 	open PauloGrabin_monografia.pdf
 	
 	@echo "****************************** Deletando as merdas... ******************************"
-	rm -f *~ *.{log,aux,dvi,bbl,blg,toc,lof,lot}
+	rm -f *~ *.{log,aux,dvi,blg,toc,lof,lot}
 #	bash -c 'rm -f *~ *.{log,aux,dvi} exemplo*pdf *synctex.gz'
