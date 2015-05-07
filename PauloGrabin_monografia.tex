@@ -132,22 +132,22 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
 \begin{listadesiglas}{IBGE}
-\item[API] Application Programming Interface
+%\item[API] Application Programming Interface
 \item[BLE] Bluetooth Low Energy
 \item[GPS] Global Positioning System
-\item[HTTP] Hypertext Transfer Protocol
+%\item[HTTP] Hypertext Transfer Protocol
 \item[IBGE] Instituto Brasileiro de Geografia e Estatística
-\item[JSON] JavaScript Object Notation
+%\item[JSON] JavaScript Object Notation
 \item[NFC] Near Field Communication
 \item[PDV] Pessoas com Deficiência Visual
 \item[RFID] Radio Frequency Identification
 \item[RLSB]	Royal London Society for Blind People
-\item[SDK] Software Development Kid
-\item[SIG] Special Interest Group
-\item[SOAP] Simple Object Access Protocol
-\item[TAM] Technology Acceptance Model
-\item[UML] Unified Modeling Language
-\item[XML] Extensible Markup Language
+%\item[SDK] Software Development Kid
+%\item[SIG] Special Interest Group
+%\item[SOAP] Simple Object Access Protocol
+%\item[TAM] Technology Acceptance Model
+%\item[UML] Unified Modeling Language
+%\item[XML] Extensible Markup Language
 \end{listadesiglas}
 
 %=======================================================================
@@ -158,30 +158,51 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %=======================================================================
 % Introdução
 %=======================================================================
-\chapter{Introdução}
-%Texto contextualizando o problema abordado e o escopo abarcado.
+\chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
 O presente trabalho trata sobre uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a deficiência visual, atuando na forma com que eles se orientam e deslocam em ambientes internos.
 Será mostrada como alternativa a modelagem de um sistema que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por \textit{Bluetooth Low Energy} (BLE).
 
 Como resultado do trabalho espera-se oferecer um sistema de fácil utilização que ofereça orientação e navegação precisa a seus usuários, de maneira que eles tenham confiança e independência. Vale ainda ressaltar que proposito do trabalho não é substituir ferramentas de auxílio como bengala e cães-guia, e sim ser um complemento a esses recursos.
 
 	\section{Motivação}
-	%Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica. 
-	%Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
+	%Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica. Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
+
+	% Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
+
+De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuía 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são pessoas com deficiência visual (PDV). A mesma pesquisa leva em consideração as diferentes intensidades da deficiência visual, aplicando os seguintes critérios \cite{IBGE2010}: 
+
+\begin{quote}
+	Foi pesquisado se a pessoa tinha dificuldade permanente de enxergar (avaliada com o uso de óculos ou lentes de contato, no caso da pessoa utilizá-los), aplicando os seguintes critérios:
+		
+	• Não consegue de modo algum - para a pessoa que declarou ser permanentemente incapaz de enxergar; \\
+	• Grande dificuldade - para a pessoa que declarou ter grande dificuldade permanente de enxergar, ainda que usando óculos ou lentes de contato; \\
+	• Alguma dificuldade - para a pessoa que declarou ter alguma dificuldade permanente de enxergar, ainda que usando óculos ou lentes de contato; ou \\
+	• Nenhuma dificuldade - para a pessoa que declarou não ter qualquer dificuldade permanente de enxergar, ainda que precisando usar óculos ou lentes de contato.
+\end{quote}
+
+Tendo diversas causas possíveis e atingindo pessoas em qualquer idade, a deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela. Mobilidade, educação, trabalho e vida social são exemplos, apenas para citar alguns. É difícil para uma pessoa com a visão perfeita se colocar no lugar de uma pessoa que não enxerga. \citetexto{quinones2011supporting} afirma que mobilidade e deslocamento são atividades naturais para aqueles com enxergam sem dificuldades, podendo ir e vir com relativa facilidade pois pistas e sinais irão apontar a direção certa caso se percam, se vejam em situações desconfortáveis ou algum obstáculo apareça. Mostrando o outro lado, em \citetexto{URNA2007}, um trabalho que objetiva auxiliar PDV a cruzar ruas e avenidas, são citadas algumas situações usuais que são impraticáveis para PDV, como por exemplo ler as linhas de ônibus que passam por uma determinada parada, ou ainda ler o destino de um ônibus se aproximando. Não poder ver a sinalização na rua ou semáforos em um cruzamento torna perigoso para PDV transitarem desacompanhados, necessitando ter a companhia de amigos ou familiares durante todo o trajeto. Existem estabelecimentos, como por exemplo o metro de Porto Alegre, colocam uma parte de seus funcionários a disposição dos deficiêntes para guia-los durante seu trajeto. Porem, seu numero é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível.
+
+Em 2014 a Royal London Society for Blind People (RLSB), uma organização sem fins lucrativos que busca criar uma diferença que melhore a vida das futuras gerações, divulgou um manifesto para chamar atenção aos desafios enfrentados diariamente que impedem os PDV de usufruir da totalidade dos seus direitos fundamentais. Desafios esses que não são restritos às divisas do Reino Unido, onde a organização se encontra.
+Dentre as áreas citadas é possível destacar a mobilidade urbana, a educação superior e acessibilidade na tecnologia. A publicação trás ainda motivação que levou a sua publicação, informando que 25\% das pessoas com perda de visão estão insatisfeitas com sua vida \cite{YouthManifesto}.
+
+Em \citetexto{YouthManifesto} é dito ainda que a possibilidade de viajar de maneira impendente em qualquer hora e qualquer lugar é um grande desafio enfrentado pelos PDV, seja para ir trabalhar ou encontrar amigos, o transporte público frequentemente é a única maneira viável de se deslocar.
+
+Visando atuar em áreas levantadas pela RLSB o modelo proposto neste trabalho atuará na mobilidade dos usuários em ambientes internos, tais como o campus de uma universidade, buscando facilitar o acesso a educação e a vida social disponível nos campi. Atravéis de smartphones ou outros dispositivos móveis o sistema irá informar ao usuário sua localização atual e recomendar caminhos que o levem ao seu destino, levando em consideração sua mobilidade e os obstaculos em sua rota.
+
+Escolhendo o contexto de uma universidade pela importância que a educação tem na vida das pessoas, o maior objetivo deste trabalho dar confiança 
 
 
-	Em \citetexto{YouthManifesto} a Royal blablabla...
 
-	Em 2014 a Royal London Society for Blind People (RLSB)
 
-	Em alguns locais, como o metro de porto alegre por exemplo, PDV precisam solicitar ajuda ou então esperar até que algum funcionário do metro apareça para auxilia-los. Em outros casos, é necessaria a presentaça e a ajuda de familiares ou amigos.
 
-	Escolhendo o contexto de uma universidade pela importancia que a educação tem na vida das pessoas, no sentido de ampliar o alcance...
 
-	RLSB youth manifesto: aponta algumas áreas problematicas que impedem que PDV possam usufruir da totalidade dos serviços ou recursos ofertados...
-	transporte, educação e aplicativos acessiveis buscando trazer a comunidade para perto afim de criar uma diferença que melhore a vida de futuras gerações de PDV.
 
-	O maior objetivo deste trabalho é evitar situações desse tipo, dando confiança
+No Brasil, existe legislação especifica para garantir a acessibilidade e os direitos dos PDV. Os Decretos 3.298/99 e 5.296/04 definem critérios técnicos para conceituação de alguém como PDV. Os níveis de deficiência visual são baixa visão e cegueira, baseados na acuidade visual medida através de exame. A Lei 10.098/00 estabelece normas e critérios básicos para a promoção da acessibilidade, descrevendo normas de construção de edifícios públicos, de uso coletivo e privados, bem como regulamentando como deve se dar a acessibilidade nos sistemas de comunicação e sinalização. Porem, a vida digital não é contemplada pela legislação brasileira.
+
+
+\citetexto{quinones2011supporting} busca entender, através de entrevistas, como PDV realizam seus deslocamentos diários, bem como elencar requisitos necessários para desenvolver sistemas que os auxiliam nesta tarefa. O trabalho afirma que PDV criam mapas mentais ricos em detalhes dos locais que mais frequentam, memorizando rotas e marcos específicos destes locais. É sugerido no trabalho que uma característica importante de um sistema para navegação é o suporte a ambientes dinâmicos, no sentido de que mesmo caminhos conhecidos podem sofrer alterações, mesmo que levemente.
+	
+	
 
 	\section{Questão de pesquisa}
 	Como a Computação Ubíqua pode ser aplicada no desenvolvimento de um modelo de sistema que objetiva promover acessibilidade e auxiliar as pessoas com deficiência visual a transitar com confiança e independência em ambientes internos?
@@ -198,9 +219,9 @@ Como resultado do trabalho espera-se oferecer um sistema de fácil utilização 
 		Para atingir o objetivo geral desse trabalho foram definidos alguns os seguintes objetivos especificos:
 
 		\begin{itemize}
-			\item Realizar estudo sobre deficiência visual - estudar essa deficiência buscando entender a maneira com que ela altera a vida de seus portadores e como ela afeta suas capacidades, bem como entender as necessidades que surgem a partir dela, para que os PDV possam ter uma vida mais proxima da levada pelas pessoas sem deficiência visual. Conhecer tecnologias assistivas que possam auxiliar a atingir o objetivo geral.
+			\item Realizar estudo sobre deficiência visual - estudar essa deficiência buscando entender a maneira com que ela altera a vida de seus portadores e como ela afeta suas capacidades, bem como entender as necessidades que surgem a partir dela, para que os PDV possam ter uma vida mais próxima da levada pelas pessoas sem deficiência visual. Conhecer tecnologias assistivas que possam auxiliar a atingir o objetivo geral.
 
-			\item Realizar estudo sobre computação móvel e ubíqua - compreender quais características da computação móvel e ubíqua são desejaveis em um modelo que será usado por PDV, de forma que o modelo de integre com o cotidiano de seus usuários da maneira mais natural e intuitiva possivel.
+			\item Realizar estudo sobre computação móvel e ubíqua - compreender quais características da computação móvel e ubíqua são desejáveis em um modelo que será usado por PDV, de forma que o modelo de integre com o cotidiano de seus usuários da maneira mais natural e intuitiva possível.
 
 			\item Realizar estudo sobre sistemas de localização e navegação - analisar trabalhos e soluções existentes nessa área buscando entender quais características deles podem ser aproveitas em um sistema para PDV, bem como novas características que devem ser incorporadas para que as necessidades dos PDV sejam atendidas.
 
@@ -210,11 +231,9 @@ Como resultado do trabalho espera-se oferecer um sistema de fácil utilização 
 			\item Avaliar o sistema desenvolvido - testar o sistema com PDV e avaliar, fazendo uso de questionário, a eficácia e eficiência do sistema. O resultado ajudará identificar a aceitação, pontos fortes e possíveis melhorias do sistema, bem como elencar trabalhos futuros relacionados ao tema. (TODO: avaliação com usuários ou com estudo de caso por cenários?) 
 		\end{itemize}
 
-
-	
 	\section{Organização do texto}
-O presente trabalho está dividido em seis capítulos. O primeiro introduz esse trabalho de conclusão, bem como apresenta sua contribuição ciêntifica e objetivos.
-O segundo capítulo apresenta os principais conceitos utilizados para o embasamento desde trabalho, descrevendo computação móvel e ubiqua, tecnologias assistivas, sistemas de localização e dando um panograma geral sobre a deficiência visual.
+O presente trabalho está dividido em seis capítulos. O primeiro introduz esse trabalho de conclusão, bem como apresenta sua contribuição científica e objetivos.
+O segundo capítulo apresenta os principais conceitos utilizados para o embasamento desde trabalho, descrevendo computação móvel e ubíqua, tecnologias assistivas, sistemas de localização e dando um panorama geral sobre a deficiência visual.
 O terceiro capítulo apresenta os trabalhos relacionados e traça um comparativo entre eles.
 No quarto capítulo é feito um detalhamento do modelo proposto neste trabalho, seus principais requisitos e componentes que formam este modelo.
 O quinto capítulo descreve a metodologia de pesquisa, materiais utilizados e como será realizado o desenvolvimento do protótipo.
@@ -225,34 +244,24 @@ O sexto e ultimo capítulo conclui o trabalho e apresenta as considerações fin
 %=======================================================================
 \chapter{Referencial Teórico}
 
-
-	\section{Deficiência Visual}
-De acordo com o levantado por \citetexto{IBGE2010} no último Censo Demográfico, realizado em 2010, o Brasil possuia 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são pessoas com deficiência visual (PDV).
-
-A deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela, dificultando diversos aspectos de sua vida, como o seu deslocamento em ambientes desconhecidos. Não é possível compreender a dificuldade que um cego possui em realizar as tarefas consideradas triviais por aqueles que possuem a totalidade de sua visão.
-
-CAUSAS
-
-EXEMPLO DE VISÃO
-
-
-No Brasil, existe legislação especifica para tratar da condição médica necessária para classificar alguém como deficiente visual e, também, para garantir a acessibilidade e os direitos dos PDV. Os Decretos 3.298/99 e 5.296/04 definem critérios técnicos para conceituação de alguém como PDV. Os níveis de deficiência visual são baixa visão e cegueira, baseados na acuidade visual medida através de exame. A Lei 10.098/00 estabelece normas e critérios básicos para a promoção da acessibilidade, descrevendo normas de construção de edifícios públicos, de uso coletivo e privados, bem como regulando como deve se dar a acessibilidade nos sistemas de comunicação e sinalização.
-	
 	\section{Computação Móvel e Ubíqua}
 Tecnologias tão avançadas que deixam de ser um fim em si mesmas e passam a ser um meio para que as pessoas realizem seus afazeres. Tão conectados, tão presentes na nossa rotina e concebidas para naturalmente se integrarem em nossas vidas que deixam de ser percebidas e se colocam no plano de fundo da nossa percepção. É assim que \citetexto{Weiser1991} começa introduzindo o conceito de computação ubíqua. 
 
 Weiser previu um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook que é usado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocuparem os ambientes em que convivemos, estudamos ou trabalhamos. Esses computadores conversariam entre si de maneira continua e transparente, de modo que eles e todos os usuários estariam permanentemente conectados entre si, permitindo que serviços estejam acessíveis em todos os lugares e em todos os momentos. Tal definição vai ao encontro do conceito estabelecido por \citetexto{Satyanarayanan2001} para computação móvel como sendo: “Informação na ponta dos dedos em qualquer lugar e em qualquer tempo”.
 	
 	\section{Tecnologias Assistivas}
+Tecnologias assistivas tem papel chave na independência e segurança de pessoas com deficiência. Para os PDV, tecnologias assistivas bem planejadas e bem implementadas podem fazer significante diferença na educação, aceitação social e produtividade. \citetexto{dias2015navpal}.
+
+
 Diversas ferramentas existem para promover a inclusão de PDV, bem como para aliviar as dificuldades impostas pela deficiência visual. Cães-guia, bengalas e piso tátil são as principais formas usadas pra facilitar locomoção.
 
-Ganz et al. (2014) destaca que smartphones são ferramentas extremamente benéficas no dia a dia das PDV, podendo ser utilizados em diversas finalidade, tais como reconhecimento de cédulas de dinheiro, objetos e cores, navegação na internet, leitura de e-mails e comunicação. O trabalho ainda afirma que o uso de smartphones é possível devido à presença de recursos de acessibilidade oferecidos pelos principais sistemas operacionais disponíveis. 
+\citetexto{Ganz2014} destaca que smartphones são ferramentas extremamente benéficas no dia a dia das PDV, podendo ser utilizados em diversas finalidade, tais como reconhecimento de cédulas de dinheiro, objetos e cores, navegação na internet, leitura de e-mails e comunicação. O trabalho ainda afirma que o uso de smartphones é possível devido à presença de recursos de acessibilidade oferecidos pelos principais sistemas operacionais disponíveis. 
 
 Entre esses recursos, podemos destacar a leitura de telas e os alertas vibratórios, essenciais pra aqueles que não enxergam as telas sensíveis ao toque que equipam a grande maioria dos smartphones disponíveis atualmente. Ao invés de apenas ler o texto sendo exibido, essa funcionalidade também informa sobre os tipos de cada componente, possibilitando ao usuário saber como lidar com cada um.
 
-Mau et al. (2008), após pesquisa realizada em seu trabalho, define o telefone celular como “a peça de tecnologia mais valiosa para os cegos”. 
+\citetexto{mau2008blindaid}, após pesquisa realizada em seu trabalho, define o telefone celular como “a peça de tecnologia mais valiosa para os cegos”. 
 
-Segundo o estudo realizado por Quinõnes et al. (2011), PDV possuem o desejo de carregar consigo a menor quantidade possível de equipamento. É necessário criar tecnologias que não sejam um fardo a ser carregado, mas que ofereçam a quantidade apropriada de informações ao usuário. Uma maneira citada pelo autor é a incorporação de tecnologias de navegação em aparelhos que deficientes visuais carreguem consigo normalmente, assim reduzindo o número de objetos que devem ser cuidados.
+Segundo o estudo realizado por \citetexto{quinones2011supporting}, PDV possuem o desejo de carregar consigo a menor quantidade possível de equipamento. É necessário criar tecnologias que não sejam um fardo a ser carregado, mas que ofereçam a quantidade apropriada de informações ao usuário. Uma maneira citada pelo autor é a incorporação de tecnologias de navegação em aparelhos que deficientes visuais carreguem consigo normalmente, assim reduzindo o número de objetos que devem ser cuidados.
 	
 	\section{Sistemas de localização}
 Bluetooth é uma tecnologia de comunicação sem fios de curto alcance, lançada comercialmente em 1990, quando teve sua primeira especificação formal divulgada. Desde então diversas modificações foram feitas e a tecnologia passou por diversos aprimoramentos, estando atualmente na versão 4.x, também conhecida como Bluetooth Smart, lançada em 2010. 
@@ -265,7 +274,7 @@ O LE foi criado para permitir produtos que requerem baixíssimo consumo de energ
 
 A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional.
 
-Taylor et al. (2012) revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para navegação para PDV. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), bluetooth e Global Positioning System (GPS) são algumas dessas tecnologias. Os autores ainda apontam que apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
+\citetexto{taylor2012smart} revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para navegação para PDV. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), bluetooth e Global Positioning System (GPS) são algumas dessas tecnologias. Os autores ainda apontam que apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
 
 \begin{itemize}
   \item GPS é normalmente usado para localização em ambientes externos, mas se mostra ineficiente devido à própria natureza das ondas de rádio usadas na tecnologia, quando obstáculos são locados ao redor do usuário. Além disso, GPS não é uma tecnologia ideal para ambientes internos, pois é capaz apenas de marcar um ponto em um mapa, não sendo suficiente para indicar, por exemplo, múltiplos andares em um prédio, cenário muito comum em ambientes indoor. 
@@ -320,8 +329,8 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 	\FloatBarrier
 
 
-	O agente é responsavel pela comunicação com o Hefestos, através da qual são obtidos perfís de usuários e recursos disponiveis para o suporte a acessibilidade. 
-	O modulo de saída é o responsavel por passar as informações aos usuários, sendo utilizados duas maneiras de disponibilizar as informações: leitura de tela e alertas vibratórios.
+	O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte a acessibilidade. 
+	O modulo de saída é o responsável por passar as informações aos usuários, sendo utilizados duas maneiras de disponibilizar as informações: leitura de tela e alertas vibratórios.
 
 
 
@@ -355,7 +364,7 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 Essa etapa consiste em detalhar o modelo. O capítulo do modelo deve começar a partir da delimitação da pesquisa, dizendo quais lacunas serão atacadas e como. Geralmente há uma visão geral do modelo aqui, já desenvolvido na atividade 4. Esse capítulo detalha como a questão de pesquisa será respondida? Que modelo computacional é necessário para isso. Se é proposta uma ontologia, ela é detalhada aqui; Se há um modelo de contexto, ele é detalhado aqui. Pode-se usar alguns diagramas para representar a arquitetura, interações, fluxos e componentes. Lembre-se que o modelo pode ter diferentes implementações e não precisa ser limitado por uma tecnologia específica. Por exemplo, não faz sentido dizer que o modelo é para Android ou feito em Java. Por que não poderia ser para iOS e feito em Objective C? Que característica de um modelo limitaria isso?
 
 
-Esse capítulo apresenta um modelo de sistema que auxilia a navegação de deficiêntes visuais.
+Esse capítulo apresenta um modelo de sistema que auxilia a navegação de deficientes visuais.
 
 
 Vini:
@@ -389,12 +398,12 @@ O modelo objetiva oferecer localização confiável a seus usuários através de
 
 	\section{Visão Geral}
 
-A Figura~\ref{fig:visaoGeral} mostra ilustra as fases psicológicas da escrita da dissertação. Você vai se reconhecer no personagem. ;-)
+A Figura~\ref{fig:blablabla} mostra ilustra as fases psicológicas da escrita da dissertação. Você vai se reconhecer no personagem. ;-)
 
 \FloatBarrier
 \begin{figure}[!ht]
 	\caption{Visão geral do modelo}
-	\label{fig:visaoGeral}
+	\label{fig:blablabla}
 	\centering%
 	\begin{minipage}{.8\textwidth}
 		\includegraphics[width=\textwidth]{escrita}
@@ -427,7 +436,7 @@ A Figura~\ref{fig:visaoGeral} mostra ilustra as fases psicológicas da escrita d
 % Metodologia
 %=======================================================================
 \chapter{Metodologia}
-Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficiêntes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
+Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
 
 	\section{Desenvolvimento}
 O trabalho de modelagem de desenvolvimento do xxxxxxx (TODO) foi divido em (TODO) XX passos metodológicos apresentados na figura (TODO) XX. Os passos 1 a X foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do RIo dos Sinos (UNISINOS).
@@ -514,12 +523,6 @@ A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes p
 	
 	\section{Trabalhos futuros}
 
-
-
-Conforme \citetexto{Hexsel11}, a int
-
-tratar do como \cite{Hexsel11}, que deve ser explicado
-
 Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Biblioteca11} e, se necessário, da norma NBR~6023 \cite{NBR6023:2002}.
 
 
@@ -578,95 +581,19 @@ Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Bibliote
 
 
 
-
-Conforme \citetexto{Hexsel11}, a introdução tem o objetivo de ``\emph{introduzir} o material que vai ser apresentado em mais detalhe nas seções subseqüentes''. Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
 
 Geralmente, a introdução tem uma estrutura similar ao resumo e deve apresentar:
 \begin{itemize}
 	\item \textbf{Contexto e motivação:} Aqui você deve apresentar o contexto do trabalho (área de que ele se trata) e uma motivação para trabalhar nesse assunto.
 	\item \textbf{Problema:} Aqui você vai apresentar um problema, uma lacuna, observada na área e que você pretende tratar. Você deve se perguntar aqui: ``Que respostas estou disposto a responder?''. O problema deve ser definido claramente e delimitado em termos de espaço de tempo. Veja que essa parte visa alertar o leitor de que o que você está propondo é uma solução para um problema observado na área. 
+	
+
 	\item \textbf{Objetivos:} Aqui você deve apresentar os objetivos do seu trabalho. Tome cuidado para não confundir objetivos com atividades.   Faça a si mesmo a pergunta: ``O que pretendo alcançar com a pesquisa?''. Você pode discernir entre objetivos gerais e objetivos específicos:
 	\begin{itemize}
 		\item Objetivo geral --- qual o propósito da pesquisa?
 		\item Objetivos específicos --- abertura do objetivo geral em outros menores (possíveis capítulos).
 	\end{itemize}
-	Veja abaixo um exemplo de objetivo retirado da monografia de~\citetexto{Teixeira09}:
-
-	Com a possibilidade de acesso a base de dados XML gerada a partir do Sistema de Currículos Lattes e a necessidade de melhor reutilizar as informações existentes neste sistema, o presente trabalho tem como objetivo geral permitir o acesso do pesquisador a seus dados através de uma interface mais amigável: o padrão LaTeX. Para isto destacam-se os seguintes objetivos específicos:
-	\begin{alineas}
-		\item identificar e analisar o formato de especificação de currículos da Plataforma Lattes;
-		\item disponibilizar uma ferramenta para a geração de uma representação de dados intermediária a partir do formato especificado;
-		\item implementar a tradução dos dados colhidos em código LaTeX através da utilização da ferramenta criada;
-		\item analisar os resultados obtidos e as alternativas presentes no uso da ferramenta.
-	\end{alineas}
-\end{itemize}
-
-
-
-\section{Resumo}
-O resumo deve conter de 100 a 500 palavras. No resumo não deve haver citações e indica-se que essa seja a última seção do texto a ser escrita. Veja abaixo uma sugestão de organização e exemplo de resumo de \citetexto{Moro11}.
-
-Sugestão (uma a três linhas para cada item):
-\begin{itemize}
-	\item Contexto geral e específico;
-	\item Questão/problema sendo investigado (propósito do trabalho);
-	\item Estado-da-arte (por que precisa de uma solução nova/melhor);
-	\item Solução (nome da proposta, metodologia básica sem detalhes, quais características respondem as questões iniciais, interpretação dos resultados, conclusões).
-\end{itemize}
-
-Exemplo (SANTOS et al., 2008 apud \citealp{Moro11}):
-\begin{quote}
-CONTEXTO: A Web é abundante em páginas que armazenam  dados de forma implícita. PROBLEMA: Em muitos casos, estes dados estão presentes em textos semiestruturados sem a presença de delimitadores explícitos e organizados em uma estrutura também implícita. SOLUÇÃO: Este artigo apresenta uma nova abordagem para extração em textos semi-estruturados baseada em Modelos de Markov Ocultos (Hidden Markov Models - HMM). ESTADO-DA-ARTE e MÉTODO PROPOSTO: Ao contrário de outros trabalhos baseados em HMM, a abordagem proposta dá ênfase à extração de metadados, além dos dados propriamente ditos. Esta abordagem consiste no uso de uma estrutura aninhada de HMMs, onde um HMM principal identifica os atributos no texto e HMMs internos, um para cada atributo, identificam os dados e metadados. Os HMMs são gerados a partir de um treinamento com uma fração de amostras da base a ser extraída. RESULTADOS: Os experimentos realizados com anúncios de classificados retirados da Web mostram que o processo de extração alcança qualidade acima de 0,97 com a medida F, mesmo se esta fração de treinamento é pequena. 
-\end{quote}
-
-%=======================================================================
-% Exemplos de Citações e Referências Bibliográficas
-%=======================================================================
-\chapter{Exemplos de Citações e Referências Bibliográficas}
-\nobibliography* % para usar o \bibentry
-Neste capítulo são apresentados exemplos de citações e referências bibliográficas.  Aqui é utilizado o pacote \texttt{bibentry}, que permite a inserção de referências no meio do texto (atenção para a diferença entre citações e referências).
-
-Você vai ver que, neste exemplo, não está sendo usado o estilo de referências bibliográficas do projeto ABNTeX\footnote{http://http://sourceforge.net/projects/abntex}.  Você é completamente livre para usá-lo (veja no início do arquivo .tex como fazer isso).  Os motivos para não usar o ABNTeX neste exemplo são basicamente dois:
-\begin{itemize}
-	\item Para usar o ABNTeX, é necessário instalá-lo em seu sistema \TeX\ primeiro; embora não seja uma tarefa tão complicada, enxergamos como uma dificuldade a mais para o usuário iniciante.  Nosso objetivo aqui é facilitar ao aluno da UNISINOS o uso deste modelo, de modo que basta copiar os arquivos \texttt{UNISINOSmonografia.cls} e \texttt{unisinos.bst} para a pasta onde estão seus arquivos .tex;
-	\item As normas da ABNT são tão complexas que, para atender a todas as variações possíveis de citações e referências, o projeto ABNTeX criou uma série de campos adicionais nas entradas do arquivo .bib.  Embora funcione para o caso ABNT, o efeito colateral de fazer isso é que o seu arquivo .bib será muitas vezes incompatível com os demais estilos tradicionais do BibTeX, como \texttt{plain}, \texttt{alpha}, \texttt{ieeetr}, entre outros.  Por exemplo, em referências a artigos publicados em conferências, o campo \texttt{organization} é usado pelo ABNTeX para definir o nome do evento.  Isso não é padrão e não será reconhecido pelos estilos tradicionais\footnote{Veja como criar seus arquivos .bib no manual do BibTeX, que pode ser encontrado em http://ctan.tug.org/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf.}.  Considerando que um dos maiores benefícios do BibTeX é criar um arquivo .bib que pode ser reutilizado pelo resto da vida, nossa estratégia com o \texttt{unisinos.bst} foi tentar aproximar ao máximo a formatação exigida pela ABNT sem implicar na criação de arquivos .bib incompatíveis.  Isso funciona bem na grande maioria dos casos, mas não em todos.  Nesse caso, a saída é usar o ABNTeX ou então alterar manualmente o arquivo .bbl que é gerado ao rodar o comando \texttt{bibtex}.
-\end{itemize}
-
-Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Biblioteca11} e, se necessário, da norma NBR~6023 \cite{NBR6023:2002}.
-
-\section{Citações}
-As citações podem ocorrer de duas formas: com os nomes dos autores inseridos no texto ou não.  Isso implica em uma construção diferente para as frases.  Por exemplo:
-\begin{itemize}
-	\item Com o nome do autor inserido no texto: ``De acordo com \citetexto{Tanenbaum03}, o modelo de referência OSI foi proposto de forma tardia.''
-	\item Sem inserir o autor no texto: ``O modelo de referência OSI foi proposto de forma tardia \cite{Tanenbaum03}.''
-\end{itemize}
-
-\section{Livros}
-Seguem alguns exemplos de referências de livros:
-\begin{itemize}
-	\item \bibentry{Buford09}.
-	\item Livro com indicação de edição:\\
-	\bibentry{Kurose10ptbr}.
-\end{itemize}
-
-\section{Artigos em Periódicos}
-Os exemplos abaixo ilustram referências a artigos em periódicos.
-\begin{itemize}
-	\item \bibentry{Hayes08}.
-	\item \bibentry{Lawton08}.
-\end{itemize}
-
-\section{Artigos em Conferências}
-\begin{itemize}
-	\item \bibentry{Laadan10}.
-	\item \bibentry{Anderson95}.
-\end{itemize}
-
-\section{Teses e Dissertações}
-Seguem algumas referências a trabalhos acadêmicos, como teses, dissertações, trabalhos de conclusão de curso, etc.
-\begin{itemize}
-	\item \bibentry{Falk2013}.
-	\item \bibentry{Flaumann05}.
+	
 \end{itemize}
 
 %=======================================================================
