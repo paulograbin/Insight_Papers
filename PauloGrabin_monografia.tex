@@ -17,7 +17,7 @@
 % Dados gerais sobre o trabalho.
 %=======================================================================
 \autor{Gräbin}{Paulo Henrique Grolli}
-\titulo{Um modelo acessível de software para localização e navegação de deficiêntes visuais com Bluetooth Low Energy}
+\titulo{Um modelo acessível de software para localização e navegação de deficientes visuais com Bluetooth Low Energy}
 \orientador[Prof.~Dr.]{Costa}{Cristiano André da}
 \local{São Leopoldo}
 \ano{2015}
@@ -45,37 +45,37 @@ pela Universidade do Vale do Rio dos Sinos --- UNISINOS
 % Início do documento.
 %=======================================================================
 \begin{document}
-%\capa
-%\folhaderosto
+\capa
+\folhaderosto
 
 %=======================================================================
 % Dedicatória (opcional).
 %=======================================================================
-% \begin{dedicatoria}
-% À meus pais que sempre me incentivaram na busca por conhecimento \\e a lutar pelos meus objetivos.\\[4ex] % quebra a linha dando um espaçamento maior
+\begin{dedicatoria}
+À meus pais que sempre me incentivaram na busca por conhecimento \\e a lutar pelos meus objetivos.\\[4ex] % quebra a linha dando um espaçamento maior
 
-% \begin{itshape} % faz o texto ficar em itálico
-% Learning is the only thing the mind never exhausts, \\
-% never fears, \\
-% and never regrets.\\
-% \end{itshape}
-% --- \textsc{Leonardo Da Vinci} % \textsc é o "small caps"
-% \end{dedicatoria}
+\begin{itshape} % faz o texto ficar em itálico
+Learning is the only thing the mind never exhausts, \\
+never fears, \\
+and never regrets.\\
+\end{itshape}
+--- \textsc{Leonardo Da Vinci} % \textsc é o "small caps"
+\end{dedicatoria}
 
 %=======================================================================
 % Agradecimentos (opcional).
 %=======================================================================
-% \begin{agradecimentos}
-% Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, pelas valiosas conversas, seu auxilio incomparável, e por sua disponibilidade sempre que necessário.
+\begin{agradecimentos}
+Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, pelas valiosas conversas, seu auxilio incomparável, e por sua disponibilidade sempre que necessário.
 
-% Aos meus pais, Ivani Grolli Gräbin e Milton Gräbin, que sempre me incentivaram a estudar e a realizar meus sonhos.
+Aos meus pais, Ivani Grolli Gräbin e Milton Gräbin, que sempre me incentivaram a estudar e a realizar meus sonhos.
 
-% A minha namorada Victoria Caroline da Silva, pela compreensão, por ficar sempre do meu lado e por me motivar a superar os desafios.
+A minha namorada Victoria Caroline da Silva, pela compreensão, por ficar sempre do meu lado e por me motivar a superar os desafios.
 
-% Por fim, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e entendiam os convites recusados.
+Por fim, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e entendiam os convites recusados.
 
-% Muito obrigado!
-% \end{agradecimentos}
+Muito obrigado!
+\end{agradecimentos}
 
 %=======================================================================
 % Epígrafe (opcional).
@@ -108,12 +108,12 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %=======================================================================
 % Lista de Figuras (opcional).
 %=======================================================================
-%\listoffigures
+\listoffigures
 
 %=======================================================================
 % Lista de Tabelas (opcional).
 %=======================================================================
-%\listoftables
+\listoftables
 
 %=======================================================================
 % Lista de Abreviaturas (opcional).
@@ -131,24 +131,24 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 % Lista de Siglas (opcional).
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
-% \begin{listadesiglas}{IBGE}
-% %\item[API] Application Programming Interface
-% \item[BLE] Bluetooth Low Energy
-% \item[GPS] Global Positioning System
-% %\item[HTTP] Hypertext Transfer Protocol
-% \item[IBGE] Instituto Brasileiro de Geografia e Estatística
-% %\item[JSON] JavaScript Object Notation
-% \item[NFC] Near Field Communication
-% \item[PDV] Pessoas com Deficiência Visual
-% \item[RFID] Radio Frequency Identification
-% \item[RLSB]	Royal London Society for Blind People
-% %\item[SDK] Software Development Kid
-% %\item[SIG] Special Interest Group
-% %\item[SOAP] Simple Object Access Protocol
-% %\item[TAM] Technology Acceptance Model
-% %\item[UML] Unified Modeling Language
-% %\item[XML] Extensible Markup Language
-% \end{listadesiglas}
+\begin{listadesiglas}{IBGE}
+%\item[API] Application Programming Interface
+\item[BLE] Bluetooth Low Energy
+\item[GPS] Global Positioning System
+\item[IBGE] Instituto Brasileiro de Geografia e Estatística
+%\item[JSON] JavaScript Object Notation
+\item[NFC] Near Field Communication
+\item[PDV] Pessoas com Deficiência Visual
+\item[RFID] Radio Frequency Identification
+\item[RLSB]	Royal London Society for Blind People
+%\item[SDK] Software Development Kid
+%\item[SIG] Special Interest Group
+%\item[SOAP] Simple Object Access Protocol
+%\item[TAM] Technology Acceptance Model
+%\item[TCC] Trabalho de Conclusão de Curso
+%\item[UML] Unified Modeling Language
+%\item[XML] Extensible Markup Language
+\end{listadesiglas}
 
 %=======================================================================
 % Sumário
@@ -159,15 +159,17 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 % Introdução
 %=======================================================================
 \chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
+Na pesquisa bibliográfica realizada foi identificado que um grande desafio enfrentado por PDV é a localização e o deslocamento dentro de ambientes desconhecidos, tais como aeroportos, shopping centers e universidades.
+
 O presente trabalho trata de uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a visual, atuando na forma com que elas se orientam e se deslocam em ambientes internos.
 Será mostrada como alternativa a modelagem de um sistema que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por \textit{Bluetooth Low Energy} (BLE).
 
-Como resultado do trabalho, espera-se oferecer um sistema de fácil utilização que proporcione orientação e navegação precisas a seus usuários, de maneira que eles tenham confiança e independência. Vale ainda ressaltar que proposito do trabalho não é substituir ferramentas de auxílio como bengala e cães-guia, e sim ser um complemento a esses recursos.
+Como resultado do trabalho, espera-se oferecer um sistema de fácil utilização que proporcione orientação e navegação precisas a seus usuários, de maneira que eles tenham confiança e independência. Vale ainda ressaltar que propósito do trabalho não é substituir ferramentas de auxílio como bengala e cães-guia, e sim ser um complemento a esses recursos.
 
 	\section{Motivação}
-	%Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica. Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
+%Texto descrevendo a motivação para o trabalho, destacando a oportunidade de pesquisa encontrada e a motivação científica. Nessa seção cabe uma figura mostrando o problema atual e como será resolvido pelo trabalho sendo realizado.
 
-	% Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
+% Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
 
 De acordo com o levantado por \citetexto{IBGE2010}, no último Censo Demográfico, realizado em 2010, o Brasil possuía 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são pessoas com deficiência visual (PDV). A mesma pesquisa leva em consideração as diferentes intensidades da deficiência visual, aplicando os seguintes critérios \cite{IBGE2010}: 
 
@@ -180,30 +182,30 @@ De acordo com o levantado por \citetexto{IBGE2010}, no último Censo Demográfic
 	• Nenhuma dificuldade - para a pessoa que declarou não ter qualquer dificuldade permanente de enxergar, ainda que precisando usar óculos ou lentes de contato.
 \end{quote}
 
-Tendo diversas causas possíveis e atingindo pessoas em qualquer idade, a deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela. Mobilidade, educação, trabalho e vida social são exemplos, apenas para citar alguns. É difícil para uma pessoa com a visão perfeita colocar-se no lugar de uma pessoa que não enxerga. \citetexto{quinones2011supporting} afirma que mobilidade e deslocamento são atividades naturais para aqueles que enxergam sem dificuldades, podendo ir e vir com relativa facilidade, já que pistas e sinais irão apontar a direção certa caso se percam, se vejam em situações desconfortáveis ou se algum obstáculo apareça. Mostrando o outro lado, em \citetexto{URNA2007}, um trabalho que objetiva auxiliar PDV a cruzar ruas e avenidas, são citadas algumas situações usuais que são impraticáveis para PDV, como, por exemplo, ler as linhas de ônibus que passam por uma determinada parada ou ainda ler o destino de um ônibus se aproximando. Não poder ver a sinalização na rua ou semáforos em um cruzamento torna perigoso para PDV transitarem desacompanhados, necessitando ter a companhia de amigos ou familiares durante todo o trajeto. Existem estabelecimentos, como, por exemplo, o metrô de Porto Alegre, que colocam uma parte de seus funcionários à disposição dos deficiêntes para guià-los durante seu trajeto. Porém, seu número é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível.
+Tendo diversas causas possíveis e atingindo pessoas em qualquer idade, a deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela. Mobilidade, educação, trabalho e vida social são exemplos, apenas para citar alguns. É difícil para uma pessoa com a visão perfeita colocar-se no lugar de uma pessoa que não enxerga. \citetexto{quinones2011supporting} afirma que mobilidade e deslocamento são atividades naturais para aqueles que enxergam sem dificuldades, podendo ir e vir com relativa facilidade, já que pistas e sinais irão apontar a direção certa caso se percam, se vejam em situações desconfortáveis ou se algum obstáculo apareça. Mostrando o outro lado, em \citetexto{URNA2007}, um trabalho que objetiva auxiliar PDV a cruzar ruas e avenidas, são citadas algumas situações usuais que são impraticáveis para PDV, como, por exemplo, ler as linhas de ônibus que passam por uma determinada parada ou ainda ler o destino de um ônibus se aproximando. Conforme \citetexto{rodriguez2014accessible}, PDV não possuem a totalidade da informação de que necessitam para contornar obstáculos. O mesmo se aplica a direção seguida e a distancia remanescente até o destino, informações essenciais para um deslocamento em ambientes desconhecidos. Não poder ver a sinalização na rua ou semáforos em um cruzamento torna perigoso para PDV transitarem desacompanhados, necessitando ter a companhia de amigos ou familiares durante todo o trajeto. Existem estabelecimentos, como, por exemplo, o metrô de Porto Alegre, que colocam uma parte de seus funcionários à disposição dos deficientes para guiá-los durante seu trajeto. Porém, seu número é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível.
 
 Em 2014, a Royal London Society for Blind People (RLSB), organização sem fins lucrativos que busca criar uma diferença que melhore a vida das futuras gerações de PDV, divulgou um manifesto com o resultado de pesquisas sobre perda de visão e também para chamar atenção aos desafios enfrentados diariamente, que impedem os PDV de usufruir da totalidade dos seus direitos fundamentais. Desafios esses que não são restritos às divisas do Reino Unido, onde a organização se encontra.
 De acordo com o documento, perda de visão é uma experiência tão traumática que pode ser comparada à perda de um ente querido, visto que dificilmente eles recebem o apoio emocional necessário. Não conseguir ver causa isolamento social, o que prejudica enormemente o futuro do individuo. Ainda é dito que empresas ou organizações, como lojas, bancos e agentes de viagem, não compreendem as necessidades e habilidades dos PDV, impedindo-os de levar uma vida comum e impossibilitando-os de realizar as atividades que gostariam. O trabalho ainda destaca que, frequentemente, as pessoas não sabem oferecer assistência básica como guiá-los em espaços públicos como estações de trem. Dentre as áreas citadas como problemáticas, é possível destacar a mobilidade urbana, a educação superior e acessibilidade na tecnologia. A publicação trás ainda motivação que levou a sua publicação, informando que 25\% das pessoas com perda de visão estão insatisfeitas com sua vida \cite{YouthManifesto}.
 
-Em relação à mobilidade, \citetexto{YouthManifesto} cita que existe uma variedade de aplicativos para smartphone que auxíliam pessoas a se localizar e deslocar, porém, poucos deles são acessiveis. É afirmando que, se essas tecnologias fossem projetadas com todas as pessoas em mente, mais PDV poderiam transitar com segurança, reduzindo a dependência de outras pessoas. 
+Em relação à mobilidade, \citetexto{YouthManifesto} cita que existe uma variedade de aplicativos para smartphone que auxiliam pessoas a se localizar e deslocar, porém, poucos deles são acessíveis. É afirmado também que, se essas tecnologias fossem projetadas com todas as pessoas em mente, mais PDV poderiam transitar com segurança, reduzindo a dependência de outras pessoas. 
 
-Indo ao encontro das iniciativas das RLSB e atuando na área de mobilidade, o modelo proposto visa auxíliar portadores de deficiênvia visual a se localizar e deslocar em ambientes internos, como, por exemplo, o campus de uma universidade, buscando facilitar o acesso à educação e à vida social disponível nos campi. Usando dispositivos móveis, o sistema irá informar ao usuário sua localização atual e recomendar caminhos que o levem ao seu destino, levando em consideração os obstáculos em sua rota.
+Indo ao encontro das iniciativas das RLSB e atuando na área de mobilidade, o modelo proposto visa auxiliar portadores de deficiência visual a se localizar e deslocar em ambientes internos, como, por exemplo, o campus de uma universidade, buscando facilitar o acesso à educação e à vida social disponível nos campi. Usando dispositivos móveis, o sistema irá informar ao usuário sua localização atual e recomendar caminhos que o levem ao seu destino, levando em consideração os obstáculos em sua rota.
 
-Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema será projetado para ter usabilidade intuitiva e ser uma parte quase invisível do cotidiano do usuário, aplicando o conceito de computação ubíqua introduzido em \citetexto{Weiser1991}.	
+Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema será projetado para ter usabilidade intuitiva e ser uma parte quase invisível do cotidiano do usuário, aplicando o conceito de computação ubíqua introduzido em \citetexto{Weiser1991}, afim de se adaptar as necessidades dos PDV.
 
 	\section{Questão de pesquisa}
-	Como a Computação Ubíqua pode ser aplicada no desenvolvimento de um modelo de sistema que objetiva promover acessibilidade e auxiliar as pessoas com deficiência visual a transitar com confiança e independência em ambientes internos?
+	Como a Computação Ubíqua pode contribuir no desenvolvimento de um modelo de sistema que seja uma alternativa ao problema de localização e deslocamento em ambientes internos enfrentado por deficientes visuais, promovendo acessibilidade e permitindo o transito com confiança e independência?
 
 	\section{Objetivos}
 	Tendo identificado a questão de pesquisa, foram definidos alguns objetivos para esse trabalho, apresentados nas seções subsequentes.
 	
 		\subsection{Objetivo geral}
-		O objetivo principal desde trabalho é especificar, desenvolver e validar um modelo de sistema para localização e orientação de PDV em ambientes internos através de dispositivos móveis, aplicando fundamentos de acessibilidade e conceitos de computação ubíqua, para permitir que seus usuários se localizem e se desloquem em ambientes desconhecidos sem necessidade do auxílio de outras pessoas.
+		O objetivo principal deste trabalho é especificar, desenvolver e validar um modelo de sistema para localização e orientação de PDV em ambientes internos através de dispositivos móveis, aplicando fundamentos de acessibilidade e conceitos de computação ubíqua, para permitir que seus usuários se localizem e se desloquem em ambientes desconhecidos sem necessidade do auxílio de outras pessoas.
 
 		O sistema não deve exigir uso de hardware dedicado por parte dos usuários, devendo, porém, ser leve, discreto e de fácil uso.
 		
 		\subsection{Objetivos específicos}
-		Para atingir o objetivo geral desse trabalho, foram definidos os seguintes objetivos específicos:
+		Para atingir o objetivo geral deste trabalho, foram definidos os seguintes objetivos específicos:
 
 		\begin{itemize}
 			\item Realizar estudo sobre deficiência visual - estudar essa deficiência buscando entender a maneira com que ela altera a vida de seus portadores e como ela afeta suas capacidades, bem como entender as necessidades que surgem a partir dela, para que os PDV possam ter uma vida mais próxima da levada pelas pessoas sem deficiência visual. Conhecer tecnologias assistivas que possam auxiliar a atingir o objetivo geral.
@@ -219,7 +221,7 @@ Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema ser�
 		\end{itemize}
 
 	\section{Organização do texto}
-O presente trabalho está dividido em seis capítulos. O primeiro introduz esse trabalho de conclusão de curso (TCC), bem como apresenta sua contribuição científica e objetivos.
+O presente trabalho está dividido em seis capítulos. O primeiro introduz este trabalho de conclusão de curso (TCC), bem como apresenta sua contribuição científica e objetivos.
 O segundo capítulo apresenta os principais conceitos utilizados para o embasamento desde trabalho, descrevendo computação móvel e ubíqua, tecnologias assistivas, sistemas de localização e dando um panorama geral sobre a deficiência visual.
 O terceiro capítulo apresenta os trabalhos relacionados e traça um comparativo entre eles.
 No quarto capítulo, é feito um detalhamento do modelo proposto neste trabalho, seus principais requisitos e componentes que formam este modelo.
@@ -230,14 +232,27 @@ O sexto e último capítulo conclui o trabalho e apresenta as considerações fi
 % Fundamentação teórica
 %=======================================================================
 \chapter{Referencial Teórico}
+% Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
 
 	\section{Computação Móvel e Ubíqua}
 Tecnologias tão avançadas que deixam de ser um fim em si mesmas e passam a ser um meio para que as pessoas realizem seus afazeres. Tão conectados, tão presentes na nossa rotina e concebidas para naturalmente se integrarem em nossas vidas que deixam de ser percebidas e se colocam no plano de fundo da nossa percepção. É assim que \citetexto{Weiser1991} começa introduzindo o conceito de computação ubíqua. 
 
 Weiser previu um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook que é usado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocuparem os ambientes em que convivemos, estudamos ou trabalhamos. Esses computadores conversariam entre si de maneira continua e transparente, de modo que eles e todos os usuários estariam permanentemente conectados entre si, permitindo que serviços estejam acessíveis em todos os lugares e em todos os momentos. Tal definição vai ao encontro do conceito estabelecido por \citetexto{Satyanarayanan2001} para computação móvel como sendo: “Informação na ponta dos dedos em qualquer lugar e em qualquer tempo”.
+
+Conforme \citetext{ballance2008developing}, a computação ubíqua oferece potêncial para diminuir ou ainda eliminar as intervenções humanas necessárias em um sistema computacional.
 	
+	\section{Acessibilidade}
+
 	\section{Tecnologias Assistivas}
 Tecnologias assistivas tem papel chave na independência e segurança de pessoas com deficiência. Para os PDV, tecnologias assistivas bem planejadas e bem implementadas podem fazer significante diferença na educação, aceitação social e produtividade. \citetexto{dias2015navpal}.
+
+Em \citetexto{narasimhan2009smartphone} são sugeridos alguns princípios que devem ser seguidos no desenvolvimento de ferramentas assistivas pra PDV:
+\begin{itemize}
+	\item A ferramenta deve possibilitar a independência nas atividades diárias, não exigindo a assistencia e/ou acompanhamento de outras pessoas, com deficiência visual ou não.
+	\item Evitar adicionar melhoramentos nas bengalas, visto que aumentar o peso ou novas funcionalidades podem influênviar negativamente no uso diário
+	\item Usuários devem ter a opção de usar ou não usar as funcionalidades disponíveis. Seu uso não pode ser forçado para não dificultar seu dia-a-dia.
+	\item Manter custos baixos é promover a adoção de produtos pra PDV, já que produtos específicos para esse publico tendem a ser mais caros.
+\end{itemize}
 
 
 Diversas ferramentas existem para promover a inclusão de PDV, bem como para aliviar as dificuldades impostas pela deficiência visual. Cães-guia, bengalas e piso tátil são as principais formas usadas pra facilitar locomoção.
@@ -251,6 +266,11 @@ Entre esses recursos, podemos destacar a leitura de telas e os alertas vibratór
 Segundo o estudo realizado por \citetexto{quinones2011supporting}, PDV possuem o desejo de carregar consigo a menor quantidade possível de equipamento. É necessário criar tecnologias que não sejam um fardo a ser carregado, mas que ofereçam a quantidade apropriada de informações ao usuário. Uma maneira citada pelo autor é a incorporação de tecnologias de navegação em aparelhos que deficientes visuais carreguem consigo normalmente, assim reduzindo o número de objetos que devem ser cuidados.
 	
 	\section{Sistemas de localização}
+
+	\section{Técnologia Bluetooth}
+
+De acordo com \citetexto{ballance2008developing}, a combinação computação ubíqua e Bluetooth tem potêncial para fomentar soluções que simples e baratas que outrora não seriam possíveis.
+
 Bluetooth é uma tecnologia de comunicação sem fios de curto alcance, lançada comercialmente em 1990, quando teve sua primeira especificação formal divulgada. Desde então diversas modificações foram feitas e a tecnologia passou por diversos aprimoramentos, estando atualmente na versão 4.x, também conhecida como Bluetooth Smart, lançada em 2010. 
 
 O Bluetooth foi criado e atualmente é mantido por um conjunto de empresas conhecido como Bluetooth Special Interest Group (SIG). Inicialmente formado por Ericsson, Intel, Nokia, Toshiba e IBM, o SIG é hoje composto por mais de 20.000 empresas, incluindo Apple, Microsoft, Motorola e Lenovo.
@@ -270,15 +290,16 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
   \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de bluetooth low energy.    \ldots
 \end{itemize}
 
+
 %=======================================================================
 % Trabalhos relacionados
 %=======================================================================
 \chapter{Trabalhos Relacionados}
 \epigrafecap{The most dangerous phrase in the language is "We've always done this way"}{Grace Hopper}
 
-Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
+% Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
-Neste capítulo são apresentadas 3 ou 4 (TODO) soluções relacionadas com o tema. Estas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
+Para criar um novo modelo em busca de solucionar um problema enfrentado pelos PDV é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Neste capítulo são apresentadas 4 soluções relacionadas com o tema desse trabalho. Essas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
 	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
 Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
@@ -292,15 +313,17 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 		\citetexto{Ganz2012}
 
 	\section{Tirésias}
-	Em \citetexto{Falk2013} é proposto um modelo para acessibilidade ubíqua chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Esse, por sua vez, procura estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
+	Em \citetexto{Falk2013} é proposto um modelo para acessibilidade ubíqua chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Este, por sua vez, é um modelo genérico que visa procura estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
+
+	O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone.
 
 	Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus componentes, bem como a maneira integrada em que eles operam. Os componentes citados são:
 
 	\begin{itemize} 
 		\item agente assistente pessoal
-		\item modulo de saída
+		\item módulo de saída
 		\item módulo de entrada
-		\item modulo de configurações
+		\item módulo de configurações
 	\end{itemize}
 
 	\FloatBarrier
@@ -315,13 +338,21 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 	\end{figure}
 	\FloatBarrier
 
+	O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. As informações são dividas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíves, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais proximo é disponibilizado, e quando o usuário concluí o trecho atual o proximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do proximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
+
+	O módulo de entrada gerencia a interação do usuário com o sistema. 
+
+
+
 
 	O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte a acessibilidade. 
-	O modulo de saída é o responsável por passar as informações aos usuários, sendo utilizados duas maneiras de disponibilizar as informações: leitura de tela e alertas vibratórios.
 
 
 
-	\section{Trabalho 3}
+
+	\section{UCAT - Ubiquitous Context Awareness Tools for the Blind}
+
+	\section{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impareid Navigate Work Zones Safely} % (TODO: Reduzir título?)
 	
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
 \begin{table}
@@ -348,10 +379,14 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 % Modelo proposto
 %=======================================================================
 \chapter{Modelo Proposto}
-Essa etapa consiste em detalhar o modelo. O capítulo do modelo deve começar a partir da delimitação da pesquisa, dizendo quais lacunas serão atacadas e como. Geralmente há uma visão geral do modelo aqui, já desenvolvido na atividade 4. Esse capítulo detalha como a questão de pesquisa será respondida? Que modelo computacional é necessário para isso. Se é proposta uma ontologia, ela é detalhada aqui; Se há um modelo de contexto, ele é detalhado aqui. Pode-se usar alguns diagramas para representar a arquitetura, interações, fluxos e componentes. Lembre-se que o modelo pode ter diferentes implementações e não precisa ser limitado por uma tecnologia específica. Por exemplo, não faz sentido dizer que o modelo é para Android ou feito em Java. Por que não poderia ser para iOS e feito em Objective C? Que característica de um modelo limitaria isso?
+% Essa etapa consiste em detalhar o modelo. O capítulo do modelo deve começar a partir da delimitação da pesquisa, dizendo quais lacunas serão atacadas e como. Geralmente há uma visão geral do modelo aqui, já desenvolvido na atividade 4. Esse capítulo detalha como a questão de pesquisa será respondida? Que modelo computacional é necessário para isso. Se é proposta uma ontologia, ela é detalhada aqui; Se há um modelo de contexto, ele é detalhado aqui. Pode-se usar alguns diagramas para representar a arquitetura, interações, fluxos e componentes. Lembre-se que o modelo pode ter diferentes implementações e não precisa ser limitado por uma tecnologia específica. Por exemplo, não faz sentido dizer que o modelo é para Android ou feito em Java. Por que não poderia ser para iOS e feito em Objective C? Que característica de um modelo limitaria isso?
+
+A solução proposta através desse modelo consiste em um aplicativo acessível para dispositivos móveis compativeis com a tecnologia Bluetooth que será usado pelos usuários, juntamente com beacons Bluetooth que fornecerão a localização do usuário. O beacons serão previamente distribuidos em pontos-chave pelo local de forma a ótimizar seu alcance e área de cobertura. O aplicativo fornecerá instruções via audio e alertas vibratórios para guiar o usuário ao seu destino, conforme o usuário for se aproximando dos beacons pelo caminho.
+
+Este capitulo apresenta os componentes em maiores detalhes.
 
 
-Esse capítulo apresenta um modelo de sistema que auxilia a navegação de deficientes visuais.
+
 
 
 
@@ -388,10 +423,6 @@ Modelo Proposto
 	Modelo de comunicação
 	Modelo de contexto
 
-
-Visando mitigar o impacto da deficiência visual na vida dos usuários, o modelo proposto fará uso de dispositivos móveis aliados aos conceitos da computação ubíqua para auxiliar os PDV durante o deslocamento em ambientes internos, tais como o campus da UNISINOS, através de instruções dadas por voz e alertas vibratórios. O modelo oferecerá as funcionalidades de informar a localização atual, pesquisar locais, mostrar locais de conveniência (restaurantes, agências bancárias, etc), informar rota mais curta até o local selecionado e salvar local como favorito, entre outras. Para as funcionalidades espaciais, o modelo usará beacons transmissores bluetooth previamente espalhados pelo campus.
-
-O modelo objetiva oferecer localização confiável a seus usuários através de seus smartphones sem necessidade de hardware dedicado, assim possibilitando navegação segura e independente, tendo baixo custo e facilidade de implantação.
 
 	\section{Visão Geral}
 
@@ -497,28 +528,30 @@ A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes p
 
 \chapter{Conclusão}
 
-	\section{Comparação entre os trabalhos estudados e o modelo proposto}
+\section{Comparação entre os trabalhos estudados e o modelo proposto}
 
-\begin{table}
-	\caption{Comparação entre os trabalhos estudados e o modelo proposto}
-	%\label{tab:estacoes}
-	\centering%
-	\begin{minipage}{.6\textwidth}
-		\begin{tabular*}{\textwidth}{ll}
-			\hline
-			\textbf{Meses} & \textbf{Estações do Ano}\\
-			\hline
-			21 de março a 21 de junho & Outono\\
-			21 de junho a 23 de setembro & Inverno\\
-			23 de setembro a 21 de dezembro & Primavera\\
-			21 de dezembro a 21 de março & Verão\\
-			\hline
-		\end{tabular*}
-		\fonte{Elaborada pela autora.}
-	\end{minipage}
-\end{table}
+	\begin{table}
+		\caption{Comparação entre os trabalhos estudados e o modelo proposto}
+		%\label{tab:estacoes}
+		\centering%
+		\begin{minipage}{.6\textwidth}
+			\begin{tabular*}{\textwidth}{ll}
+				\hline
+				\textbf{Meses} & \textbf{Estações do Ano}\\
+				\hline
+				21 de março a 21 de junho & Outono\\
+				21 de junho a 23 de setembro & Inverno\\
+				23 de setembro a 21 de dezembro & Primavera\\
+				21 de dezembro a 21 de março & Verão\\
+				\hline
+			\end{tabular*}
+			\fonte{Elaborada pela autora.}
+		\end{minipage}
+	\end{table}
 	
 	\section{Trabalhos futuros}
+- Ambientes dinámicos
+- Salas de aula
 
 Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Biblioteca11} e, se necessário, da norma NBR~6023 \cite{NBR6023:2002}.
 
