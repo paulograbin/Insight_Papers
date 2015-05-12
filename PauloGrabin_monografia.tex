@@ -299,7 +299,7 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
 
 % Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
-Para criar um novo modelo em busca de solucionar um problema enfrentado pelos PDV é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Neste capítulo são apresentadas 4 soluções relacionadas com o tema desse trabalho. Essas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
+Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pessoas com deficiência visual é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados vários trabalhos que compartilham desse mesmo objetivo através do emprego de propostas tecnológicas. Neste capítulo são apresentadas 4 soluções relacionadas com o tema desse trabalho. Essas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
 	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
 Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
@@ -313,17 +313,19 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 		\citetexto{Ganz2012}
 
 	\section{Tirésias}
-	Em \citetexto{Falk2013} é proposto um modelo para acessibilidade ubíqua chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Este, por sua vez, é um modelo genérico que visa procura estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
+	Em \citetexto{Falk2013} é proposto um modelo para acessibilidade chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Este, por sua vez, é um modelo genérico que visa procura estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
 
-	O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone.
+	De acordo com \citetexto{Falk2013}, o Tirésias emprega conceitos de sensibilidade ao contexto e acessibilidade ubíqua, utilizando maneiras especializadas de interação com o sistema, para promover acessibilidade a PDV. Dessa forma, o modelo é capaz de oferecer informações relevantes ao contexto onde o usuário está e o que existe a sua volta.
+
+	O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone, e, baseado nisso o sistema exibe recursos de acessibilidade disponiveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são...
 
 	Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus componentes, bem como a maneira integrada em que eles operam. Os componentes citados são:
 
 	\begin{itemize} 
-		\item agente assistente pessoal
-		\item módulo de saída
-		\item módulo de entrada
-		\item módulo de configurações
+		\item Agente assistente pessoal
+		\item Módulo de saída
+		\item Módulo de entrada
+		\item Módulo de configurações
 	\end{itemize}
 
 	\FloatBarrier
@@ -338,12 +340,11 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 	\end{figure}
 	\FloatBarrier
 
-	O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. As informações são dividas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíves, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais proximo é disponibilizado, e quando o usuário concluí o trecho atual o proximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do proximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
+	O módulo de saída é o responsável por gerenciar as informações passadas aos usuários, elas, por sua vez, são dividas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíves, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais proximo é disponibilizado, e quando o usuário concluí o trecho atual o proximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do proximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
 
-	O módulo de entrada gerencia a interação do usuário com o sistema. 
+	O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispostivos com teclado dedicado ou somente a tela sensivel ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniênte de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
 
-
-
+	O módulo de configuração disponibiliza o controle de ajustes de todas as funcionalidades disponíveis no sistema, de forma a customizar o sistema às necessidades de diferentes usuários. Alguns dos ajustes disponíveis são o controle de frequencia e volume da leitura de tela, a quantidade de recursos lida e se o usuário deseja ser notificado quando há alguma mudança nos recursos.
 
 	O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte a acessibilidade. 
 
