@@ -232,6 +232,7 @@ O sexto e último capítulo conclui o trabalho e apresenta as considerações fi
 % Fundamentação teórica
 %=======================================================================
 \chapter{Referencial Teórico}
+\epigrafecap{O óbvio é aquilo que ninguém enxerga, \\até que alguém o expresse com simplicidade.}{Khalil Gibran}
 % Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
 
 	\section{Computação Móvel e Ubíqua}
@@ -302,7 +303,35 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
 Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pessoas com deficiência visual é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados vários trabalhos que compartilham desse mesmo objetivo através do emprego de propostas tecnológicas. Neste capítulo são apresentadas 4 soluções relacionadas com o tema desse trabalho. Essas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
 	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
-Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
+\citetexto{Ganz2011} e \citetexto{Ganz2012} introduzem sistema de sistema de localização que busca auxiliar PDV aumentando sua percepção dos ambientes internos. O sistema é composto por um servidor central, responsável por armazenar as informações de localização do ambiente, tags RFID passivas distribuídas pelo local, leitores RFID acoplados em luvas utilizadas pelos usuários em conjunto com um smartphone Android. O principal motivo que levou a escolha do RFID é a granularidade que a tecnologia permite, devido ao baixo custo de implantação e o fato de elas não exigirem fonte de alimentação elétrica. De acordo com os autores, a diferença do Percept em relação a outros sistemas similares é a combinação luva/leitor e smartphone, e tambem o baixo custo de implantação e manutenção. 
+
+A arquitetura do sistema tambem é descrita em \citetexto{Ganz2011}. Porem, \citetexto{Ganz2012} é que traz maiores detalhes. O modelo é composto por três componentes: o ambiente em que as tags estão instaladas, o conjunto luva PERCEPT e android, e por fim o servidor PERCEPT.
+
+No ambiente ficam as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centrimetros para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem de um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, afim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braille.
+
+
+
+A luva é responsável por obter as informações das tags através de um leitor RFID embutido. Quando uma tag é lida, a luva se comunica com o smartphone Android para que a rota até o destino seja calculada. O leitor é construído usando uma placa Arduino, um leitor RFID, uma antena, um chip bluetooth, uma bateria e três botões. Através dos botões o usuário pode navegar entre o conjunto de instruções da rota. De acordo com os autores, foi dedido inserir o leitor em uma luva pois assim o usuário mantém as mãos livres para outras atividades.
+
+
+
+
+O usuário deve encontrar a tag que represente o destino desejado, através da informação escrita na tag, e então posicionar a palma de sua mão em cima da tag correspondente. O leitor na luva então se comunica via bluetooth com o smartphone Android
+
+
+
+
+\FloatBarrier
+	\begin{figure}[!ht]
+		\caption{Arquitetura do modelo Percept}
+		\label{fig:visaoGeral}
+		\centering%
+		\begin{minipage}{.9\textwidth}
+			\includegraphics[width=\textwidth]{imgs/perceptArquitetura}
+			\fonte{Percept}
+		\end{minipage}
+	\end{figure}
+	\FloatBarrier
 
 		\cite{Ganz2011}
 
@@ -317,7 +346,7 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 
 	De acordo com \citetexto{Falk2013}, o Tirésias emprega conceitos de sensibilidade ao contexto e acessibilidade ubíqua, utilizando maneiras especializadas de interação com o sistema, para promover acessibilidade a PDV. Dessa forma, o modelo é capaz de oferecer informações relevantes ao contexto onde o usuário está e o que existe a sua volta.
 
-	O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone, e, baseado nisso o sistema exibe recursos de acessibilidade disponiveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são...
+	O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone, e, baseado nisso o sistema exibe recursos de acessibilidade disponiveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são a listagem de recursos disponíveis, indicação de caminho até recurso selecionado e solicitação de ajuda.
 
 	Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus componentes, bem como a maneira integrada em que eles operam. Os componentes citados são:
 
@@ -334,13 +363,13 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 		\label{fig:visaoGeral}
 		\centering%
 		\begin{minipage}{.6\textwidth}
-			\includegraphics[width=\textwidth]{tiresiasArquitetura}
+			\includegraphics[width=\textwidth]{imgs/tiresiasArquitetura}
 			\fonte{Tirésias: um modelo para acessibilidade ubíqua orientado à deficiência visual}
 		\end{minipage}
 	\end{figure}
 	\FloatBarrier
 
-	O módulo de saída é o responsável por gerenciar as informações passadas aos usuários, elas, por sua vez, são dividas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíves, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais proximo é disponibilizado, e quando o usuário concluí o trecho atual o proximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do proximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
+	O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são dividas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíves, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais proximo é disponibilizado, e quando o usuário concluí o trecho atual o proximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do proximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
 
 	O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispostivos com teclado dedicado ou somente a tela sensivel ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniênte de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
 
@@ -350,12 +379,13 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 
 
 
-
 	\section{UCAT - Ubiquitous Context Awareness Tools for the Blind}
 
 	\section{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impareid Navigate Work Zones Safely} % (TODO: Reduzir título?)
 	
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
+
+\FloatBarrier
 \begin{table}
 	\caption{Tabela comparativa entre os trabalhos relacionados}
 	%\label{tab:estacoes}
@@ -374,7 +404,7 @@ Em \citetexto{Ganz2011} e \citetexto{Ganz2012} apresentam um modelo blablabla
 		\fonte{Elaborada pela autora.}
 	\end{minipage}
 \end{table}
-
+\FloatBarrier
 
 %=======================================================================
 % Modelo proposto
@@ -435,7 +465,7 @@ A Figura~\ref{fig:blablabla} mostra ilustra as fases psicológicas da escrita da
 	\label{fig:blablabla}
 	\centering%
 	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{escrita}
+		\includegraphics[width=\textwidth]{imgs/visaoGeral}
 		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{figure}
@@ -452,7 +482,7 @@ A Figura~\ref{fig:blablabla} mostra ilustra as fases psicológicas da escrita da
 	\label{fig:arquitetura}
 	\centering%
 	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{arquitetura.png}
+		\includegraphics[width=\textwidth]{imgs/arquitetura.png}
 		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{figure}
@@ -494,38 +524,12 @@ A seguir são apresentados brevemente cada um dos passos concebidos:
 	\item \textbf{Analisar resultados dos testes:} teste teste teste
 \end{enumerate}
 
-\begin{description}
-	\item [1. Revisar bibliografia] teste teste teste
-	%	2
-    \item [2. Realizar estudo sobre deficiência visual] teste teste teste
-	%	3
-    \item [3. Realizar estudo sobre sistemas de localização e navegação] teste teste teste
-	%	4
-    \item [Realizar estudo sobre tecnologias assistivas] teste teste teste
-	%	5
-    \item [Realizar estudo sobre computação móvel e ubíqua] teste teste teste
-    %	6
-    \item [Elencar requisitos e modelar o sistema] teste teste teste
-    %	7
-    \item [Codificar sistema] teste teste teste
-	%	8
-	\item [Testar aceitação do sistema] teste teste teste	
-	%	9
-	\item [Analisar resultados dos testes] teste teste teste
-\end{description}
-
 	\section{Avaliação}
 A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação do mesmo serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas. A primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso. A segunda será a técnica da entrevista estruturada. 
 
 A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes para obter informações sobre a forma como os usuários se guiam quando necessitam deslocar-se em um ambiente desconhecido. Após o termino dos testes para obter informações relativas a qualidade da localização e da navegação oferecida pelo protótipo. O resultado da analise permitirá identificar a eficácia do sistema e possibilitará elencar melhorias e/ou trabalhos relacionados ao tema.
 
-
-
-
-
-
-
-
+(TODO avaliação por cenários ou usuários)
 
 \chapter{Conclusão}
 
