@@ -66,13 +66,13 @@ and never regrets.\\
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, pelas valiosas conversas, seu auxilio incomparável, e por sua disponibilidade sempre que necessário.
+Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, por ter me aceito como orientando, pelas valiosas conversas, seu auxilio incomparável e por sua disponibilidade sempre que necessário.
 
 Aos meus pais, Ivani Grolli Gräbin e Milton Gräbin, que sempre me incentivaram a estudar e a realizar meus sonhos.
 
 A minha namorada Victoria Caroline da Silva, pela compreensão, por ficar sempre do meu lado e por me motivar a superar os desafios.
 
-Por fim, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e entendiam os convites recusados.
+Por último mas não menos importante, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas são fundamentais e estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e entendiam os convites recusados.
 
 Muito obrigado!
 \end{agradecimentos}
@@ -93,7 +93,7 @@ Muito obrigado!
 % Resumo em Português.
 %=======================================================================
 \begin{abstract}
-O presente trabalho apresenta a modelagem de um sistema de posicionamento em ambientes internos, com recursos de acessibilidade, desenhado com o objetivo de ser usado por pessoas com deficiência visual. O modelo consiste em uma aplicação a ser usada em dispositivos móveis, utilizando beacons transmissores Bluetooth espalhados pelo ambiente para obter a localização do usuário. O sistema objetiva fornecer uma localização confiavel e um deslocamento seguro atráves de instruções de voz, leitura de tela e feedback tatíl, para permitir que seus usuários possam se deslocar em ambientes desconhecidos sem a necessidade de auxílio de outras pessoas.
+Este trabalho apresenta a modelagem de um sistema de posicionamento em ambientes internos, com recursos de acessibilidade, desenhado com o objetivo de ser usado por pessoas com deficiência visual. O modelo consiste em uma aplicação a ser usada em dispositivos móveis, utilizando beacons transmissores Bluetooth espalhados pelo ambiente para obter a localização do usuário. O sistema objetiva fornecer uma localização confiavel e um deslocamento seguro atráves de instruções de voz, leitura de tela e feedback tatíl, para permitir que seus usuários possam se deslocar em ambientes desconhecidos sem a necessidade de auxílio de outras pessoas.
 \end{abstract}
 
 %=======================================================================
@@ -303,25 +303,27 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
 Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pessoas com deficiência visual é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados vários trabalhos que compartilham desse mesmo objetivo através do emprego de propostas tecnológicas. Neste capítulo são apresentadas 4 soluções relacionadas com o tema desse trabalho. Essas foram selecionadas por possuírem proposito semelhante bem como características desejadas por esse trabalho. Ao final desde capitulo, no item~\ref{comparacaoTrabs} é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
 	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
-\citetexto{Ganz2011} e \citetexto{Ganz2012} introduzem sistema de sistema de localização que busca auxiliar PDV aumentando sua percepção dos ambientes internos. O sistema é composto por um servidor central, responsável por armazenar as informações de localização do ambiente, tags RFID passivas distribuídas pelo local, leitores RFID acoplados em luvas utilizadas pelos usuários em conjunto com um smartphone Android. O principal motivo que levou a escolha do RFID é a granularidade que a tecnologia permite, devido ao baixo custo de implantação e o fato de elas não exigirem fonte de alimentação elétrica. De acordo com os autores, a diferença do Percept em relação a outros sistemas similares é a combinação luva/leitor e smartphone, e tambem o baixo custo de implantação e manutenção. 
+\citetexto{Ganz2011} e \citetexto{Ganz2012} introduzem sistema de sistema de localização que busca auxiliar PDV aumentando sua percepção dos ambientes internos. O sistema é composto por um servidor central, responsável por armazenar as informações de localização do ambiente, tags RFID passivas distribuídas pelo local, leitores RFID acoplados em luvas utilizadas pelos usuários em conjunto com um smartphone Android. O principal motivo que levou a escolha do RFID é a granularidade que a tecnologia permite graças ao baixo custo de implantação e o fato de elas não exigirem fonte de alimentação elétrica. De acordo com os autores, a diferença do Percept em relação a outros sistemas similares é a combinação luva/leitor e smartphone, e tambem o baixo custo de implantação e manutenção. 
 
-A arquitetura do sistema tambem é descrita em \citetexto{Ganz2011}. Porem, \citetexto{Ganz2012} é que traz maiores detalhes. O modelo é composto por três componentes: o ambiente em que as tags estão instaladas, o conjunto luva PERCEPT e android, e por fim o servidor PERCEPT.
+A arquitetura do sistema tambem é descrita em \citetexto{Ganz2011}. Porem, \citetexto{Ganz2012} é que traz maiores detalhes. O modelo é composto pelos seguintes componentes: o ambiente, o conjunto luva PERCEPT e aplicativo Android, e por fim o servidor PERCEPT. O funcionamento deles é descrito da seguinte forma:
 
-No ambiente ficam as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centrimetros para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem de um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, afim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braille.
+\begin{itemize}
+	\item Ambiente é onde ficam instaladas as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centrimetros para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem de um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, afim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braille.
+	
+	\item A luva PERCEPT é responsável por obter as informações das tags através de um leitor RFID embutido. Quando a leitura de uma tag é realizada, a luva se comunica através de Bluetooth com o smartphone Android para que a rota até o destino seja calculada. O leitor é construído usando uma placa Arduino, um leitor RFID, uma antena, um chip bluetooth, uma bateria e três botões. Através dos botões o usuário pode navegar entre o conjunto de instruções da rota. De acordo com os autores, a decisão de inserir o leitor em uma luva foi tomada pois assim o usuário pode manter suas mãos livres para outras atividades. Para fazer a leitura de uma tag, o usuário deve, após encontrar aquela que contem o destino desejado entre todas as outras, posicionar a palma de sua mão com a luva em cima da tag.
 
+	\item O aplicativo para a plataforma Android é dívido em quatro módulos:
+		\begin{description}
+			\item Módulo Bluetooth: Responsável por gerenciar a comunicação com a luva PERCEPT.
+			\item Módulo Percept: Aplicação encarregada de responder a eventos como leitura de tag e pressionamento de botões. Quando ocorre a leitura de uma tag, esse módulo manda seu indentificador para o servidor, através de uma conexão sem fios, para que o cálculo da rota seja realizado.
+			\item Módulo Wifi: Parte incumbida de estabelecer uma conexão entre o smartphone e o servidor PERCEPT
+			\item Motor de conversão texto/voz: Componente nativo do Android capaz de converter para voz as instruções de texto recebidas do servidor.
+		\end{description}
 
+	\item O servidor armazena o layout dos ambientes e calcula as rotas até o destino escolhido pelo usuário. Através da ferramenta Quamtum GIS, cada andar é individualmente mapeado em um grafo onde cada nó representa um possivel destino e cada aresta um caminho disponível. Todos os dados são armazenados em uma base de dados Postgre. O servidor calcula a rota mais curta até o destino escolhido, formulando instruções de texto, quando recebe uma requisição de um cliente Android. Uma instrução de deslocamento 
+\end{itemize}
 
-A luva é responsável por obter as informações das tags através de um leitor RFID embutido. Quando uma tag é lida, a luva se comunica com o smartphone Android para que a rota até o destino seja calculada. O leitor é construído usando uma placa Arduino, um leitor RFID, uma antena, um chip bluetooth, uma bateria e três botões. Através dos botões o usuário pode navegar entre o conjunto de instruções da rota. De acordo com os autores, foi dedido inserir o leitor em uma luva pois assim o usuário mantém as mãos livres para outras atividades.
-
-
-
-
-O usuário deve encontrar a tag que represente o destino desejado, através da informação escrita na tag, e então posicionar a palma de sua mão em cima da tag correspondente. O leitor na luva então se comunica via bluetooth com o smartphone Android
-
-
-
-
-\FloatBarrier
+	\FloatBarrier
 	\begin{figure}[!ht]
 		\caption{Arquitetura do modelo Percept}
 		\label{fig:visaoGeral}
@@ -332,14 +334,6 @@ O usuário deve encontrar a tag que represente o destino desejado, através da i
 		\end{minipage}
 	\end{figure}
 	\FloatBarrier
-
-		\cite{Ganz2011}
-
-		\citetexto{Ganz2011}
-			
-		\cite{Ganz2012}
-
-		\citetexto{Ganz2012}
 
 	\section{Tirésias}
 	Em \citetexto{Falk2013} é proposto um modelo para acessibilidade chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Este, por sua vez, é um modelo genérico que visa procura estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
