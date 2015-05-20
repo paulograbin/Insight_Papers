@@ -5,6 +5,8 @@
 \usepackage{bibentry} 		% para inserir refs. bib. no meio do texto
 \usepackage{placeins}		% float barriers
 \usepackage{enumitem}
+\usepackage{hyperref}		% para permitir links para as seções do documento
+\usepackage{xcolor}
 
 %=======================================================================
 % A vantagem do unisinos.bst é que ele permite o uso de um arquivo .bib
@@ -146,6 +148,7 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %\item[SOAP] Simple Object Access Protocol
 %\item[TAM] Technology Acceptance Model
 %\item[TCC] Trabalho de Conclusão de Curso
+\item[TTS] Text to Speech
 %\item[UML] Unified Modeling Language
 %\item[XML] Extensible Markup Language
 \end{listadesiglas}
@@ -159,6 +162,12 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 % Introdução
 %=======================================================================
 \chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
+
+\textcolor{red}{
+(TODO: palavras em lingua estrangeira precisam ficar em italico?) \\
+(TODO: traduzir titulo dos tabalhos relacionados?) 
+}
+
 Na pesquisa bibliográfica realizada foi identificado que um grande desafio enfrentado por PDV é a localização e o deslocamento dentro de ambientes desconhecidos, tais como aeroportos, shopping centers e universidades.
 
 O presente trabalho trata de uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a visual, atuando na forma com que elas se orientam e se deslocam em ambientes internos.
@@ -251,7 +260,7 @@ Tecnologias assistivas tem papel chave na independência e segurança de pessoas
 
 Nos últimos anos tem sido feito um esforço para aumentar a acessibilidade a dispositivos e à informação disponível nestes (Ex: leitores de tela). No entanto, o mundo real apresenta muitas informações visuais, inacessível a uma pessoa cega. \cite{ucat2014}.
 
-Em \citetexto{narasimhan2009smartphone} são sugeridos alguns princípios que devem ser seguidos no desenvolvimento de ferramentas assistivas pra PDV:
+Em \citetexto{narasimhan2009smartphone} são sugeridos alguns princípios que devem ser seguidos no desenvolvimento de ferramentas assistivas para PDV:
 \begin{itemize}
 	\item A ferramenta deve possibilitar a independência nas atividades diárias, não exigindo a assistência e/ou acompanhamento de outras pessoas, com deficiência visual ou não.
 	\item Evitar adicionar melhoramentos nas bengalas, visto que aumentar o peso ou novas funcionalidades podem influenciar negativamente no uso diário
@@ -309,7 +318,7 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
 % Trabalhos relacionados
 %=======================================================================
 \chapter{Trabalhos Relacionados}
-\epigrafecap{The most dangerous phrase in the language is "We've always done this way"}{Grace Hopper}
+\epigrafecap{The most dangerous phrase in the language is "We have always done this way"}{Grace Hopper}
 
 % Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
@@ -318,10 +327,10 @@ Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pesso
 %=======================================================================
 % PERCEPT
 %=======================================================================
-	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired}
-\citetexto{Ganz2011} e \citetexto{Ganz2012} introduzem sistema de sistema de localização que busca auxiliar PDV aumentando sua percepção dos ambientes internos. O sistema é composto por um servidor central, responsável por armazenar as informações de localização do ambiente, tags RFID passivas distribuídas pelo local, leitores RFID acoplados em luvas utilizadas pelos usuários em conjunto com um smartphone Android. O principal motivo que levou a escolha do RFID é a granularidade que a tecnologia permite graças ao baixo custo de implantação e o fato de elas não exigirem fonte de alimentação elétrica. De acordo com os autores, a diferença do PERCEPT em relação a outros sistemas similares é a combinação luva/leitor e smartphone, e também o baixo custo de implantação e manutenção. 
+	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired} 
+\citetexto{Ganz2011} e \citetexto{Ganz2012} introduzem um sistema de sistema de localização que busca auxiliar PDV aumentando sua percepção dos ambientes internos. O sistema é composto por um servidor central, responsável por armazenar as informações de localização do ambiente, tags RFID passivas distribuídas pelo local, leitores RFID acoplados em luvas utilizadas pelos usuários em conjunto com um smartphone Android. O principal motivo que levou a escolha do RFID é a granularidade que a tecnologia permite graças ao baixo custo de implantação e o fato de elas não exigirem fonte de alimentação elétrica. De acordo com os autores, a diferença do PERCEPT em relação a outros sistemas similares é a combinação luva/leitor e smartphone, e também o baixo custo de implantação e manutenção. 
 
-A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porem, \citetexto{Ganz2012} é que traz maiores detalhes. O modelo é composto pelos seguintes componentes: o ambiente, o conjunto luva PERCEPT e aplicativo Android, e por fim o servidor PERCEPT. O funcionamento deles é descrito da seguinte forma:
+A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porem, em \citetexto{Ganz2012} ela é explicada de modo mais profundo. O modelo é formado pelos seguintes componentes: o ambiente, o conjunto luva PERCEPT e aplicativo Android, e por fim o servidor PERCEPT. O funcionamento deles é descrito da seguinte forma:
 
 \begin{itemize}
 	\item Ambiente é onde ficam instaladas as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centímetros para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem de um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, afim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braile.
@@ -338,17 +347,17 @@ A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porem, \ci
 
 	\item O servidor armazena o layout dos ambientes e calcula as rotas até o destino escolhido pelo usuário. Através da ferramenta Quantum GIS, cada andar é individualmente mapeado em um grafo onde cada nó representa um possível destino e cada aresta um caminho disponível. Todos os dados são armazenados em uma base de dados Postgre. O servidor calcula a rota mais curta até o destino escolhido, formulando instruções de texto, quando recebe uma requisição de um cliente Android. Uma instrução de deslocamento 
 
-	Em uma breve avaliação do modelo, podemos ressaltar que, devido ao baixo custo das tags RFID, é fácil implantar o sistema em um grande ambiente. Porem, a necessidade de conexão constante a internet pode ser um problema. O fato de o usuário necessitar procurar os quiosques, bem como encontrar a tag correspondente ao destino desejado, é um grande contratempo.
+	Em uma breve avaliação do modelo, podemos ressaltar que, devido ao baixo custo das tags RFID, é fácil implantar o sistema em um grande ambiente. Porem, a necessidade de conexão constante a internet pode ser um problema. O fato de o usuário necessitar procurar os quiosques, bem como encontrar a tag correspondente ao destino desejado, é um grande complicador.
 \end{itemize}
 
 	\FloatBarrier
 	\begin{figure}[!ht]
-		\caption{Arquitetura do modelo Percept}
-		\label{fig:visaoGeral}
+		\caption{Arquitetura do Percept}
+		\label{fig:visaoGeralPercept}
 		\centering%
 		\begin{minipage}{.9\textwidth}
 			\includegraphics[width=\textwidth]{imgs/perceptArquitetura}
-			\fonte{Percept}
+			\fonte{PERCEPT indoor navigation system for the blind and visually impaired: architecture and experimentation}
 		\end{minipage}
 	\end{figure}
 	\FloatBarrier
@@ -374,8 +383,8 @@ Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus com
 
 \FloatBarrier
 \begin{figure}[!ht]
-	\caption{Arquitetura do modelo Tirésias}
-	\label{fig:visaoGeral}
+	\caption{Arquitetura do Tirésias}
+	\label{fig:visaoGeralTiresias}
 	\centering%
 	\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imgs/tiresiasArquitetura}
@@ -399,40 +408,114 @@ Avaliando o modelo, é notável a acessibilidade no que tange a entrada e saída
 % UCAT
 %=======================================================================
 	\section{UCAT - Ubiquitous Context Awareness Tools for the Blind}
-\citetexto{ucat2014} apresenta uma pesquisa cujo objetivo é identificar as necessidades de informação de um deficiente visual, focando principalmente em questões relacionadas...
+\citetexto{ucat2014} apresenta uma pesquisa cujo objetivo é identificar as necessidades de informação de um deficiente visual, focando principalmente em questões relacionadas a percepção, orientação em ambientes conhecidos e desconhecidos e também em dificuldades comumente enfrentadas no dia-a-dia, após algumas entrevistas com PDV o trabalho descobriu que a falta de conhecimento a respeito das pessoas ao redor foi apontado como a principal causa de desconforto. Além disso, todos os entrevistados afirmaram que seria muito bom possuir uma ferramenta sutil e discreta que os ajudasse a obter mais informações sobre seus arredores.
 
+O autor afirma que não existe nenhum sistema que forneça a usuários cegos informações sobre o contexto ao seu redor, e propõe um modelo com essa finalidade. Desenvolvido para dispositivos móveis que suportam a tecnologia Bluetooth, objetiva ser uma ferramenta através da qual os PDV podem criar, compartilhar e receber informações a respeito de pessoas, locais ou objetos através de notas. 
 
-Focando principalmente em questões relacionadas a percepção, orientação em ambientes conhecidos e desconhecidos e também em dificuldades comumente enfrentadas no dia-a-dia, após algumas entrevistas com PDV o trabalho descobriu que a falta de conhecimento a respeito das pessoas ao redor foi apontado como a principal causa de desconforto. Além disso, todos os entrevistas afirmaram que seria muito bom possuir uma ferramenta sutil e discreta que os ajudasse a obter mais informações sobre seus arredores.
+Usando Bluetooth como ferramenta de detecção e o endereço MAC do dispositivo para identificar unicamente cada telefone, a aplicação mostra todos os dispositivos ao redor do usuário, sendo capaz de detectar quando alguém se aproxima ou se afasta. O sistema permite criar contatos, associando aparelhos de telefone a pessoas específicas, permitindo também que o usuário crie notas de texto ou voz relacionadas a alguém ou algum lugar. O modelo periodicamente busca por dispositivos próximos, e, quando encontra algum, procura se alguma nota foi criada e associada a ele. Se uma associação é encontrada o aplicativo notifica o usuário através de alertas vibratórios que podem ser personalizados.
 
-O autor afirma que não existe nenhum sistema que forneça a usuários cegos informações sobre o contexto ao seu redor, e propõe um modelo com essa finalidade. Desenvolvido para dispositivos móveis que suportam a tecnologia Bluetooth, objetiva ser uma ferramenta através da qual os PDV podem criar, compartilhar e receber informações a respeito de pessoas, locais ou objetos.
+Aqui existe um grande ponto fraco da tecnologia utilizada, para funcionar corretamente é necessário que todos os dispositivos estejam com o Bluetooth conectado e em modo visível aos demais, caso contrário o aplicativo é incapaz de detecta-los.
 
-O sistema usa Bluetooth para detectar pessoas próximas, relacionando contatos no smartphone do usuário com o endereço MAC do telefone dessas pessoas. A aplicação periodicamente busca dispositivos próximos, e, quando encontra algum, procura se ele foi relacionado a algum contato conhecido do usuário. Se uma relação é encontrada o aplicativo notifica o usuário através de alertas vibratórios. Aqui existe um grande ponto fraco do sistema, para funcionar corretamente 
-e necessário que todos os dispositivos estevam com o Bluetooth conectado e em modo visível aos demais, caso contrário o aplicativo é incapaz de detecta-los.
-
-A arquitetura do sistema possui estrutura cliente-servidor
+A arquitetura do sistema possui estrutura cliente-servidor, onde o servidor é responsável apenas por trocar informações entre usuários através da ferramenta Google Cloud Messaging\footnote{Ferramenta de mensageria do Google, para mais informações consultar a documentação da ferramenta em https://developer.android.com/google/gcm/index.html} que é usada quando um usuário decide compartilhar alguma informação com outros. O smartphone é o responsável pela execução da maior parte das funcionalidades do modelo. Nele ficam armazenadas as informações pessoas de cada usuário, seus contatos, associações e notas criadas.
 
 \FloatBarrier
 \begin{figure}[!ht]
-	\caption{Arquitetura do modelo UCAT}
-	\label{fig:visaoGeral}
+	\caption{Arquitetura do UCAT}
+	\label{fig:visaoGeralUCAT}
 	\centering%
 	\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imgs/ucatArquitetura}
-		\fonte{UCAT}
+		\fonte{UCAT: Ubiquitous Context Awareness Tools for The Blind}
 		\end{minipage}
 \end{figure}
 \FloatBarrier
 
+Para facilitar a interação dos usuários com o telefone o sistema lança mão de alguns recursos de acessibilidade:
+\begin{itemize}
+	\item O sistema oferece diferentes formas de navegação baseada em gestos realizados na tela, afim de simplificar a navegação do usuário pelas telas e menus. Alguns gestos disponíveis são o deslizar, o clique duplo e o clique longo. O primeiro tem a função de percorrer as listagens de recursos e menus do aplicativo baseado na direção deslizada na tela, já os outros servem para confirmar ações ou obter mais informações, respectivamente.
+	
+	\item Feedback por áudio, ou retorno do sistema através de voz, acontece através da função de conversão de texto para voz nativa do Android\footnote{Mais informações no Centro de Ajuda sobre acessibilidade do Android, em https://support.google.com/accessibility/android/}, sendo empregado para avisar ao usuário em que parte da aplicação ele se encontra bem como listar funcionalidades de cada tela.
+
+	\item Feedback tátil, ou alertas vibratórios, faz com que cada tipo de notificação emitida pelo sistema seja acompanhada por um padrão diferente de vibração, de modo a permitir que o usuário entenda o motivo do alerta sem obriga-lo a retirar o telefone do bolso.
+\end{itemize}
+
 %=======================================================================
 % BLUETOOTH WORKZONES
 %=======================================================================
-	\section{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impareid Navigate Work Zones Safely} % (TODO: Reduzir título?)
+	\section{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impareid Navigate Work Zones Safely} 
+
+O estudo realizado por \citetexto{chen2014} revela que pedestres correspondem por 17\% das mortes em canteiros de obras nos Estados Unidos. Segundo o autor, um grande planejamento é feito para acomodar o trafego de pedestres ao redor de zonas em obras, especialmente para os deficientes visuais, e garantir segurança no trajeto. O trabalho descreve seus objetivos da seguinte forma: compreender quais as informações relevantes para redirecionar PDV ao redor de obras, afim de prover mensagens relevantes e criar um sistema para dispositivos móveis afim de antecipadamente alertar seus usuários sobre a aproximação dos canteiros de obra. Ainda é citada a intenção de padronizar o formato de mensagens emitido em zonas em construção no redirecionamento dos transeuntes, afim de garantir aos PDV a possibilidade de caminhar independentemente e com segurança.
+
+Para atingir o primeiro objetivo foram conduzidas entrevistas com PDV afim de compreender os desafios que eles enfrentam e quais são consideradas informações relevantes durante seu deslocamento. Para o segundo objetivo o trabalho propõe um aplicativo para smartphones Android que verbalmente emite mensagens enquanto seu usuário se aproxima das áreas delimitadas, fazendo uso de GPS, Bluetooth, função de conversão texto para voz e sensores presentes no telefone. 
+
+\FloatBarrier
+\begin{figure}[!ht]
+	\caption{Estrutura do modelo}
+	\label{fig:visaoGeralWorkzones}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/workzoneArquitetura}
+		\fonte{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely}
+		\end{minipage}
+\end{figure}
+\FloatBarrier
+
+O modelo consiste em três componentes: servidor com banco de dados com mapas, aplicativo para Android e beacons bluetooth, 
+\begin{itemize}
+	\item O servidor contem o banco de dados onde ficam armazenados os mapas para referencia espacial, informações sobre o posicionamento dos beacons e mensagens correspondentes a cada um deles. Essas informações são inseridas no banco de dados através de uma interface web acessada através de um computador comum. O modelo de dados de cada beacon compreende um identificador único, latitude, longitude e nome do ponto onde ele foi posicionado e também quatro possíveis textos livres, de acordo com a estrutura das mensagens.
+
+	\item O aplicativo constantemente busca por sinais Bluetooth nas proximidades do usuário. Quando algum é encontrado seu identificador é comparado com aqueles cadastrados na base de dados espacial. Caso o aplicativo detecte que o usuário se encontra próximo a uma zona em obras, o telefone vibra e o alerta correspondente é emitido verbalmente através da função Text to Speech (TTS) do Android. É também função do aplicativo conectar-se periodicamente ao banco de dados afim de sincronizar sua base de dados local, mantendo as informações atualizadas. Apenas zonas num raio de até 8 quilometro do usuário, se forma a garantir o funcionamento mesmo durante um breve período sem conexão com a base.
 	
+	\item Utilizados devido a possíveis problemas com o sinal GPS fraco ou inexistente, os beacons Bluetooth Smart podem ser posicionados nos limites das zonas em obras, em cavaletes ou cones. São dispositivos de baixo consumo que constantemente emitem seu identificador em um raio de 10 metros, podendo ainda ser aumentado ou diminuindo conforme a necessidade.
+\end{itemize}
 
+\FloatBarrier
+\begin{figure}[!ht]
+	\caption{Demonstração da disposição dos beacons ao redor de uma zona em obras}
+	\label{fig:workzoneScheme}
+	\centering%
+	\begin{minipage}{.6\textwidth}
+		\includegraphics[width=\textwidth]{imgs/workzoneSchema}
+		\fonte{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely}
+		\end{minipage}
+\end{figure}
+\FloatBarrier
 
+As mensagens emitidas pelo aplicativo seguem o padrão estabelecido durante as entrevistas, sendo formadas por 4 partes distintas \cite{chen2014}:
+\begin{itemize}
+	\item Breve anuncio para chamar atenção do usuário
+	\item Localização atual
+	\item O que e onde
+	\item Ação recomendada
+\end{itemize}
 
+Uma mensagem de exemplo, seguindo esse padrão, poderia ser: Atenção, você está na esquina da Rua X com a Rua Y, a calçada encontra-se fechada por Z metros. Atravesse a rua X para receber mais informações.
+
+O pronto fraco desse trabalho é a baixa área de abrangência da solução, funcionando apenas no entorno de zonas em obras.
+A pesquisa e a tecnologia seriam melhores aproveitadas em situações mais corriqueiras, como em um ambiente de uma universidade ou um estádio. Vale citar como ponto forte o uso da ultima versão da tecnologia Bluetooth, ao contrário dos outros trabalhos citados, onde não é necessário parear os dispositivos para que eles se comuniquem.
 
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \FloatBarrier
 \begin{table}
@@ -547,7 +630,7 @@ A Figura~\ref{fig:blablabla} mostra ilustra as fases psicológicas da escrita da
 Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
 
 	\section{Desenvolvimento}
-O trabalho de modelagem de desenvolvimento do xxxxxxx (TODO) foi divido em (TODO) XX passos metodológicos apresentados na figura (TODO) XX. Os passos 1 a X foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do RIo dos Sinos (UNISINOS).
+O trabalho de modelagem de desenvolvimento do xxxxxxx (TODO) foi divido em (TODO) XX passos metodológicos apresentados na figura (TODO) XX. Os passos 1 a X foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do Rio dos Sinos (UNISINOS).
 
 A seguir são apresentados brevemente cada um dos passos concebidos:
 
