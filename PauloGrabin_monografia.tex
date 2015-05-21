@@ -3,10 +3,11 @@
 \usepackage[T1]{fontenc} 	% encoding da fonte (afeta a sep. de sílabas)
 \usepackage{graphicx} 		% comandos para gráficos e inclusão de figuras
 \usepackage{bibentry} 		% para inserir refs. bib. no meio do texto
-\usepackage{placeins}		% float barriers
+\usepackage{placeins}		% manter imagens e tabelas no lugar específicado
 \usepackage{enumitem}
 \usepackage{hyperref}		% para permitir links para as seções do documento
-\usepackage{xcolor}
+\usepackage{xcolor}			% texto colorido no PDF
+\usepackage{tabularx}		% permite específicar o tamanho das colunas de uma tabela
 
 %=======================================================================
 % A vantagem do unisinos.bst é que ele permite o uso de um arquivo .bib
@@ -350,17 +351,17 @@ A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porem, em 
 	Em uma breve avaliação do modelo, podemos ressaltar que, devido ao baixo custo das tags RFID, é fácil implantar o sistema em um grande ambiente. Porem, a necessidade de conexão constante a internet pode ser um problema. O fato de o usuário necessitar procurar os quiosques, bem como encontrar a tag correspondente ao destino desejado, é um grande complicador.
 \end{itemize}
 
-	\FloatBarrier
-	\begin{figure}[!ht]
-		\caption{Arquitetura do Percept}
+\FloatBarrier
+	\begin{figure}
+		\caption{Visão geral da arquitetura do Percept}
 		\label{fig:visaoGeralPercept}
 		\centering%
 		\begin{minipage}{.9\textwidth}
 			\includegraphics[width=\textwidth]{imgs/perceptArquitetura}
-			\fonte{PERCEPT indoor navigation system for the blind and visually impaired: architecture and experimentation}
+			\fonte{\citetexto{Ganz2011}}
 		\end{minipage}
 	\end{figure}
-	\FloatBarrier
+\FloatBarrier
 
 %=======================================================================
 % TIRÉSIAS
@@ -381,9 +382,8 @@ Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus com
 	\item Módulo de configurações
 \end{itemize}
 
-\FloatBarrier
-\begin{figure}[!ht]
-	\caption{Arquitetura do Tirésias}
+\begin{figure}
+	\caption{Visão geral da arquitetura do Tirésias}
 	\label{fig:visaoGeralTiresias}
 	\centering%
 	\begin{minipage}{.6\textwidth}
@@ -391,7 +391,6 @@ Ainda em \citetexto{Falk2013} a arquitetura do Tirésias é descrita em seus com
 		\fonte{Tirésias: um modelo para acessibilidade ubíqua orientado à deficiência visual}
 		\end{minipage}
 \end{figure}
-\FloatBarrier
 
 O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são dividas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado, e quando o usuário concluí o trecho atual o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
 
@@ -419,8 +418,8 @@ Aqui existe um grande ponto fraco da tecnologia utilizada, para funcionar corret
 A arquitetura do sistema possui estrutura cliente-servidor, onde o servidor é responsável apenas por trocar informações entre usuários através da ferramenta Google Cloud Messaging\footnote{Ferramenta de mensageria do Google, para mais informações consultar a documentação da ferramenta em https://developer.android.com/google/gcm/index.html} que é usada quando um usuário decide compartilhar alguma informação com outros. O smartphone é o responsável pela execução da maior parte das funcionalidades do modelo. Nele ficam armazenadas as informações pessoas de cada usuário, seus contatos, associações e notas criadas.
 
 \FloatBarrier
-\begin{figure}[!ht]
-	\caption{Arquitetura do UCAT}
+\begin{figure}
+	\caption{Visão geral da arquitetura do UCAT}
 	\label{fig:visaoGeralUCAT}
 	\centering%
 	\begin{minipage}{.6\textwidth}
@@ -448,17 +447,15 @@ O estudo realizado por \citetexto{chen2014} revela que pedestres correspondem po
 
 Para atingir o primeiro objetivo foram conduzidas entrevistas com PDV afim de compreender os desafios que eles enfrentam e quais são consideradas informações relevantes durante seu deslocamento. Para o segundo objetivo o trabalho propõe um aplicativo para smartphones Android que verbalmente emite mensagens enquanto seu usuário se aproxima das áreas delimitadas, fazendo uso de GPS, Bluetooth, função de conversão texto para voz e sensores presentes no telefone. 
 
-\FloatBarrier
-\begin{figure}[!ht]
-	\caption{Estrutura do modelo}
+\begin{figure}
+	\caption{Visão geral da arquitetura do modelo}
 	\label{fig:visaoGeralWorkzones}
 	\centering%
-	\begin{minipage}{.8\textwidth}
+	\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imgs/workzoneArquitetura}
 		\fonte{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely}
 		\end{minipage}
 \end{figure}
-\FloatBarrier
 
 O modelo consiste em três componentes: servidor com banco de dados com mapas, aplicativo para Android e beacons bluetooth, 
 \begin{itemize}
@@ -470,11 +467,11 @@ O modelo consiste em três componentes: servidor com banco de dados com mapas, a
 \end{itemize}
 
 \FloatBarrier
-\begin{figure}[!ht]
+\begin{figure}
 	\caption{Demonstração da disposição dos beacons ao redor de uma zona em obras}
 	\label{fig:workzoneScheme}
 	\centering%
-	\begin{minipage}{.6\textwidth}
+	\begin{minipage}{.4\textwidth}
 		\includegraphics[width=\textwidth]{imgs/workzoneSchema}
 		\fonte{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely}
 		\end{minipage}
@@ -496,44 +493,33 @@ A pesquisa e a tecnologia seriam melhores aproveitadas em situações mais corri
 
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
 
+Com o intuito de facilitar a compreensão e a comparação dos trabalhos relacionados, foi desenvolvida a Tabela \ref{tab:trabalalhosRelacionados}, contendo os principais dados sobre os modelos estudados. Nela é possivel identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho.
 
+Os aspectos mais relevantes na comparação são o hardware que é utilizado no modelo, qual a tecnologia aplicada na determinação da localização do usuário e a área de abrangência do sistema. Todos os modelos estudados são focados no uso de dispositivos móveis, no entanto, um deles exige o uso combinado de outro dispositivo de hardware dedícado. Dois dos trabalhos utilizam Bluetooth para obter a localização, enquanto os outros usam RFID ou GPS. Em relação ao ultimo aspecto, três dos sistemas possuem foco em ambientes internos, enquanto um é mais específico e voltado a zonas em construção.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+No que tange outros aspectos avaliados, a arquitetura de todos as publicações se baseia do modelo cliente-servidor com comunicação via internet. Apenas o Tirésias foi desenvolvido em Objetive-C para a plataforma iOS, enquanto todos os outros foram desenvolvidos em Java para a plataforma Android. Ainda é possivel ressaltar que apenas o Tirésias concebe interoperabilidade para outras aplicações que podem vir a ser desenvolvidas.
 
 \FloatBarrier
 \begin{table}
 	\caption{Tabela comparativa entre os trabalhos relacionados}
-	%\label{tab:estacoes}
+	\label{tab:trabalalhosRelacionados}
 	\centering%
-	\begin{minipage}{.6\textwidth}
-		\begin{tabular*}{\textwidth}{ll}
+	\begin{minipage}{1\textwidth}
+		\begin{tabular}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} | p{3cm} | }
 			\hline
-			\textbf{Meses} & \textbf{Estações do Ano}\\
-			\hline
-			21 de março a 21 de junho & Outono\\
-			21 de junho a 23 de setembro & Inverno\\
-			23 de setembro a 21 de dezembro & Primavera\\
-			21 de dezembro a 21 de março & Verão\\
-			\hline
-		\end{tabular*}
-		\fonte{Elaborada pela autora.}
+										& Percept 									& UCAT 								& Navigation System for Work Zones Safely   & Tirésias   \\ \hline
+				Método de localização 	& RFID 										& Bluetooth 2.1 					& Bluetooth 4.0 							& GPS 						 \\ \hline
+				Abrangência 			& Indoor 									& Indoor e outdoor 					& Zonas em obras 							& Indoor 					 \\ \hline
+				Hardware específico 	& Sim 										& Não 								& Não 										& Não 						 \\ \hline
+				Comunicação 			& Internet ou intranet 						& Internet 							& Internet 									& Internet ou intranet 		 \\ \hline
+				Interoperabilidade 		& Não 										& Não 								& Não 										& Sim 						 \\ \hline
+				Banco de dados 			& Postgres 									& SQLite 							& MySQL 									& Não específicado 			 \\ \hline
+				Linguagem 				& Java 										& Java 								& Java 										& Objective-C 				 \\ \hline
+				Sistema operacional 	& Android 									& Android 							& Android 									& iOS 						 \\ \hline
+				Hardware 				& Luva equipada c/ leitor RFID e smartphone & Dispositivos móveis c/ Bluetooth 	& Dispositivos móveis c/ Bluetooth 			& Dispositivos Móveis c/ GPS \\ \hline
+				Arquitetura 			& Cliente-servidor 							& Cliente-servidor 					& Cliente-servidor 							& Cliente-servidor 			 \\ \hline
+		\end{tabular}
+		\fonte{Elaborado pelo autor}
 	\end{minipage}
 \end{table}
 \FloatBarrier
@@ -548,7 +534,7 @@ A solução proposta através desse modelo consiste em um aplicativo acessível 
 
 Este capitulo apresenta os componentes em maiores detalhes.
 
-
+\section{Visão geral do modelo}
 
 
 
@@ -589,10 +575,8 @@ Modelo Proposto
 
 	\section{Visão Geral}
 
-A Figura~\ref{fig:blablabla} mostra ilustra as fases psicológicas da escrita da dissertação. Você vai se reconhecer no personagem. ;-)
-
 \FloatBarrier
-\begin{figure}[!ht]
+\begin{figure}
 	\caption{Visão geral do modelo}
 	\label{fig:blablabla}
 	\centering%
@@ -609,7 +593,7 @@ A Figura~\ref{fig:blablabla} mostra ilustra as fases psicológicas da escrita da
  
 
 \FloatBarrier 
-\begin{figure}[!ht]
+\begin{figure}
 	\caption{Diagrama de blocos da arquitetura}
 	\label{fig:arquitetura}
 	\centering%
@@ -689,79 +673,6 @@ A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes p
 	\section{Trabalhos futuros}
 - Ambientes dinâmicos
 - Salas de aula
-
-Em caso de dúvida, siga as orientações do manual da Biblioteca \cite{Biblioteca11} e, se necessário, da norma NBR~6023 \cite{NBR6023:2002}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Geralmente, a introdução tem uma estrutura similar ao resumo e deve apresentar:
-\begin{itemize}
-	\item \textbf{Contexto e motivação:} Aqui você deve apresentar o contexto do trabalho (área de que ele se trata) e uma motivação para trabalhar nesse assunto.
-	\item \textbf{Problema:} Aqui você vai apresentar um problema, uma lacuna, observada na área e que você pretende tratar. Você deve se perguntar aqui: ``Que respostas estou disposto a responder?''. O problema deve ser definido claramente e delimitado em termos de espaço de tempo. Veja que essa parte visa alertar o leitor de que o que você está propondo é uma solução para um problema observado na área. 
-	
-
-	\item \textbf{Objetivos:} Aqui você deve apresentar os objetivos do seu trabalho. Tome cuidado para não confundir objetivos com atividades.   Faça a si mesmo a pergunta: ``O que pretendo alcançar com a pesquisa?''. Você pode discernir entre objetivos gerais e objetivos específicos:
-	\begin{itemize}
-		\item Objetivo geral --- qual o propósito da pesquisa?
-		\item Objetivos específicos --- abertura do objetivo geral em outros menores (possíveis capítulos).
-	\end{itemize}
-	
-\end{itemize}
 
 %=======================================================================
 % Referências
