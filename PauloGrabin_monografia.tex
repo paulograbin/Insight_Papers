@@ -137,7 +137,8 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 \begin{listadesiglas}{SNPDPD}
 %\item[API] Application Programming Interface
 \item[BLE] Bluetooth Low Energy
-\item[GPS] Global Positioning System
+\item[GPS] Global Positioning Sy
+\item[GCM] Google Cloud Messasing
 \item[IBGE] Instituto Brasileiro de Geografia e Estatística
 %\item[JSON] JavaScript Object Notation
 \item[NFC] Near Field Communication
@@ -164,10 +165,9 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 % Introdução
 %=======================================================================
 \chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
-Na pesquisa bibliográfica realizada foi identificado que um grande desafio enfrentado por PDV é a localização e o deslocamento dentro de ambientes desconhecidos, tais como aeroportos, shopping centers e universidades.
+Pessoas com a visão saudavel se apoiam enormemente no sentido da visão para localizar-se. Frequentemente a sinalização destinada a orientação em locais como aeroportos, shopping centers e universidades é composta inteiramente por sinais visuais. Por esse mesmo motivo, pessoas com deficiência visual (PDV) tem grande dificuldade quando precisam deslocar-se, necessitando do auxílio de ferramentas como bengalas e cães-guia ou ainda da ajuda de outras pessoas. \citetexto{Ganz2014} afirma que a visão é o recurso mais importante na percepção do que se passa no entorno de alguém, e a sua perda significa uma severa redução na orientação e mobilidade, especialmente em ambientes desconhecidos e complexos.
 
-O presente trabalho trata de uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a visual, atuando na forma com que elas se orientam e se deslocam em ambientes internos.
-Será mostrada como alternativa a modelagem de um sistema que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por \textit{Bluetooth Low Energy} (BLE).
+O presente trabalho trata de uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a visual, atuando na forma com que elas se orientam e se deslocam em ambientes internos. Será mostrada como alternativa a modelagem de um sistema que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por Bluetooth Low Energy (BLE).
 
 Como resultado do trabalho, espera-se oferecer um sistema de fácil utilização que proporcione orientação e navegação precisas a seus usuários, de maneira que eles tenham confiança e independência. Vale ainda ressaltar que propósito do trabalho não é substituir ferramentas de auxílio como bengala e cães-guia, e sim ser um complemento a esses recursos.
 
@@ -189,10 +189,11 @@ A mesma pesquisa leva em consideração as diferentes intensidades da deficiênc
 	• Nenhuma dificuldade - para a pessoa que declarou não ter qualquer dificuldade permanente de enxergar, ainda que precisando usar óculos ou lentes de contato.
 \end{quote}
 
-Tendo diversas possíveis causas e atingindo pessoas em qualquer idade, a deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela. Educação, trabalho e vida social são exemplos, apenas para citar alguns. É difícil para uma pessoa com a visão perfeita colocar-se no lugar de uma pessoa que não enxerga. \citetexto{quinones2011supporting} afirma que mobilidade e deslocamento são atividades naturais para aqueles que enxergam sem dificuldades, podendo ir e vir com relativa facilidade, já que pistas e sinais irão apontar a direção certa caso se percam, se vejam em situações desconfortáveis ou se algum obstáculo apareça. Mostrando o outro lado, em \citetexto{URNA2007}, um trabalho que objetiva auxiliar PDV a cruzar ruas e avenidas, são citadas algumas situações usuais que são impraticáveis para PDV, como, por exemplo, ler as linhas de ônibus que passam por uma determinada parada ou ainda ler o destino de um ônibus se aproximando. Conforme \citetexto{rodriguez2014accessible}, PDV não possuem a totalidade da informação de que necessitam para contornar obstáculos. O mesmo se aplica a direção seguida e a distancia remanescente até o destino, informações essenciais para um deslocamento em qualquer ambiente. \citetext{Ganz2014} afirma que o sentido da visão é o recurso mais importante na percepção do que se passa no entorno de alguém, e a sua perda significa uma severa redução na orientação e mobilidade, especialmente em ambientes desconhecidos e complexos. Os autores dizem também que, mesmo com auxílio de uma cão guia ou bengala, ainda é um desafio enorme para os PDV deslocar-se em tais ambientes sem ajuda de uma pessoa com visão plena. Existem estabelecimentos, como, por exemplo, o metrô de Porto Alegre, que colocam uma parte de seus funcionários à disposição dos deficientes para guiá-los durante seu trajeto. Porém, seu número é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível.
+Tendo diversas possíveis causas e atingindo pessoas em qualquer idade, a deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela. Educação, trabalho e vida social são exemplos, apenas para citar alguns. É difícil para uma pessoa com a visão perfeita colocar-se no lugar de uma pessoa que não enxerga. \citetexto{quinones2011supporting} afirma que mobilidade e deslocamento são atividades naturais para aqueles que enxergam sem dificuldades, podendo ir e vir com relativa facilidade, já que pistas e sinais irão apontar a direção certa caso se percam, se vejam em situações desconfortáveis ou se algum obstáculo apareça. Mostrando o outro lado, em \citetexto{URNA2007}, um modelo que objetiva auxiliar PDV a cruzar ruas e avenidas, são citadas algumas situações usuais que são impraticáveis para PDV, como, por exemplo, ler as linhas de ônibus que passam por uma determinada parada ou ainda ler o destino de um ônibus se aproximando. Conforme \citetexto{rodriguez2014accessible}, PDV não possuem a totalidade da informação de que necessitam para contornar obstáculos. O mesmo se aplica a direção seguida e a distancia remanescente até o destino, informações essenciais para um deslocamento em qualquer ambiente. Não poder ver a sinalização na rua ou semáfotos em um cruzamento torna perigoso para PDV transitarem desacompanhados, necessitando ter a companhia de amigos ou familiares durante todo o trajeto. 
+Em \citetexto{Ganz2014}, os autores afirmam que, mesmo com auxílio de uma cão guia ou bengala, ainda é um desafio enorme para os PDV deslocar-se em tais ambientes sem ajuda de uma pessoa com visão plena. Existem estabelecimentos, como, por exemplo, o metrô de Porto Alegre, que colocam uma parte de seus funcionários à disposição dos deficientes para guiá-los durante seu trajeto. Porém, seu número é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível.
 
-Em 2014, a Royal London Society for Blind People (RLSB), organização sem fins lucrativos que busca criar uma diferença que melhore a vida das futuras gerações de PDV, divulgou um manifesto com o resultado de pesquisas sobre perda de visão e também para chamar atenção aos desafios enfrentados diariamente, que impedem os PDV de usufruir da totalidade dos seus direitos fundamentais. Desafios esses que não são restritos às divisas do Reino Unido, onde a organização se encontra.
-De acordo com o documento, perda de visão é uma experiência tão traumática que pode ser comparada à perda de um ente querido, visto que dificilmente eles recebem o apoio emocional necessário. Não conseguir ver causa isolamento social, o que prejudica enormemente o futuro do individuo. Ainda é dito que empresas ou organizações, como lojas, bancos e agentes de viagem, não compreendem as necessidades e habilidades dos PDV, impedindo-os de levar uma vida comum e impossibilitando-os de realizar as atividades que gostariam. O trabalho ainda destaca que, frequentemente, as pessoas não sabem oferecer assistência básica como guiá-los em espaços públicos como estações de trem. Dentre as áreas citadas como problemáticas, é possível destacar a mobilidade urbana, a educação superior e acessibilidade na tecnologia. A publicação trás ainda motivação que levou a sua publicação, informando que 25\% das pessoas com perda de visão estão insatisfeitas com sua vida \cite{YouthManifesto}.
+Em 2014, a Royal London Society for Blind People (RLSB), organização sem fins lucrativos que busca criar uma diferença que melhore a vida das futuras gerações de PDV, divulgou um manifesto com o resultado de pesquisas sobre perda de visão e também para chamar atenção aos desafios enfrentados diariamente, que impedem os PDV de usufruir da totalidade dos seus direitos fundamentais.\cite{YouthManifesto}. Desafios esses que não são restritos às divisas do Reino Unido, onde a organização se encontra.
+De acordo com o documento, perda de visão é uma experiência tão traumática que pode ser comparada à perda de um ente querido, visto que dificilmente eles recebem o apoio emocional necessário. Não conseguir ver causa isolamento social, o que prejudica enormemente o futuro do individuo. Ainda é dito que empresas ou organizações, como lojas, bancos e agentes de viagem, não compreendem as necessidades e habilidades dos PDV, impedindo-os de levar uma vida comum e impossibilitando-os de realizar as atividades que gostariam. O trabalho ainda destaca que, frequentemente, as pessoas não sabem oferecer assistência básica como guiá-los em espaços públicos como estações de trem. Dentre as áreas citadas como problemáticas, é possível destacar a mobilidade urbana, a educação superior e acessibilidade na tecnologia. A publicação trás ainda motivação que levou a sua publicação, informando que 25\% das pessoas com perda de visão estão insatisfeitas com sua vida. \cite{YouthManifesto}.
 
 Em relação à mobilidade, \citetexto{YouthManifesto} cita que existe uma variedade de aplicativos para smartphone que auxiliam pessoas a se localizar e deslocar, porém, poucos deles são acessíveis. É afirmado também que, se essas tecnologias fossem projetadas com todas as pessoas em mente, mais PDV poderiam transitar com segurança, reduzindo a dependência de outras pessoas. 
 
@@ -201,34 +202,35 @@ Indo ao encontro das iniciativas das RLSB e atuando na área de mobilidade, o mo
 Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema será projetado para ter usabilidade intuitiva e ser uma parte quase invisível do cotidiano do usuário, aplicando o conceito de computação ubíqua introduzido em \citetexto{Weiser1991}, afim de se adaptar as necessidades dos PDV.
 
 	\section{Questão de pesquisa}
+	Tendo identificado e contextualizado o problema, foi definida a seguinte questão de pesquisa a ser trabalhada neste trabalho:
+
 	Como a Computação Ubíqua pode contribuir no desenvolvimento de um modelo de sistema que seja uma alternativa ao problema de localização e deslocamento em ambientes internos enfrentado por deficientes visuais, promovendo acessibilidade e permitindo o transito com confiança e independência?
+
+	% TODO: Sugestão: explicar a questão de pesquisa em 2 ou 3 paragrafos.
 
 	\section{Objetivos}
 	Tendo identificado a questão de pesquisa, foram definidos alguns objetivos para esse trabalho, apresentados nas seções subsequentes.
 	
-		\subsection{Objetivo geral}
 		O objetivo principal deste trabalho é especificar, desenvolver e validar um modelo de sistema para localização e orientação de PDV em ambientes internos através de dispositivos móveis, aplicando fundamentos de acessibilidade e conceitos de computação ubíqua, para permitir que seus usuários se localizem e se desloquem em ambientes desconhecidos sem necessidade do auxílio de outras pessoas.
 
-		O sistema não deve exigir uso de hardware dedicado por parte dos usuários, devendo, porém, ser leve, discreto e de fácil uso.
+		O sistema não deve exigir uso de hardware dedicado por parte dos usuários, devendo, porém, ser leve, discreto e de fácil uso. \\
 		
-		\subsection{Objetivos específicos}
 		Para atingir o objetivo geral deste trabalho, foram definidos os seguintes objetivos específicos:
 
-		\begin{itemize}
-			\item Realizar estudo sobre deficiência visual - estudar essa deficiência buscando entender a maneira com que ela altera a vida de seus portadores e como ela afeta suas capacidades, bem como entender as necessidades que surgem a partir dela, para que os PDV possam ter uma vida mais próxima da levada pelas pessoas sem deficiência visual. Conhecer tecnologias assistivas que possam auxiliar a atingir o objetivo geral.
+		\begin{itemize} %abaixo não estão listados objetivos específicos (o que vais fazer), mas sim metodologia (como vais fazer). Cuidado!
+			\item Compreender as limitações impostas pela deficiência visual - estudar essa deficiência buscando entender a maneira com que ela altera a vida de seus portadores e como ela afeta suas capacidades, bem como entender as necessidades que surgem a partir dela, para que os PDV possam ter uma vida mais próxima da levada pelas pessoas sem deficiência visual. 
 
-			\item Realizar estudo sobre computação móvel e ubíqua - compreender quais características da computação móvel e ubíqua são desejáveis em um modelo que será usado por PDV, de forma que o modelo se integre com o cotidiano de seus usuários da maneira mais natural e intuitiva possível.
+			\item Compreender computação móvel e ubíqua - analisar quais características da computação móvel e ubíqua são desejáveis em um modelo que será usado por PDV, de forma que o modelo se integre com o cotidiano de seus usuários da maneira mais natural e intuitiva possível.
 
-			\item Realizar estudo sobre sistemas de localização e navegação - analisar trabalhos e soluções existentes nessa área, buscando entender quais características deles podem ser aproveitas em um sistema para PDV, bem como novas características que devem ser incorporadas para que as necessidades dos PDV sejam atendidas.
+			\item Compreender sistemas de localização e navegação - analisar trabalhos e soluções existentes nessa área, buscando entender quais características deles podem ser aproveitas em um sistema para PDV, bem como novas características que devem ser incorporadas para que as necessidades dos PDV sejam atendidas.
 
-			\item Desenvolver um protótipo da solução - modelar e codificar uma parte do modelo proposto, criando um protótipo que utilize o conhecimento adquirido para promover um sistema que auxilie PDV e 
-			possibilite a avaliação do modelo.
+			\item Desenvolver um protótipo da solução - modelar e codificar uma parte do modelo proposto, criando um protótipo que utilize o conhecimento adquirido para promover um sistema que auxilie PDV e possibilite a avaliação do modelo.
 
 			\item Avaliar o sistema desenvolvido - testar o sistema com PDV e avaliar, fazendo uso de questionário, a eficácia e eficiência do sistema. O resultado ajudará identificar a aceitação, pontos fortes e possíveis melhorias do sistema, bem como elencar trabalhos futuros relacionados ao tema. (TODO: avaliação com usuários ou com estudo de caso por cenários?) 
 		\end{itemize}
 
 	\section{Organização do texto}
-O presente trabalho está dividido em seis capítulos. O primeiro introduz este trabalho de conclusão de curso, bem como apresenta sua contribuição científica e objetivos.
+O presente trabalho está dividido em seis capítulos. 
 O segundo capítulo apresenta os principais conceitos utilizados para o embasamento desde trabalho, descrevendo computação móvel e ubíqua, tecnologias assistivas, sistemas de localização e dando um panorama geral sobre a deficiência visual.
 O terceiro capítulo apresenta os trabalhos relacionados feitos nesta área, cobrindo seus aspectos mais relevantes para esse trabalho, e traça um comparativo entre eles.
 No quarto capítulo, é feito um detalhamento do modelo proposto neste trabalho, dando ênfase na arquitetura do sistema, seus principais requisitos e componentes que formam este modelo.
@@ -239,7 +241,7 @@ O sexto e último capítulo conclui o trabalho e apresenta as considerações fi
 % Fundamentação teórica
 %=======================================================================
 \chapter{Referencial Teórico}
-\epigrafecap{O óbvio é aquilo que ninguém enxerga, \\até que alguém o expresse com simplicidade.}{Khalil Gibran}
+%\epigrafecap{O óbvio é aquilo que ninguém enxerga, \\até que alguém o expresse com simplicidade.}{Khalil Gibran}
 % Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inícia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
 Este capítulo apresenta a base teórica sobre a qual está construído este trabalho. Inicialmente é apresentada uma visão geral sobre computação ubíqua, computação móvel e acessibilidade. Em seguida os conceitos são mesclados e então é introduzido o conceito de acessibilidade ubíqua e tecnologias assistivas. Finalmente, é introduzida a tecnologia Bluetooth, seu modo de funcionamento e aplicações práticas.
 
@@ -358,10 +360,12 @@ A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, n�
 % Trabalhos relacionados
 %=======================================================================
 \chapter{Trabalhos Relacionados}
-\epigrafecap{The most dangerous phrase in the language is "We have always done this way"}{Grace Hopper}
+%\epigrafecap{The most dangerous phrase in the language is "We have always done this way"}{Grace Hopper}
 % Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
-Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pessoas com deficiência visual, é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados vários trabalhos que compartilham desse mesmo objetivo através do emprego de propostas tecnológicas. Neste capítulo, são apresentadas quatro soluções relacionadas com o tema desse trabalho. Essas foram selecionadas por possuírem propósito semelhante, bem como características desejadas por esse trabalho. Ao final desde capítulo, no item~\ref{comparacaoTrabs}, é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
+Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pesssoas com deficiência visual, é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados diversos trabalhos que compartilham do objetivo deste através do emprego de propostas tecnológicas. Para a escolha daqueles que seriam apresentados neste capítulo foi feita uma seleção, levando em consideração critérios como a similaridade do objetivo com o deste trabalho, o ano de publicação do modelo, suporte a acessibilidade, foco em dispositivos móveis e a abrangência de ambientes internos. Dessa forma, os selecionados foram os trabalhos mais recentes que promovam acessibilidade, usem dispositivos móveis, atuem principalmente em ambientes internos e possuam objetivos mais semelhantes com o deste trabalho.
+
+Neste capítulo, são apresentadas quatro soluções que possuem propósito semelhante, bem como características desejadas por esse trabalho. Ao final desde capítulo, no item~\ref{comparacaoTrabs}, é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
 %=======================================================================
 % PERCEPT
@@ -369,7 +373,7 @@ Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pesso
 	\section{PERCEPT: Indoor Nagivation for the Blind and Visually Impaired} 
 \citetexto{Ganz2011} e \citetexto{Ganz2012} introduzem um sistema de sistema de localização que busca auxiliar PDV aumentando sua percepção dos ambientes internos. O sistema é composto por um servidor central, responsável por armazenar as informações de localização do ambiente, tags RFID passivas distribuídas pelo local, leitores RFID acoplados em luvas utilizadas pelos usuários em conjunto com um smartphone Android. O principal motivo que levou à escolha do RFID é a granularidade que a tecnologia permite graças ao baixo custo de implantação e ao fato de elas não exigirem fonte de alimentação elétrica. De acordo com os autores, a diferença do PERCEPT em relação a outros sistemas similares é a combinação luva/leitor e smartphone e também o baixo custo de implantação e manutenção. 
 
-A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porém, em \citetexto{Ganz2012}, ela é explicada de modo mais profundo. A figura \ref{fig:visaoGeralPercept} mostra uma visão geral da arquitetura. O modelo é formado pelos seguintes componentes: o ambiente, o conjunto luva PERCEPT e aplicativo Android e por fim o servidor PERCEPT. O funcionamento deles é descrito da seguinte forma:
+A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porém, em \citetexto{Ganz2012}, ela é explicada de modo mais profundo. O modelo é formado pelos seguintes componentes: o ambiente, o conjunto luva PERCEPT e aplicativo Android e por fim o servidor PERCEPT. O funcionamento deles é descrito da seguinte forma:
 
 \begin{itemize}
 	\item Ambiente é onde ficam instaladas as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centímetros, para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem em um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, afim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braile.
@@ -386,6 +390,8 @@ A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porém, em
 
 	\item O servidor armazena o layout dos ambientes e calcula as rotas até o destino escolhido pelo usuário. Através da ferramenta Quantum GIS, cada andar é individualmente mapeado em um grafo onde cada nó representa um possível destino e cada aresta um caminho disponível. Todos os dados são armazenados em uma base de dados Postgre. O servidor calcula a rota mais curta até o destino escolhido, formulando instruções de texto, quando recebe uma requisição de um cliente Android. Uma instrução de deslocamento 
 \end{itemize}
+
+A figura \ref{fig:visaoGeralPercept} mostra uma visão geral da arquitetura. Do lado esquerdo ela mostra os quiosques e, em detalhe, as tags. No centro é exibida a luva na mão de um usuário juntamente com o smartphone. Por fim, do lado direito, é mostrada a comunicação entre o modulo que calcula as rotas e a base de dados.
 
 \FloatBarrier
 	\begin{figure}
@@ -411,14 +417,7 @@ De acordo com \citetexto{Falk2013}, o Tirésias emprega conceitos de sensibilida
 
 O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone e, baseado nisso, o sistema exibe recursos de acessibilidade disponíveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são a listagem de recursos disponíveis, a indicação de caminho até recurso selecionado e a solicitação de ajuda.
 
-Ainda em \citetexto{Falk2013}, a arquitetura do Tirésias é descrita em seus componentes, bem como a maneira integrada em que eles operam. A figura \ref{fig:visaoGeralTiresias} exibe uma visão geral da arquitetura. Os componentes citados são:
-
-\begin{itemize} 
-	\item Agente assistente pessoal
-	\item Módulo de saída
-	\item Módulo de entrada
-	\item Módulo de configurações
-\end{itemize}
+O modelo Tirésias é composto pelos módulos de saída, entrada, configurações e pelo assistente pessoal, somados ao modelo Hefestos. A figura \ref{fig:visaoGeralTiresias} exibe uma visão geral da arquitetura do Tirésias, mostrando em cima os componentes do proprio modelo, e embaixo os componentes do modelo em que ele é baseado. Os componentes são descritos abaixo.
 
 \begin{figure}
 	\caption{Visão geral da arquitetura do Tirésias}
@@ -426,17 +425,19 @@ Ainda em \citetexto{Falk2013}, a arquitetura do Tirésias é descrita em seus co
 	\centering%
 	\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imgs/tiresiasArquitetura}
-		\fonte{Tirésias: um modelo para acessibilidade ubíqua orientado à deficiência visual}
+		\fonte{\citetexto{Falk2013}}
 		\end{minipage}
 \end{figure}
 
-O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são divididas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário, são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado e, quando o usuário conclui o trecho atual, o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
+\begin{itemize}
+	\item O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são divididas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário, são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado e, quando o usuário conclui o trecho atual, o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
 
-O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispostívos com teclado dedicado ou somente a tela sensível ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniente de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
+	\item O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispostívos com teclado dedicado ou somente a tela sensível ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniente de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
 
-O módulo de configuração disponibiliza o controle de ajustes de todas as funcionalidades disponíveis no sistema, de forma a customizar o sistema às necessidades de diferentes usuários. Alguns dos ajustes disponíveis são o controle de frequência e volume da leitura de tela, a quantidade de recursos lida e se o usuário deseja ser notificado quando há alguma mudança nos recursos.
+	\item O módulo de configuração disponibiliza o controle de ajustes de todas as funcionalidades disponíveis no sistema, de forma a customizar o sistema às necessidades de diferentes usuários. Alguns dos ajustes disponíveis são o controle de frequência e volume da leitura de tela, a quantidade de recursos lida e se o usuário deseja ser notificado quando há alguma mudança nos recursos.
 
-O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte à acessibilidade. 
+	\item O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte à acessibilidade.
+\end{itemize} 
 
 Avaliando o modelo, é notável a acessibilidade no que tange a entrada e saída dos dados no aplicativo. Entretanto, um ponto fraco é a utilização do GPS como modo de localização, visto que o sistema é incapaz de identificar um andar específico em um prédio com muitos pisos, por exemplo, bem como o sinal pode ser fraco ou estar indisponível em algumas regiões devido à natureza da tecnologia. 
 
@@ -452,19 +453,19 @@ Usando Bluetooth como ferramenta de detecção e o endereço MAC do dispositivo 
 
 Aqui existe um grande ponto fraco da tecnologia utilizada. Para funcionar corretamente, é necessário que todos os dispositivos estejam com o Bluetooth conectado e em modo visível aos demais; caso contrário, o aplicativo é incapaz de detectá-los.
 
-A arquitetura do sistema, exibida possui estrutura cliente-servidor, onde o servidor é responsável apenas por trocar informações entre usuários através da ferramenta Google Cloud Messaging\footnote{Ferramenta de mensageria do Google, para mais informações consultar a documentação da ferramenta em https://developer.android.com/google/gcm/index.html} que é usada quando um usuário decide compartilhar alguma informação com outros. O smartphone é o responsável pela execução da maior parte das funcionalidades do modelo. Nele, ficam armazenadas as informações pessoas de cada usuário, seus contatos, associações e notas criadas.
+A arquitetura do sistema possui estrutura cliente-servidor, onde o servidor é responsável apenas por hospedar a base de dados e trocar informações entre usuários através da ferramenta Google Cloud Messaging (GCM) \footnote{Ferramenta de mensageria do Google, para mais informações consultar a documentação da ferramenta em https://developer.android.com/google/gcm/index.html} que é usada quando um usuário decide compartilhar alguma informação com outros. O smartphone é o responsável pela execução da maior parte das funcionalidades do modelo. Nele, ficam armazenadas as informações pessoas de cada usuário, seus contatos, associações e notas criadas.
 
-\FloatBarrier
+A figura \ref{fig:visaoGeralUCAT} exibe uma visão geral da arquitetura do modelo UCAT. Nela podemos ver que os clientes conectados ao servidor e ao GCM, enquanto a base de dados se conecta ao servidor e ao GCM. 
+
 \begin{figure}
 	\caption{Visão geral da arquitetura do UCAT}
 	\label{fig:visaoGeralUCAT}
 	\centering%
 	\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imgs/ucatArquitetura}
-		\fonte{UCAT: Ubiquitous Context Awareness Tools for The Blind}
+		\fonte{\citetexto{ucat2014}}
 		\end{minipage}
 \end{figure}
-\FloatBarrier
 
 Para facilitar a interação dos usuários com o telefone, o sistema lança mão de alguns recursos de acessibilidade:
 \begin{itemize}
@@ -484,15 +485,17 @@ O estudo realizado por \citetexto{chen2014} revela que pedestres correspondem a 
 
 Para atingir o primeiro objetivo, foram conduzidas entrevistas com PDV afim de compreender os desafios que eles enfrentam e quais são consideradas informações relevantes durante seu deslocamento. Para o segundo objetivo, o trabalho propõe um aplicativo para smartphones Android que verbalmente emite mensagens enquanto seu usuário se aproxima das áreas delimitadas, fazendo uso de GPS, Bluetooth, função de conversão texto para voz e sensores presentes no telefone. 
 
+\FloatBarrier
 \begin{figure}
 	\caption{Visão geral da arquitetura do modelo}
 	\label{fig:visaoGeralWorkzones}
 	\centering%
 	\begin{minipage}{.6\textwidth}
 		\includegraphics[width=\textwidth]{imgs/workzoneArquitetura}
-		\fonte{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely}
+		\fonte{\citetexto{chen2014}}
 		\end{minipage}
 \end{figure}
+\FloatBarrier
 
 O modelo consiste em três componentes: servidor com banco de dados com mapas, aplicativo para Android e beacons bluetooth, 
 \begin{itemize}
@@ -500,8 +503,10 @@ O modelo consiste em três componentes: servidor com banco de dados com mapas, a
 
 	\item O aplicativo constantemente busca por sinais Bluetooth nas proximidades do usuário. Quando algum é encontrado, seu identificador é comparado com aqueles cadastrados na base de dados espacial. Caso o aplicativo detecte que o usuário se encontra próximo a uma zona em obras, o telefone vibra e o alerta correspondente é emitido verbalmente através da função Text to Speech (TTS) do Android. É também função do aplicativo conectar-se periodicamente ao banco de dados afim de sincronizar sua base de dados local, mantendo as informações atualizadas. Apenas zonas num raio de até oito quilômetros do usuário são possíveis para garantir o funcionamento mesmo durante um breve período sem conexão com a base.
 	
-	\item Utilizados devido a possíveis problemas com o sinal GPS fraco ou inexistente, os beacons Bluetooth Smart podem ser posicionados nos limites das zonas em obras, em cavaletes ou cones. São dispositivos de baixo consumo que constantemente emitem seu identificador em um raio de dez metros, podendo ainda ser aumentado ou diminuindo conforme a necessidade.
+	\item Utilizados devido a possíveis problemas com o sinal GPS fraco ou inexistente, os beacons Bluetooth Smart podem ser posicionados nos limites das zonas em obras, em cavaletes ou cones, conforme mostrado na figura \ref{fig:workzoneScheme}. São dispositivos de baixo consumo que constantemente emitem seu identificador em um raio de dez metros, podendo ainda ser aumentado ou diminuindo conforme a necessidade.
 \end{itemize}
+
+A figura \ref{fig:visaoGeralWorkzones} mostra a arquitetura do modelo. Nela é possivel ver que a base de dados é exposta através de um servidor, sendo acessada pelo aplicativo para obter as informações e por uma outra interface através de uma pagina web usada para manter as informações.
 
 \FloatBarrier
 \begin{figure}
@@ -510,7 +515,7 @@ O modelo consiste em três componentes: servidor com banco de dados com mapas, a
 	\centering%
 	\begin{minipage}{.4\textwidth}
 		\includegraphics[width=\textwidth]{imgs/workzoneSchema}
-		\fonte{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely}
+		\fonte{\citetexto{chen2014}}
 		\end{minipage}
 \end{figure}
 \FloatBarrier
@@ -530,11 +535,13 @@ A pesquisa e a tecnologia seriam melhores aproveitadas em situações mais corri
 
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
 
-Com o intuito de facilitar a compreensão e a comparação dos trabalhos relacionados, foi desenvolvida a Tabela \ref{tab:trabalalhosRelacionados}, contendo os principais dados sobre os modelos estudados. Nela, é possivel identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho.
+Com o intuito de facilitar a compreensão e a comparação dos trabalhos relacionados, foi desenvolvida a Tabela \ref{tab:trabalalhosRelacionados}, contendo os principais dados sobre os modelos estudados. Nela, é possivel identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho. % TODO: Explicar as características consideradas
 
 Os aspectos mais relevantes na comparação são o hardware que é utilizado no modelo, qual a tecnologia aplicada na determinação da localização do usuário e a área de abrangência do sistema. Todos os modelos estudados são focados no uso de dispositivos móveis, no entanto, um deles exige o uso combinado de outro dispositivo de hardware dedícado. Dois dos trabalhos utilizam Bluetooth para obter a localização, enquanto os outros usam RFID ou GPS. Em relação ao último aspecto, três dos sistemas possuem foco em ambientes internos, enquanto um é mais específico e voltado a zonas em construção.
 
 No que tange a outros aspectos avaliados, a arquitetura de todos as publicações se baseia do modelo cliente-servidor com comunicação via internet. Apenas o Tirésias foi desenvolvido em Objetive-C para a plataforma iOS, enquanto todos os outros foram desenvolvidos em Java para a plataforma Android. Ainda é possivel ressaltar que apenas o Tirésias concebe interoperabilidade para outras aplicações que podem vir a ser desenvolvidas.
+
+%TODO: Falta um paragrafo dizendo as lacunas de pesquisa, ou seja, o que o teu modelo vai ter que esses não tem
 
 \FloatBarrier
 \begin{table}
@@ -542,11 +549,12 @@ No que tange a outros aspectos avaliados, a arquitetura de todos as publicaçõe
 	\label{tab:trabalalhosRelacionados}
 	\centering%
 	\begin{minipage}{1\textwidth}
-		\begin{tabular}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} | p{3cm} | }
+		\begin{tabular}{ p{3cm} | p{3cm} | p{3cm} | p{3cm} | p{3cm} }
 			\hline
 										& Percept 									& UCAT 								& Navigation System for Work Zones		& Tirésias   \\ \hline
 				Método de localização 	& RFID 										& Bluetooth 2.1 					& Bluetooth 4.0 						& GPS 						 \\ \hline
 				Abrangência 			& Indoor 									& Indoor e outdoor 					& Zonas em obras 						& Indoor 					 \\ \hline
+				Ambiêntes dinâmicos		& Não específicado							& Não específicado					& Não específicado						& Não específicado			 \\ \hline
 				Hardware específico 	& Sim 										& Não 								& Não 									& Não 						 \\ \hline
 				Comunicação 			& Internet ou intranet 						& Internet 							& Internet 								& Internet ou intranet 		 \\ \hline
 				Interoperabilidade 		& Não 										& Não 								& Não 									& Sim 						 \\ \hline
@@ -753,6 +761,7 @@ A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes p
 										& Percept 									& UCAT 								& Navigation System for Work Zones		& Tirésias   \\ \hline
 				Método de localização 	& RFID 										& Bluetooth 2.1 					& Bluetooth 4.0 						& GPS 						 \\ \hline
 				Abrangência 			& Indoor 									& Indoor e outdoor 					& Zonas em obras 						& Indoor 					 \\ \hline
+				Ambiêntes dinâmicos		& Não específicado							& Não específicado					& Não específicado						& Não específicado			 \\ \hline
 				Hardware específico 	& Sim 										& Não 								& Não 									& Não 						 \\ \hline
 				Comunicação 			& Internet ou intranet 						& Internet 							& Internet 								& Internet ou intranet 		 \\ \hline
 				Interoperabilidade 		& Não 										& Não 								& Não 									& Sim 						 \\ \hline
