@@ -20,7 +20,7 @@
 % Dados gerais sobre o trabalho.
 %=======================================================================
 \autor{Gräbin}{Paulo Henrique Grolli}
-\titulo{Um modelo acessível de software para localização e navegação de deficientes visuais com Bluetooth Low Energy}
+\titulo{Insight: Um modelo acessível para localização em ambientes internos usando a tecnologia BLE}
 \orientador[Prof.~Dr.]{Costa}{Cristiano André da}
 \local{São Leopoldo}
 \ano{2015}
@@ -69,7 +69,15 @@ and never regrets.\\
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Obrigado!
+Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, por ter me aceito como orientando, pelas valiosas conversas, seu auxilio incomparável e por sua disponibilidade sempre que necessário.
+
+Aos meus pais, Ivani Grolli Gräbin e Milton Gräbin, que sempre me incentivaram a estudar e a realizar meus sonhos.
+
+A minha namorada Victoria Caroline da Silva, pelas revisões, pela compreensão e por ficar sempre do meu lado.
+
+Por último mas não menos importante, aos meus amigos, os quais não diretamente ajudaram na produção desse trabalho, mas são fundamentais e estiveram do meu lado nos momentos em que necessitava esvaziar a cabeça e entendiam os convites recusados.
+
+Muito obrigado!
 
 \end{agradecimentos}
 
@@ -127,9 +135,7 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 % Lista de Siglas (opcional).
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
-\begin{listadesiglas}{SNPDPD}
 %\item[API] Application Programming Interface
-%\item[JSON] JavaScript Object Notation
 %\item[SDK] Software Development Kid
 %\item[SIG] Special Interest Group
 %\item[SOAP] Simple Object Access Protocol
@@ -137,13 +143,16 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %\item[TCC] Trabalho de Conclusão de Curso
 %\item[UML] Unified Modeling Language
 %\item[XML] Extensible Markup Language
+\begin{listadesiglas}{SNPDPD}
 \item[BLE] Bluetooth Low Energy
 \item[GCM] Google Cloud Messasing
 \item[GPS] Global Positioning System
 \item[IBGE] Instituto Brasileiro de Geografia e Estatística
 \item[IEEE] Institute of Electrical and Electronics Engineers
+\item[JSON] Javascript Object Notation
 \item[NFC] Near Field Communication
 \item[PDV] Pessoas com Deficiência Visual
+\item[REST] Representational State Transfer
 \item[RFID] Radio Frequency Identification
 \item[RLSB]	Royal London Society for Blind People
 \item[SNPDPD] Secretaria Nacional de Promoção dos Direitos da Pessoa com Deficiência
@@ -187,7 +196,8 @@ A mesma pesquisa leva em consideração as diferentes intensidades da deficiênc
 \end{quote}
 
 Tendo diversas possíveis causas e atingindo pessoas em qualquer idade, a deficiência visual impõe severas dificuldades em todos os aspectos da vida dos que são afetados por ela. Educação, trabalho e vida social são exemplos, apenas para citar alguns. É difícil para uma pessoa com a visão perfeita se colocar no lugar de uma pessoa que não enxerga. \citetexto{quinones2011supporting} afirma que mobilidade e deslocamento são atividades naturais para aqueles que enxergam sem dificuldades, podendo ir e vir com relativa facilidade, já que pistas e sinais irão apontar a direção certa caso se percam, se vejam em situações desconfortáveis ou se algum obstáculo apareça. Mostrando o outro lado, em \citetexto{URNA2007} são citadas algumas situações usuais que são impraticáveis para PDV, como, por exemplo, ler as linhas de ônibus que passam por uma determinada parada ou ainda ler o destino de um ônibus se aproximando. Conforme \citetexto{rodriguez2014accessible}, PDV não possuem a totalidade da informação de que necessitam para contornar obstáculos. O mesmo se aplica a direção seguida e a distância remanescente até o destino, informações essenciais para um deslocamento em qualquer ambiente. Não poder ver a sinalização na rua ou semáforos em um cruzamento torna perigoso para PDV transitarem desacompanhados, necessitando ter a companhia de amigos ou familiares durante todo o trajeto. 
-Em \citetexto{Ganz2014}, os autores afirmam que, mesmo com auxílio de um cão-guia ou bengala, ainda é um desafio enorme para os PDV se deslocarem em tais ambientes sem ajuda de uma pessoa com visão plena. Existem estabelecimentos, como, por exemplo, o metrô de Porto Alegre, que coloca uma parte de seus funcionários à disposição dos deficientes para guiá-los durante seu trajeto. Porém, seu número é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível.
+Em \citetexto{Ganz2014}, os autores afirmam que, mesmo com auxílio de um cão-guia ou bengala, ainda é um desafio enorme para os PDV se deslocarem em tais ambientes sem ajuda de uma pessoa com visão plena. 
+\citetexto{dias2015navpal} afirma que é esperado que PDV explorem ambientes internos por conta própria, ou então levem consigo seus proprios acompanhantes ou ferramentas. Existem estabelecimentos, como, por exemplo, o metrô de Porto Alegre, que coloca uma parte de seus funcionários à disposição dos deficientes para guiá-los durante seu trajeto. Porém, seu número é limitado, o que faz com que os usuários precisem esperar até um funcionário estar disponível. Além disso, muitas vezes essas pessoas não receberam treinamento sobre como acompanhar corretamente um deficiênte visual.
 
 Em 2014, a Royal London Society for Blind People (RLSB), organização sem fins lucrativos que busca criar uma diferença que melhore a vida das futuras gerações de PDV, divulgou um manifesto para chamar atenção aos desafios enfrentados diariamente pelos PDV, que os impedem de usufruir da totalidade dos seus direitos fundamentais. \cite{YouthManifesto}. Desafios esses que não são restritos às divisas do Reino Unido, onde a organização se encontra.
 De acordo com o documento, perda de visão é uma experiência tão traumática que pode ser comparada à perda de um ente querido, visto que dificilmente eles recebem o apoio emocional necessário. Não conseguir enxergar causa isolamento social, o que prejudica enormemente o futuro do indivíduo. Ainda é dito que empresas ou organizações, como lojas, bancos e agentes de viagem, não compreendem as necessidades e habilidades dos PDV, impedindo-os de levar uma vida comum e impossibilitando-os de realizar as atividades que gostariam. O trabalho ainda destaca que, frequentemente, as pessoas não sabem oferecer assistência básica, como guiá-los em espaços públicos, estações de trem, por exemplo. Dentre as áreas citadas como problemáticas, é possível destacar a mobilidade urbana, a educação superior e acessibilidade na tecnologia. No trabalho ainda é revelado o motivo de sua publicação, informando que 25\% das pessoas com perda de visão estão insatisfeitas com suas vidas. \cite{YouthManifesto}.
@@ -267,17 +277,17 @@ Entretanto, a vida digital foge da alçada da jurisdição de qualquer país. Em
 
 %Aqui a Vic parou
 
-De acordo com \citetexto{vanderheiden2008ubiquitous}, no inicio dos anos 90 apenas computadores fabricados pela Apple contavam com recursos de acessibilidade, enquanto nos demais softwares de terceiros eram a alternativa para aqueles que necessitavam. Graças aos esforços combinados da indústria e da academia, hoje todos os maiores sistemas operacionais possuem recursos de acessibilidade, como leitores de tela e lente de aumento, nativos entre suas funcionalidades. Pensados e concebidos diretamente na construção do sistema operacional, esses recursos são capazes de oferecer uma integração mais profunda com o sistema e uma experiência muito melhor ao usuário se comparados com softwares produzidos por outras empresas. 
+De acordo com \citetexto{vanderheiden2008ubiquitous}, no início dos anos 90 apenas computadores fabricados pela Apple contavam com recursos de acessibilidade, enquanto nos demais, softwares de terceiros eram a alternativa para aqueles que necessitavam. Graças aos esforços combinados da indústria e da academia, hoje todos os maiores sistemas operacionais possuem recursos de acessibilidade, como leitores de tela e lente de aumento, nativos entre suas funcionalidades. Pensados e concebidos diretamente na construção do sistema operacional, esses recursos são capazes de oferecer uma integração mais profunda com o sistema e uma experiência muito melhor ao usuário se comparados a softwares produzidos por outras empresas. 
 
 Em consonância com a afirmação de \citetexto{Weiser1991}, \citetexto{vanderheiden2008ubiquitous} diz que, com a computação substituindo o paradigma de computação pessoal para computação ubíqua, é necessário pensar em novas formas de acessibilidade:
 
 \begin{quote}
-	Algum dia computadores serão como as lâmpadas de hoje. Houve uma época em que tínhamos que carregar lâmpadas conosco a qualquer lugar que fossemos. As pessoas carregavam consigo lanternas ou velas pelos quartos ou a qualquer lugar onde quisessem ir. Não havia expectativa de que luz seria fornecida a menos que cada um trouxesse a sua. Hoje em dia, ninguém mais carrega lâmpadas. As pessoas esperam que, exceto quando acampando ou viajando pela floresta, diversas de fontes de luz sejam oferecidos nos lugares onde elas entram. No futuro podemos esperar uma situação semelhante em relação a computação. Onde quer que se vá, a computação estará através de diversos tipos de interfaces. Talvez tenhamos que levar conosco tipos específicos de interfaces se assim desejarmos, mas seremos capazes de usa-las juntamente com os recursos dos ambientes em que estaremos. \cite{vanderheiden2008ubiquitous}
+	Algum dia computadores serão como as lâmpadas de hoje. Houve uma época em que tínhamos que carregar lâmpadas conosco a qualquer lugar que fossemos. As pessoas carregavam consigo lanternas ou velas pelos quartos ou a qualquer lugar onde quisessem ir. Não havia expectativa de que luz seria fornecida a menos que cada um trouxesse a sua. Hoje em dia, ninguém mais carrega lâmpadas. As pessoas esperam que, exceto quando acampando ou viajando pela floresta, diversas fontes de luz sejam oferecidos nos lugares onde elas entram. No futuro podemos esperar uma situação semelhante em relação à computação. Onde quer que se vá, a computação estará através de diversos tipos de interfaces. Talvez tenhamos que levar conosco tipos específicos de interfaces se assim desejarmos, mas seremos capazes de usá-las juntamente com os recursos dos ambientes em que estaremos. \cite{vanderheiden2008ubiquitous}
 \end{quote}
 
-Assim emergem os conceitos de acessibilidade ubíqua e interfaces de usuário plugáveis, como talvez a forma mais efetiva de acessibilidade. Esses conceitos são descritos por \citetexto{Tavares2011} como a capacidade de invocar recursos assistivos especiais diretamente da internet para serem usados em qualquer tela próxima.
+Assim emergem os conceitos de acessibilidade ubíqua e interfaces de usuário plugáveis, como talvez a forma definitiva de acessibilidade. Esses conceitos são descritos por \citetexto{Tavares2011} como a capacidade de invocar recursos assistivos especiais diretamente da internet para serem usados em qualquer tela próxima.
 
-\citetexto{Tavares2011} define a acessibilidade ubíqua, também chamada de u-accessibility, como a união entre as normas e padrões para acessibilidade; tecnologias e interfaces que atendem as necessidades dos usuários; e computação ubíqua, através de dispositivos móveis, sensores e da comunicação entre eles.
+\citetexto{Tavares2011} define a acessibilidade ubíqua, também chamada de u-accessibility, como a união entre as normas e padrões para acessibilidade; tecnologias e interfaces que atendem às necessidades dos usuários; e computação ubíqua, através de dispositivos móveis, sensores e a comunicação entre eles.
 
 	\section{Tecnologias Assistivas} 
 Não há um conceito universalmente estabelecido e aceito de tecnologias assistivas. Diversas entidades e países buscam estabelecer sua própria definição. O Brasil apresenta seu conceito em \cite{TA2009}, descrevendo-o como se segue:
@@ -289,13 +299,13 @@ Não há um conceito universalmente estabelecido e aceito de tecnologias assisti
 	inclusão social
 \end{quote}
 
-\citetexto{pupo2006acessibilidade} afirma que existem tecnologias assistivas para auxiliar no acesso as informações, na comunicação, durante a locomoção e em atividades comuns no dia-a-dia como estudo, trabalho e lazer, citando como exemplos cadeiras de rodas, bengalas, próteses, lupas e aparelhos auditivos. Conforme \citetexto{dias2015navpal}, tecnologias assitivas desempenham um papel chave na independência e segurança de pessoas com deficiência. Para os PDV, tecnologias assistivas bem planejadas e bem implementadas podem fazer significante diferença na educação, aceitação social e produtividade. \cite{dias2015navpal}.
+\citetexto{pupo2006acessibilidade} afirma que existem tecnologias assistivas para auxiliar no acesso às informações, na comunicação, durante a locomoção e em atividades comuns no dia-a-dia, como estudo, trabalho e lazer, citando como exemplos cadeiras de rodas, bengalas, próteses, lupas e aparelhos auditivos. Conforme \citetexto{dias2015navpal}, tecnologias assitivas desempenham um papel chave na independência e segurança de pessoas com deficiência. Para os PDV, tecnologias assistivas bem planejadas e bem implementadas podem fazer significante diferença na educação, aceitação social e produtividade. \cite{dias2015navpal}.
 
-Conforme \citetexto{stewart2008accessible}, é preferencia dos usuários, tanto PDV como aqueles com visão saudável, carregar consigo dispositivos que caibam em um bolso, deixando as mãos livres. O autor ainda afirma que PDV consideram essencial ainda que os aparelhos sejam imperceptíveis durante seu uso, de forma a evitar estereótipos tipicamente associados ao uso de tecnologias assistivas.
+Conforme \citetexto{stewart2008accessible}, é preferência dos usuários, tanto PDV como aqueles com visão saudável, carregar consigo dispositivos que caibam em um bolso, deixando as mãos livres. O autor ainda afirma que PDV consideram essencial que os aparelhos sejam imperceptíveis durante seu uso, de forma a evitar estereótipos tipicamente associados ao uso de tecnologias assistivas.
 
-Diversos autores destacam as vantagens do uso de smartphones como dispositivos capazes de oferecer acessibilidade em diversas formas aos usuários. Segundo \citetexto{Ganz2014}, smartphones, item básico possuído por grande parte da população, tem se mostrado uma ferramenta capaz de beneficiar enormemente os PDV em sua vida diária, através de aplicações como leitores de cédulas de dinheiro, reconhecimento de cores e objetos, navegação na web, leitura de emails e ligações telefônicas. O trabalho ainda afirma que o uso de smartphones é possível devido à presença de recursos de acessibilidade oferecidos pelos principais sistemas operacionais disponíveis. Entre esses recursos, podemos destacar a leitura de telas e os alertas vibratórios, essenciais para aqueles que não enxergam as telas sensíveis ao toque que equipam a grande maioria dos smartphones disponíveis atualmente. Ao invés de apenas ler o texto sendo exibido, essa funcionalidade também informa sobre os tipos de cada componente, possibilitando ao usuário saber como interagir com cada um.
+Diversos autores destacam as vantagens do uso de smartphones como dispositivos capazes de oferecer acessibilidade em diversas formas aos usuários. Segundo \citetexto{Ganz2014}, smartphones, item básico possuído por grande parte da população, têm se mostrado uma ferramenta capaz de beneficiar enormemente os PDV em sua vida diária, através de aplicações, como leitores de cédulas de dinheiro, reconhecimento de cores e objetos, navegação na web, leitura de e-mails e ligações telefônicas. O trabalho ainda afirma que o uso de smartphones é possível devido à presença de recursos de acessibilidade oferecidos pelos principais sistemas operacionais disponíveis. Entre esses recursos, podemos destacar a leitura de telas e os alertas vibratórios, essenciais para aqueles que não enxergam as telas sensíveis ao toque que equipam a grande maioria dos smartphones disponíveis atualmente. Ao invés de apenas ler o texto sendo exibido, essa funcionalidade também informa sobre os tipos de cada componente, possibilitando ao usuário saber como interagir com cada um.
 
-De acordo com \citetexto{Brady2013}, os maiores sistemas operacionais para dispositivos móveis disponíveis incluem por padrão a funcionalidade de leitura de tela, de maneira a permitir seu uso por usuários PDV. Aparelhos com tela sensível ao toque eram tidos como inacessíveis a usuários cegos, porém interfaces multitoque bem desenhadas aproveitam bem o tamanho da tela e são preferidos pelos deficientes visuais.
+De acordo com \citetexto{Brady2013}, os maiores sistemas operacionais para dispositivos móveis disponíveis incluem por padrão a funcionalidade de leitura de tela, de maneira a permitir seu uso por usuários PDV. Aparelhos com tela sensível ao toque eram tidos como inacessíveis a usuários cegos, porém interfaces multitoque bem desenhadas aproveitam melhor o tamanho da tela e são preferidos pelos deficientes visuais.
 
 \citetexto{mau2008blindaid} afirma que a utilização de um dispositivo de uso geral possui uma clara vantagem sobre um aparelho específico que os usuários teriam que carregar e aprender a usar. Os autores ainda definem o telefone celular como “a peça de tecnologia mais valiosa para os cegos”. \cite{mau2008blindaid}.
 
@@ -306,26 +316,26 @@ Em \citetexto{narasimhan2009smartphone} são sugeridos alguns princípios que de
 	\item A ferramenta deve possibilitar a independência nas atividades diárias, não exigindo a assistência e/ou acompanhamento de outras pessoas, com deficiência visual ou não.
 	\item Evitar adicionar melhoramentos nas bengalas, visto que aumentar o peso ou novas funcionalidades podem influenciar negativamente no uso diário
 	\item Usuários devem ter a opção de usar ou não usar as funcionalidades disponíveis. Seu uso não pode ser forçado para não dificultar seu dia-a-dia.
-	\item Manter custos baixos é promover a adoção de produtos pra PDV, já que produtos específicos para esse publico tendem a ser mais caros.
+	\item Manter custos baixos é promover a adoção de produtos pra PDV, já que produtos específicos para esse público tendem a ser mais caros.
 \end{itemize}
 
 	\section{Tecnologia Bluetooth}
-Bluetooth é uma tecnologia de comunicação sem fios de curto alcance, lançada comercialmente em 1990, quando teve sua primeira especificação formal divulgada. Desde então diversas modificações foram feitas e a tecnologia passou por diversos aprimoramentos, estando atualmente na versão 4.x, também conhecida como Bluetooth Smart ou Bluetooth Low Energy, lançada em 2010. 
+Bluetooth é uma tecnologia de comunicação sem fios de curto alcance, lançada comercialmente em 1990, quando teve sua primeira especificação formal divulgada. Desde então, diversas modificações foram feitas e a tecnologia passou por diversos aprimoramentos, estando atualmente na versão 4, também conhecida como Bluetooth Smart ou Bluetooth Low Energy, lançada em 2010. 
 
 O Bluetooth foi criado e atualmente é mantido por um conjunto de empresas conhecido como Bluetooth Special Interest Group (SIG). Inicialmente formado por Ericsson, Intel, Nokia, Toshiba e IBM, o SIG é hoje composto por mais de 20.000 empresas, incluindo Apple, Microsoft, Motorola e Lenovo.
 
-A tecnologia possui duas formas distintas de atuação, apesar de compartilharem entre si alguns pontos em comum. O primeiro e mais antigo modo, disponível desde a primeira especificação, é chamado Basic Rate (BR). O segundo foi introduzido somente na versão 4.0 e é chamado Low Energy (LE) e é o modo que será utilizado pelo modelo proposto neste trabalho.
+A tecnologia possui duas formas distintas de atuação, apesar de compartilharem entre si alguns pontos em comum. O primeiro e mais antigo modo, disponível desde a primeira especificação, é chamado Basic Rate (BR). O segundo foi introduzido somente na versão 4 e é chamado Low Energy (LE) e é o modo que será utilizado pelo modelo proposto neste trabalho.
 
-De acordo com \citetexto{Townsend2014}, o LE foi criado para permitir produtos que requerem baixíssimo consumo de energia e baixo custo, quando comparados ao outro modo. Assim sendo, esse modo foi pensado para aplicações que exigem pouca troca de informações. Um exemplo de produto viável com a chegada do modo LE são os beacons Bluetooth, que consistem em dispositivos do tamanho de uma moeda comum, compostos por um processador, uma bateria e um transmissor, que transmitem informações sobre si em intervalos regulares. Como o sinal dos beacons tem seu alcance limitado a alguns poucos metros, foi introduzido o conceito de microlocalização, tornando possível o desenvolvimento de aplicações novas aplicações e serviços onde antes não era possível, tais como lojas e pontos de venda, grandes shows ou eventos, estádios esportivos, localização em ambientes internos, etc. A microlocalização é definida por \citetexto{zafari2015micro} como a obtenção da localização uma entidade com grau de precisão na ordem dos centímetros. 
+De acordo com \citetexto{Townsend2014}, o LE foi criado para permitir produtos que requerem baixíssimo consumo de energia e baixo custo, quando comparados ao outro modo. Assim sendo, esse modo foi pensado para aplicações que exigem pouca troca de informações. Um exemplo de produto viável com a chegada do modo LE são os beacons Bluetooth, que consistem em dispositivos do tamanho de uma moeda comum, compostos por um processador, uma bateria e um transmissor, que transmitem informações sobre si em intervalos regulares. Como o sinal dos beacons tem seu alcance limitado a alguns poucos metros, foi introduzido o conceito de microlocalização, tornando possível o desenvolvimento de novas aplicações e serviços onde antes não era possível, tais como lojas, grandes shows ou eventos, estádios esportivos e em ambientes internos. A microlocalização é definida por \citetexto{zafari2015micro} como a obtenção da localização de uma entidade com grau de precisão na ordem dos centímetros. 
 
-A imensa maioria dos telefones celulares hoje fazem uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional, e, ao contrário da versão anterior, a partir da versão 4 a tecnologia Bluetooth não exige o pareamento de dispositivos para que eles possam se localizar e comunicar.
+A imensa maioria dos telefones celulares hoje faz uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional. Ao contrário da versão anterior, a partir da versão 4, a tecnologia Bluetooth não exige o pareamento de dispositivos para que eles possam se localizar e comunicar.
 
-De acordo com \citetexto{ballance2008developing}, a combinação computação ubíqua e Bluetooth tem potencial para fomentar soluções que simples e baratas que outrora não seriam possíveis.
+De acordo com \citetexto{ballance2008developing}, a combinação computação ubíqua e Bluetooth tem potencial para fomentar soluções simples e baratas que outrora não seriam possíveis.
 
-\citetexto{taylor2012smart} revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para localização e navegação para PDV, tanto em ambientes internos como externos. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), Bluetooth e Global Positioning System (GPS) são algumas dessas tecnologias. Os autores ainda apontam que apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
+\citetexto{taylor2012smart} revelam que diversas tecnologias foram utilizadas anteriormente em modelos de sistema para localização e navegação para PDV, tanto em ambientes internos como externos. Sonares, Radio Frequency Identification (RFID), Near Field Communication (NFC), Bluetooth e Global Positioning System (GPS) são algumas delas. Os autores ainda apontam que, apesar de todas elas oferecerem vantagens em suas propostas, todas também possuem pontos fracos:
 
 \begin{itemize}
-  \item GPS é normalmente usado para localização em ambientes externos, mas se mostra ineficiente devido à própria natureza das ondas de rádio usadas na tecnologia, quando obstáculos são locados ao redor do usuário. De acordo com \citetexto{montague2010accessible}, apesar de GPS ser muito eficiente na hora de determinar um ponto em uma rua de um mapa, essa tecnologia está longe ser a melhor escolha para ambientes internos. Nesse cenário é preciso viabilizar a possibilidade de diversos andares em um local, coisa que não é possível de ser feita via GPS.
+  \item GPS é normalmente usado para localização em ambientes externos, mas se mostra ineficiente devido à própria natureza das ondas de rádio usadas na tecnologia, quando obstáculos são locados ao redor do usuário. De acordo com \citetexto{montague2010accessible}, apesar de GPS ser muito eficiente na hora de determinar um ponto em um mapa, essa tecnologia está longe ser a melhor escolha para ambientes internos. Nesse cenário é preciso viabilizar a possibilidade de diversos andares em um local, o que não é possível ser feito via GPS.
   \item Sonares são formas baratas de detecção de objetos e obstáculos, através de frequências acústicas, mas exigem hardware dedicado e não servem para localização.
   \item RFID, juntamente com NFC, exige proximidade de seus emissores para que a comunicação seja estabelecida.
   \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia Bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de Bluetooth low energy.
@@ -352,9 +362,9 @@ A tabela \ref{tab:tecnologiasLocalizacao} mostra algumas características dessas
 \end{table}
 \FloatBarrier
 
-Analisando a tabela podemos ver que a tecnologia GPS é a que oferece a maior precisão na localização, além de ser suportada pela maioria dos smartphones. Porém, ela não é recomendada para ambientes internos. As tecnologias ultrassom e infravermelho oferecem boa precisão, mas são pouquíssimos os modelos de smartphone que fazem uso delas. Infravermelho ainda exige contato visual direito e sem restrições entre os dispositivos para funcionar. RFID e NFC oferecem ótima precisão devido a proximidade necessária para uso da tecnologia, porém, possuem pouco suporte por parte dos dispositivos. Bluetooth, em ambas as versões, possuem precisão média e são bem suportadas pelos smartphones.
+Analisando a tabela podemos ver que a tecnologia GPS é a que oferece a maior precisão na localização, além de ser suportada pela maioria dos smartphones. Porém, ela não é recomendada para ambientes internos. As tecnologias ultrassom e infravermelho oferecem boa precisão, mas são pouquíssimos os modelos de smartphone que fazem uso delas. Infravermelho ainda exige contato visual direto e sem restrições entre os dispositivos para funcionar. RFID e NFC oferecem ótima precisão devido à proximidade necessária para uso da tecnologia, porém, possuem pouco suporte por parte dos dispositivos. Bluetooth, em ambas as versões, possuem precisão média e são bem suportadas pelos smartphones.
 
-Importante ressaltar que os dados apresentados são dados teóricos da tecnologia obtidos através da especificação de cada uma das tecnologias, podendo variar para mais ou para menos dependendo da forma com que elas foram implementadas.
+Importante ressaltar que os dados apresentados são dados teóricos da tecnologia obtidos através da especificação de cada uma das tecnologias, podendo variar para mais ou para menos dependendo da forma com que elas forem implementadas.
 
 %=======================================================================
 % Trabalhos relacionados
@@ -511,7 +521,7 @@ A figura \ref{fig:visaoGeralWorkzones} mostra a arquitetura do modelo. Nela é p
 \FloatBarrier
 \begin{figure}
 	\caption{Demonstração da disposição dos beacons ao redor de uma zona em obras}
-	\label{fig:workzoneScheme}
+	\label{fig:workZoneScheme}
 	\centering%
 	\begin{minipage}{.4\textwidth}
 		\includegraphics[width=\textwidth]{imgs/workzoneSchema}
@@ -537,9 +547,9 @@ A pesquisa e a tecnologia seriam melhores aproveitadas em situações mais corri
 
 Com o intuito de facilitar a compreensão e a comparação dos trabalhos relacionados, um comparativo entre os trabalhos foi traçado. A partir do comparativo, a tabela \ref{tab:trabalalhosRelacionados} foi desenvolvida, contendo os principais dados sobre os modelos estudados. Nela são apresentadas as abordagens usadas em cada um dos modelos, sendo possível identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho. 
 
-Alguns critérios foram selecionados para uma comparação mais clara entre os trabalhos, cada item da tabela se relaciona com um critério considerado nos modelos selecionados: O método de localização diz respeito a tecnologia utilizada pelo modelo para obter a localização do usuário; a abrangência se refere ao tipo de ambiente em que o modelo se propõe a funcionar; ambientes dinâmicos indica a capacidade do modelo de lidar com mudanças no ambiente; hardware específico demonstra se o modelo existe que o usuário carregue consigo mais um equipamento ou se o modelo se encaixa em um equipamento já existente; comunicação descreve a maneira utilizada pelo modelo para se comunicar com servidores ou atores externos; interoperabilidade mostra se o modelo prevê que seus dados possam ser utilizados por outras aplicações; banco de dados, linguagem e sistema operacional descrevem quais tecnologias são usadas pelo modelo durante seu desenvolvimento e uso; hardware diz especificamente qual o aparato que o usuário deverá possuir para utilizar o modelo; por fim, arquitetura descreve os componentes de software do modelo e a forma com que eles se comunicam.
+Alguns critérios foram selecionados para uma comparação mais clara entre os trabalhos, cada item da tabela se relaciona com um critério considerado nos modelos selecionados: o método de localização diz respeito a tecnologia utilizada pelo modelo para obter a localização do usuário; a abrangência se refere ao tipo de ambiente em que o modelo se propõe a funcionar; ambientes dinâmicos indica a capacidade do modelo de lidar com mudanças no ambiente; hardware específico demonstra se o modelo exige que o usuário carregue consigo mais um equipamento ou se o modelo se encaixa em um equipamento já existente; comunicação descreve a maneira utilizada pelo modelo para se comunicar com servidores ou atores externos; interoperabilidade mostra se o modelo prevê que seus dados possam ser utilizados por outras aplicações; banco de dados, linguagem e sistema operacional descrevem quais tecnologias são usadas pelo modelo durante seu desenvolvimento e uso; hardware diz especificamente qual o aparato que o usuário deverá possuir para utilizar o modelo; por fim, arquitetura descreve os componentes de software do modelo e a forma com que eles se comunicam.
 
-Os aspectos mais relevantes na comparação são o hardware que é utilizado no modelo, qual a tecnologia aplicada na determinação da localização do usuário e a área de abrangência do sistema. Todos os modelos estudados são focados no uso de dispositivos móveis, no entanto, um deles exige o uso combinado de outro dispositivo de hardware dedicado. Dois dos trabalhos utilizam Bluetooth para obter a localização, enquanto os outros usam RFID ou GPS. Em relação ao último aspecto, três dos sistemas possuem foco em ambientes internos, enquanto um é mais específico e voltado a zonas em construção.
+Os aspectos mais relevantes na comparação são o hardware que é utilizado no modelo, a tecnologia aplicada na determinação da localização do usuário e a área de abrangência do sistema. Todos os modelos estudados são focados no uso de dispositivos móveis, no entanto, um deles exige o uso combinado de outro dispositivo de hardware dedicado. Dois dos trabalhos utilizam Bluetooth para obter a localização, enquanto os outros usam RFID ou GPS. Em relação ao último aspecto, três dos sistemas possuem foco em ambientes internos, enquanto um é mais específico e voltado a zonas em construção.
 
 \FloatBarrier
 \begin{table}
@@ -562,15 +572,37 @@ Os aspectos mais relevantes na comparação são o hardware que é utilizado no 
 				Hardware 				& Luva equipada c/ leitor RFID e smartphone & Dispositivos móveis c/ Bluetooth 	& Dispositivos móveis c/ Bluetooth 		& Dispositivos Móveis c/ GPS \\ \hline
 				Arquitetura 			& Cliente-servidor 							& Cliente-servidor 					& Cliente-servidor 						& Cliente-servidor 			 \\ \hline
 		\end{tabular}
-		\fonte{Elaborado pelo autor}
+		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{table}
 \FloatBarrier
 
-No que tange a outros aspectos avaliados, a arquitetura de todos os modelos se assemelham no uso da estrutura cliente-servidor com comunicação via internet. Apenas o Tirésias foi desenvolvido em Objetive-C para a plataforma iOS, enquanto todos os outros foram desenvolvidos em Java para a plataforma Android. Ainda é possível ressaltar que apenas o Tirésias concebe interoperabilidade para outras aplicações que podem vir a ser desenvolvidas.
+No que tange a outros aspectos avaliados, a arquitetura de todos os modelos se assemelha no uso da estrutura cliente-servidor com comunicação via internet. Apenas o Tirésias foi desenvolvido em Objetive-C para a plataforma iOS, enquanto todos os outros foram desenvolvidos em Java para a plataforma Android. Ainda é possível ressaltar que apenas o Tirésias concebe interoperabilidade para outras aplicações que podem vir a ser desenvolvidas.
 
-Foi identificado que nenhum dos modelos identifica se faz uso de bibliotecas ou frameworks que visem promover acessibilidade. Além disso, as tecnologias de localização usadas em três dos modelos não se adequam perfeitamente a ambientes internos pois exigem proximidade muito grande do usuário para obter as informações ou então não são capazes de identificar múltiplos andares em um ambiente. O modelo destinado à áreas em construção é o único que faz uso da tecnologia mais adequada, o Bluetooth Low Energy. Porém, a emprega em uma área de abrangência muito pequena.
-Outra lacuna identificada foi a falta de informações a respeito do gerenciamento por parte do modelo de mudanças que possam acontecer eventualmente nos ambientes, ou ambientes dinâmicos. Por fim, foi identificado que o único modelo que considera a possibilidade integração com outras soluções é o Tirésias.
+Foi identificado que nenhum dos modelos selecionados faz uso de bibliotecas ou frameworks que visem promover acessibilidade. Além disso, as tecnologias de localização usadas em três dos modelos não se adequam perfeitamente a ambientes internos, pois exigem proximidade muito grande do usuário para obter as informações ou então não são capazes de identificar múltiplos andares em um ambiente. O modelo destinado a áreas em construção é o único que faz uso da tecnologia mais adequada, o Bluetooth Low Energy. Porém, a emprega em uma área de abrangência muito pequena.
+Outra lacuna identificada foi a falta de informações a respeito do gerenciamento, por parte dos modelos, de mudanças que possam acontecer eventualmente nos ambientes, ou ambientes dinâmicos. Por fim, foi identificado que o único modelo que considera a possibilidade integração com outras soluções é o Tirésias.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %=======================================================================
 % Modelo proposto
@@ -583,21 +615,28 @@ Outra lacuna identificada foi a falta de informações a respeito do gerenciamen
 % Como a questão de pesquisa será respondida
 % Diagramas (arquitetura, interações, fluxos e componentes)
 
-Este capítulo apresenta um modelo de sistema que visa promover acessibilidade de pessoas com deficiência visual. O modelo atua auxíliando na localização e no deslocamento de seus usuários, contando com recursos que facilitam a interação do usuário, visto que PDV necessitam de formas especializadas de contato com dispositivos. \citetexto{Falk2013}.
+Este capítulo apresenta um modelo de sistema que visa promover acessibilidade de pessoas com deficiência visual. O modelo atua auxiliando na localização e no deslocamento de seus usuários, contando com recursos que facilitam sua interação, visto que PDV necessitam de formas especializadas de contato com dispositivos. \citetexto{Falk2013}.
 
-O principal recurso agregado ao modelo é a utilização do kit de desenvolvimento de software indoo.rs, fornecido pela empresa Indoors. O indoor.rs promove acessibilidade buscando ser a base na qual são montadas aplicações que necessitam de informações em sobre localização precisas e em tempo real. A decisão de usar essa biblioteca se deve ao fato de o kit facilitar o desenvolvimento de soluções de localização, tanto para aparelhos Android quanto para aparelhos iOS, através de beacons Bluetooth. Outras características da plataforma indoo.rs são a dispensa da necessidade de conexão com a internet, o baixo consumo de energia e inclusão de ferramentas analíticas e gerenciais, através das quais é possível extrair inumeras informações a respeito do movimento dos usuários nas premissas do ambiente. Outros diferenciais são a utilização de sensibilidade ao contexto e o suporte às funcionalidades de acessibilidade oferecidas nativamente pelos sistemas operacionais.
-São previsos também o suporte a ambientes dinâmicos e possibilidade de integração com outras soluções, ambos através de um webservice.
+O principal recurso agregado ao modelo é a utilização do kit de desenvolvimento de software indoo.rs, fornecido pela empresa Indoors. O indoo.rs promove acessibilidade buscando ser a base na qual são montadas aplicações que necessitam de informações precisas e em tempo real. A decisão de usar essa biblioteca se deve ao fato de o kit facilitar o desenvolvimento de soluções de localização, tanto para aparelhos Android quanto para aparelhos iOS, através de beacons Bluetooth. Outras características da plataforma indoo.rs são a dispensa da necessidade de conexão com a internet, o baixo consumo de energia e a inclusão de ferramentas analíticas e gerenciais, através das quais é possível extrair inúmeras informações a respeito do movimento dos usuários nas premissas do ambiente. Outros diferenciais do modelo são a utilização de sensibilidade ao contexto e o suporte às funcionalidades de acessibilidade, oferecidas nativamente pelos sistemas operacionais.
+São previstos também o suporte a ambientes dinâmicos e a possibilidade de integração com outras soluções, ambos através de um serviço web.
 
 \section{Visão geral do modelo} 
-O modelo foi batizado de Insight, sendo composto de um aplicativo para dispositivos móveis, um servidor e diversos beacons Bluetooth, conforme mostrado na figura \ref{fig:visaoGeral}. 
+O modelo, batizado de Insight, foi concebido tendo em mente tecnologias existentes e já disponíveis ao alcance da maioria das pessoas. Todos os equipamentos necessários já existem no mercado, de forma que não é preciso fazer modificações em produtos, ou usar hardware dedicado para aproveitar as funcionalidades aqui descritas.
 
-O aplicativo é contempla pelo seguintes módulos: serviço Bluetooth, motor de localização, módulo de saída e base secundária. No servidor ficam hospedados um webservice REST, uma ferramenta de gerenciamento dos ambientes e uma base de dados primária. Os beacons serão previamente distribuídos em pontos-chave do local onde o modelo for aplicado de forma a otimizar seu alcance e área de cobertura.
+O objetivo do modelo é promover acessibilidade aos seus usuários, possibilitando que eles estejam sempre cientes dos recursos ao seu redor e do caminho até eles. Para isso, o aplicativo auxília o usuário em seu deslocamento curva-a-curva através de instruções verbais. No entanto, visto que o objetivo do modelo não é alertar sobre obstáculos no caminho do usuário, ele não deve ser visto como um substituto para ferramentas que possuam esse fim. O Insight deve ser sempre usado em conjunto com outras ferramentas assistivas, tais como bengalas e cães guia, esses sim possibilitam o desvio de quaisquer obstáculos que possam surgir. 
 
-Através do modelo o usuário poderá saber onde está, descobrir recursos que existem a sua volta e selecionar algum recurso específico para que seja traçada uma rota a ser percorrida para chegar ao destino escolhido, entre outras funcionalidades. O aplicativo fornece instruções via áudio e alertas vibratórios, através dos recursos assistivos dos smartphones, para guiar o usuário ao seu destino, conforme o usuário for se aproximando dos beacons pelo caminho.
+Empresas ou organizações que queiram melhorar a acessibilidade de suas dependências devem ter em mente que outras medidas podem ser tomadas em conjunto com a adoção do modelo, para aumentar a eficiência de seus esforços. Uma medida que possui sinergia total com o Insight é a colocação de piso tátil por todos os trajetos que serão percorridos pelos PDV. Piso tátil são faixas em auto-relevo no chão, fornecendo auxílio e indicações aos PDV durante seus deslocamentos.
+
+A combinação Insight e piso tátil é bastante útil no empoderamento e independência dos usuários. Através do Insight é possivel descobrir locais e rotas, e através do piso tátil os usuários podem ter certeza de que o caminho sendo percorrido é seguro e não possui obstáculos que dificultem o trânsito.
+
+O modelo é composto por um aplicativo para dispositivos móveis, um servidor e diversos beacons Bluetooth, conforme mostrado na figura \ref{fig:visaoGeral}. 
+
+O aplicativo contempla os seguintes módulos: serviço Bluetooth, motor de localização, módulo de saída, módulo de sincronização e base secundária. No servidor ficam hospedados um serviço web REST, uma ferramenta de gerenciamento dos ambientes e uma base de dados primária. Os beacons serão previamente distribuídos em pontos-chave do local onde o modelo for aplicado, de forma a otimizar seu alcance e área de cobertura.
+
+Através do modelo, o usuário poderá saber onde está, descobrir recursos que existem a sua volta e selecionar algum recurso específico para que seja traçada uma rota para chegar ao destino escolhido, entre outras funcionalidades. O aplicativo fornece instruções via áudio e alertas vibratórios, através dos recursos assistivos dos smartphones, para guiar o usuário conforme avança pelo caminho até o seu destino.
 
 Cada um dos componentes, bem como a arquitetura do modelo, são explicados em maiores detalhes nas seções subsequentes.
 
-\FloatBarrier
 \begin{figure}
 	\caption{Visão geral do modelo}
 	\label{fig:visaoGeral}
@@ -607,25 +646,89 @@ Cada um dos componentes, bem como a arquitetura do modelo, são explicados em ma
 		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{figure}
-\FloatBarrier
 
-Não usar o app pra sempre, apenas em algumas viagens até aprender o caminho.
+	\section{Requisitos e casos de uso}
+O diagrama de casos de uso apresentado na figura \ref{fig:diagramaCasosDeUso} foi desenvolvido para auxiliar na fase de elicitação de requisitos, fornecer uma melhor visualização das funcionalidades da solução, e também mostrar quais são os atores envolvidos com cada uma delas. O diagrama foi construído levando em consideração as características encontradas nos trabalhos relacionados, bem como as informações presentes no referêncial teórico deste trabalho.
 
-usado com tecnologias que as pessoas já dispoe, off the shelf products
+	\begin{figure}
+		\caption{Diagrama de casos de uso do Insight}
+		\label{fig:diagramaCasosDeUso}
+		\centering%
+		\begin{minipage}{,9\textwidth}
+			\includegraphics[width=\textwidth]{imgs/casosDeUso}
+			\fonte{Elaborado pelo autor.}
+		\end{minipage}
+	\end{figure}
 
-melhor acessibilidade, ser usado em conjunto com outras ferramentas para desvio de obstaculos como bengala, cães guia, piso tatil, não tomando lugar delas
+A listagem dos requisitos é apresentada nas seções subsequentes, sendo dividida entre requisitos funcionais e requisitos não funcionais.
 
-\citetexto{quinones2011supporting} busca entender, através de entrevistas, como PDV realizam seus deslocamentos diários, bem como elencar requisitos necessários para desenvolver sistemas que os auxiliam nesta tarefa. O trabalho afirma que PDV criam mapas mentais ricos em detalhes dos locais que mais frequentam, memorizando rotas e marcos específicos destes locais. É sugerido no trabalho que uma característica importante de um sistema para navegação é o suporte a ambientes dinâmicos, no sentido de que mesmo caminhos conhecidos podem sofrer alterações, mesmo que levemente.
+\subsection{Requisitos funcionais} 
+Nesta seção são apresentados os requisitos funcionais elicitados para o modelo Insight. Cada requisito funcional corresponde a uma funcionalidade presente na solução, afim de que usuários possam desempenhar suas ações. Para a definição dos requisitos foi levado em consideração que o sistema possui dois tipos de usuários: usuários comuns e administradores.
 
-	\section{Requisitos}
+Os requisitos funcionais elicitados para o modelo são:
 
-Requisitos que tornam smartphones a ferramenta ideal para o uso do modelo
+	\begin{itemize} % breve descrição, atores, condições previas, fluxo de eventos (basico e alternativo), pós condições 
+		% USER
+		\item \textbf{RF01 - Obter localização atual:} o usuário poderá obter sua localização atual a qualquer momento.
+		
+		\item \textbf{RF02 - Visualizar locais próximos:} o usuário poderá visualizar os locais próximos a si, ordenados pela distância até o local.
+		
+		\item \textbf{RF03 - Pesquisar por local:} o usuário poderá pesquisar entre os locais disponíveis usando critérios como nome ou categoria.
+		
+		\item \textbf{RF05 - Visualizar detalhes do local:} o usuário poderá visualizar informações específicas do local selecionado, tais como nome, descrição, categoria e distância até ele.
 
-		\subsection{Requisitos funcionais}
+		\item \textbf{RF08 - Obter rota até local selecionado:} o usuário poderá obter uma rota até o local selecionado, partindo do seu local atual.
 
-		\subsection{Requisitos não funcionais}
+		\item \textbf{RF04 - Listar locais favoritos:} o usuário poderá visualizar uma lista com os locais marcados como seus favoritos.
+		
+		\item \textbf{RF06 - Manter locais favoritos:} o usuário poderá adicionar ou excluir locais da lista de locais favoritos.
+		
+		\item \textbf{RF09 - Enviar pedido de ajuda:} o usuário poderá enviar aos administradores um pedido de ajuda informando o seu local atual, para que alguém seja enviado para socorrer o usuário.
+		
+		% ADMIN
+		\item \textbf{RF10 - Manter locais:} o administrador poderá adicionar, editar, ou excluir locais cadastrados no modelo.
+		
+		\item \textbf{RF11 - Manter beacons:} o administrador poderá adicionar, editar, ou excluir beacons cadastrados no modelo.
+
+	\end{itemize}
+
+\subsection{Requisitos não funcionais}
+Nesta seção são apresentados os requisitos não funcionais elicitados para o modelo Insight. Os requisitos não funcionais descrevem aspectos internos da aplicação no que diz respeito ao desempenho, confiabilidade, interoperabilidade, mobilidade, disponibilidade, segurança e usabilidade.
+
+Os requisitos não funcionais elicitados para o modelo Insight são:
+
+\begin{itemize}
+	\item \textbf{RNF01 - Interoperabilidade - Usar servidor web:} O servidor será uma aplicação web.
+
+	\item \textbf{RNF02 - Interoperabilidade - Serviços web REST:} o servidor disponibilizará serviços web utilizando o padrão Representational State Transfer (REST) para realizar a integração com os clientes e outras aplicações.
+
+	\item \textbf{RNF03 - Interoperabilidade - JSON:} o sistema usará o padrão Javascript Object Notation (JSON) para a transferência de informações a partir do servidor REST, afim de facilitar a comunicação com os clientes e outras aplicações.
+
+	\item \textbf{RNF04 - Portabilidade - Clientes para dispositivos móveis:} o sistema será utilizado em smartphones ou tablets.
+
+	\item \textbf{RNF05 - Usabilidade - Base de dados secundária:} O aplicativo deverá conter uma cópia local do banco de dados do servidor.
+
+	\item \textbf{RNF06 - Confiabilidade - Sincronização:} O aplicativo deverá periodicamente sincronizar sua base de dados com a base de dados do servidor.
+
+	\item \textbf{RNF07 - Usabilidade - Adaptação ao contexto:} o sistema deverá identificar o contexto do usuário através do uso da localização, afim de exibir os recursos mais relevantes e fornecer os próximos passos da navegação.
+
+	\item \textbf{RNF08 - Usabilidade - Comandos por gestos:} a aplicação deverá permitir a interação do usuário através de gestos.
+
+	\item \textbf{RNF09 - Usabilidade - Comandos por voz:} a aplicação deverá permitir a interação do usuário através de comandos de voz.
+
+	\item \textbf{RNF10 - Acessibilidade - Feedback por voz:} a aplicação deverá fornecer informações ao usuário através do uso de voz.
+
+	\item \textbf{RNF11 - Acessibilidade - Feedback tátil:} a aplicação deverá fornecer informações ao usuário através do uso de alertas vibratórios.
+
+	\item \textbf{RNF12 - Acessibilidade - Discrição:} o modelo deve poder ser utilizado a partir de hardware leve e discreto.
+
+	\item \textbf{RNF12 - Usabilidade - Interferência:} o modelo não deve interferir em outras ferramentas que o usuário possa estar usando para se deslocar.
+\end{itemize}
+
+A partir dos requisitos funcionais e não funcionais, é possivel perceber que os dispositivos móveis são a ferramenta ideal para uso do modelo.
 
 	\section{Arquitetura}
+O Insight é projetado utilizando o modelo de arquitetura cliente-servidor. Os aplicativos cliente são instalados em dispositivos móveis, como smartphones e tablets, que se comunicam com o servidor através de serviços web. Para garantir que diversos usuários possam acessar o sistema ao mesmo tempo sem que a performance seja prejudicada, o servidor é disposto conforme o conceito de computação na nuvem, compartilhando os recursos físicos do servidor onde a aplicação está instalada. A figura \ref{fig:arquitetura} mostra um diagrama de blocos onde os principais componentes são exibidos, mostrando também as camadas em que a arquitetura do sistema está divida e como ocorre a troca de informações entre os componentes envolvidos. 
 
 \FloatBarrier 
 \begin{figure}
@@ -639,10 +742,64 @@ Requisitos que tornam smartphones a ferramenta ideal para o uso do modelo
 \end{figure}
 \FloatBarrier
 
-		\subsection{Motor de localização}
-Once the app is activated, the user’s location is mapped on their own device, with spoken directions transmitted via bone conducting earphones.
+	\subsection{Componentes do aplicativo}
+Nesta seção são apresentados cada um dos componentes, mostrados na figura \ref{fig:arquiteturaAplicativo}, que formam a arquitetura da aplicação para dispositivos móveis do modelo Insight.
 
-		\subsection{Serviço Bluetooth}
+\begin{figure}
+	\caption{Diagrama de blocos da arquitetura do aplicativo}
+	\label{fig:arquiteturaAplicativo}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/arquiteturaAplicativo.png}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+
+		\subsubsection{Módulo de sincronização}
+Para que o aplicativo possa ser usado sem a exigência de conexão constante com a internet existe o módulo de sincronização. Ele é o responsável por manter a base de dados do aplicativo sempre atualizada em relação a base de dados principal do modelo, localizada no servidor, e tambem enviar as informações de monitoramento do aplicativo para o servidor.
+
+O módulo se conecta com o servidor através do serviço web e verifica se existem modificações nos locais ou nos beacons desde a ultima sincronização e, em caso positivo, copia as novas informações até que as duas bases estejam equiparadas. Por padrão, a verificação em busca de modificações ocorre semanalmente, de forma a não consumir muito da bateria dos dispositivos. Todavia, esse valor pode ser ajustado para mais ou para menos afim de permitir que o modelo lide com mudanças dinâmicas no ambiente. A habilidade de suportar mudanças dinâmicas no ambiente é, segundo\citetexto{quinones2011supporting}, uma característica muito importante num sistema de localização acessível, visto que caminhos já conhecidos pelos usuários podem sofrer alterações, mesmo que levemente. Mudanças dinâmicas são alterações não previstas em rotas ou locais, como por exemplo um elevador não funcionando, uma sala fechada para limpeza, um caminho em manutenção, etc.
+
+A execução da sincronização é independênte do usuário, sendo relizada de forma automatica e transparente, através de uma conexão com o servidor via internet, usando o padrão REST para troca das informações.
+
+		\subsubsection{Base de dados secundária}
+É função principal da base de dados secundária manter uma cópia das informações do servidor, bem como dados relativos as preferencias do usuário. Esses dados ficam armazenados locamente no dispositivo, numa base de dados SQLite. Exemplos de informações mantidas por esta base são as informações completas referentes aos becons e locais cadastrados no servidor e também os locais marcados pelo usuário como seus favoritos.
+
+Além da função principal, a base secundária tambem guarda informações anonimas que visam permitir uma execução otimizada do aplicativo, tais como histórico completo de sincronizações realizadas, e dados de monitoramento do aplicativo, destinos selecionados pelo usuário, como rotas traçadas pelo sistema, instruções dadas ao usuário, informações de tempo e hora de uso, entre outras. Para garantir a privacidade do usuário, todas as informações analiticas do aplicativo são anonimizadas.
+
+A base secundária é alimentada pelo módulo de sincronização, responsável por adicionar ou excluir os dados cadastrados. Seu objetivo é aumentar a usabilidade do aplicativo, não exigindo conexão com a internet para traçar as rotas, tornando mais rápida a resposta ao usuário.
+
+		\subsubsection{Motor de localização}
+O motor de localização é, juntamente com o serviço Bluetooth, o coração do modelo. Sua função receber os dados enviados pelo serviço Bluetooth juntamente com as requisições do usuário, e então calcular a rota desde a localização atual do usuário até o destino por ele escolhido.
+
+
+
+A forma com que a rota é disponibilizada ao usuário ...
+\citetexto{quinones2011supporting} busca entender, através de entrevistas, como PDV realizam seus deslocamentos diários, bem como elencar requisitos necessários para desenvolver sistemas que os auxiliam nesta tarefa. O trabalho afirma que PDV criam mapas mentais ricos em detalhes dos locais que mais frequentam, memorizando rotas e marcos específicos destes locais. 
+
+Uma vez que o aplicativo é ativado, sua localização é obtida e informada a ele através do uso de voz
+
+
+
+
+\citetexto{montague2010accessible}:
+
+preparation, decision or confirmation. Preparation statements are instructions given as a lead up to an action the user would have to carry out. Decision statements are a call for action from the user following the instructions, occurring at decision points in the route. Confirmation statements are provided to reassure the user that they have carried out the previous step correctly.
+Regardless of statement type there seemed to be a consistent structure: Action, Context and Reference (ACR) as shown in Figure 1.
+The action gives meaning to the instruction the user is to carry out, such as “Look for...” and “Turn to the ...”. Context gives direction to the user -- Left, Forward, Up and so on. Finally, reference can be used to name objects or locations to assist the user such as Sofas, Fire exit, Stairwell etc. References are not always required.
+
+
+
+
+
+
+
+
+
+	\subsubsection{Serviço Bluetooth}
+O serviço Bluetooth é a perte do aplicativo onde está toda a programacão que o torna compativel com a tecnologia Bluetooth Low Energy. Através dele é feita a detecção dos beacons presentes no entorno do usuário, permitindo com que sua localização atual seja obtida.
+
+Detecta quando usuário chega e manda um notificação
 
 Beacons apenas em pontos chave. 
 
@@ -653,7 +810,7 @@ This creates opportunities for new types of app providing information, utility a
 This means that the applications that emerge in the near future, and how they handle the balance of providing consumer utility with data collection, are going to be of crucial importance in promoting adoption of the technology. Supermarket (and other) loyalty cards show that it's possible to get this right - they are widely embraced, probably because the benefits to the consumer are clear and the proposition is simple.
 
 
-		\subsection{Módulo de saída} % INDOOR HUMAN NAGIVATION SYSTEMS: visual, audio, haptic
+	\subsubsection{Módulo de saída} % INDOOR HUMAN NAGIVATION SYSTEMS: visual, audio, haptic
 
 \citetexto{ullman2009accommodating} 
  emphasized the importance of clear audible messages and spatial message elements 
@@ -667,19 +824,41 @@ Voz gerada por computador permite respnder mais rapidamente a mudanças no ambie
 
 Less is more. Simple and concise instructions were preferred over frequent and absolute ones, and using instructions only at significant waypoints was an effective strategy as the station’s unique sounds and a user’s instinct also helped navigation. It also proved that there was no need to communicate distance in metres or number of strides.
 
-		\subsection{Pedido de ajuda}
+		\subsubsection{Pedido de ajuda}
 
-		\subsection{Serviço Web}
 
-Permite responder a ambientes dinâmicos
 
-		\subsection{Bases de dados}
+\citetexto{dias2015navpal} If lost or disoriented, they typically ask for assistance from sighted people in the vicinity... In addition, if needed, the tools can assist the traveler in seeking assistance from others in the environment or guiding the traveler to safety....
+
+Since we do not envision technology solutions completely eliminating the need for seeking human assistance in the future,
+
+
+
+	\subsection{Componentes do servidor}
+Nesta seção são apresentados cada um dos componentes, mostrados na figura \ref{fig:arquiteturaServidor}, que formam a arquitetura do servidor do modelo Insight.
+
+\begin{figure}
+	\caption{Diagrama de blocos da arquitetura do servidor}
+	\label{fig:arquiteturaServidor}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/arquiteturaServidor.png}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+
+		\subsubsection{Serviço Web}
+
+			Permite responder a ambientes dinâmicos
+
+
+		\subsubsection{Base de dados principal}
 
 %=======================================================================
 % Metodologia
 %=======================================================================
 \chapter{Metodologia}
-Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos a solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
+Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos à solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
 
 	\section{Desenvolvimento}
 O trabalho de modelagem e desenvolvimento do Insight foi divido em 9 passos metodológicos apresentados na figura \ref{fig:passosMetodologicos}. Os passos 1 a 6 foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do Rio dos Sinos (UNISINOS).
@@ -699,11 +878,11 @@ A seguir são apresentados brevemente cada um dos passos concebidos:
 % passos
 \begin{enumerate}
 	%	1
-	\item \textbf{Revisar bibliografia:} Pesquisa bibliográfica objetivando descobrir trabalhos envolvendo o tema em questão. Realizar leitura e resumo dos trabalhos relevantes encontrados, e com isso criar uma fundamentação teórica adequada para o desenvolvimento desta pesquisa.
+	\item \textbf{Revisar bibliografia:} Pesquisa bibliográfica objetivando descobrir trabalhos envolvendo o tema em questão. Realizar leitura e resumo dos trabalhos relevantes encontrados, e, com isso, criar uma fundamentação teórica adequada para o desenvolvimento desta pesquisa.
 	%	2
-    \item \textbf{Realizar estudo sobre deficiência visual:} Estudar essa deficiência em busca de compreender a maneira com que ela afeta seus portadores e buscando compreender o processo mental realizado por eles durante seu deslocamento, tanto em ambientes familiares como desconhecidos, afim de criar uma abstração desse processo aplicando-a ao modelo.
+    \item \textbf{Realizar estudo sobre deficiência visual:} Estudar essa deficiência em busca de compreender a maneira com que ela afeta seus portadores, e também o processo mental realizado por eles durante seu deslocamento, tanto em ambientes familiares como desconhecidos, afim de criar uma abstração desse processo aplicando-a ao modelo.
 	%	3
-    \item \textbf{Realizar estudo sobre tecnologias assistivas:} Estudar e verificar que tecnologias já foram aplicadas na acessibilidade, avaliando quais podem ser utilizadas no desenvolvimento do modelo para melhor atender as necessidades dos PDV.
+    \item \textbf{Realizar estudo sobre tecnologias assistivas:} Estudar e verificar quais tecnologias já foram aplicadas na acessibilidade, avaliando quais podem ser utilizadas no desenvolvimento do modelo para melhor atender às necessidades dos PDV.
 	%	4
     \item \textbf{Realizar estudo sobre sistemas de localização:} Estudo buscando compreender o estado da arte dos sistemas de localização, identificando características que devem ser aplicadas em um sistema acessível destinado a PDV.
 	%	5
@@ -715,13 +894,13 @@ A seguir são apresentados brevemente cada um dos passos concebidos:
 	%	8
 	\item \textbf{Testar aceitação do sistema:} Codificar uma prévia do modelo desenvolvido de modo que ela possa ser avaliada em campo.
 	%	9
-	\item \textbf{Analisar resultados dos testes:} Realizar análise dos resultados obtidos através dos questionários, traçando uma conclusão do trabalho desenvolvido. Posteriormente verificando os benefí cios e dificuldades apresentados pelo sistema aos participantes, afim de estabelecer ajustes e correções, bem como trabalhos futuros.
+	\item \textbf{Analisar resultados dos testes:} Realizar análise dos resultados obtidos através dos questionários, traçando uma conclusão do trabalho desenvolvido. Posteriormente, verificando os benefícios e dificuldades apresentados pelo sistema aos participantes, afim de estabelecer ajustes e correções, bem como trabalhos futuros.
 \end{enumerate}
 
 	\section{Avaliação}
-A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação do mesmo serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas. A primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso. A segunda será a técnica da entrevista estruturada. 
+A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação dele serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas: a primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso; a segunda será a técnica da entrevista estruturada. 
 
-A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes para obter informações sobre a forma como os usuários se guiam quando necessitam deslocar-se em um ambiente desconhecido. Após o termino dos testes para obter informações relativas a qualidade da localização e da navegação oferecida pelo protótipo. O resultado da analise permitirá identificar a eficácia do sistema e possibilitará elencar melhorias e/ou trabalhos relacionados ao tema.
+A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes, para obter informações sobre a forma como os usuários se guiam quando necessitam deslocar-se em um ambiente desconhecido. Após o término dos testes, para obter informações relativas à qualidade da localização e da navegação oferecidas pelo protótipo. O resultado da análise permitirá identificar a eficácia do sistema e possibilitará elencar melhorias e/ou trabalhos relacionados ao tema.
 
 (TODO: avaliação por cenários ou usuários)
 
@@ -750,14 +929,15 @@ A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes p
 				Hardware 				& Luva equipada c/ leitor RFID e smartphone & Dispositivos móveis c/ Bluetooth 	& Dispositivos móveis c/ Bluetooth 		& Dispositivos Móveis c/ GPS \\ \hline
 				Arquitetura 			& Cliente-servidor 							& Cliente-servidor 					& Cliente-servidor 						& Cliente-servidor 			 \\ \hline
 		\end{tabular}
-		\fonte{Elaborado pelo autor}
+		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{table}
 \FloatBarrier
 	
 	\section{Trabalhos futuros}
-- Wearables pra não ser necessário usar as mãos
-- Salas de aula, integração
+- Considerar dificuldade do percurso
+- Wearables pra não ser necessário usar as mãos \\
+- Salas de aula, integração 
 
 %=======================================================================
 % Referências
