@@ -5,7 +5,6 @@
 \usepackage{bibentry} 		% para inserir refs. bib. no meio do texto
 \usepackage{placeins}		% manter imagens e tabelas no lugar especificado
 \usepackage{enumitem}
-\usepackage{hyperref}		% adiciona links no sumário para as seções do documento
 \usepackage{xcolor}			% texto colorido no PDF
 \usepackage{tabularx}		% permite específicar o tamanho das colunas de uma tabela
 
@@ -69,7 +68,7 @@ and never regrets.\\
 % Agradecimentos (opcional).
 %=======================================================================
 \begin{agradecimentos}
-Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, por ter me aceito como orientando, pelas valiosas conversas, seu auxilio incomparável e por sua disponibilidade sempre que necessário.
+Agradeço primeiramente ao meu orientador Cristiano André da Costa, pessoa a quem eu muito admiro, por ter me aceito como seu orientando, pelas valiosas conversas, seu auxilio incomparável e por sua disponibilidade sempre que necessário.
 
 Aos meus pais, Ivani Grolli Gräbin e Milton Gräbin, que sempre me incentivaram a estudar e a realizar meus sonhos.
 
@@ -165,9 +164,10 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %=======================================================================
 % Introdução
 %=======================================================================
+\chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
+
 %\epigrafecap{For millions of years, mankind lived just like the animals. Then something happened which unleashed the power of our imagination. We learned to talk and we learned to listen...}{Stephen Hawking}
 
-\chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
 Pessoas com a visão saudável se apoiam enormemente no sentido da visão para se localizar. Frequentemente a sinalização destinada a orientação em locais como aeroportos, shopping centers e universidades é composta inteiramente por sinais visuais. Por esse mesmo motivo, pessoas com deficiência visual (PDV) têm grande dificuldade quando precisam deslocar-se, necessitando do auxílio de ferramentas como bengalas e cães-guia ou ainda da ajuda de outras pessoas. \citetexto{Ganz2014} afirma que a visão é o recurso mais importante na percepção do que se passa no entorno de alguém, e a sua perda significa uma severa redução na orientação e mobilidade, especialmente em ambientes desconhecidos e complexos.
 
 O presente trabalho trata de uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a visual, atuando na forma com que elas se orientam e se deslocam em ambientes internos. Será mostrada como alternativa a modelagem de um sistema que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por Bluetooth Low Energy (BLE).
@@ -203,7 +203,7 @@ Em relação à mobilidade, \citetexto{YouthManifesto} cita que existe uma varie
 
 Indo ao encontro das iniciativas das RLSB e atuando na área de mobilidade, o modelo proposto visa auxiliar portadores de deficiência visual a se localizar e se deslocar em ambientes internos, como, por exemplo, o campus de uma universidade, buscando facilitar o acesso à educação e à vida social disponível nos campi. Usando dispositivos móveis, o sistema irá informar ao usuário sua localização atual e recomendar caminhos que o levem ao seu destino, levando em consideração os obstáculos em sua rota.
 
-Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema será projetado para ter usabilidade intuitiva e ser uma parte quase invisível do cotidiano do usuário, aplicando o conceito de computação ubíqua introduzido em \citetexto{Weiser1991}, afim de se adaptar às necessidades dos PDV.
+Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema será projetado para ter usabilidade intuitiva e ser uma parte quase invisível do cotidiano do usuário, aplicando o conceito de computação ubíqua introduzido em \citetexto{Weiser1991}, a fim de se adaptar às necessidades dos PDV.
 
 	\section{Questão de pesquisa}
 	Tendo identificado e contextualizado o problema, foi definida a seguinte questão de pesquisa a ser explorada neste trabalho:
@@ -261,7 +261,7 @@ A computação ubíqua, em outras palavras, consiste em trazer e integrar a comp
 
 Essa área de pesquisa ainda traz consigo conceitos fundamentais para uma devida compreensão do termo. A heterogeneidade da rede é garantida por padrões que possibilitam que dispositivos criados por diferentes fabricantes, para diferentes finalidades, com diferentes softwares e hardwares, se conectem através da internet. A integração com o mundo real possibilita a inserção de computadores e sensores em diversos artigos comuns do dia-a-dia, gerando informações sobre costumes e preferências dos usuários que permitem uma nova geração de serviços inteligentes e cuidadosamente personalizados. Computação na nuvem, sistemas distribuídos, computação móvel e internet são termos que andam de mãos dadas e servem como base para garantir que os conceitos anteriormente apresentados estejam sempre disponíveis e ao alcance dos dedos em segundos em qualquer lugar do mundo.
 
-Uma das características mais interessantes da computação pervasiva é a sensibilidade ao contexto, através da qual informações relevantes, tais como localização, preferência, histórico e horário, servem para que os softwares desenvolvidos possam adaptar-se as necessidades e reagir, instantânea e transparentemente, às mudanças no ambiente em que o usuário se encontra.
+Uma das características mais interessantes da computação ubíqua é a ciência de contexto, através da qual informações relevantes, tais como localização, preferência, histórico e horário, servem para que os softwares desenvolvidos possam adaptar-se as necessidades e reagir, instantânea e transparentemente, às mudanças no ambiente em que o usuário se encontra.
 
 	\section{Acessibilidade}
 Acessibilidade representa o direito de acessar informações; eliminação de barreiras arquitetônicas; de disponibilização de comunicação; de acesso físico; de equipamentos e programas adequados; de conteúdo e apresentação da informação em formatos alternativos – não se restringindo somente a internet –, a fim de melhorar a qualidade de vida de pessoas com algum tipo de deficiência. \cite{AcessibilidadeBrasil}. 
@@ -271,8 +271,6 @@ No Brasil existe legislação específica para assegurar os direitos individuais
 
 % Acessibilidade na tecnologia
 Entretanto, a vida digital foge da alçada da jurisdição de qualquer país. Em busca de tornar a internet um lugar mais acessível para todas as pessoas, entram em cena organizações como o Institute of Electrical and Electronics Engineers (IEEE) e o World Wide Web Consortium (W3C), que publicam orientações e diretrizes numa tentativa de garantir acessibilidade universal da web. Nenhuma empresa ou desenvolvedor é formalmente obrigado a aplicar essas diretrizes em seus sites e produtos, todavia, o fazem com o objetivo de atrair mais clientes ou visitantes. As recomendações não são direcionadas para uma tecnologia específica, podendo ser utilizadas em qualquer aplicação, linguagem ou navegador de internet. \cite{W3Cguideliness}. Segundo \citetexto{Rodriguez-Sanchez:2014}, um aspecto que deve ser considerado é que a aplicação seja acessível para um grande número de pessoas, independentemente das necessidades dos usuários, devendo-se usar diversos canais sensoriais (visual, auditivo e tátil) para passar as informações. Porém, é importante ressaltar que a acessibilidade da web não é baseada apenas na acessibilidade do conteúdo disponibilizado, e sim nos diversos agentes e componentes, como navegadores, usuários, desenvolvedores e ferramentas de desenvolvimento, trabalhando juntos para oferecer uma melhor experiência ao usuário.
-
-%Aqui a Vic parou
 
 De acordo com \citetexto{vanderheiden2008ubiquitous}, no início dos anos 90 apenas computadores fabricados pela Apple contavam com recursos de acessibilidade, enquanto nos demais, softwares de terceiros eram a alternativa para aqueles que necessitavam. Graças aos esforços combinados da indústria e da academia, hoje todos os maiores sistemas operacionais possuem recursos de acessibilidade, como leitores de tela e lente de aumento, nativos entre suas funcionalidades. Pensados e concebidos diretamente na construção do sistema operacional, esses recursos são capazes de oferecer uma integração mais profunda com o sistema e uma experiência muito melhor ao usuário se comparados a softwares produzidos por outras empresas. 
 
@@ -325,7 +323,7 @@ A tecnologia possui duas formas distintas de atuação, apesar de compartilharem
 
 De acordo com \citetexto{Townsend2014}, o LE foi criado para permitir produtos que requerem baixíssimo consumo de energia e baixo custo, quando comparados ao outro modo. Assim sendo, esse modo foi pensado para aplicações que exigem pouca troca de informações. Um exemplo de produto viável com a chegada do modo LE são os beacons Bluetooth, que consistem em dispositivos do tamanho de uma moeda comum, compostos por um processador, uma bateria e um transmissor, que transmitem informações sobre si em intervalos regulares. Como o sinal dos beacons tem seu alcance limitado a alguns poucos metros, foi introduzido o conceito de microlocalização, tornando possível o desenvolvimento de novas aplicações e serviços onde antes não era possível, tais como lojas, grandes shows ou eventos, estádios esportivos e em ambientes internos. A microlocalização é definida por \citetexto{zafari2015micro} como a obtenção da localização de uma entidade com grau de precisão na ordem dos centímetros. 
 
-A imensa maioria dos telefones celulares hoje faz uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional. Ao contrário da versão anterior, a partir da versão 4, a tecnologia Bluetooth não exige o pareamento de dispositivos para que eles possam se localizar e comunicar.
+A imensa maioria dos telefones celulares hoje faz uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional. Os sistemas operacionais Android e iOS oferecem suporte a tecnologia a partir das versões 4.3 e 5, respectivamente. Ao contrário da versão anterior, a partir da versão 4, a tecnologia Bluetooth não exige o pareamento de dispositivos para que eles possam se localizar e comunicar.
 
 De acordo com \citetexto{ballance2008developing}, a combinação computação ubíqua e Bluetooth tem potencial para fomentar soluções simples e baratas que outrora não seriam possíveis.
 
@@ -338,7 +336,7 @@ De acordo com \citetexto{ballance2008developing}, a combinação computação ub
   \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia Bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de Bluetooth low energy.
 \end{itemize}
 
-A tabela \ref{tab:tecnologiasLocalizacao} mostra algumas características dessas tecnologias.
+A Tabela \ref{tab:tecnologiasLocalizacao} mostra algumas características dessas tecnologias.
 
 \FloatBarrier
 \begin{table}
@@ -370,7 +368,7 @@ Importante ressaltar que os dados apresentados são limites teóricos da tecnolo
 \epigrafecap{The most dangerous phrase in the language is "We have always done this way"}{Grace Hopper}
 % Essa atividade consiste em detalhar os trabalhos relacionados. O capítulo começa apresentando como os trabalhos relacionados foram escolhidos. A seguir, existe uma seção descrevendo cada trabalho relacionado. Por fim, uma seção compara os trabalhos relacionados, apresentando a tabela criada na atividade 2 e descrevendo as lacunas que serão abordadas pela presente dissertação.
 
-Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pessoas com deficiência visual, é necessário buscar outros trabalhos com foco na mesma área, afim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados diversos trabalhos que compartilham do objetivo deste através do emprego de propostas tecnológicas. Para a escolha daqueles que seriam apresentados neste capítulo foi feita uma seleção, levando em consideração critérios como a similaridade do objetivo com o deste trabalho, o ano de publicação do modelo, suporte a acessibilidade, foco em dispositivos móveis e a abrangência de ambientes internos. Dessa forma, os selecionados foram os trabalhos mais recentes que promovam acessibilidade, usem dispositivos móveis, atuem principalmente em ambientes internos e possuam objetivos mais semelhantes com o deste trabalho.
+Para criar um novo modelo em busca de mitigar um problema enfrentado pelas pessoas com deficiência visual, é necessário buscar outros trabalhos com foco na mesma área, a fim de identificar falhas e virtudes de cada um, gerando um comparativo entre eles. Foram encontrados diversos trabalhos que compartilham do objetivo deste através do emprego de propostas tecnológicas. Para a escolha daqueles que seriam apresentados neste capítulo foi feita uma seleção, levando em consideração critérios como a similaridade do objetivo com o deste trabalho, o ano de publicação do modelo, suporte a acessibilidade, foco em dispositivos móveis e a abrangência de ambientes internos. Dessa forma, os selecionados foram os trabalhos mais recentes que promovam acessibilidade, usem dispositivos móveis, atuem principalmente em ambientes internos e possuam objetivos mais semelhantes com o deste trabalho.
 
 Neste capítulo, são apresentadas quatro soluções que possuem propósito semelhante, bem como características desejadas por esse trabalho. Ao final desde capítulo, no item~\ref{comparacaoTrabs}, é apresentado um comparativo entre os trabalhos selecionados, destacando pontos que são relevantes para o desenvolvimento da arquitetura do presente trabalho.
 
@@ -383,7 +381,7 @@ Neste capítulo, são apresentadas quatro soluções que possuem propósito seme
 A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porém, em \citetexto{Ganz2012}, ela é explicada de modo mais profundo. O modelo é formado pelos seguintes componentes: o ambiente, o conjunto luva PERCEPT e aplicativo Android e por fim o servidor PERCEPT. O funcionamento deles é descrito da seguinte forma:
 
 \begin{itemize}
-	\item Ambiente é onde ficam instaladas as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centímetros, para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem em um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, afim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braile.
+	\item Ambiente é onde ficam instaladas as tags passivas de RFID. Elas podem estar dispostas de duas formas: tags comuns, colocadas em cada porta para indicar um destino específico, sempre na altura de um metro e vinte centímetros, para simplificar a procura do usuário pela tag; ou então em quiosques, localizados sempre em pontos chave do ambiente, tais como entradas e saídas, elevadores ou saídas de emergência. Quiosques consistem em um conjunto de tags, que podem indicar diversos destinos possíveis, tais como salas no andar atual, diferentes andares, banheiros e saídas de emergência. É nos quiosques que o usuário informa ao sistema o destino escolhido, a fim de obter a rota até ele. Em todas as tags, independentemente do tipo, está escrito o destino que ela representa, em alto relevo e em braile.
 	
 	\item A luva PERCEPT é responsável por obter as informações das tags através de um leitor RFID embutido. Quando a leitura de uma tag é realizada, a luva se comunica através de Bluetooth com o smartphone Android para que a rota até o destino seja calculada. O leitor é construído usando uma placa Arduino, um leitor RFID, uma antena, um chip Bluetooth, uma bateria e três botões. Através dos botões, o usuário pode navegar entre o conjunto de instruções da rota. De acordo com os autores, a decisão de inserir o leitor em uma luva foi tomada pois, assim, o usuário pode manter suas mãos livres para outras atividades. Para fazer a leitura de uma tag, o usuário deve, após encontrar aquela que contém o destino desejado entre todas as outras, posicionar a palma de sua mão com a luva em cima da tag.
 
@@ -398,10 +396,10 @@ A arquitetura do sistema também é descrita em \citetexto{Ganz2011}. Porém, em
 	\item O servidor armazena o layout dos ambientes e calcula as rotas até o destino escolhido pelo usuário. Através da ferramenta Quantum GIS, cada andar é individualmente mapeado em um grafo onde cada nó representa um possível destino e cada aresta um caminho disponível. Todos os dados são armazenados em uma base de dados Postgre. O servidor calcula a rota mais curta até o destino escolhido, formulando instruções de texto, quando recebe uma requisição de um cliente Android. Uma instrução de deslocamento 
 \end{itemize}
 
-A figura \ref{fig:visaoGeralPercept} mostra uma visão geral da arquitetura. Do lado esquerdo ela mostra os quiosques e, em detalhe, as tags. No centro é exibida a luva na mão de um usuário juntamente com o smartphone. Por fim, do lado direito, é mostrada a comunicação entre o modulo que calcula as rotas e a base de dados.
+A Figura \ref{fig:visaoGeralPercept} mostra uma visão geral da arquitetura. Do lado esquerdo ela mostra os quiosques e, em detalhe, as tags. No centro é exibida a luva na mão de um usuário juntamente com o smartphone. Por fim, do lado direito, é mostrada a comunicação entre o modulo que calcula as rotas e a base de dados.
 
-\FloatBarrier
-	\begin{figure}
+
+	\begin{figure}[!ht]
 		\caption{Visão geral da arquitetura do Percept}
 		\label{fig:visaoGeralPercept}
 		\centering%
@@ -410,7 +408,7 @@ A figura \ref{fig:visaoGeralPercept} mostra uma visão geral da arquitetura. Do 
 			\fonte{\citetexto{Ganz2011}}
 		\end{minipage}
 	\end{figure}
-\FloatBarrier
+
 
 Em uma breve avaliação do modelo, podemos ressaltar que, devido ao baixo custo das tags RFID, é fácil implantar o sistema em um grande ambiente. Porém, a necessidade de conexão constante com a internet pode ser um problema. Outro ponto bastante problemático é o uso de tags, pois, conforme \citetexto{yang2011supporting}, não é possível assumir que PDV consigam facilmente encontrar tags RFID, por isso muita energia seria para leitura a distância. O fato de o usuário necessitar procurar os quiosques, bem como encontrar a tag correspondente ao destino desejado, é um grande complicador.
 
@@ -424,9 +422,9 @@ De acordo com \citetexto{Falk2013}, o Tirésias emprega conceitos de sensibilida
 
 O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone e, baseado nisso, o sistema exibe recursos de acessibilidade disponíveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são a listagem de recursos disponíveis, a indicação de caminho até recurso selecionado e a solicitação de ajuda.
 
-O modelo Tirésias é composto pelos módulos de saída, entrada, configurações e pelo assistente pessoal, somados ao modelo Hefestos. A figura \ref{fig:visaoGeralTiresias} exibe uma visão geral da arquitetura do Tirésias, mostrando em cima os componentes do próprio modelo, e embaixo os componentes do modelo em que ele é baseado. Os componentes são descritos abaixo.
+O modelo Tirésias é composto pelos módulos de saída, entrada, configurações e pelo assistente pessoal, somados ao modelo Hefestos. A Figura \ref{fig:visaoGeralTiresias} exibe uma visão geral da arquitetura do Tirésias, mostrando em cima os componentes do próprio modelo, e embaixo os componentes do modelo em que ele é baseado. Os componentes são descritos abaixo.
 
-\begin{figure}
+\begin{figure}[!ht]
 	\caption{Visão geral da arquitetura do Tirésias}
 	\label{fig:visaoGeralTiresias}
 	\centering%
@@ -437,7 +435,7 @@ O modelo Tirésias é composto pelos módulos de saída, entrada, configuraçõe
 \end{figure}
 
 \begin{itemize}
-	\item O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são divididas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário, são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário de movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado e, quando o usuário conclui o trecho atual, o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
+	\item O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são divididas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário, são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário se movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado e, quando o usuário conclui o trecho atual, o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
 
 	\item O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispostivos com teclado dedicado ou somente a tela sensível ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniente de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
 
@@ -462,9 +460,9 @@ Aqui existe um grande ponto fraco da tecnologia utilizada. Para funcionar corret
 
 A arquitetura do sistema possui estrutura cliente-servidor, onde o servidor é responsável apenas por hospedar a base de dados e trocar informações entre usuários através da ferramenta Google Cloud Messaging (GCM) \footnote{Ferramenta de mensageria do Google, para mais informações consultar a documentação da ferramenta em https://developer.android.com/google/gcm/index.html} que é usada quando um usuário decide compartilhar alguma informação com outros. O smartphone é o responsável pela execução da maior parte das funcionalidades do modelo. Nele, ficam armazenadas as informações pessoas de cada usuário, seus contatos, associações e notas criadas.
 
-A figura \ref{fig:visaoGeralUCAT} exibe uma visão geral da arquitetura do modelo UCAT. Nela podemos ver que os clientes conectados ao servidor e ao GCM, enquanto a base de dados se conecta ao servidor e ao GCM. 
+A Figura \ref{fig:visaoGeralUCAT} exibe uma visão geral da arquitetura do modelo UCAT. Nela podemos ver que os clientes conectados ao servidor e ao GCM, enquanto a base de dados se conecta ao servidor e ao GCM. 
 
-\begin{figure}
+\begin{figure}[!ht]
 	\caption{Visão geral da arquitetura do UCAT}
 	\label{fig:visaoGeralUCAT}
 	\centering%
@@ -476,7 +474,7 @@ A figura \ref{fig:visaoGeralUCAT} exibe uma visão geral da arquitetura do model
 
 Para facilitar a interação dos usuários com o telefone, o sistema lança mão de alguns recursos de acessibilidade:
 \begin{itemize}
-	\item O sistema oferece diferentes formas de navegação baseada em gestos realizados na tela, afim de simplificar a navegação do usuário pelas telas e menus. Alguns gestos disponíveis são o deslizar, o clique duplo e o clique longo. O primeiro tem a função de percorrer as listagens de recursos e menus do aplicativo baseado na direção deslizada na tela. Já os outros servem para confirmar ações ou obter mais informações, respectivamente.
+	\item O sistema oferece diferentes formas de navegação baseada em gestos realizados na tela, a fim de simplificar a navegação do usuário pelas telas e menus. Alguns gestos disponíveis são o deslizar, o clique duplo e o clique longo. O primeiro tem a função de percorrer as listagens de recursos e menus do aplicativo baseado na direção deslizada na tela. Já os outros servem para confirmar ações ou obter mais informações, respectivamente.
 	
 	\item Feedback por áudio, ou retorno do sistema através de voz, acontece através da função de conversão de texto para voz nativa do Android\footnote{Mais informações no Centro de Ajuda sobre acessibilidade do Android, em https://support.google.com/accessibility/android/}, sendo empregado para avisar ao usuário em que parte da aplicação ele se encontra, bem como listar funcionalidades de cada tela.
 
@@ -488,12 +486,12 @@ Para facilitar a interação dos usuários com o telefone, o sistema lança mão
 %=======================================================================
 	\section{Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impareid Navigate Work Zones Safely} 
 
-O estudo realizado por \citetexto{chen2014} revela que pedestres correspondem a 17\% das mortes em canteiros de obras nos Estados Unidos. Segundo o autor, um grande planejamento é feito para acomodar o trafego de pedestres ao redor de zonas em obras, especialmente para os deficientes visuais, e garantir segurança no trajeto. O trabalho descreve seus objetivos da seguinte forma: compreender quais as informações relevantes para redirecionar PDV ao redor de obras, afim de prover mensagens relevantes e criar um sistema para dispositivos móveis afim de antecipadamente alertar seus usuários sobre a aproximação dos canteiros de obra. Ainda é citada a intenção de padronizar o formato de mensagens emitido em zonas em construção no redirecionamento dos transeuntes, afim de garantir aos PDV a possibilidade de caminhar independentemente e com segurança.
+O estudo realizado por \citetexto{chen2014} revela que pedestres correspondem a 17\% das mortes em canteiros de obras nos Estados Unidos. Segundo o autor, um grande planejamento é feito para acomodar o trafego de pedestres ao redor de zonas em obras, especialmente para os deficientes visuais, e garantir segurança no trajeto. O trabalho descreve seus objetivos da seguinte forma: compreender quais as informações relevantes para redirecionar PDV ao redor de obras, a fim de prover mensagens relevantes e criar um sistema para dispositivos móveis com a finalidade de antecipadamente alertar seus usuários sobre a aproximação dos canteiros de obra. Ainda é citada a intenção de padronizar o formato de mensagens emitido em zonas em construção no redirecionamento dos transeuntes, para garantir aos PDV a possibilidade de caminhar independentemente e com segurança.
 
-Para atingir o primeiro objetivo, foram conduzidas entrevistas com PDV afim de compreender os desafios que eles enfrentam e quais são consideradas informações relevantes durante seu deslocamento. Para o segundo objetivo, o trabalho propõe um aplicativo para smartphones Android que verbalmente emite mensagens enquanto seu usuário se aproxima das áreas delimitadas, fazendo uso de GPS, Bluetooth, função de conversão texto para voz e sensores presentes no telefone. 
+Para atingir o primeiro objetivo, foram conduzidas entrevistas com PDV com o objetivo de compreender os desafios que eles enfrentam e quais são consideradas informações relevantes durante seu deslocamento. Para o segundo objetivo, o trabalho propõe um aplicativo para smartphones Android que verbalmente emite mensagens enquanto seu usuário se aproxima das áreas delimitadas, fazendo uso de GPS, Bluetooth, função de conversão texto para voz e sensores presentes no telefone. 
 
-\FloatBarrier
-\begin{figure}
+
+\begin{figure}[!ht]
 	\caption{Visão geral da arquitetura do modelo}
 	\label{fig:visaoGeralWorkzones}
 	\centering%
@@ -502,21 +500,21 @@ Para atingir o primeiro objetivo, foram conduzidas entrevistas com PDV afim de c
 		\fonte{\citetexto{chen2014}}
 		\end{minipage}
 \end{figure}
-\FloatBarrier
+
 
 O modelo consiste em três componentes: servidor com banco de dados com mapas, aplicativo para Android e beacons Bluetooth:
 \begin{itemize}
 	\item O servidor contém o banco de dados onde ficam armazenados os mapas para referência espacial, informações sobre o posicionamento dos beacons e mensagens correspondentes a cada um deles. Essas informações são inseridas no banco de dados através de uma interface web acessada de um computador comum. O modelo de dados de cada beacon compreende um identificador único, latitude, longitude e nome do ponto onde ele foi posicionado e também quatro possíveis textos livres, de acordo com a estrutura das mensagens.
 
-	\item O aplicativo constantemente busca por sinais Bluetooth nas proximidades do usuário. Quando algum é encontrado, seu identificador é comparado com aqueles cadastrados na base de dados espacial. Caso o aplicativo detecte que o usuário se encontra próximo a uma zona em obras, o telefone vibra e o alerta correspondente é emitido verbalmente através da função Text to Speech (TTS) do Android. É também função do aplicativo conectar-se periodicamente ao banco de dados afim de sincronizar sua base de dados local, mantendo as informações atualizadas. Apenas zonas num raio de até oito quilômetros do usuário são possíveis para garantir o funcionamento mesmo durante um breve período sem conexão com a base.
+	\item O aplicativo constantemente busca por sinais Bluetooth nas proximidades do usuário. Quando algum é encontrado, seu identificador é comparado com aqueles cadastrados na base de dados espacial. Caso o aplicativo detecte que o usuário se encontra próximo a uma zona em obras, o telefone vibra e o alerta correspondente é emitido verbalmente através da função Text to Speech (TTS) do Android. É também função do aplicativo conectar-se periodicamente ao banco de dados a fim de sincronizar sua base de dados local, mantendo as informações atualizadas. Apenas zonas num raio de até oito quilômetros do usuário são possíveis para garantir o funcionamento mesmo durante um breve período sem conexão com a base.
 	
-	\item Utilizados devido a possíveis problemas com o sinal GPS fraco ou inexistente, os beacons Bluetooth Smart podem ser posicionados nos limites das zonas em obras, em cavaletes ou cones, conforme mostrado na figura \ref{fig:workzoneScheme}. São dispositivos de baixo consumo que constantemente emitem seu identificador em um raio de dez metros, podendo ainda ser aumentado ou diminuindo conforme a necessidade.
+	\item Utilizados devido a possíveis problemas com o sinal GPS fraco ou inexistente, os beacons Bluetooth Smart podem ser posicionados nos limites das zonas em obras, em cavaletes ou cones, conforme mostrado na Figura \ref{fig:workZoneScheme }. São dispositivos de baixo consumo que constantemente emitem seu identificador em um raio de dez metros, podendo ainda ser aumentado ou diminuindo conforme a necessidade.
 \end{itemize}
 
-A figura \ref{fig:visaoGeralWorkzones} mostra a arquitetura do modelo. Nela é possível ver que a base de dados é exposta através de um servidor, sendo acessada pelo aplicativo para obter as informações e por uma outra interface através de uma pagina web usada para manter as informações.
+A Figura \ref{fig:visaoGeralWorkzones} mostra a arquitetura do modelo. Nela é possível ver que a base de dados é exposta através de um servidor, sendo acessada pelo aplicativo para obter as informações e por uma outra interface através de uma pagina web usada para manter as informações.
 
-\FloatBarrier
-\begin{figure}
+
+\begin{figure}[!ht]
 	\caption{Demonstração da disposição dos beacons ao redor de uma zona em obras}
 	\label{fig:workZoneScheme}
 	\centering%
@@ -525,7 +523,7 @@ A figura \ref{fig:visaoGeralWorkzones} mostra a arquitetura do modelo. Nela é p
 		\fonte{\citetexto{chen2014}}
 		\end{minipage}
 \end{figure}
-\FloatBarrier
+
 
 As mensagens emitidas pelo aplicativo seguem o padrão estabelecido durante as entrevistas, sendo formadas por quatro partes distintas \cite{chen2014}:
 \begin{itemize}
@@ -542,7 +540,7 @@ A pesquisa e a tecnologia seriam melhores aproveitadas em situações mais corri
 
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
 
-Com o intuito de facilitar a compreensão e a comparação dos trabalhos relacionados, um comparativo entre os trabalhos foi traçado. A partir do comparativo, a tabela \ref{tab:trabalalhosRelacionados} foi desenvolvida, contendo os principais dados sobre os modelos estudados. Nela são apresentadas as abordagens usadas em cada um dos modelos, sendo possível identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho. 
+Com o intuito de facilitar a compreensão e a comparação dos trabalhos relacionados, um comparativo entre os trabalhos foi traçado. A partir do comparativo, a Tabela \ref{tab:trabalalhosRelacionados} foi desenvolvida, contendo os principais dados sobre os modelos estudados. Nela são apresentadas as abordagens usadas em cada um dos modelos, sendo possível identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho. 
 
 Alguns critérios foram selecionados para uma comparação mais clara entre os trabalhos, cada item da tabela se relaciona com um critério considerado nos modelos selecionados: o método de localização diz respeito a tecnologia utilizada pelo modelo para obter a localização do usuário; a abrangência se refere ao tipo de ambiente em que o modelo se propõe a funcionar; ambientes dinâmicos indica a capacidade do modelo de lidar com mudanças no ambiente; hardware específico demonstra se o modelo exige que o usuário carregue consigo mais um equipamento ou se o modelo se encaixa em um equipamento já existente; comunicação descreve a maneira utilizada pelo modelo para se comunicar com servidores ou atores externos; interoperabilidade mostra se o modelo prevê que seus dados possam ser utilizados por outras aplicações; banco de dados, linguagem e sistema operacional descrevem quais tecnologias são usadas pelo modelo durante seu desenvolvimento e uso; hardware diz especificamente qual o aparato que o usuário deverá possuir para utilizar o modelo; por fim, arquitetura descreve os componentes de software do modelo e a forma com que eles se comunicam.
 
@@ -592,32 +590,35 @@ Outra lacuna identificada foi a falta de informações a respeito do gerenciamen
 
 Este capítulo apresenta um modelo de sistema que visa promover acessibilidade de pessoas com deficiência visual. O modelo atua auxiliando na localização e no deslocamento de seus usuários, contando com recursos que facilitam sua interação, visto que PDV necessitam de formas especializadas de contato com dispositivos. \citetexto{Falk2013}.
 
-O principal recurso agregado ao modelo é a utilização do kit de desenvolvimento de software indoo.rs, fornecido pela empresa Indoors. O indoo.rs promove acessibilidade buscando ser a base na qual são montadas aplicações que necessitam de informações precisas e em tempo real. A decisão de usar essa biblioteca se deve ao fato de o kit facilitar o desenvolvimento de soluções de localização, tanto para aparelhos Android quanto para aparelhos iOS, através de beacons Bluetooth. Outras características da plataforma indoo.rs são a dispensa da necessidade de conexão com a internet, o baixo consumo de energia e a inclusão de ferramentas analíticas e gerenciais, através das quais é possível extrair inúmeras informações a respeito do movimento dos usuários nas premissas do ambiente. Outros diferenciais do modelo são a utilização de sensibilidade ao contexto e o suporte às funcionalidades de acessibilidade, oferecidas nativamente pelos sistemas operacionais.
-São previstos também o suporte a ambientes dinâmicos e a possibilidade de integração com outras soluções, ambos através de um serviço web.
+Os principais recursos agredados ao modelo são a utilização de uma arquitetura de serviço na nuvem com servidores distribuidos, uma evolução do modelo cliente-servidor; e tambem a utilização do framework indoo.rs, criado pela empresa Indoors. \footnote{Para mais informações consultar o site oficial da empresa em http://indoo.rs/solutions/} O indoo.rs promove acessibilidade buscando ser a base na qual são montadas aplicações que necessitam de informações precisas e em tempo real. A decisão de usar essa biblioteca se deve ao fato do framework facilitar o desenvolvimento multiplataforma de soluções de localização através de beacons Bluetooth. Outras características do indoo.rs são a dispensa da necessidade de conexão com a internet, o baixo consumo de energia e a inclusão de ferramentas analíticas e gerenciais, através das quais é possível extrair inúmeras informações a respeito do movimento dos usuários nas premissas do ambiente. Outros diferenciais do modelo são a utilização de sensibilidade ao contexto e o suporte às funcionalidades de acessibilidade, oferecidas nativamente pelos sistemas operacionais.
+São previstos também o suporte a ambientes dinâmicos e a possibilidade de integração com outras soluções, ambos através de serviços web.
 
 \section{Visão geral do modelo} 
-O modelo, batizado de Insight, foi concebido tendo em mente tecnologias existentes e já disponíveis ao alcance da maioria das pessoas. Todos os equipamentos necessários já existem no mercado, de forma que não é preciso fazer modificações em produtos, ou usar hardware dedicado para aproveitar as funcionalidades aqui descritas.
+O modelo, batizado de Insight, foi desenvolvido após analise dos trabalhos científicos relacionados. Deles foram aproveitados conceitos e funcionalidades consideradas essenciais e descartadas ideias consideradas incompativeis com este trabalho. A arquitetura do cliente Insight é baseada naquela apresentada por \citetexto{Ganz2011}. O emprego da ciência de contexto, apesar de ser fundamentalmente diferente, é inspirado pelo apresentado em \citetexto{Falk2013}, juntamente com a ideia de expor os dados da solução para serem consumos por soluções de terceiros. A estruturação das mensagens e a sincronização entre cliente e serviço são conceitos apresentados em \citetexto{chen2014}. Os feedback auditivo e tátil são utilizados em \citetexto{ucat2014}. Podem ser citadas como exemplos de ideias descartadas a necessidade de hardware dedicado, juntamente com o emprego de uma tecnologia que exige proximidade por parte do usuário, ambas usadas pelo PERCEPT; e o uso da tecnologia GPS, utilizada no Tirésias.
 
-O objetivo do modelo é promover acessibilidade aos seus usuários, possibilitando que eles estejam sempre cientes dos locais ao seu redor e do caminho até eles. Para isso, o aplicativo auxília o usuário em seu deslocamento curva-a-curva através de instruções verbais. Alguns dos locais que terão sua localização indicadas aos usuários através do aplicativo são banheiros, balcões de informação, estações policiais, locais preparados para receber deficiêntes visuais, zonas em obras e pontos de transporte publico. Essas informações são caracterizados por \citetexto{stewart2008accessible} como extremamente importantes para os PDV.
+O Insight foi concebido tendo em mente tecnologias existentes e disponíveis ao alcance da maioria das pessoas. Todos os equipamentos necessários já existem no mercado, de forma que não é preciso fazer modificações em produtos para aproveitar as funcionalidades aqui descritas.
+
+O objetivo do modelo é promover acessibilidade aos seus usuários, possibilitando que eles estejam sempre cientes dos locais ao seu redor e do caminho até eles. Para isso, o cliente auxília o usuário em seu deslocamento curva-a-curva através de instruções verbais. Alguns dos locais que terão sua localização indicadas aos usuários através do cliente são banheiros, balcões de informação, estações policiais, locais preparados para receber deficiêntes visuais, zonas em obras e pontos de transporte publico. Essas informações são caracterizados por \citetexto{stewart2008accessible} como extremamente importantes para os PDV.
 
 Visto que o objetivo do modelo não é alertar sobre obstáculos no caminho do usuário, ele não deve ser encarado como um substituto para ferramentas que possuam esse fim. O Insight deve ser sempre usado em conjunto com outras ferramentas assistivas, tais como bengalas e cães guia, esses sim possibilitam o desvio de obstáculos de qualquer natureza que possam surgir. 
 
-
 Empresas ou organizações que queiram melhorar a acessibilidade de suas dependências devem ter em mente que outras medidas podem ser tomadas em conjunto com a adoção do modelo, para aumentar a eficiência de seus esforços. Uma medida que possui sinergia total com o Insight é a colocação de piso tátil por todos os trajetos que serão percorridos pelos PDV. Piso tátil são faixas em auto-relevo no chão percebidas pelos usuário através da sensibilidade dos pés, fornecendo auxílio e indicações aos PDV durante seus deslocamentos.
 
-A combinação Insight e piso tátil é bastante útil no empoderamento e independência dos usuários. Através do Insight é possivel descobrir locais e rotas, e através do piso tátil os usuários podem ter certeza de que o caminho sendo percorrido é seguro e não possui obstáculos que dificultem o trânsito.
+A combinação Insight e piso tátil é bastante útil no empoderamento e independência dos usuários. O Insight permite descobrir locais e rotas, e o piso tátil permite que os usuários tenham certeza de que o caminho sendo percorrido é seguro e não possui obstáculos que dificultem o trânsito.
 
-O modelo é composto por um aplicativo para dispositivos móveis, um servidor e diversos beacons Bluetooth, conforme mostrado na figura \ref{fig:visaoGeral}. 
+O modelo é composto por uma aplicação cliente, uma aplicação servidor e diversos beacons Bluetooth, conforme mostrado na Figura \ref{fig:visaoGeral}. 
 
-O aplicativo contempla os seguintes módulos: serviço Bluetooth, motor de localização, módulo de saída, módulo de sincronização e base secundária. No servidor ficam hospedados um serviço web REST, uma ferramenta de gerenciamento dos ambientes e uma base de dados primária. Os beacons serão previamente distribuídos em pontos-chave do local onde o modelo for aplicado, de forma a otimizar seu alcance e área de cobertura.
+O cliente contempla os seguintes módulos: serviço Bluetooth, motor de localização, módulo de saída, módulo de sincronização e base local. A aplicação servidor contempla um serviço web REST, uma ferramenta de gerenciamento dos ambientes, um módulo de controle e uma base de dados primária. Os beacons serão previamente distribuídos em pontos-chave do local onde o modelo for aplicado, de forma a otimizar seu alcance e área de cobertura.
 
-Através do modelo, o usuário poderá saber onde está, descobrir locais que existem a sua volta e selecionar algum recurso específico para que seja traçada uma rota para chegar ao destino escolhido, entre outras funcionalidades. O aplicativo fornece instruções via áudio e alertas vibratórios, através dos recursos assistivos dos smartphones, para guiar o usuário conforme avança pelo caminho até o seu destino.
+Através do modelo, o usuário poderá saber onde está, descobrir locais que existem a sua volta e selecionar algum recurso específico para que seja traçada uma rota para chegar ao destino escolhido, entre outras funcionalidades. O cliente fornece instruções via áudio e alertas vibratórios, através dos recursos assistivos dos smartphones, para guiar o usuário conforme avança pelo caminho até o seu destino.
 
-De acordo com \citetexto{gedawy2011designing}, qualquer sistema de navegação destinado a PDV conter cinco elementos essenciais. São eles: uma representação geografia capaz de representar multiplos andares; uma funcionalidade para calcular as rotas e direções dos usuários; uma maneira de identificar a localização do usuário; uma interface para gerenciar a interação do usuário; e, por ultimo, um componente que traduza as rotas para uma forma de comunicação compreensivel pelo usuário. \cite{gedawy2011designing}. O aplicativo Insight possuí um destes elementos.
+\citetexto{dias2015navpal} afirma que, quando perdidos ou desorientados, PDV frequentemente requisitam ajuda de pessoas proximas. Como não é objetivo do Insight eliminar completamente a assistência humana e também por precausão, caso o usuário entre em algum ambiente fora do alcance dos beacons, é prevista no modelo a funcionalidade do pedido de ajuda. Quando o usuário a aciona, sua ultima localização conhecida é enviada pelo modelo para numeros de telefone cadastrados no modelo. Então os administradores podem providenciar que alguém vá ao encontro de quem necessita de ajuda.
 
-Cada um dos componentes, bem como a arquitetura do modelo, são explicados em maiores detalhes nas seções subsequentes.
+De acordo com \citetexto{gedawy2011designing}, qualquer sistema de navegação destinado a PDV conter cinco elementos essenciais. São eles: uma representação geografia capaz de representar multiplos andares; uma funcionalidade para calcular as rotas e direções dos usuários; uma maneira de identificar a localização do usuário; uma interface para gerenciar a interação do usuário; e, por ultimo, um componente que traduza as rotas para uma forma de comunicação compreensivel pelo usuário. \cite{gedawy2011designing}. O cliente Insight possuí um destes elementos.
 
-\begin{figure}
+A arquitetura do modelo, bem como cada um dos componentes, é explicada em maiores detalhes nas seções subsequentes.
+
+\begin{figure}[!ht]
 	\caption{Visão geral do modelo}
 	\label{fig:visaoGeral}
 	\centering%
@@ -627,10 +628,145 @@ Cada um dos componentes, bem como a arquitetura do modelo, são explicados em ma
 	\end{minipage}
 \end{figure}
 
-	\section{Requisitos e casos de uso}
-O diagrama de casos de uso apresentado na figura \ref{fig:diagramaCasosDeUso} foi desenvolvido para auxiliar na fase de elicitação de requisitos, fornecer uma melhor visualização das funcionalidades da solução, e também mostrar quais são os atores envolvidos com cada uma delas. O diagrama foi construído levando em consideração as características encontradas nos trabalhos relacionados, bem como as informações presentes no referêncial teórico deste trabalho.
+	\section{Arquitetura}
+O Insight é projetado para ser um serviço na núvem com servidores distribuídos. Diversas instâncias da aplicação servidor são executadas simultaneamente em diversos servidores físicos para garantir escalabilidade e disponibilidade. A totalidade das instâncias é chamada de serviço Insight. Tal arquitetura possui o objetivo de permitir que diversos usuários possam acessar o sistema sem que a performance seja prejudicada. Por sua vez, os clientes são instalados em dispositivos móveis, como smartphones e tablets, e se comunicam com o serviço Insight através de web services REST localizados em cada uma das instâncias. A Figura \ref{fig:arquitetura} mostra um diagrama de blocos onde os principais componentes são exibidos, mostrando também as camadas em que a arquitetura do sistema está divida e como ocorre a troca de informações entre os componentes envolvidos. Componentes externos ao modelo, como balanceadores de carga, não são exibidos. Posteriormente, a Figura \ref{fig:arquiteturaCliente} mostra a arquitetura detalhada da aplicação cliente e a Figura \ref{fig:arquiteturaServico} mostra arquitetura detalhada das instâncias da aplicação servidor.
 
-	\begin{figure}
+
+\begin{figure}[!ht]
+	\caption{Diagrama de blocos da arquitetura}
+	\label{fig:arquitetura}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/arquitetura.png}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+
+
+	\subsection{Componentes do cliente}
+Nesta seção são apresentados cada um dos componentes, mostrados na Figura \ref{fig:arquiteturaCliente}, que formam a arquitetura da aplicação para dispositivos móveis do modelo Insight.
+
+\begin{figure}[!ht]
+	\caption{Diagrama de blocos da arquitetura do cliente}
+	\label{fig:arquiteturaCliente}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/arquiteturaCliente.png}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+
+		\subsubsection{Módulo de sincronização}
+Para que o cliente possa ser usado sem a exigência de conexão constante com a internet existe o módulo de sincronização. Ele é o responsável por manter a base de dados do cliente sempre atualizada em relação a base de dados principal do modelo, localizada nas instâncias, e também enviar as informações de monitoramento do cliente para a nuvem.
+
+O módulo se conecta com o serviço Insight e verifica se existem modificações nos locais ou nos beacons desde a ultima sincronização e, em caso positivo, copia as novas informações até que as duas bases estejam equiparadas. Por padrão, a verificação em busca de modificações ocorre semanalmente, de forma a não consumir muito da bateria dos dispositivos. Todavia, o administrador pode alterar esse valor para mais ou para menos a fim de permitir que o modelo lide com mudanças dinâmicas no ambiente. A habilidade de suportar mudanças dinâmicas no ambiente é, segundo \citetexto{quinones2011supporting}, uma característica muito importante num sistema de localização acessível, visto que caminhos já conhecidos pelos usuários podem sofrer alterações, mesmo que levemente. Mudanças dinâmicas são alterações não previstas em rotas ou locais, como por exemplo um elevador não funcionando, uma sala fechada para limpeza, um caminho em manutenção, etc.
+
+A execução da sincronização é independênte do usuário, sendo relizada de forma automatica e transparente, através de uma conexão com o serviço Insight via internet, usando o padrão REST para troca das informações.
+
+		\subsubsection{Base de dados local}
+É função principal da base de dados local manter uma cópia das informações do serviço, bem como dados relativos as preferencias do usuário. Esses dados ficam armazenados locamente no dispositivo. Exemplos de informações mantidas por esta base são as informações completas referentes aos becons e locais cadastrados no serviço e também os locais marcados pelo usuário como seus favoritos.
+
+Além da função principal, a base local também guarda informações anonimas que visam permitir uma execução otimizada do cliente, tais como histórico completo de sincronizações realizadas, e dados de monitoramento do cliente, destinos selecionados pelo usuário, como rotas traçadas pelo sistema, instruções dadas ao usuário, informações de tempo e hora de uso, entre outras. Para garantir a privacidade do usuário, todas as informações analiticas do cliente são anonimizadas.
+
+A base local é alimentada pelo módulo de sincronização, responsável por adicionar ou excluir os dados cadastrados. Seu objetivo é aumentar a usabilidade do cliente, não exigindo conexão com a internet para traçar as rotas, tornando mais rápida a resposta ao usuário.
+
+		\subsubsection{Motor de localização}
+O motor de localização é, juntamente com o serviço Bluetooth, o coração do modelo. Sua função é combinar as requisições recebidas do usuário com os dados do serviço Bluetooth para então calcular as rotas desde a localização atual do usuário até o destino por ele escolhido. 
+
+A forma com que a rota é disponibilizada ao usuário ...
+\citetexto{quinones2011supporting} busca entender, através de entrevistas, como PDV realizam seus deslocamentos diários, bem como elencar requisitos necessários para desenvolver sistemas que os auxiliam nesta tarefa. O trabalho afirma que PDV criam mapas mentais ricos em detalhes dos locais que mais frequentam, memorizando rotas e marcos específicos destes locais. 
+
+Uma vez que o cliente é ativado, sua localização é obtida e informada a ele através do uso de voz
+
+
+Para o calculo das rotas é usado o algoritmo proposto por \citetexto{dijkstra1959note}.
+
+
+
+
+
+
+
+
+
+	\subsubsection{Serviço Bluetooth}
+O serviço Bluetooth é a parte do cliente onde está toda a programacão que o torna compativel com a tecnologia Bluetooth Low Energy. Através dele é feita o monitoramento dos beacons presentes no entorno do usuário, permitindo com que sua localização atual seja obtida.
+
+Este módulo, juntamente com os beacons, fornece o contexto do usuário para o modelo. Através do contexto é possível atuar quando mudanças são identificadas, adaptando as instruções dadas ao usuário conforme ele se desloca, se aproximando ou se distanciando do destino.
+
+Esse módulo é capaz de continuar a atuando mesmo após o bloqueio do smartphone, guiando o usuário através de mensagens verbais. Outra funcionalidade possivel através deste componente é detectar quando o usuário adentra no ambiente onde o modelo está implantado, avisando ao usuário sobre sua existência e questionando se ele deseja usar o cliente. Esse comportamento pode ser desativado, caso seja essa a preferência do usuário.
+
+O processo de identificação de um beacon por parte do cliente pode ser resumido como o seguinte:
+\begin{itemize}
+	\item Beacon transmite seu identificador no ambiente em que está instalado. 
+	\item Cliente detecta a transmissão do beacon e determinar o identificador.
+	\item Cliente verifica em sua base de dados a localização associada a esse identificador.
+	\item Cliente obtem a localização atual do usuário e se adapta ao novo contexto.
+	\item Cliente decide se há alguma ação para ser tomada, baseada no contexto do usuário.
+	\item Se houver alguma ação, o cliente a executa.
+	\item Cliente infoma usuário sobre a ação, através de voz ou alertas vibratórios.
+\end{itemize}
+
+Uma grande vantagem do uso de beacons é a capacidade de transmitir e receber identificadores sem que seja necessário parear os dispositivos envolvidos. Isso permite que qualquer smartphone que imediatamente identifique e capte o sinal, não exigindo ações por parte do usuário.
+
+Os beacons devem ser espalhados em pontos chave do ambiente e em todos os destinos possíveis. Desta forma é garantida a área de cobertura do modelo e a otimização na quantidade de beacons necessários, fazendo com que o usuário sempre possa descobrir sua localização e sempre possa chegar ao destino desejado. O Insight não exige a posição exata e precisa do usuário, então apenas um beacon é capaz de fornecer a localização necessária. Caso fosse indispensável ter a localização exata seriam necessários pelo menos três beacons por local, possibilitando a triangulação da posição.
+
+	\subsubsection{Interface do usuário e módulo de saída}
+A interface do usuário é responsável por gerenciar o trato do usuário com o sistema. O módulo de saída é o responsável pelo feedback dado ao usuário. Estes componentes são profundamente integrados um com o outro. A fim de suportar as necessídades dos PDV, a interface oferece métodos especializados de interação como navegação por gestos e voz, e o módulo de saída oferece feedback através de voz e alertas vibratórios. 
+O Insight usa os recursos acessiveis presentes no sistema operacional para modificar drasticamente as formas de interação do sistema. 
+
+O clique simples tem seu efeito modificado. Ao invés de ativar ou abrir, o clique simples apenas seleciona algum item. Para ativar um abrir um item selecionado são necessários dois toques em qualquer parte da tela. Em listas de seleção, como por exemplo a lista de locais próximos ao usuário ou sua lista de locais favoritos, a navegação é feita a partir de gestos. Deslizar o dedo para a direita ou para baixo avança a seleção, já deslizar o dedo para esquerda ou para cima faz a seleção retornar um item. Cada vez que um item é selecionado seu nome é lido para o usuário. Duas formas são previstas para rolar a tela, deslizando dois dedos na direção desejada ou então com um deslize seguido imediatamente por outro na direção contrária. Em telas que possuem componentes variados, como campos de texto e botões, a navegação é ainda mais especializada, lendo não apenas o nome do componente, mas também sua descrição e, quando disponivel, seu tipo e estado atual. A navegação entre itens é identica a das listas de seleção, deslizando o dedo para baixo ou para a esquerda o próximo componente é selecionado e lido. Por exemplo, se o item selecionado for um botão com o texto "Obter rota" a leitura seria "Obter rota, botão"
+Para a inserção de texto o processo é bem similar. O teclado é percorrido com os mesmos gestos citados anteriormente, e cada letra selecionada é lida ao usuário. Para percorrer o texto escrito são usados gestos, e o usuário pode definir a granularidade do deslocamento em letras, palavras, frases ou paragrafos.
+
+\citetexto{mau2008blindaid} compara diversas formas de instruir o usuário PDV durante seu deslocamento. Após comparar instruções faladas, tons, forma de bussola e feedback tátil o trabalho indica que a melhor maneira é mesmo o uso de instruções verbais. Quando um usuário solicita que o sistema calcule uma rota até algum destino, as instruções também são passadas pelo Insight verbalmente. Porem, a leitura ocorre de uma maneira um pouco diferente. Conforme \citetexto{ullman2009accommodating}, é importante fornecer instruções claras, citando também elementos espaciais que podem ser usados como referências pelos usuários.
+
+O Insight emite um bipe antes de cada instrução, a fim de chamar a atenção do usuário, o alertando que ele chegou em um novo marco do caminho e uma nova instrução sera proferida. Instruções são passadas apenas em pontos chave do trajeto, de forma a evitar que uma frequência muito alta de informações sobrecarregue o usuário. Unidades de medidas de distância como metros são evitadas, preferindo informar o usuário do número aproximado de passos até o proximo destino. As instruções alertam o usuário sobre obstaculos no caminho, tais como escadas, aclives ou declives, caso estes existam.
+
+Todas as falas são geradas por computador. Isso permite economizar o tamanho do software cliente, pois não é necessário armazenar arquivos de áudio, e também responder rapidamente a mudanças no ambiente, visto que não existe a exigencia as falas passem por todo o processo de gravação.
+
+	\subsection{Componentes da instância do serviço}
+Nesta seção são apresentados cada um dos componentes mostrados na Figura \ref{fig:arquiteturaServico}, que formam a arquitetura das instâncias do serviço Insight.
+
+\begin{figure}[!ht]
+	\caption{Diagrama de blocos da arquitetura de uma instância do serviço}
+	\label{fig:arquiteturaServico}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/arquiteturaServico.png}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+
+		\subsubsection{Serviço Web REST}
+
+			Permite responder a ambientes dinâmicos
+
+		\subsubsection{Editor de ambientes}
+
+			Para editar os ambientes
+			editou, salva, manda sincronizar
+
+		\subsubsection{Módulo de controle}
+
+			Para sincronizar as bases de dados de todas as instâncias
+
+		\subsubsection{Base de dados}
+
+			Armazena os dados
+
+%=======================================================================
+% Metodologia
+%=======================================================================
+\chapter{Metodologia}
+Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos à solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
+
+	\section{Aspectos de implementação}
+	
+	\subsection{Requisitos e casos de uso} % TODO: Isso aqui é mais implementação. Até podes deixar, mas gostaria de ver o detalhe dos teus componentes, fluxos de funcionamento, descrição dos componentes, modelo de contexto. 
+O diagrama de casos de uso apresentado na Figura \ref{fig:diagramaCasosDeUso} foi desenvolvido para auxiliar na fase de elicitação de requisitos, fornecer uma melhor visualização das funcionalidades da solução, e também mostrar quais são os atores envolvidos com cada uma delas. O diagrama foi construído levando em consideração as características encontradas nos trabalhos relacionados, bem como as informações presentes no referêncial teórico deste trabalho.
+
+
+	\begin{figure}[!ht]
 		\caption{Diagrama de casos de uso do Insight}
 		\label{fig:diagramaCasosDeUso}
 		\centering%
@@ -639,15 +775,16 @@ O diagrama de casos de uso apresentado na figura \ref{fig:diagramaCasosDeUso} fo
 			\fonte{Elaborado pelo autor.}
 		\end{minipage}
 	\end{figure}
+	
 
 A listagem dos requisitos é apresentada nas seções subsequentes, sendo dividida entre requisitos funcionais e requisitos não funcionais.
 
 \subsection{Requisitos funcionais} 
-Nesta seção são apresentados os requisitos funcionais elicitados para o modelo Insight. Cada requisito funcional corresponde a uma funcionalidade presente na solução, afim de que usuários possam desempenhar suas ações. Para a definição dos requisitos foi levado em consideração que o sistema possui dois tipos de usuários: usuários comuns e administradores.
+Nesta seção são apresentados os requisitos funcionais elicitados para o modelo Insight. Cada requisito funcional corresponde a uma funcionalidade presente na solução, a fim de que usuários possam desempenhar suas ações. Para a definição dos requisitos foi levado em consideração que o sistema possui três tipos de usuários: usuários comuns e administradores.
 
 Os requisitos funcionais elicitados para o modelo são:
 
-	\begin{itemize} % breve descrição, atores, condições previas, fluxo de eventos (basico e alternativo), pós condições 
+	\begin{itemize}
 		% USER
 		\item \textbf{RF01 - Obter localização atual:} o usuário poderá obter sua localização atual a qualquer momento.
 		
@@ -663,14 +800,18 @@ Os requisitos funcionais elicitados para o modelo são:
 		
 		\item \textbf{RF07 - Manter locais favoritos:} o usuário poderá adicionar ou excluir locais da lista de locais favoritos.
 		
-		\item \textbf{RF08 - Enviar pedido de ajuda:} o usuário poderá enviar aos administradores um pedido de ajuda informando o seu local atual, para que alguém seja enviado para socorrer o usuário.
+		\item \textbf{RF08 - Mensagem de boas vindas:} o sistema deverá detectar quando o usuário chega no ambiente e enviar uma notificação ao usuário perguntando se ele deseja usar o cliente.
+
+		\item \textbf{RF09 - Enviar pedido de ajuda:} o usuário poderá enviar aos administradores um pedido de ajuda informando o seu ultimo local conhecido, para que alguém seja enviado para socorrer o usuário.
+
+		%\item \textbf{RF10 - Receber pedido de ajuda:} administradores devem poder receber pedidos de ajuda emitidos por usuários, afim de enviar alguem para socorrer o usuário.
 		
 		% ADMIN
-		\item \textbf{RF09 - Manter locais:} o administrador poderá adicionar, editar, ou excluir locais cadastrados no modelo.
+		\item \textbf{RF10 - Manter locais:} o administrador poderá adicionar, editar, ou excluir locais e rotas cadastrados no modelo.
 		
-		\item \textbf{RF10 - Manter beacons:} o administrador poderá adicionar, editar, ou excluir beacons cadastrados no modelo.
+		\item \textbf{RF11 - Manter beacons:} o administrador poderá adicionar, editar, ou excluir beacons cadastrados no modelo.
 
-		\item \textbf{RF11 - Sincronização:} o administrator poderá alterar a periodicidade das sincronizações do aplicativo com o servidor.
+		\item \textbf{RF12 - Sincronização:} o administrator poderá alterar a periodicidade das sincronizações do cliente com o servidor.
 
 	\end{itemize}
 
@@ -680,172 +821,43 @@ Nesta seção são apresentados os requisitos não funcionais elicitados para o 
 Os requisitos não funcionais elicitados para o modelo Insight são:
 
 \begin{itemize}
-	\item \textbf{RNF01 - Interoperabilidade - Usar servidor web:} O servidor será uma aplicação web.
+	\item \textbf{RNF01 - Escalabilidade e disponibilidade - Serviço na núvem:} A aplicação servidor será uma aplicação web.
 
-	\item \textbf{RNF02 - Interoperabilidade - Serviços web REST:} o servidor disponibilizará serviços web utilizando o padrão Representational State Transfer (REST) para realizar a integração com os clientes e outras aplicações.
+	\item \textbf{RNF02 - Interoperabilidade - Serviços web REST:} a aplicação servidor disponibilizará web services utilizando o padrão Representational State Transfer (REST) para realizar a integração com os clientes e outras soluções.
 
-	\item \textbf{RNF03 - Interoperabilidade - JSON:} o sistema usará o padrão Javascript Object Notation (JSON) para a transferência de informações a partir do servidor REST, afim de facilitar a comunicação com os clientes e outras aplicações.
+	\item \textbf{RNF03 - Interoperabilidade - JSON:} o sistema usará o padrão Javascript Object Notation (JSON) para a transferência de informações a partir do servidor REST, a fim de facilitar a comunicação com os clientes e outras soluções.
 
-	\item \textbf{RNF04 - Portabilidade - Clientes para dispositivos móveis:} o sistema será utilizado em smartphones ou tablets.
+	\item \textbf{RNF04 - Portabilidade - Clientes para dispositivos móveis:} a aplicação cliente será utilizado em smartphones ou tablets.
 
-	\item \textbf{RNF05 - Usabilidade - Base de dados secundária:} O aplicativo deverá conter uma cópia local do banco de dados do servidor.
+	\item \textbf{RNF05 - Usabilidade - Base de dados local:} O cliente deverá conter uma cópia local do banco de dados localizado na nuvem.
 
-	\item \textbf{RNF06 - Confiabilidade - Sincronização:} O aplicativo deverá periodicamente sincronizar sua base de dados com a base de dados do servidor.
+	\item \textbf{RNF06 - Confiabilidade - Sincronização:} O cliente deverá periodicamente sincronizar sua base de dados com a base de dados na nuvem.
 
-	\item \textbf{RNF07 - Usabilidade - Adaptação ao contexto:} o sistema deverá identificar o contexto do usuário através do uso da localização, afim de exibir os locais mais relevantes e fornecer os próximos passos da navegação.
+	\item \textbf{RNF07 - Usabilidade - Adaptação ao contexto:} o cliente deverá identificar o contexto do usuário através do uso da localização, a fim de exibir os locais mais relevantes e fornecer os próximos passos da navegação.
 
-	\item \textbf{RNF08 - Usabilidade - Comandos por gestos:} a aplicação deverá permitir a interação do usuário através de gestos.
+	\item \textbf{RNF08 - Usabilidade - Comandos por gestos:} o cliente deverá permitir a interação do usuário através de gestos.
 
-	\item \textbf{RNF09 - Usabilidade - Comandos por voz:} a aplicação deverá permitir a interação do usuário através de comandos de voz.
+	\item \textbf{RNF09 - Usabilidade - Comandos por voz:} o cliente deverá permitir a interação do usuário através de comandos de voz.
 
-	\item \textbf{RNF10 - Acessibilidade - Feedback por voz:} a aplicação deverá fornecer informações ao usuário através do uso de voz.
+	\item \textbf{RNF10 - Acessibilidade - Feedback por voz:} o cliente deverá fornecer informações ao usuário através do uso de voz.
 
-	\item \textbf{RNF11 - Acessibilidade - Feedback tátil:} a aplicação deverá fornecer informações ao usuário através do uso de alertas vibratórios.
+	\item \textbf{RNF11 - Acessibilidade - Feedback tátil:} o cliente deverá fornecer informações ao usuário através do uso de alertas vibratórios.
 
 	\item \textbf{RNF12 - Acessibilidade - Discrição:} o modelo deve poder ser utilizado a partir de hardware leve e discreto.
 
 	\item \textbf{RNF13 - Usabilidade - Interferência:} o modelo não deve interferir em outras ferramentas que o usuário possa estar usando para se deslocar.
+
+	\item \textbf{RNF14 - Confiabilidade - Replicação de instâncias:} o modelo deve, sempre que for feita alguma alteração nas rotas, beacons ou locais, replicar essas alterações para todas as outras instâncias.
+
+	\item \textbf{RNF15 - Desempenho - Formato de armazenamento:} o modelo deve armazenar as informações relativas a rotas no formato de grafos.
+
+	\item \textbf{RNF16 - Desempenho - Calculo de rotas:} as rotas deverão ser calculadas através do algoritmo de Dijkstra.
+
 \end{itemize}
 
 A partir dos requisitos funcionais e não funcionais, é possivel perceber que os dispositivos móveis são a ferramenta ideal para uso do modelo.
 
-	\section{Arquitetura}
-O Insight é projetado utilizando o modelo de arquitetura cliente-servidor. Os aplicativos cliente são instalados em dispositivos móveis, como smartphones e tablets, que se comunicam com o servidor através de serviços web. Para garantir que diversos usuários possam acessar o sistema ao mesmo tempo sem que a performance seja prejudicada, o servidor é disposto conforme o conceito de computação na nuvem, compartilhando os recursos físicos do servidor onde a aplicação está instalada. A figura \ref{fig:arquitetura} mostra um diagrama de blocos onde os principais componentes são exibidos, mostrando também as camadas em que a arquitetura do sistema está divida e como ocorre a troca de informações entre os componentes envolvidos. 
-
-\FloatBarrier 
-\begin{figure}
-	\caption{Diagrama de blocos da arquitetura}
-	\label{fig:arquitetura}
-	\centering%
-	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{imgs/arquitetura.png}
-		\fonte{Elaborado pelo autor.}
-	\end{minipage}
-\end{figure}
-\FloatBarrier
-
-	\subsection{Componentes do aplicativo}
-Nesta seção são apresentados cada um dos componentes, mostrados na figura \ref{fig:arquiteturaAplicativo}, que formam a arquitetura da aplicação para dispositivos móveis do modelo Insight.
-
-\begin{figure}
-	\caption{Diagrama de blocos da arquitetura do aplicativo}
-	\label{fig:arquiteturaAplicativo}
-	\centering%
-	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{imgs/arquiteturaAplicativo.png}
-		\fonte{Elaborado pelo autor.}
-	\end{minipage}
-\end{figure}
-
-		\subsubsection{Módulo de sincronização}
-Para que o aplicativo possa ser usado sem a exigência de conexão constante com a internet existe o módulo de sincronização. Ele é o responsável por manter a base de dados do aplicativo sempre atualizada em relação a base de dados principal do modelo, localizada no servidor, e tambem enviar as informações de monitoramento do aplicativo para o servidor.
-
-O módulo se conecta com o servidor através do serviço web e verifica se existem modificações nos locais ou nos beacons desde a ultima sincronização e, em caso positivo, copia as novas informações até que as duas bases estejam equiparadas. Por padrão, a verificação em busca de modificações ocorre semanalmente, de forma a não consumir muito da bateria dos dispositivos. Todavia, o administrador pode alterar esse valor para mais ou para menos afim de permitir que o modelo lide com mudanças dinâmicas no ambiente. A habilidade de suportar mudanças dinâmicas no ambiente é, segundo \citetexto{quinones2011supporting}, uma característica muito importante num sistema de localização acessível, visto que caminhos já conhecidos pelos usuários podem sofrer alterações, mesmo que levemente. Mudanças dinâmicas são alterações não previstas em rotas ou locais, como por exemplo um elevador não funcionando, uma sala fechada para limpeza, um caminho em manutenção, etc.
-
-A execução da sincronização é independênte do usuário, sendo relizada de forma automatica e transparente, através de uma conexão com o servidor via internet, usando o padrão REST para troca das informações.
-
-		\subsubsection{Base de dados secundária}
-É função principal da base de dados secundária manter uma cópia das informações do servidor, bem como dados relativos as preferencias do usuário. Esses dados ficam armazenados locamente no dispositivo, numa base de dados SQLite. Exemplos de informações mantidas por esta base são as informações completas referentes aos becons e locais cadastrados no servidor e também os locais marcados pelo usuário como seus favoritos.
-
-Além da função principal, a base secundária tambem guarda informações anonimas que visam permitir uma execução otimizada do aplicativo, tais como histórico completo de sincronizações realizadas, e dados de monitoramento do aplicativo, destinos selecionados pelo usuário, como rotas traçadas pelo sistema, instruções dadas ao usuário, informações de tempo e hora de uso, entre outras. Para garantir a privacidade do usuário, todas as informações analiticas do aplicativo são anonimizadas.
-
-A base secundária é alimentada pelo módulo de sincronização, responsável por adicionar ou excluir os dados cadastrados. Seu objetivo é aumentar a usabilidade do aplicativo, não exigindo conexão com a internet para traçar as rotas, tornando mais rápida a resposta ao usuário.
-
-		\subsubsection{Motor de localização}
-O motor de localização é, juntamente com o serviço Bluetooth, o coração do modelo. Sua função receber os dados enviados pelo serviço Bluetooth juntamente com as requisições do usuário, e então calcular a rota desde a localização atual do usuário até o destino por ele escolhido.
-
-
-
-A forma com que a rota é disponibilizada ao usuário ...
-\citetexto{quinones2011supporting} busca entender, através de entrevistas, como PDV realizam seus deslocamentos diários, bem como elencar requisitos necessários para desenvolver sistemas que os auxiliam nesta tarefa. O trabalho afirma que PDV criam mapas mentais ricos em detalhes dos locais que mais frequentam, memorizando rotas e marcos específicos destes locais. 
-
-Uma vez que o aplicativo é ativado, sua localização é obtida e informada a ele através do uso de voz
-
-
-
-
-\citetexto{montague2010accessible}:
-
-preparation, decision or confirmation. Preparation statements are instructions given as a lead up to an action the user would have to carry out. Decision statements are a call for action from the user following the instructions, occurring at decision points in the route. Confirmation statements are provided to reassure the user that they have carried out the previous step correctly.
-Regardless of statement type there seemed to be a consistent structure: Action, Context and Reference (ACR) as shown in Figure 1.
-The action gives meaning to the instruction the user is to carry out, such as “Look for...” and “Turn to the ...”. Context gives direction to the user -- Left, Forward, Up and so on. Finally, reference can be used to name objects or locations to assist the user such as Sofas, Fire exit, Stairwell etc. References are not always required.
-
-
-
-
-
-
-
-
-
-	\subsubsection{Serviço Bluetooth}
-O serviço Bluetooth é a perte do aplicativo onde está toda a programacão que o torna compativel com a tecnologia Bluetooth Low Energy. Através dele é feita a detecção dos beacons presentes no entorno do usuário, permitindo com que sua localização atual seja obtida.
-
-Explicar como beacons funcionam...
-
-Detecta quando usuário chega e manda um notificação
-
-Beacons apenas em pontos chave. 
-
-Bluetooth não precisa parear.
-
-Beacons therefore add a layer of context. Previously, context was given by a user's details and history, combined with factors like time and possibly approximate location from GPS (think of Google maps and other local services). Now that can be enhanced by precise, immediate location and therefore movement, for example - entering the building, at a specific car in the showroom, at a particular gate in the airport, in a certain section of stadium seating, at some museum exhibit, walking towards a certain store and so on.
-This creates opportunities for new types of app providing information, utility and convenience for users that wasn't previously possible. However it also generates significant quantities of data on movements and habits of consumers - this is a potential boon for companies, but is also likely to lead to privacy concerns, even though some companies already track location by GPS and wifi with consumer opt-in.
-This means that the applications that emerge in the near future, and how they handle the balance of providing consumer utility with data collection, are going to be of crucial importance in promoting adoption of the technology. Supermarket (and other) loyalty cards show that it's possible to get this right - they are widely embraced, probably because the benefits to the consumer are clear and the proposition is simple.
-
-
-	\subsubsection{Módulo de saída} % INDOOR HUMAN NAGIVATION SYSTEMS: visual, audio, haptic
-
-\citetexto{ullman2009accommodating} 
- emphasized the importance of clear audible messages and spatial message elements 
-
-
-A user study comparing a variety of interfaces (namely, spoken, tone outputs, compass or haptic inputs) [10] showed that the superiority of spoken directions (in combination with the compass) for a navigation task in an obstacle-free outdoor campus area.
-
-
-Beep pra chamar atenção
-Voz gerada por computador permite respnder mais rapidamente a mudanças no ambiente, não exigindo que falas passem por todo o processo de gravação.
-
-Less is more. Simple and concise instructions were preferred over frequent and absolute ones, and using instructions only at significant waypoints was an effective strategy as the station’s unique sounds and a user’s instinct also helped navigation. It also proved that there was no need to communicate distance in metres or number of strides.
-
-		\subsubsection{Pedido de ajuda}
-
-
-
-\citetexto{dias2015navpal} If lost or disoriented, they typically ask for assistance from sighted people in the vicinity... In addition, if needed, the tools can assist the traveler in seeking assistance from others in the environment or guiding the traveler to safety....
-
-Since we do not envision technology solutions completely eliminating the need for seeking human assistance in the future,
-
-
-
-	\subsection{Componentes do servidor}
-Nesta seção são apresentados cada um dos componentes, mostrados na figura \ref{fig:arquiteturaServidor}, que formam a arquitetura do servidor do modelo Insight.
-
-\begin{figure}
-	\caption{Diagrama de blocos da arquitetura do servidor}
-	\label{fig:arquiteturaServidor}
-	\centering%
-	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{imgs/arquiteturaServidor.png}
-		\fonte{Elaborado pelo autor.}
-	\end{minipage}
-\end{figure}
-
-		\subsubsection{Serviço Web}
-
-			Permite responder a ambientes dinâmicos
-
-
-		\subsubsection{Base de dados principal}
-
-%=======================================================================
-% Metodologia
-%=======================================================================
-\chapter{Metodologia}
-Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos à solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
-
-	\section{Desenvolvimento}
-O trabalho de modelagem e desenvolvimento do Insight foi divido em 9 passos metodológicos apresentados na figura \ref{fig:passosMetodologicos}. Os passos 1 a 6 foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do Rio dos Sinos (UNISINOS).
+O trabalho de modelagem e desenvolvimento do Insight foi divido em 9 passos metodológicos apresentados na Figura \ref{fig:passosMetodologicos}. Os passos 1 a 6 foram realizados no presente trabalho. Os demais passos serão realizados na disciplina Trabalho de Conclusão II, que também compreende os requisitos para a colação de grau da Universidade do Vale do Rio dos Sinos (UNISINOS).
 
 \begin{figure}[!ht]
 	\caption{Passos metodológicos}
@@ -864,7 +876,7 @@ A seguir são apresentados brevemente cada um dos passos concebidos:
 	%	1
 	\item \textbf{Revisar bibliografia:} Pesquisa bibliográfica objetivando descobrir trabalhos envolvendo o tema em questão. Realizar leitura e resumo dos trabalhos relevantes encontrados, e, com isso, criar uma fundamentação teórica adequada para o desenvolvimento desta pesquisa.
 	%	2
-    \item \textbf{Realizar estudo sobre deficiência visual:} Estudar essa deficiência em busca de compreender a maneira com que ela afeta seus portadores, e também o processo mental realizado por eles durante seu deslocamento, tanto em ambientes familiares como desconhecidos, afim de criar uma abstração desse processo aplicando-a ao modelo.
+    \item \textbf{Realizar estudo sobre deficiência visual:} Estudar essa deficiência em busca de compreender a maneira com que ela afeta seus portadores, e também o processo mental realizado por eles durante seu deslocamento, tanto em ambientes familiares como desconhecidos, a fim de criar uma abstração desse processo aplicando-a ao modelo.
 	%	3
     \item \textbf{Realizar estudo sobre tecnologias assistivas:} Estudar e verificar quais tecnologias já foram aplicadas na acessibilidade, avaliando quais podem ser utilizadas no desenvolvimento do modelo para melhor atender às necessidades dos PDV.
 	%	4
@@ -878,17 +890,18 @@ A seguir são apresentados brevemente cada um dos passos concebidos:
 	%	8
 	\item \textbf{Testar aceitação do sistema:} Codificar uma prévia do modelo desenvolvido de modo que ela possa ser avaliada em campo.
 	%	9
-	\item \textbf{Analisar resultados dos testes:} Realizar análise dos resultados obtidos através dos questionários, traçando uma conclusão do trabalho desenvolvido. Posteriormente, verificando os benefícios e dificuldades apresentados pelo sistema aos participantes, afim de estabelecer ajustes e correções, bem como trabalhos futuros.
+	\item \textbf{Analisar resultados dos testes:} Realizar análise dos resultados obtidos através dos questionários, traçando uma conclusão do trabalho desenvolvido. Posteriormente, verificando os benefícios e dificuldades apresentados pelo sistema aos participantes, a fim de estabelecer ajustes e correções, bem como trabalhos futuros.
 \end{enumerate}
 
 	\section{Avaliação}
-A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação dele serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas: a primeira será através de questionários anônimos durante o período de testes, afim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso; a segunda será a técnica da entrevista estruturada. 
+A avaliação do modelo proposto se dará após a implementação e implantação do sistema. Para a implantação dele serão convocados usuários PDV com interesse em colaborar com a pesquisa. Os usuários utilizarão o sistema e posteriormente o avaliarão usando duas técnicas distintas: a primeira será através de questionários anônimos durante o período de testes, a fim de detectar problemas pontuais e verificar a adaptação do usuário ao sistema durante o período de uso; a segunda será a técnica da entrevista estruturada. 
 
 A entrevista ocorrerá em dois momentos. Antes de iniciar o período de testes, para obter informações sobre a forma como os usuários se guiam quando necessitam deslocar-se em um ambiente desconhecido. Após o término dos testes, para obter informações relativas à qualidade da localização e da navegação oferecidas pelo protótipo. O resultado da análise permitirá identificar a eficácia do sistema e possibilitará elencar melhorias e/ou trabalhos relacionados ao tema.
 
 (TODO: avaliação por cenários ou usuários)
 
 \chapter{Conclusão}
+A infraestrutura de beacons permite ainda o desenvolvimento de outros serviços na área
 
 \section{Comparação entre os trabalhos estudados e o modelo proposto}
 
