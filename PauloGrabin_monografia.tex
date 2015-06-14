@@ -610,7 +610,17 @@ O modelo é composto por uma aplicação cliente, uma aplicação servidor e div
 
 O cliente contempla os seguintes módulos: serviço Bluetooth, motor de localização, módulo de saída, módulo de sincronização e base local. A aplicação servidor contempla um serviço web REST, uma ferramenta de gerenciamento dos ambientes, um módulo de controle e uma base de dados primária. Os beacons serão previamente distribuídos em pontos-chave do local onde o modelo for aplicado, de forma a otimizar seu alcance e área de cobertura.
 
-Através do modelo, o usuário poderá saber onde está, descobrir locais que existem a sua volta e selecionar algum recurso específico para que seja traçada uma rota para chegar ao destino escolhido, entre outras funcionalidades. O cliente fornece instruções via áudio e alertas vibratórios, através dos recursos assistivos dos smartphones, para guiar o usuário conforme avança pelo caminho até o seu destino.
+Através do modelo, o usuário poderá saber onde está, descobrir locais que existem a sua volta e selecionar algum recurso específico para que seja traçada uma rota para chegar ao destino escolhido, entre outras funcionalidades. O cliente fornece instruções via áudio e alertas vibratórios, através dos recursos assistivos dos smartphones, para guiar o usuário conforme avança pelo caminho até o seu destino. A Figura \ref{fig:fluxoBasico} mostra o fluxo básico do processo de uso do Insight, desde a escolha do destino, passando pelo deslocamento do usuário até que ele chegue no destino final.
+
+\begin{figure}[!ht]
+	\caption{Fluxo básico da execução}
+	\label{fig:fluxoBasico}
+	\centering%
+	\begin{minipage}{.8\textwidth}
+		\includegraphics[width=\textwidth]{imgs/fluxoBasico}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
 
 \citetexto{dias2015navpal} afirma que, quando perdidos ou desorientados, PDV frequentemente requisitam ajuda de pessoas proximas. Como não é objetivo do Insight eliminar completamente a assistência humana e também por precausão, caso o usuário entre em algum ambiente fora do alcance dos beacons, é prevista no modelo a funcionalidade do pedido de ajuda. Quando o usuário a aciona, sua ultima localização conhecida é enviada pelo modelo para numeros de telefone cadastrados no modelo. Então os administradores podem providenciar que alguém vá ao encontro de quem necessita de ajuda.
 
@@ -638,6 +648,18 @@ O Insight é projetado para ser um serviço na núvem com servidores distribuíd
 	\centering%
 	\begin{minipage}{.8\textwidth}
 		\includegraphics[width=\textwidth]{imgs/arquitetura.png}
+		\fonte{Elaborado pelo autor.}
+	\end{minipage}
+\end{figure}
+
+A Figura \ref{fig:diagramaSequencia} mostra um diagrama de sequência detalhando a troca de mensagens entre os componentes do modelo durante a execução de algumas tarefas no Insight.
+
+\begin{figure}[!ht]
+	\caption{Diagrama de sequência do modelo}
+	\label{fig:diagramaSequencia}
+	\centering%
+	\begin{minipage}{.6\textwidth}
+		\includegraphics[width=\textwidth]{imgs/diagramaSequencia.png}
 		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{figure}
@@ -762,7 +784,7 @@ Enquadrando o presente trabalho na classificação apresentada em \citetexto{Ger
 
 	\section{Aspectos de implementação}
 	
-	\subsection{Requisitos e casos de uso} % TODO: Isso aqui é mais implementação. Até podes deixar, mas gostaria de ver o detalhe dos teus componentes, fluxos de funcionamento, descrição dos componentes, modelo de contexto. 
+	\subsection{Requisitos e casos de uso}  
 O diagrama de casos de uso apresentado na Figura \ref{fig:diagramaCasosDeUso} foi desenvolvido para auxiliar na fase de elicitação de requisitos, fornecer uma melhor visualização das funcionalidades da solução, e também mostrar quais são os atores envolvidos com cada uma delas. O diagrama foi construído levando em consideração as características encontradas nos trabalhos relacionados, bem como as informações presentes no referêncial teórico deste trabalho.
 
 
