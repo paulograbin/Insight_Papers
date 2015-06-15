@@ -166,7 +166,7 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %=======================================================================
 \chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
 
-%\epigrafecap{For millions of years, mankind lived just like the animals. Then something happened which unleashed the power of our imagination. We learned to talk and we learned to listen...}{Stephen Hawking}
+\epigrafecap{Now this is not the end. It is not even the beginning of the end.\\ But it is, perhaps, the end of the beginning.}{Winston Churchill}
 
 Pessoas com a visão saudável se apoiam enormemente no sentido da visão para se localizar. Frequentemente a sinalização destinada a orientação em locais como aeroportos, shopping centers e universidades é composta inteiramente por sinais visuais. Por esse mesmo motivo, pessoas com deficiência visual (PDV) têm grande dificuldade quando precisam deslocar-se, necessitando do auxílio de ferramentas como bengalas e cães-guia ou ainda da ajuda de outras pessoas. \citetexto{Ganz2014} afirma que a visão é o recurso mais importante na percepção do que se passa no entorno de alguém, e a sua perda significa uma severa redução na orientação e mobilidade, especialmente em ambientes desconhecidos e complexos.
 
@@ -246,11 +246,10 @@ O sexto e último capítulo conclui o trabalho e apresenta as considerações fi
 %=======================================================================
 % Fundamentação teórica
 %=======================================================================
-\chapter{Referencial Teórico}
+\chapter{Fundamentação Teórica}
 \epigrafecap{O óbvio é aquilo que ninguém enxerga, \\até que alguém o expresse com simplicidade.}{Khalil Gibran}
 % Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inicia explicando sua lógica e todas as subseções são ligadas entre si por um sequência lógica de pensamento e redação.
 Este capítulo apresenta a base teórica sobre a qual está construído este trabalho. Inicialmente é apresentada uma visão geral sobre computação ubíqua, computação móvel e acessibilidade. Em seguida os conceitos são mesclados, e então é introduzido o conceito de acessibilidade ubíqua e tecnologias assistivas. Finalmente, é introduzida a tecnologia Bluetooth, seu modo de funcionamento e aplicações práticas.
-
 
 	\section{Computação Móvel e Ubíqua}
 Tecnologias tão avançadas que deixam de ser um fim em si mesmas e passam a ser um meio para que as pessoas realizem seus afazeres. Tão conectados, tão presentes em nossa rotina e concebidas para naturalmente se integrarem em nossas vidas que deixam de ser notadas e se colocam no plano de fundo da nossa percepção. É assim que \citetexto{Weiser1991} começa introduzindo o conceito de computação ubíqua. O autor também a conceitua como "uma nova maneira de pensar a respeito de computadores no mundo". \cite{Weiser1991}.
@@ -262,6 +261,8 @@ A computação ubíqua, em outras palavras, consiste em trazer e integrar a comp
 Essa área de pesquisa ainda traz consigo conceitos fundamentais para uma devida compreensão do termo. A heterogeneidade da rede é garantida por padrões que possibilitam que dispositivos criados por diferentes fabricantes, para diferentes finalidades, com diferentes softwares e hardwares, se conectem através da internet. A integração com o mundo real possibilita a inserção de computadores e sensores em diversos artigos comuns do dia-a-dia, gerando informações sobre costumes e preferências dos usuários que permitem uma nova geração de serviços inteligentes e cuidadosamente personalizados. Computação na nuvem, sistemas distribuídos, computação móvel e internet são termos que andam de mãos dadas e servem como base para garantir que os conceitos anteriormente apresentados estejam sempre disponíveis e ao alcance dos dedos em segundos em qualquer lugar do mundo.
 
 Uma das características mais interessantes da computação ubíqua é a ciência de contexto, através da qual informações relevantes, tais como localização, preferência, histórico e horário, servem para que os softwares desenvolvidos possam adaptar-se as necessidades e reagir, instantânea e transparentemente, às mudanças no ambiente em que o usuário se encontra.
+
+Com a computação cada vez mais onipresente, juntamente com dispositivos móveis e poderosos, é possível aplica-la na tentativa de melhorar a vida das pessoas. Uma das possiveis aplicações é na promoção da acessibilidade de quem necessita.
 
 	\section{Acessibilidade}
 Acessibilidade representa o direito de acessar informações; eliminação de barreiras arquitetônicas; de disponibilização de comunicação; de acesso físico; de equipamentos e programas adequados; de conteúdo e apresentação da informação em formatos alternativos – não se restringindo somente a internet –, a fim de melhorar a qualidade de vida de pessoas com algum tipo de deficiência. \cite{AcessibilidadeBrasil}. 
@@ -284,7 +285,9 @@ Assim emergem os conceitos de acessibilidade ubíqua e interfaces de usuário pl
 
 \citetexto{Tavares2011} define a acessibilidade ubíqua, também chamada de u-accessibility, como a união entre as normas e padrões para acessibilidade; tecnologias e interfaces que atendem às necessidades dos usuários; e computação ubíqua, através de dispositivos móveis, sensores e a comunicação entre eles.
 
-	\section{Tecnologias Assistivas} 
+	\section{Tecnologias Assistivas}
+\citetexto{pupo2006acessibilidade} afirma que existem tecnologias assistivas para auxiliar no acesso às informações, na comunicação, durante a locomoção e em atividades comuns no dia-a-dia, como estudo, trabalho e lazer, citando como exemplos cadeiras de rodas, bengalas, próteses, lupas e aparelhos auditivos. Conforme \citetexto{dias2015navpal}, tecnologias assitivas desempenham um papel chave na independência e segurança de pessoas com deficiência. Para os PDV, tecnologias assistivas bem planejadas e bem implementadas podem fazer significante diferença na educação, aceitação social e produtividade. \cite{dias2015navpal}. Tecnologias assistivas são formas bastante eficazes de promoção de acessibilidade.
+
 Não há um conceito universalmente estabelecido e aceito de tecnologias assistivas. Diversas entidades e países buscam estabelecer sua própria definição. O Brasil apresenta seu conceito em \cite{TA2009}, descrevendo-o como se segue:
 \begin{quote}
 	Tecnologia Assistiva é uma área do conhecimento, de característica interdisciplinar, que
@@ -293,8 +296,6 @@ Não há um conceito universalmente estabelecido e aceito de tecnologias assisti
 	incapacidades ou mobilidade reduzida, visando sua autonomia, independência, qualidade de vida e
 	inclusão social
 \end{quote}
-
-\citetexto{pupo2006acessibilidade} afirma que existem tecnologias assistivas para auxiliar no acesso às informações, na comunicação, durante a locomoção e em atividades comuns no dia-a-dia, como estudo, trabalho e lazer, citando como exemplos cadeiras de rodas, bengalas, próteses, lupas e aparelhos auditivos. Conforme \citetexto{dias2015navpal}, tecnologias assitivas desempenham um papel chave na independência e segurança de pessoas com deficiência. Para os PDV, tecnologias assistivas bem planejadas e bem implementadas podem fazer significante diferença na educação, aceitação social e produtividade. \cite{dias2015navpal}.
 
 Conforme \citetexto{stewart2008accessible}, é preferência dos usuários, tanto PDV como aqueles com visão saudável, carregar consigo dispositivos que caibam em um bolso, deixando as mãos livres. O autor ainda afirma que PDV consideram essencial que os aparelhos sejam imperceptíveis durante seu uso. No mesmo sentido, \citetexto{taylor2012smart} diz que PDV preferem não atrair atenção para si enquanto fazem uso de um sistema de localização.
 
@@ -313,6 +314,8 @@ Em \citetexto{narasimhan2009smartphone} são sugeridos alguns princípios que de
 	\item Usuários devem ter a opção de usar ou não usar as funcionalidades disponíveis. Seu uso não pode ser forçado para não dificultar seu dia-a-dia.
 	\item Manter custos baixos é promover a adoção de produtos pra PDV, já que produtos específicos para esse público tendem a ser mais caros.
 \end{itemize}
+
+Baseando-se nestes princípios e na capacidade de auxílio dos smartphones, um exemplo de ferramenta assistiva que vem a tona é o uso de dispositivos móveis para que o usuário deficiênte visual obtenha sua localização atual e, a partir dela, descubra locais e recursos acessíveis ao seu redor. Tal ferramenta exige a utilização de alguma tecnologia capaz de distinguir e obter a posição do usuário. Uma das tecnologias capazes de atender a essas necessidades é o Bluetooth 
 
 	\section{Tecnologia Bluetooth}
 Bluetooth é uma tecnologia de comunicação sem fios de curto alcance, lançada comercialmente em 1990, quando teve sua primeira especificação formal divulgada. Desde então, diversas modificações foram feitas e a tecnologia passou por diversos aprimoramentos, estando atualmente na versão 4, também conhecida como Bluetooth Smart ou Bluetooth Low Energy, lançada em 2010. A tecnologia nativamente possui capacidade para lidar com diversos serviços, tais como criptografia, transferência de arquivos e transferência síncrona e assíncrona de dados.
@@ -587,6 +590,8 @@ Outra lacuna identificada foi a falta de informações a respeito do gerenciamen
 % Visão geral
 % Como a questão de pesquisa será respondida
 % Diagramas (arquitetura, interações, fluxos e componentes)
+
+\epigrafecap{For millions of years, mankind lived just like the animals. Then something happened which unleashed the power of our imagination. We learned to talk and we learned to listen...}{Stephen Hawking}
 
 Este capítulo apresenta um modelo de sistema que visa promover acessibilidade de pessoas com deficiência visual. O modelo atua auxiliando na localização e no deslocamento de seus usuários, contando com recursos que facilitam sua interação, visto que PDV necessitam de formas especializadas de contato com dispositivos. \citetexto{Falk2013}.
 
