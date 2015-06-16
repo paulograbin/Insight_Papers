@@ -762,44 +762,53 @@ Todas as falas são geradas por computador. Isso permite economizar o tamanho do
 	\subsection{Componentes do serviço Insight}
 Nesta seção são detalhamente apresentados cada um dos componentes que formam a arquitetura da camada de serviços do Insight, mostrados na Figura \ref{fig:arquiteturaServico}.
 
-A camada de serviço do Insight é composta pela totalidade das instâncias em execução, um módulo de controle, um editor de ambientes e a principal base de dados do modelo.
+A camada de serviço do Insight é composta pela totalidade das instâncias em execução, um módulo de controle, um editor de ambientes e a principal base de dados do modelo. 
+
+O uso do modelo de computação na núvem permite que o sistema possa ser acessado por um grande número de usuários mantendo baixos custos de infraestrutura.
 
 \begin{figure}[!ht]
 	\caption{Diagrama de blocos da arquitetura da camada de serviço}
 	\label{fig:arquiteturaServico}
 	\centering%
-	\begin{minipage}{.6\textwidth}
+	\begin{minipage}{.7\textwidth}
 		\includegraphics[width=\textwidth]{imgs/arquiteturaServico.png}
 		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{figure}
 
-		\subsubsection{Serviço Insight}
-Coleção de instâncias
-		
-		\subsubsection{Editor de ambientes}
-Para editar os ambientes
+	\subsubsection{Editor de ambientes}
+O editor de ambientes é a ferramenta através da qual os administradores mapeiam o ambiente existente para dentro do modelo. A edição é totalmente visual. Os administradores criam uma representação bidimencional do ambiente, onde devem ser definidos os locais e recursos que podem ser escolhidos como destino pelo usuário, os trechos e caminhos que podem ser percorridos pelos usuários para chegar a algum destino e também indicam os locais onde estão espalhados os beacons.
+
+Para auxíliar durante o mapeamento do ambiente, o modelo permite visualizar áreas não cobertas pelo alcance dos beacons e tambem oferece sugestões de posicionamento otimizado dos beacons. Os dados são persistidos na base principal do modelo.
+
+	\subsubsection{Módulo de controle}
+O módulo de controle mantem informações e referências a todas as instâncias da aplicação servidor em execução. Este componentes é o responsável por criar e executar uma nova instância, bem como encerrar sua execução, a fim de que a camada de serviço do Insight mantenha conhecimento de todas as instâncias. Ele controla também informações de histórico a respeito da execução das instâncias e de todas as sincronizações ocorridas, tanto por parte da aplicação cliente como por parte das instâncias, para fins de controle e gerênciamento do Insight. 
+
+Através dele é feito o gerênciamento dos aspectos de segurança e infraestrutura do modelo, como por exemplo a criação de usuários administradores e monitoramento da base de dados.
+
+O modulo de controle oferece um painel onde podem ser monitoradas em tempo real informações relevantes sobre o estado das instâncias, usuários ativos no momento, pedidos de ajuda e outras informações analíticas do modelo. 
+
+	\subsubsection{Base de dados}
+A base de dados da camada de serviço é o principal repositório de informações do Insight. Nela ficam armazenados todo o cadastro dos beacons, rotas e locais existentes no modelo. Todas as informações relacionadas aos locais existentes é armazenada em forma de grafos.
+
+Os dados armazenados são acessados através do web service REST de cada instância. Desta forma, as informações são acessíveis independente da plataforma utilizada.
+
+	\subsubsection{Coleção de instâncias}
+A coleção de instâncias é o conjunto de todas as cópias da aplicação servidor sendo executadas no momento. 
+O ciclo de vida de cada instância é gerenciado pelo módulo de controle.
+Mais detalhes sobre aplicação servidor são apresentados na seção \ref{componentesAplicacaoServidor}.
+
+	\subsection{Outras soluções}
+Um importante aspecto do modelo é sua interoperabilidade. O Insight oferece um serviço completo de localização em ambientes internos. Aliado com a infraestrutura de localização formada pelos beacons dispostos no ambiente, diversas aplicações são possiveis. Cada empresa ou organização que adota o Insight pode fazer uso dos dados do modelo para desenvolver novas soluções de localização em suas dependências, aproveitando toda a infraestrutura já existente para evitar custos. 
+
+Os dados são expostos via web service REST, permitindo que sejam consumidos por qualquer plataforma, oferecendo flexibilidade para as soluções desenvolvidas. 
 
 
-		\subsubsection{Módulo de controle}
-O módulo de controle mantem informações e referências a todas as outras instâncias da aplicação servidor em execução. Toda vez que uma nova instância inicia ou termina sua execução ela emite um aviso na camada de serviço do Insight, a fim de que as outras tenham conhecimento do seu estado. São armazenados também informações de histórico a respeito das sincronizações ocorridas e dos clientes que se conectaram a ela. Este componente é responsável por replicar as mudanças acontecidas na sua instância para todas as outras, bem como 
-
-		\subsubsection{Base de dados}
-
-Armazena os dados
 
 
 
 
-
-
-
-
-
-
-
-
-\subsection{Componentes da aplicação servidor}
+\subsection{Componentes da aplicação servidor}\label{componentesAplicacaoServidor}
 Nesta seção são apresentados cada um dos componentes mostrados na Figura \ref{fig:arquiteturaInstancia}, que formam a arquitetura da aplicação servidor do Insight.
 
 Cada instância roda em servidor físico específico, com seus memória, processamento e armazenamento próprios, garantindo estabilidade e disponibilidade sem prejudicar a performance. Não há limite para quantas instâncias podem ser executadas ao mesmo tempo e cada uma é independente, não possuindo qualquer conhecimento sobre as outras instâncias existentes.
@@ -816,13 +825,22 @@ Cada instância roda em servidor físico específico, com seus memória, process
 
 \subsubsection{Serviço Web REST}
 Permite responder a ambientes dinâmicos
+faz requisições pro modulo de conexão ao banco
+interoperabilidade
 
-\subsubsection{Base de dados local}
-cache
+Segundo \citetexto{richardson2008restful}, REST é um padrão amplamente utilizado na comunicação entre sistemas.
 
 \subsubsection{Módulo de conexão ao banco}
-Gerencia conexão, as vezes cache as vezes banco.
+Esse componente é responsável por realizar todas as operações da instância que necessitam de acesso ao banco de dados, bem como gerenciar todas as conexões da instância com a base de dados.
 
+
+Gerencia conexão, as vezes cache as vezes banco da camada de serviço.
+faz requisição pros dois
+
+\subsubsection{Base de dados local}
+mantem em cache informações que foram buscadas na base de principal
+tempo de resposta, tendo em vista que não é necessário ir até a camada de serviço para obter as informações
+escalabilidade
 
 %=======================================================================
 % Metodologia
