@@ -416,40 +416,6 @@ A Figura \ref{fig:visaoGeralPercept} mostra uma visão geral da arquitetura. Do 
 Em uma breve avaliação do modelo, podemos ressaltar que, devido ao baixo custo das tags RFID, é fácil implantar o sistema em um grande ambiente. Porém, a necessidade de conexão constante com a internet pode ser um problema. Outro ponto bastante problemático é o uso de tags, pois, conforme \citetexto{yang2011supporting}, não é possível assumir que PDV consigam facilmente encontrar tags RFID, por isso muita energia seria para leitura a distância. O fato de o usuário necessitar procurar os quiosques, bem como encontrar a tag correspondente ao destino desejado, é um grande complicador.
 
 %=======================================================================
-% TIRÉSIAS
-%=======================================================================
-	\section{Tirésias}
-Em \citetexto{Falk2013} é proposto um modelo para acessibilidade chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Este, por sua vez, é um modelo genérico que visa procurar estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
-
-De acordo com \citetexto{Falk2013}, o Tirésias emprega conceitos de sensibilidade ao contexto e acessibilidade ubíqua, utilizando maneiras especializadas de interação com o sistema, para promover acessibilidade a PDV. Dessa forma, o modelo é capaz de oferecer informações relevantes ao contexto onde o usuário está e o que existe a sua volta.
-
-O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone e, baseado nisso, o sistema exibe recursos de acessibilidade disponíveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são a listagem de recursos disponíveis, a indicação de caminho até recurso selecionado e a solicitação de ajuda.
-
-O modelo Tirésias é composto pelos módulos de saída, entrada, configurações e pelo assistente pessoal, somados ao modelo Hefestos. A Figura \ref{fig:visaoGeralTiresias} exibe uma visão geral da arquitetura do Tirésias, mostrando em cima os componentes do próprio modelo, e embaixo os componentes do modelo em que ele é baseado. Os componentes são descritos abaixo.
-
-\begin{figure}[!ht]
-	\caption{Visão geral da arquitetura do Tirésias}
-	\label{fig:visaoGeralTiresias}
-	\centering%
-	\begin{minipage}{.6\textwidth}
-		\includegraphics[width=\textwidth]{imgs/tiresiasArquitetura}
-		\fonte{\citetexto{Falk2013}}
-		\end{minipage}
-\end{figure}
-
-\begin{itemize}
-	\item O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são divididas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário, são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário se movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado e, quando o usuário conclui o trecho atual, o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
-
-	\item O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispositivos com teclado dedicado ou somente a tela sensível ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniente de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
-
-	\item O módulo de configuração disponibiliza o controle de ajustes de todas as funcionalidades disponíveis no sistema, de forma a customizar o sistema às necessidades de diferentes usuários. Alguns dos ajustes disponíveis são o controle de frequência e volume da leitura de tela, a quantidade de recursos lida e se o usuário deseja ser notificado quando há alguma mudança nos recursos.
-
-	\item O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte à acessibilidade.
-\end{itemize} 
-
-Avaliando o modelo, é notável a acessibilidade no que tange a entrada e saída dos dados no aplicativo. Entretanto, um ponto fraco é a utilização do GPS como modo de localização, visto que o sistema é incapaz de identificar um andar específico em um prédio com muitos pisos, por exemplo, bem como o sinal pode ser fraco ou estar indisponível em algumas regiões devido à natureza da tecnologia. 
-
-%=======================================================================
 % UCAT
 %=======================================================================
 	\section{UCAT - Ubiquitous Context Awareness Tools for the Blind}
@@ -540,6 +506,40 @@ Uma mensagem de exemplo, seguindo esse padrão, poderia ser: Atenção, você es
 
 O pronto fraco desse trabalho é a baixa área de abrangência da solução, funcionando apenas no entorno de zonas em obras.
 A pesquisa e a tecnologia seriam melhores aproveitadas em situações mais corriqueiras, como em um ambiente de uma universidade ou um estádio. Vale citar como ponto forte o uso da última versão da tecnologia Bluetooth, ao contrário dos outros trabalhos citados, onde não é necessário parear os dispositivos para que eles se comuniquem.
+
+%=======================================================================
+% TIRÉSIAS
+%=======================================================================
+	\section{Tirésias}
+Em \citetexto{Falk2013} é proposto um modelo para acessibilidade chamado Tirésias. De acordo com o artigo, o Tirésias é baseado no Hefestos. Este, por sua vez, é um modelo genérico que visa procurar estabelecer alguns padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização construída em cima do modelo Hefestos para atender as necessidades das pessoas com deficiência visual. 
+
+De acordo com \citetexto{Falk2013}, o Tirésias emprega conceitos de sensibilidade ao contexto e acessibilidade ubíqua, utilizando maneiras especializadas de interação com o sistema, para promover acessibilidade a PDV. Dessa forma, o modelo é capaz de oferecer informações relevantes ao contexto onde o usuário está e o que existe a sua volta.
+
+O Tirésias funciona obtendo informações de localização do usuário através do GPS contido no smartphone e, baseado nisso, o sistema exibe recursos de acessibilidade disponíveis nas proximidades do usuário. Algumas das funcionalidades oferecidas são a listagem de recursos disponíveis, a indicação de caminho até recurso selecionado e a solicitação de ajuda.
+
+O modelo Tirésias é composto pelos módulos de saída, entrada, configurações e pelo assistente pessoal, somados ao modelo Hefestos. A Figura \ref{fig:visaoGeralTiresias} exibe uma visão geral da arquitetura do Tirésias, mostrando em cima os componentes do próprio modelo, e embaixo os componentes do modelo em que ele é baseado. Os componentes são descritos abaixo.
+
+\begin{figure}[!ht]
+	\caption{Visão geral da arquitetura do Tirésias}
+	\label{fig:visaoGeralTiresias}
+	\centering%
+	\begin{minipage}{.6\textwidth}
+		\includegraphics[width=\textwidth]{imgs/tiresiasArquitetura}
+		\fonte{\citetexto{Falk2013}}
+		\end{minipage}
+\end{figure}
+
+\begin{itemize}
+	\item O módulo de saída é o responsável por gerenciar as informações passadas aos usuários. Informações são divididas em dois grupos: o primeiro são indicações de recursos disponíveis próximos ao usuário; o segundo tipo são os trechos do caminho até um determinado destino escolhido pelo usuário. Para comunicar as informações ao usuário, são utilizados a leitura da tela em conjunto com alertas vibratórios. A disponibilização das informações do primeiro tipo envolve a leitura do nome, da descrição e da distância até cada recurso um dos recursos disponíveis, baseado na posição atual do usuário. Conforme o usuário se movimenta, a informação de distância dos recursos é atualizada. A diferença do segundo tipo é que apenas o destino parcial mais próximo é disponibilizado e, quando o usuário conclui o trecho atual, o próximo é lido. Além da leitura de tela, o Tirésias combina a utilização de alertas vibratórios com a bússola eletrônica que equipa os smartphone para indicar a direção correta aos usuários. Quando o smartphone está voltado em direção do próximo destino, o fato é informado ao usuário através de vibrações, interrompidas quando o smartphone é virado para outras direções.
+
+	\item O módulo de entrada gerencia a interface do usuário com o sistema. Capaz de suportar dispositivos com teclado dedicado ou somente a tela sensível ao toque, o Tirésias se adapta aos recursos disponíveis no smartphone para oferecer a maneira mais conveniente de interação ao usuário. É através deste módulo que o usuário informa ao modelo onde deseja ir, por exemplo.
+
+	\item O módulo de configuração disponibiliza o controle de ajustes de todas as funcionalidades disponíveis no sistema, de forma a customizar o sistema às necessidades de diferentes usuários. Alguns dos ajustes disponíveis são o controle de frequência e volume da leitura de tela, a quantidade de recursos lida e se o usuário deseja ser notificado quando há alguma mudança nos recursos.
+
+	\item O agente é responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuários e recursos disponíveis para o suporte à acessibilidade.
+\end{itemize} 
+
+Avaliando o modelo, é notável a acessibilidade no que tange a entrada e saída dos dados no aplicativo. Entretanto, um ponto fraco é a utilização do GPS como modo de localização, visto que o sistema é incapaz de identificar um andar específico em um prédio com muitos pisos, por exemplo, bem como o sinal pode ser fraco ou estar indisponível em algumas regiões devido à natureza da tecnologia. 
 
 	\section{Comparação entre os trabalhos estudados}\label{comparacaoTrabs}
 
