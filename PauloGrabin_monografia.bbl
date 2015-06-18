@@ -25,46 +25,44 @@
 
 \bibitem[CHEN-FU(2014)Chen-Fu]{chen2014} CHEN-FU, L\@. \emph{Development of a
   navigation system using smartphone and bluetooth technologies to help the
-  visually impaired navigate work zones safely}. [S.l.]: Minnesota Department
-  of Transportation Research Services \& Library, 2014.
+  visually impaired navigate work zones safely}. Minnesota Department
+  of Transportation, Research Services \& Library, 2014.
 
 \bibitem[DAVIS(1989)Davis]{davis1989perceived} DAVIS, F.~D\@. Perceived
   usefulness, perceived ease of use, and user acceptance of information
-  technology. \emph{MIS quarterly}, [S.l.], p.~319--340, 1989.
+  technology. \emph{MIS quarterly}, p.~319--340, 1989.
 
 \bibitem[DEY(2001)Dey]{dey2001understanding} DEY, A.~K\@. Understanding and
-  using context. \emph{Personal and ubiquitous computing}, [S.l.], v.~5, n.~1,
+  using context. \emph{Personal and ubiquitous computing}, v.~5, n.~1,
   p.~4--7, 2001.
 
-\bibitem[DIAS(2014)Dias]{dias2015navpal} DIAS, M.~B\@. \emph{{NavPal }:
+\bibitem[DIAS(2014)Dias]{dias2015navpal} DIAS, M.~B\@. \emph{{NavPal}:
   technology solutions for enhancing urban navigation for blind travelers}.
   2014. Tese (Doutorado em Ci{\^e}ncia da Computa{\c{c}}{\~a}o) ---
   Carnegie-Mellon University, 2014.
 
-\bibitem[DIJKSTRA(1959)Dijkstra]{dijkstra1959note} DIJKSTRA, E.~W\@. A note on
-  two problems in connexion with graphs. \emph{Numerische Mathematik}, [S.l.],
+\bibitem[DIJKSTRA(1959)Dijkstra]{dijkstra1959note} DIJKSTRA, Edsger ~W\@. A note on
+  two problems in connexion with graphs. \emph{Numerische Mathematik},
   v.~1, p.~269--271, 1959.
 
 \bibitem[FALK; TAVARES; BARBOSA(2013)Falk, Tavares e Barbosa]{Falk2013} FALK,
   R.~A.; TAVARES, J. E. d.~R.; BARBOSA, J. L.~V\@. {Tirésias: um modelo para
   acessibilidade ub\'{\i}qua orientado \`{a} defici\^{e}ncia visual}.
-  \emph{Revista Brasileira de Computa\c{c}\~{a}o Aplicada}, [S.l.], p.~55--70,
+  \emph{Revista Brasileira de Computa\c{c}\~{a}o Aplicada}, v.5, n. 1, p.~55--70,
   2013.
 
 \bibitem[GANZ et~al.(2011)Ganz et~al.]{Ganz2011} GANZ, A. et~al\@. Percept:
-  Indoor navigation for the blind and visually impaired. \emph{Engineering in
+  Indoor navigation for the blind and visually impaired. In: \emph{Engineering in
   Medicine and Biology Society, EMBC, 2011 Annual International Conference of
-  the IEEE}, [S.l.], p.~856--859, 2011.
+  the IEEE.} IEEE, 2011. p.~856--859.
 
 \bibitem[GANZ et~al.(2012)Ganz et~al.]{Ganz2012} GANZ, A. et~al\@. PERCEPT
   indoor navigation system for the blind and visually impaired: architecture
   and experimentation. \emph{International journal of telemedicine and
-  applications}, [S.l.], v.~2012, p.~19, 2012.
+  applications}, v.~2012, p.~19, 2012.
 
 \bibitem[GANZ et~al.(2014)Ganz et~al.]{Ganz2014} GANZ, A. et~al\@. PERCEPT-II:
-  Smartphone based indoor navigation system for the blind. In: \emph{ENGINEERING IN
-  MEDICINE AND BIOLOGY SOCIETY (EMBC), 2014 36TH ANNUAL INTERNATIONAL
-  CONFERENCE OF THE IEEE.} IEEE, 2014. p.~3662--3665.
+  Smartphone based indoor navigation system for the blind. In: \emph{Engineering in Medicine and Biology Society (EMBC), 2014 36th Annual International Conference of the IEEE.} IEEE, 2014. p.~3662--3665.
 
 \bibitem[GEDAWY(2011)Gedawy]{gedawy2011designing} GEDAWY, H.~K\@.
   \emph{Designing an interface and path translator for a smart phone-based
@@ -72,7 +70,7 @@
   em Ci{\^e}ncia da Computa{\c{c}}{\~a}o) --- Qatar Foundation, 2011.
 
 \bibitem[GERHARDT; SILVEIRA(2009)Gerhardt e Silveira]{Gerhardt2009} GERHARDT,
-  T.~E.; SILVEIRA, D.~T\@. \emph{{M\'{e}todos de Pesquisa}}. [S.l.]:
+  T.~E.; SILVEIRA, D.~T\@. \emph{{M\'{e}todos de Pesquisa}}.
   Universidade Federal do Rio Grande do Sul, 2009.
 
 \bibitem[HARPER; GREEN(2000)Harper e Green]{harper2000travel} HARPER, S.;
@@ -91,11 +89,11 @@
   Parte 11 - Orientações sobre usabilidade. 2011.
 
 \bibitem[LIKERT(1932)Likert]{likert1932technique} LIKERT, R\@. A technique for
-  the measurement of attitudes. \emph{Archives of psychology}, [S.l.], 1932.
+  the measurement of attitudes. \emph{Archives of psychology}, 1932.
 
 \bibitem[MAU et~al.(2008)Mau et~al.]{mau2008blindaid} MAU, S. et~al\@.
   Blindaid: an electronictravel aid for the blind. \emph{Robotics Institute
-  Report, CMU-RI-TR-07-39}, [S.l.], 2008.
+  Report, CMU-RI-TR-07-39}, 2008.
 
 \bibitem[MONTAGUE(2010)Montague]{montague2010accessible} MONTAGUE, K\@.
   Accessible indoor navigation. In: \emph{Proceedings of the 12th international ACM SIGACCESS conference on Computers and accessibility.} ACM, 2010. p.~305--306.
@@ -107,33 +105,26 @@
 \bibitem[PUPO; MELO; FERR{\'E}S(2006)PUPO, MELO e
   FERR{\'E}S]{pupo2006acessibilidade} PUPO, D.~T.; MELO, A.~M.; FERR{\'E}S,
   S.~P\@. Acessibilidade: discurso e pr{\'a}tica no cotidiano das bibliotecas.
-  \emph{Campinas: Unicamp/Biblioteca Central C{\'e}sar Lattes}, [S.l.], 2006.
+  \emph{Campinas: Unicamp/Biblioteca Central C{\'e}sar Lattes}, 2006.
 
 \bibitem[QUINONES et~al.(2011)Quinones et~al.]{quinones2011supporting}
-  QUINONES, P.-A. et~al\@. Supporting visually impaired navigation: a
-  needs-finding study. In: CHI'11 EXTENDED ABSTRACTS ON HUMAN FACTORS IN
-  COMPUTING SYSTEMS, 2011. \emph{Anais{\ldots}} [S.l.:~s.n.], 2011.
-  p.~1645--1650.
+  QUINONES, Pablo-Alejandro. et~al\@. Supporting visually impaired navigation: a
+  needs-finding study. In: \emph{CHI'11 EXTENDED ABSTRACTS ON HUMAN FACTORS IN
+  COMPUTING SYSTEMS.} ACM, 2011. p.~1645--1650.
 
 \bibitem[RICHARDSON; RUBY(2008)Richardson e Ruby]{richardson2008restful}
-  RICHARDSON, L.; RUBY, S\@. \emph{Restful web services}. First Edit.~ed.
-  [S.l.]: O'Reilly Media, Inc., 2008. 409~p.
+  RICHARDSON, Leonard.; RUBY, Sam. \emph{RESTful web services}. Primeira edição.
+  O'Reilly Media, Inc., 2008.
 
 \bibitem[RODRIGUES(2013)Rodrigues]{ucat2014} RODRIGUES, I. R.~P\@.
   \emph{{UCAT}: ubiquitous context awareness tools for the blind}. 2013.
   Disserta{\c{c}}{\~a}o (Mestrado em Ci{\^e}ncia da Computa{\c{c}}{\~a}o) ---
   Universidade de Lisboa, 2013.
 
-\bibitem[RODRIGUEZ-SANCHEZ et~al.(2014b)Rodriguez-Sanchez
-  et~al.]{Rodriguez-Sanchez:2014} RODRIGUEZ-SANCHEZ, M.~C. et~al\@. Accessible
-  smartphones for blind users: a case study for a wayfinding system.
-  \emph{Expert Syst. Appl.}, Tarrytown, NY, USA, v.~41, n.~16, p.~7210--7222,
-  Nov.~2014.
-
 \bibitem[RODRIGUEZ-SANCHEZ et~al.(2014a)Rodriguez-Sanchez
   et~al.]{rodriguez2014accessible} RODRIGUEZ-SANCHEZ, M. et~al\@. Accessible
   smartphones for blind users: a case study for a wayfinding system.
-  \emph{Expert Systems with Applications}, [S.l.], v.~41, n.~16, p.~7210--7222,
+  \emph{Expert Systems with Applications}, v.~41, n.~16, p.~7210--7222,
   2014.
 
 \bibitem[{Royal London Society for Blind People}(2014){Royal London Society for
@@ -144,7 +135,7 @@
 
 \bibitem[SATYANARAYANAN(2001)Satyanarayanan]{Satyanarayanan2001}
   SATYANARAYANAN, M\@. {Pervasive computing: vision and challenges}. \emph{IEEE
-  Personal Communications}, [S.l.], v.~8, p.~10--17, 2001.
+  Personal Communications}, v.~8, n. 4, p.~10--17, 2001.
 
 \bibitem[STEWART et~al.(2008)Stewart et~al.]{stewart2008accessible} STEWART, J.
   et~al\@. Accessible contextual information for urban orientation. In:
@@ -163,19 +154,19 @@
 
 \bibitem[TOWNSEND et~al.(2014)Townsend et~al.]{Townsend2014} TOWNSEND, K.
   et~al\@. \emph{{Getting Started with Bluetooth Low Energy}: tools and
-  techniques for low-power networking}. First Edit.~ed. [S.l.]: O'Reilly Media,
+  techniques for low-power networking}. Primeira edição. O'Reilly Media,
   Inc., 2014. 180~p.
 
 \bibitem[ULLMAN; TROUT(2009)Ullman e Trout]{ullman2009accommodating} ULLMAN,
   B.~R.; TROUT, N.~D\@. Accommodating pedestrians with visual impairments in
   and around work zones. \emph{Transportation Research Record: Journal of the
-  Transportation Research Board}, [S.l.], v.~2140, n.~1, p.~96--102, 2009.
+  Transportation Research Board}, v.~2140, p.~96--102, 2009.
 
 \bibitem[VANDERHEIDEN(2008)Vanderheiden]{vanderheiden2008ubiquitous}
   VANDERHEIDEN, G.~C\@. Ubiquitous accessibility, common technology core, and
   micro assistive technology: commentary on “computers and people with
   disabilities”. \emph{ACM Transactions on Accessible Computing (TACCESS)},
-  [S.l.], v.~1, n.~2, p.~10, 2008.
+  v.~1, n.~2, p.~10, 2008.
 
 \bibitem[W3C(2008)W3C]{W3Cguideliness} W3C. \emph{Web content accessibility
   guidelines}. Dispon{\'\i}vel em:
@@ -183,22 +174,20 @@
   maio~2015.
 
 \bibitem[WEISER(1991)Weiser]{Weiser1991} WEISER, M\@. The computer for the 21st
-  century. \emph{Scientific American}, [S.l.], v.~265, p.~94--104, 1991.
+  century. \emph{Scientific American}, v.~265, p.~94--104, 1991.
 
 \bibitem[YANG et~al.(2011)Yang et~al.]{yang2011supporting} YANG, R. et~al\@.
   Supporting spatial awareness and independent wayfinding for pedestrians with
-  visual impairments. In: THE PROCEEDINGS OF THE 13TH INTERNATIONAL ACM
-  SIGACCESS CONFERENCE ON COMPUTERS AND ACCESSIBILITY, 2011.
-  \emph{Anais{\ldots}} [S.l.:~s.n.], 2011. p.~27--34.
+  visual impairments. In: \emph{ The proceedings of the 13th international ACM SIGACCESS conference on Computers and accessibility.} ACM, 2011. p.~27--34.
 
 \bibitem[YOON; KIM(2007)Yoon e Kim]{yoon2007convenience} YOON, C.; KIM, S\@.
   Convenience and tam in a ubiquitous computing environment: the case of
-  wireless lan. \emph{Electronic Commerce Research and Applications}, [S.l.],
+  wireless lan. \emph{Electronic Commerce Research and Applications},
   v.~6, n.~1, p.~102--112, 2007.
 
 \bibitem[ZAFARI; PAPAPANAGIOTOU; CHRISTIDIS(2015)Zafari, Papapanagiotou e
   Christidis]{zafari2015micro} ZAFARI, F.; PAPAPANAGIOTOU, I.; CHRISTIDIS, K\@.
   Micro-location for internet of things equipped smart buildings. \emph{arXiv
-  preprint arXiv:1501.01539}, [S.l.], 2015.
+  preprint arXiv:1501.01539}, 2015.
 
 \end{thebibliography}
