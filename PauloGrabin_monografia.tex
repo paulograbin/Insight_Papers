@@ -21,7 +21,7 @@
 % Dados gerais sobre o trabalho.
 %=======================================================================
 \autor{Gräbin}{Paulo Henrique Grolli}
-\titulo{Insight: Um modelo acessível para localização em ambientes internos usando a tecnologia BLE}
+\titulo{Insight: Um modelo acessível para localização em ambientes internos usando a tecnologia Bluetooth Low Energy}
 \orientador[Prof.~Dr.]{Costa}{Cristiano André da}
 \local{São Leopoldo}
 \ano{2015}
@@ -168,7 +168,7 @@ This paper presents the modeling of a Indoor Positioning System with accessibili
 %=======================================================================
 \chapter{Introdução} %Texto contextualizando o problema abordado e o escopo abarcado.
 
-\epigrafecap{Now this is not the end. It is not even the beginning of the end.\\ But it is, perhaps, the end of the beginning.}{Winston Churchill}
+\epigrafecap{Now this is not the end. It is not even the beginning of the end.\\ But it is, perhaps, the end of the beginning}{Winston Churchill}
 
 Pessoas com a visão saudável se apoiam enormemente no sentido da visão para se localizar. Frequentemente a sinalização destinada a orientação em locais como aeroportos, shopping centers e universidades é composta inteiramente por sinais visuais. Por esse mesmo motivo, pessoas com deficiência visual (PDV) têm grande dificuldade quando precisam deslocar-se, necessitando do auxílio de ferramentas como bengalas e cães-guia ou ainda da ajuda de outras pessoas. \citetexto{Ganz2014} afirma que a visão é o recurso mais importante na percepção do que se passa no entorno de alguém, e a sua perda significa uma severa redução na orientação e mobilidade, especialmente em ambientes desconhecidos e complexos.
 
@@ -249,7 +249,7 @@ O sexto e último capítulo conclui o trabalho e apresenta as considerações fi
 % % Fundamentação teórica
 % %=======================================================================
 \chapter{Fundamentação Teórica}
-\epigrafecap{O óbvio é aquilo que ninguém enxerga, \\até que alguém o expresse com simplicidade.}{Khalil Gibran}
+\epigrafecap{The obvious is that which is never seen until someone expresses it simply}{Khalil Gibran}
 % Esse capítulo contém os principais conceitos e áreas envolvidos no trabalho. O capítulo deve apresentar esses conceitos em uma linha de pensamento sequencial e encadeada. Não deve conter subseções independentes sem se relacionar uma com a outra. O capítulo inicia explicando sua lógica e todas as subseções são ligadas entre si por uma sequência lógica de pensamento e redação.
 Este capítulo apresenta a base teórica sobre a qual está construído este trabalho. Inicialmente é apresentada uma visão geral sobre computação ubíqua, computação móvel e acessibilidade. Em seguida os conceitos são mesclados, e então é introduzido o conceito de acessibilidade ubíqua e tecnologias assistivas. Finalmente, é introduzida a tecnologia Bluetooth, seu modo de funcionamento e aplicações práticas.
 
@@ -597,8 +597,8 @@ Outra lacuna identificada foi a falta de informações a respeito do gerenciamen
 % Como a questão de pesquisa será respondida
 % Diagramas (arquitetura, interações, fluxos e componentes)
 
-\epigrafecap{Para as pessoas sem deficiência, a tecnologia torna as coisas mais fáceis. \\
-Para as pessoas com deficiência, a tecnologia torna as coisas possíveis.} 
+\epigrafecap{For most people, technology makes things easier. \\
+For people with disabilities, technology makes things possible.} 
 {Mary Pat Radabaugh}
 
 Este capítulo apresenta um modelo de sistema que visa promover acessibilidade de pessoas com deficiência visual. O modelo atua auxiliando na localização e no deslocamento de seus usuários, contando com recursos que facilitam sua interação, visto que PDV necessitam de formas especializadas de contato com dispositivos. \citetexto{Falk2013}.
@@ -858,13 +858,13 @@ No Insight, a sensibilidade ao contexto do usuário é importante para que o mod
 Para a detecção do contexto serão espalhados beacons Bluetooth pelo ambiente. Estes por sua vez emitirão sinais que serão detectados pelo smartphone do usuário ao entrar na zona de alcance do beacon. O modelo possuirá em seu banco de dados as informações necessárias para obter o posicionamento do beacon ao detectar seu sinal
 
 %\subsection{Modelo de comunicação}
-% A comunicação entre clientes e servidores UbiHealth é realizada sobre o protocolo HTTPS. As mensagens trocadas entre clientes e servidores utilizam a arquitetura de serviços REST, sigla originária do inglês e que significa Transferência de Estado Representativo (Representational State Transfer). A arquitetura REST foi escolhida por ser de fácil implementação e reconhecida por prover melhor escalabilidade ao sistema. Os arquivos binários no formato DICOM também serão transferidos entre cliente e servidor através da arquitetura REST e do protocolo HTTPS
-% A Figura 7 traz um diagrama de sequência que tem o propósito de facilitar o entendimento da comunicação entre os diferentes atores envolvidos. O exemplo mostra as ações de um usuário em seu dispositivo móvel utilizando um cliente UbiHealth que comunica-se com servidores UbiHealth. O usuário em questão é um médico generalista que abre o caso de um paciente. Em seguida o usuário busca auxílio de um especialista adicionando o mesmo ao caso. Para auxiliar o especialista no diagnóstico, o usuário generalista busca um registro médico que possa ser adicionado ao caso para ser analisado pelo especialista. Esta busca retornará do servidor um arquivo no formato DICOM contendo uma fotografia, o qual o usuário adicionará ao caso. Junto com a fotografia o usuário adicionará também uma mensagem explicando seu ponto de vista sobre o registro e a relevância para este caso.
 
 %=======================================================================
 % Metodologia
 %=======================================================================
 \chapter{Metodologia}
+\epigrafecap{The future is already here. It's just not very evenly distributed.}{William Gibson}
+
 Enquadrando o presente trabalho na classificação apresentada em \citetexto{Gerhardt2009}, quanto à natureza da pesquisa, ele se caracteriza como uma pesquisa aplicada, pois objetiva gerar conhecimentos para aplicação prática dirigidos à solução de um problema específico que é a navegação e localização de deficientes visuais. A abordagem do trabalho é qualitativa e, do ponto de vista dos objetivos, é uma pesquisa exploratória e descritiva, buscando resultar em um modelo acessível de localização e navegação em ambientes internos. O procedimento técnico utilizado para a construção da pesquisa é a pesquisa bibliográfica.
 
 	\section{Aspectos de implementação}
