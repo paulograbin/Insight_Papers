@@ -56,9 +56,9 @@
 \begin{document}
 % Diferentemente do normal, os comandos a seguir devem vir aqui mesmo,
 % e não antes do \begin{document} onde seria o lugar deles. 
-\titulo{Exemplo de Artigo no Padrão da UNISINOS: Versão \LaTeX}
-\autor{Fulano de Tal\footnote{Aluno do curso de Ciência da Computação.  Email: fulano@tal.com}}
-\autor{Beltrano da Silva\footnote{Orientador, professor da Unisinos, doutor em Ciência da Computação pela Universidade de Stanford (1995), Mestre em Ciência da Computação pela Universidade de Calcutá (1983).  Email: professor@unisinos.br}}
+\titulo{Insight: Um modelo acessível para localização em ambientes internos usando a tecnologia Bluetooth Low Energy}
+\autor{Paulo Henrique Grolli Gräbin\footnote{Aluno do curso de Ciência da Computação.  Email: paulograbin@gmail.com}}
+\autor{Cristiano André da Costa\footnote{Orientador, professor da Unisinos, doutor em Ciência da Computação pela Universidade Federal do Rio Grande do Sul (2008), Mestre em Ciência da Computação pela mesma Universidade (1997). Email: cac@unisinos.br}}
 
 %=======================================================================
 % Resumo em Português.
@@ -75,7 +75,7 @@ Este documento apresenta orientações para uso da classe \LaTeX\ de formataçã
 %=======================================================================
 \section{Introdução}
 
-Conforme \citetexto{Hexsel11}, a introdução tem o objetivo de ``\emph{introduzir} o material que vai ser apresentado em mais detalhe nas seções subseqüentes''. Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
+Conforme , a introdução tem o objetivo de ``\emph{introduzir} o material que vai ser apresentado em mais detalhe nas seções subseqüentes''. Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
 
 Geralmente, a introdução tem uma estrutura similar ao resumo e deve apresentar:
 \begin{itemize}
@@ -86,7 +86,7 @@ Geralmente, a introdução tem uma estrutura similar ao resumo e deve apresentar
 		\item Objetivo geral --- qual o propósito da pesquisa?
 		\item Objetivos específicos --- abertura do objetivo geral em outros menores (possíveis capítulos).
 	\end{itemize}
-	Veja abaixo um exemplo de objetivo retirado da monografia de~\citetexto{Teixeira09}:
+	Veja abaixo um exemplo de objetivo retirado da monografia de Teixeira09}:
 
 	Com a possibilidade de acesso a base de dados XML gerada a partir do Sistema de Currículos Lattes e a necessidade de melhor reutilizar as informações existentes neste sistema, o presente trabalho tem como objetivo geral permitir o acesso do pesquisador a seus dados através de uma interface mais amigável: o padrão LaTeX. Para isto destacam-se os seguintes objetivos específicos:
 	\begin{alineas}
@@ -127,7 +127,7 @@ A Figura~\ref{fig:escrita} ilustra as fases psicológicas da escrita da disserta
 	\centering%
 	\begin{minipage}{.8\textwidth}
 		\includegraphics[width=\textwidth]{escrita}
-		\fonte{\citetexto{Cham12}}
+		\fonte Cham12}}
 	\end{minipage}
 \end{figure}
 
@@ -154,7 +154,7 @@ A Tabela~\ref{tab:estacoes} é um exemplo de tabela elaborada pelo(a) próprio(a
 \end{table}
 
 \subsection{Resumo}
-O resumo deve conter de 150 a 250 palavras. No resumo não deve haver citações e indica-se que essa seja a última seção do texto a ser escrita. Veja abaixo uma sugestão de organização e exemplo de resumo de \citetexto{Moro11}.
+O resumo deve conter de 150 a 250 palavras. No resumo não deve haver citações e indica-se que essa seja a última seção do texto a ser escrita. Veja abaixo uma sugestão de organização e exemplo de resumo de Moro11}.
 
 Sugestão (uma a três linhas para cada item):
 \begin{itemize}
@@ -164,7 +164,7 @@ Sugestão (uma a três linhas para cada item):
 	\item Solução (nome da proposta, metodologia básica sem detalhes, quais características respondem as questões iniciais, interpretação dos resultados, conclusões).
 \end{itemize}
 
-Exemplo (SANTOS et al., 2008 apud \citealp{Moro11}):
+Exemplo (SANTOS et al., 2008 apud Moro11}):
 \begin{quote}
 CONTEXTO: A Web é abundante em páginas que armazenam  dados de forma implícita. PROBLEMA: Em muitos casos, estes dados estão presentes em textos semiestruturados sem a presença de delimitadores explícitos e organizados em uma estrutura também implícita. SOLUÇÃO: Este artigo apresenta uma nova abordagem para extração em textos semi-estruturados baseada em Modelos de Markov Ocultos (Hidden Markov Models - HMM). ESTADO-DA-ARTE e MÉTODO PROPOSTO: Ao contrário de outros trabalhos baseados em HMM, a abordagem proposta dá ênfase à extração de metadados, além dos dados propriamente ditos. Esta abordagem consiste no uso de uma estrutura aninhada de HMMs, onde um HMM principal identifica os atributos no texto e HMMs internos, um para cada atributo, identificam os dados e metadados. Os HMMs são gerados a partir de um treinamento com uma fração de amostras da base a ser extraída. RESULTADOS: Os experimentos realizados com anúncios de classificados retirados da Web mostram que o processo de extração alcança qualidade acima de 0,97 com a medida F, mesmo se esta fração de treinamento é pequena. 
 \end{quote}
@@ -182,42 +182,20 @@ Você vai ver que, neste exemplo, não está sendo usado o estilo de referência
 	\item As normas da ABNT são tão complexas que, para atender a todas as variações possíveis de citações e referências, o projeto ABNTeX criou uma série de campos adicionais nas entradas do arquivo .bib.  Embora funcione para o caso ABNT, o efeito colateral de fazer isso é que o seu arquivo .bib será muitas vezes incompatível com os demais estilos tradicionais do BibTeX, como \texttt{plain}, \texttt{alpha}, \texttt{ieeetr}, entre outros.  Por exemplo, em referências a artigos publicados em conferências, o campo \texttt{organization} é usado pelo ABNTeX para definir o nome do evento.  Isso não é padrão e não será reconhecido pelos estilos tradicionais\footnote{Veja como criar seus arquivos .bib no manual do BibTeX, que pode ser encontrado em http://ctan.tug.org/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf.}.  Considerando que um dos maiores benefícios do BibTeX é criar um arquivo .bib que pode ser reutilizado pelo resto da vida, nossa estratégia com o \texttt{unisinos.bst} foi tentar aproximar ao máximo a formatação exigida pela ABNT sem implicar na criação de arquivos .bib incompatíveis.  Isso funciona bem na grande maioria dos casos, mas não em todos.  Nesse caso, a saída é usar o ABNTeX ou então alterar manualmente o arquivo .bbl que é gerado ao rodar o comando \texttt{bibtex}.
 \end{itemize}
 
-Em caso de dúvida, siga as orientações do guia da Biblioteca \cite{Biblioteca12} e, se necessário, da norma NBR~6023 \cite{NBR6023:2002}.
 
 \subsection{Citações}
 As citações podem ocorrer de duas formas: com os nomes dos autores inseridos no texto ou não.  Isso implica em uma construção diferente para as frases.  Por exemplo:
-\begin{itemize}
-	\item Com o nome do autor inserido no texto: ``De acordo com \citetexto{Tanenbaum03}, o modelo de referência OSI foi proposto de forma tardia.''
-	\item Sem inserir o autor no texto: ``O modelo de referência OSI foi proposto de forma tardia \cite{Tanenbaum03}.''
-\end{itemize}
 
 \subsection{Livros}
 Seguem alguns exemplos de referências de livros:
-\begin{itemize}
-	\item \bibentry{Buford09}.
-	\item Livro com indicação de edição:\\
-	\bibentry{Kurose10ptbr}.
-\end{itemize}
 
 \subsection{Artigos em Periódicos}
 Os exemplos abaixo ilustram referências a artigos em periódicos.
-\begin{itemize}
-	\item \bibentry{Hayes08}.
-	\item \bibentry{Lawton08}.
-\end{itemize}
 
 \subsection{Artigos em Conferências}
-\begin{itemize}
-	\item \bibentry{Laadan10}.
-	\item \bibentry{Anderson95}.
-\end{itemize}
 
 \subsection{Teses e Dissertações}
 Seguem algumas referências a trabalhos acadêmicos, como teses, dissertações, trabalhos de conclusão de curso, etc.
-\begin{itemize}
-	\item \bibentry{Teixeira09}.
-	\item \bibentry{Flaumann05}.
-\end{itemize}
 
 %=======================================================================
 % Conclusão
@@ -242,7 +220,7 @@ Este documento apresenta orientações para uso da classe \LaTeX\ de formataçã
 %=======================================================================
 % Referências
 %=======================================================================
-\bibliography{bibliografia}
+\bibliography{bibliografia_artigo}
 
 %=======================================================================
 % Exemplo de Apêndice
