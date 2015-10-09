@@ -6,19 +6,19 @@ all:
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Primeira vez... ******************************"
-	/Library/TeX/texbin/pdflatex PauloGrabin_artigo
+	pdflatex PauloGrabin_artigo
 	
 	@echo "\n\n\n\n"
 	@echo "****************************** Gera referencias... ******************************"
-	/Library/TeX/texbin/bibtex PauloGrabin_artigo
+	bibtex PauloGrabin_artigo
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Segunda vez... ******************************"
-	/Library/TeX/texbin/pdflatex PauloGrabin_artigo
+	pdflatex PauloGrabin_artigo
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Terceira vez... ******************************"
-	/Library/TeX/texbin/pdflatex PauloGrabin_artigo
+	pdflatex PauloGrabin_artigo
 
 	@echo "\n\n\n\n"
 	@echo "****************************** Abre PDF... ******************************"
