@@ -41,13 +41,24 @@ Deficientes visuais passam por grandes dificuldades durante seu deslocamento, de
 \section{Introdução}
 A visão é o recurso mais importante na localização de um indivíduo e na percepção do que se passa ao seu redor. Frequentemente, a sinalização destinada a orientação em locais como aeroportos, shopping centers e universidades é composta inteiramente por sinais visuais. Por esse motivo, pessoas com deficiência visual (PDV) tem grande dificuldade quando necessitam se deslocar, precisando do auxílio de ferramentas como bengalas e cães-guia ou ainda da ajuda de outras pessoas.
 
+De acordo com o levantado por \citetexto{IBGE2010}, no último Censo Demográfico, realizado em 2010, o Brasil possuía 45,6 milhões de pessoas que afirmaram ser portadoras de deficiência. Desse total, 35,7 milhões, ou 78,2\%, são pessoas com deficiência visual (PDV). Ou seja, aproximadamente 18\% da população brasileira é afetada.
+
+Em 2014, a Royal London Society for Blind People (RLSB), organização sem fins lucrativos que busca criar uma diferença que melhore a vida das futuras gerações de PDV, divulgou um manifesto para chamar atenção aos desafios enfrentados diariamente pelos PDV, que os impedem de usufruir da totalidade dos seus direitos fundamentais. \cite{YouthManifesto}. Desafios esses que não são restritos às divisas do Reino Unido, onde a organização se encontra.
+De acordo com o documento, perda de visão é uma experiência tão traumática que pode ser comparada à perda de um ente querido, visto que dificilmente eles recebem o apoio emocional necessário. Não conseguir enxergar causa isolamento social, o que prejudica enormemente o futuro do indivíduo. Ainda é dito que empresas ou organizações, como lojas, bancos e agentes de viagem, não compreendem as necessidades e habilidades dos PDV, impedindo-os de levar uma vida comum e impossibilitando-os de realizar as atividades que gostariam. O trabalho ainda destaca que, frequentemente, as pessoas não sabem oferecer assistência básica, como guiá-los em espaços públicos, estações de trem, por exemplo. Dentre as áreas citadas como problemáticas, é possível destacar a mobilidade urbana, a educação superior e acessibilidade na tecnologia. No trabalho ainda é revelado o motivo de sua publicação, informando que 25\% das pessoas com perda de visão estão insatisfeitas com suas vidas. \cite{YouthManifesto}.
+
+Em relação à mobilidade, \citetexto{YouthManifesto} cita que existe uma variedade de aplicativos para smartphone que auxiliam pessoas a se localizar e se deslocar, porém, poucos deles são acessíveis. É afirmado também que, se essas tecnologias fossem projetadas com todas as pessoas em mente, mais PDV poderiam transitar com segurança, reduzindo a dependência de outras pessoas.
+
+Indo ao encontro das iniciativas das RLSB e atuando na área de mobilidade, o presente trabalho apresenta um modelo que faz uso de conceitos como dispositivos móveis, acessibilidade ubíqua, tecnologias assistivas e localização por Bluetooth Low Energy (BLE). O modelo trata de uma alternativa para facilitar as atividades diárias das pessoas com deficiência, especialmente a visual, atuando na forma com que elas se orientam e se deslocam em ambientes internos.
+
+Tendo a premissa de funcionar a partir do smartphone do usuário, o sistema irá informar ao usuário sua localização atual e recomendar caminhos que o levem ao seu destino, levando em consideração os obstáculos em sua rota. O sistema será projetado para ter usabilidade intuitiva e ser uma parte quase invisível do cotidiano do usuário, aplicando o conceito de computação ubíqua introduzido em \citetexto{Weiser1991}, a fim de se adaptar às necessidades dos PDV.
+
 \section{Fundamentação Teórica}
 Este capítulo apresenta a base teórica sobre a qual está construído este trabalho. Inicialmente são abordados os conceitos de computação ubíqua, computação móvel e acessibilidade. Em seguida esses conceitos são mesclados, sendo introduzido o conceito de acessibilidade ubíqua e tecnologias assistivas. Finalmente, é introduzida a tecnologia Bluetooth, seu modo de funcionamento e aplicações praticas.
 
 \subsection{Computação Móvel e Ubíqua}
 Olhando para o futuro, quando existiriam tecnologias tão avançadas, tão conectadas e tão naturalmente integradas em nosssas vidas que nem perceberiamos sua presença, \citetexto{Weiser1991} criou o termo computação ubíqua. 
 
-Weiser antecipou um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook usado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocupar os ambientes em que trabalhamos ou estudamos. Tais computadores conversariam entre si de maneira continua e transparente, de modo que seus usuários estariam permanentemente conectados e acessiveis em todos os lugares e em todos os momentos. TODO: Citar a terceira lei de Clarke. Tal definição vai ao encontro do conceito estabelecido por \citetexto{Satyanarayanan2001} para computação móvel como sendo: “Informação na ponta dos dedos, em qualquer lugar e em qualquer tempo”.
+Weiser antecipou um mundo onde computadores deixariam de possuir apenas o tamanho de um notebook utilizado em cima de uma mesa. Um mundo onde computadores seriam pequenos o suficiente para serem embutidos em botões de uma camisa e também grandes o suficiente para ocupar os ambientes em que trabalhamos ou estudamos. Tais computadores conversariam entre si de maneira continua e transparente, de modo que seus usuários estariam permanentemente conectados e acessiveis em todos os lugares e em todos os momentos. TODO: Citar a terceira lei de Clarke. Tal definição vai ao encontro do conceito estabelecido por \citetexto{Satyanarayanan2001} para computação móvel como sendo: “Informação na ponta dos dedos, em qualquer lugar e em qualquer tempo”.
 
 Um dos aspectos mais interessantes da computação ubíqua é a ciência de contexto, definida em \citetexto{dey2001understanding} como o uso de informações relevantes, tais como localização, preferência, histórico e horário podem ser usadas para determinar a situação em que o usuário se encontra. Tais informações servem para que os softwares desenvolvidos possam se adaptar as necessidades e reagir, instantânea e transparentemente, às mudanças no ambiente em que o usuário se encontra.
 
@@ -115,7 +126,7 @@ A tecnologia possui duas formas distintas de atuação, apesar de compartilharem
 
 De acordo com \citetexto{Townsend2014}, o LE foi criado para permitir produtos que requerem baixíssimo consumo de energia e baixo custo, quando comparados ao outro modo. Assim sendo, esse modo foi pensado para aplicações que exigem pouca troca de informações. Um exemplo de produto viável com a chegada do modo LE são os beacons Bluetooth, que consistem em dispositivos do tamanho de uma moeda comum, compostos por um processador, uma bateria e um transmissor, que transmitem informações sobre si em intervalos regulares. Como o sinal dos beacons tem seu alcance limitado a alguns poucos metros, foi introduzido o conceito de microlocalização, tornando possível o desenvolvimento de novas aplicações e serviços onde antes não era possível, tais como lojas, grandes shows ou eventos, estádios esportivos e em ambientes internos. A microlocalização é definida por \citetexto{zafari2015micro} como a obtenção da localização de uma entidade com grau de precisão na ordem dos centímetros. 
 
-A imensa maioria dos telefones celulares hoje faz uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional. Os sistemas operacionais Android e iOS oferecem suporte a tecnologia a partir das versões 4.3 e 5, respectivamente. Ao contrário da versão anterior, a partir da versão 4, a tecnologia Bluetooth não exige o pareamento de dispositivos para que eles possam se localizar e comunicar.
+A imensa maioria dos telefones celulares hoje faz uso nativo da tecnologia, não exigindo qualquer tipo de equipamento adicional. Ao contrário da versão anterior, a partir da versão 4, a tecnologia Bluetooth não exige o pareamento de dispositivos para que eles possam se localizar e comunicar.
 
 De acordo com \citetexto{ballance2008developing}, a combinação computação ubíqua e Bluetooth tem potencial para fomentar soluções simples e baratas que outrora não seriam possíveis.
 
@@ -128,35 +139,10 @@ De acordo com \citetexto{ballance2008developing}, a combinação computação ub
   \item Os autores não chegam a citar nominalmente os pontos fracos da tecnologia Bluetooth, mas um grande ponto que pode ser citado é o consumo de bateria causado pelas versões que antecederam a versão 4, também chamada de Bluetooth Low Energy.
 \end{itemize}
 
-A Tabela \ref{tab:tecnologiasLocalizacao} mostra algumas características dessas tecnologias.
-
-\begin{table}
-	\caption{Tabela comparativa entre tecnologias aplicadas em localização}
-	\label{tab:tecnologiasLocalizacao}
-		\begin{tabular}{ p{2,5cm} | p{2cm} | p{2,5cm} | p{3cm} | p{3cm} }
-			\hline
-				Tecnologia & Precisão & Abrangência & Suportada por smartphones & Exige linha de visão   \\ \hline
-				GPS & 10 m & Externo & Praticamente todos & Não   \\ \hline
-				Bluetooth 2 & 100 m & Ambos & Praticamente todos & Não   \\ \hline
-				Bluetooth BE & 100 m & Ambos & Alguns & Não   \\ \hline
-				RFID & Entre 10cm e 100m & Ambos & Alguns & Não   \\ \hline
-				NFC & Até 10 cm & Ambos & Alguns & Não   \\ \hline
-				Ultrassom & Centímetros & Ambos & Poucos & Não   \\ \hline
-				Infravermelho & Centímetros & Ambos & Poucos & Sim   \\ \hline
-			\end{tabular}
-		\fonte{\citetexto{stewart2008accessible}}
-\end{table}
-
-Analisando a tabela podemos ver que a tecnologia GPS é a que oferece a maior precisão na localização, além de ser suportada pela maioria dos smartphones. Porém, ela não é recomendada para ambientes internos. As tecnologias ultrassom e infravermelho oferecem boa precisão, mas são pouquíssimos os modelos de smartphone que fazem uso delas. Infravermelho ainda exige contato visual direto e sem restrições entre os dispositivos para funcionar. RFID e NFC oferecem ótima precisão devido à proximidade necessária para uso da tecnologia, porém, possuem pouco suporte por parte dos dispositivos. Bluetooth, em ambas as versões, possuem precisão média e são bem suportadas pelos smartphones.
-
-Importante ressaltar que os dados apresentados são limites teóricos da tecnologia obtidos através da especificação de cada uma das tecnologias. Estes valores podem variar para mais ou para menos, visto que, segundo \citetexto{Townsend2014}, o alcance de qualquer tecnologia sem fio é influenciado por diversos fatores, entre eles é possível  citar o ambiente onde ela está sendo utilizada, design da antena e o material utilizado.
-
 \section{Trabalhos Relacionados}
-Nesta seção serão apresentados quatro trabalhos relacionados com a solução a ser proposta. A busca por trabalhos foi feita com base na pesquisa pelas palavras-chave TODO: em bases de dadas da área de ciência da computação como ACM\footnote{Disponível em http://dl.acm.org.}, IEEE\footnote{Disponível em http://www.ieee.org.} e no buscador Google Acadêmico\footnote{Disponível em http://scholar.google.com.}. A seleção dos trabalhos foi feita considerando critérios como a similaridade do objetivo com o deste trabalho, o ano de publicação do modelo, suporte à acessibilidade, foco em dispositivos móveis e abrangência em ambientes internos.
+Nesta seção serão apresentados quatro trabalhos relacionados com a solução a ser proposta. A busca por trabalhos foi feita com base na pesquisa pelas palavras-chave TODO: em bases de dadas da área de ciência da computação como ACM\footnote{Disponível em http://dl.acm.org.}, IEEE\footnote{Disponível em http://www.ieee.org.} e no buscador Google Acadêmico\footnote{Disponível em http://scholar.google.com.}. A seleção dos trabalhos foi feita considerando critérios como a similaridade do objetivo com o deste trabalho, o ano de publicação do modelo, suporte à acessibilidade, foco em dispositivos móveis e abrangência em ambientes internos. 
 
-Os trabalhos relacionados escolhidos foram: Percept (\cite{Ganz2011} e \cite{Ganz2012}), um modelo de navegação em ambientes internos usando RFID; 
-UCAT (\citetexto{ucat2014}), uma aplicação para dispositivos móveis que permite ao usuário saber quem está ao seu redor; 
-Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely (\citetexto{chen2014}), um modelo para dispositivos móveis que avisa aos usuários sobre sua aproximação de zonas em obras e Tirésias (\citetexto{Falk2013}), um modelo de acessibilidade para dispositivos móveis para o suporte de pessoas que possuem deficiência visual.
+Os trabalhos relacionados escolhidos foram: Percept \cite{Ganz2011, Ganz2012}, um modelo de navegação em ambientes internos usando RFID; UCAT \cite{ucat2014}, uma aplicação para dispositivos móveis que permite ao usuário saber quem está ao seu redor; Development of a Navigation System Using Smartphone and Bluetooth Technologies to Help the Visually Impaired Navigate Work Zones Safely \cite{chen2014}, um modelo para dispositivos móveis que avisa aos usuários sobre sua aproximação de zonas em obras e Tirésias \cite{Falk2013}, um modelo de acessibilidade para dispositivos móveis para o suporte de pessoas que possuem deficiência visual.
 
 Percept é um modelo de localização que busca aumentar a percepção dos PDV. \citetexto{Ganz2011} e \citetexto{Ganz2012} definem um sistema de localização em ambientes internos utilizado através de dispositivos móveis que permite ao usuário selecionar um dos destinos possíveis no ambiente e obter rota e instruções para chegar até ele. O Percept é composto por tags RFID passivas espalhadas pelo ambiente, responsáveis por representar individualmente cada possível destino no ambiente e por indicar ao modelo o destino escolhido pelo usuário; uma luva com hardware customizado, capaz de fazer a leitura das tags e enviar comandos ao dispositivo móvel; um dispositivo móvel, que recebe informações da luva e se comunica com o servidor para obter a rota até o destino escolhido; e o servidor PERCEPT, responsável por armazenar o layout dos ambientes e calcular a rota até o destino escolhido.
 
@@ -166,11 +152,12 @@ A proposta de \citetexto{chen2014} propõe um modelo de software para dispositiv
 
 A proposta de \citetexto{Falk2013}, denominada Tirésias, é baseado no modelo Hefestos, proposto por \citetexto{Tavares2011}. Este, por sua vez, é um modelo genérico que visa estabelecer padrões de acessibilidade que possam ser aplicados em diversos tipos de deficiência. Segundo os autores, o Tirésias pode ser compreendido como uma especialização do Hefestos para atender as necessidades das pessoas com deficiência visual. O modelo obtém a posição atual do usuário através do GPS contido no smartphone e, se baseando nela, exibe recursos de acessibilidade disponíveis nas proximidades. Algumas das funcionalidades oferecidas são a listagem de recursos disponíveis, a indicação de caminho até o recurso selecionado e a solicitação de ajuda. O modelo é composto pelos módulos de saída, responsável por gerenciar as informações passadas ao usuário; entrada, responsável por gerenciar a interface com o usuário; configurações, que disponibiliza ajustes de forma a customizar o sistema às necessidades do usuário; pelo assistente pessoal, responsável pela comunicação com o Hefestos, através da qual são obtidos perfis de usuário e recursos disponíveis para o suporte à acessibilidade; somados ao modelo Hefestos. De acordo com \citetexto{Falk2013}, o Tirésias emprega sensibilidade ao contexto e acessibilidade ubíqua, utilizando maneiras especializadas de interação com o sistema, para promover acessibilidade aos PDV.
 
+Com o intuito de facilitar a compreensão e comparação dos trabalhos relacionados, foi elaborada a tabela \ref{tab:trabalalhosRelacionados}. Nela são apresentadas as abordagens usadas em cada um dos modelos, sendo possível identificar de forma ágil as características e tecnologias aplicadas em cada um, permitindo a identificação de pontos fortes e lacunas relevantes para o presente trabalho.
 
+Conforme pode ser observado no comparativo apresentado, todos os modelos focam no uso de dispositivos móveis, no entanto, um deles exige o uso combinado de outro dispositivo de hardware dedicado. Dois dos trabalhos usam Bluetooth para obter a localização do usuário, enquanto os outros usam RFID ou GPS. Quanto à área de abrangência, dois dos modelos possuem foco em ambientes internos, enquanto um é específicamente voltado a zonas em construção e outro é agnostico a esse aspecto.
+Quanto a arquitetura dos modelos, todos fazem uso da estrutura cliente-servidor com comunicação via internet. O Tirésias foi desenvolvido para a plataforma iOS com a linguagem Objective-C, enquanto os outros foram desenvolvidos para a plataforma Android com a linguagem Java. Ainda é possível ressaltar que apenas o Tirésias prevê interoperabilidade com outras aplicações.
 
-
-
-Prevendo uma maior facilidade e compreensão quanto à comparação entre os trabalhos relacionados, foi elaborada a TODO:. Nela são destacadas as principais características e aspectos considerados relevantes para o presente trabalho.
+Nenhum dos modelos faz uso de bibliotecas ou frameworks que promovem acessibilidade. Além disso, a tecnologia de localizaçõa usada em três dos modelos não se adequa perfeitamente em ambientes internos pois exigem proximidade muito grande do usuário para ser ativada ou é incapaz de identificar multiplos andares em um ambiente. Apenas o modelo destinado a áreas em construção faz uso da tecnologia mais adequada, Bluetooth Low Energy. Porém, a emprega com abrangência muito pequena. Outra lacuna identificada foi a falta de informações a respeito do gerenciamento de mudanças que possam acontecer eventualmente nos ambientes, ou ambientes dinâmicos.
 
 \begin{table}
 	\caption{Tabela comparativa entre os trabalhos relacionados}
@@ -202,15 +189,17 @@ Prevendo uma maior facilidade e compreensão quanto à comparação entre os tra
 	\end{minipage}
 \end{table}
 
-
-
-Baseado nas lacunas observadas, o presente trabalhos busca integrar, em uma única solução para dispositivos móveis, ...
-
-
+A próxima seção irá detalhar o modelo proposto, trabalhando e desenvolvendo alternativas às lacunas identificadas nessa revisão de literatura.
 
 \section{Modelo Proposto}
+O Insight...
 
 \section{Avaliação}
+Avaliação por cenários...
+
+\subsection{Implementação}
+Para avaliação do Insight, foi desenvolvido um protótipo composto apenas pelos módulos considerados essenciais para que seja possível ter uma solução completa para avaliar o modelo proposto. Sua construção foi feita com base no modelo proposto e divida em TODO: etapas.
+O aplicativo foi desenvolvido para a plataforma de dispositivos móveis Android, criada e mantida pelo Google. As telas do prototipo desenvolvido podem ser observadas na Figura TODO:, que apresenta a interface... Seu desenvolvimento utilizou a linguagem Java, usada nativamente para desenvolvimento nesta plataforma.
 
 %=======================================================================
 % Conclusão
