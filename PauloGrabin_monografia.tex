@@ -608,7 +608,7 @@ O Insight foi concebido tendo em mente tecnologias existentes e disponíveis ao 
 
 O objetivo do modelo é promover acessibilidade aos seus usuários, possibilitando que eles estejam sempre cientes dos locais ao seu redor e do caminho até eles. Para isso, o cliente auxilia o usuário em seu deslocamento curva-a-curva através de instruções verbais. Alguns dos locais que terão sua localização indicadas aos usuários através do cliente são banheiros, balcões de informação, estações policiais, locais preparados para receber deficientes visuais, zonas em obras e pontos de transporte público. Essas informações são caracterizados por \citetexto{stewart2008accessible} como extremamente importantes para os PDV.
 
-Visto que o objetivo do modelo não é alertar sobre obstáculos no caminho do usuário, ele não deve ser encarado como um substituto para ferramentas que possuam esse fim. O Insight deve ser sempre usado em conjunto com outras ferramentas assistivas, tais como bengalas e cães guia, esses sim possibilitam o desvio de obstáculos de qualquer natureza que possam surgir. 
+Visto que não faz parte do objetivo do modelo alertar sobre obstáculos no caminho do usuário, ele não deve ser encarado como um substituto para ferramentas que possuam esse fim. O Insight deve ser sempre usado em conjunto com outras ferramentas assistivas, tais como bengalas e cães guia, esses sim possibilitam o desvio de obstáculos de qualquer natureza que possam surgir. 
 
 Empresas ou organizações que queiram melhorar a acessibilidade de suas dependências devem ter em mente que outras medidas podem ser tomadas em conjunto com a adoção do modelo, para aumentar a eficiência de seus esforços. Uma medida que possui sinergia total com o Insight é a colocação de piso tátil por todos os trajetos que serão percorridos pelos PDV. Piso tátil são faixas em alto-relevo no chão percebidas pelos usuário através da sensibilidade dos pés, fornecendo auxílio e indicações aos PDV durante seus deslocamentos.
 
@@ -635,7 +635,7 @@ Através do modelo, o usuário poderá saber onde está, descobrir locais que ex
 
 \citetexto{dias2015navpal} afirma que, quando perdidos ou desorientados, PDV frequentemente requisitam ajuda de pessoas próximas. Como não é objetivo do Insight eliminar completamente a assistência humana e também por precaução, caso o usuário entre em algum ambiente fora do alcance dos beacons, é prevista no modelo a funcionalidade do pedido de ajuda. Quando o usuário a aciona, sua última localização conhecida é enviada pelo modelo para números de telefone cadastrados no modelo. Então os administradores podem providenciar que alguém vá ao encontro de quem necessita de ajuda.
 
-De acordo com \citetexto{gedawy2011designing}, qualquer sistema de navegação destinado a PDV conter cinco elementos essenciais. São eles: uma representação geografia capaz de representar múltiplos andares; uma funcionalidade para calcular as rotas e direções dos usuários; uma maneira de identificar a localização do usuário; uma interface para gerenciar a interação do usuário; e, por último, um componente que traduza as rotas para uma forma de comunicação compreensível pelo usuário. \cite{gedawy2011designing}. O cliente Insight possuí um destes elementos.
+De acordo com \citetexto{gedawy2011designing}, qualquer sistema de navegação destinado a PDV conter cinco elementos essenciais. São eles: uma representação geografia capaz de representar múltiplos andares; uma funcionalidade para calcular as rotas e direções dos usuários; uma maneira de identificar a localização do usuário; uma interface para gerenciar a interação do usuário; e, por último, um componente que traduza as rotas para uma forma de comunicação compreensível pelo usuário. \cite{gedawy2011designing}. O cliente Insight possuí cada um destes elementos.
 
 A arquitetura do modelo, bem como cada um dos componentes, é explicada em maiores detalhes nas seções subsequentes.
 
@@ -833,7 +833,7 @@ Cada instância roda em servidor físico específico, com seus memória, process
 \FloatBarrier
 
 \subsubsection{Web service REST}
-O web service REST de cada instância é o responsável por expor os clientes os dados armazenados na base de dados. Segundo \citetexto{richardson2008restful}, REST é um padrão amplamente utilizado na comunicação entre sistemas, devido a sua capacidade de simplificar o acesso mesmo a dados bastante complexos. O padrão REST não é limitado a alguma plataforma específica, de forma que clientes em quaisquer sistemas sejam facilmente para consumir web services REST. Ainda segundo o autor, uma solução que faz uso do padrão REST é chamada de RESTful.
+O web service REST de cada instância é o responsável por expor aos clientes os dados armazenados na base de dados. Segundo \citetexto{richardson2008restful}, REST é um padrão amplamente utilizado na comunicação entre sistemas, devido a sua capacidade de simplificar o acesso mesmo a dados bastante complexos. O padrão REST não é limitado a alguma plataforma específica, de forma que clientes em quaisquer sistemas sejam facilmente para consumir web services REST. Ainda segundo o autor, uma solução que faz uso do padrão REST é chamada de RESTful.
 
 Através deste componente é realizada a comunicação e a interoperabilidade do Insight. Ele recebe as requisições de dados e então as direciona ao módulo de conexão ao banco de dados, que, por sua vez, determina onde será buscada a informação. As requisições podem originar de outras soluções ou então de clientes Insight sincronizando seus dados.
 
@@ -879,7 +879,7 @@ O diagrama de casos de uso apresentado na Figura \ref{fig:diagramaCasosDeUso} fo
 A listagem dos requisitos é apresentada nas seções subsequentes, sendo dividida entre requisitos funcionais e requisitos não funcionais.
 
 \subsection{Requisitos funcionais} 
-Nesta seção são apresentados os requisitos funcionais elicitados para o modelo Insight. Cada requisito funcional corresponde a uma funcionalidade presente na solução, a fim de que usuários possam desempenhar suas ações. Para a definição dos requisitos foi levado em consideração que o sistema possui três tipos de usuários: usuários comuns e administradores.
+Nesta seção são apresentados os requisitos funcionais elicitados para o modelo Insight. Cada requisito funcional corresponde a uma funcionalidade presente na solução, a fim de que usuários possam desempenhar suas ações. Para a definição dos requisitos foi levado em consideração que o sistema possui dois tipos de usuários: usuários comuns e administradores.
 
 Os requisitos funcionais elicitados para o modelo são:
 
