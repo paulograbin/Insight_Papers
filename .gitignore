@@ -106,3 +106,7 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+imgs/segundo_cortado_com_labels.png
+imgs/segundo_cortado_com_labels_menor.png
+imgs/terreo_cortado_com_labels.png
+imgs/terreo_cortado_com_labels_menor.png
